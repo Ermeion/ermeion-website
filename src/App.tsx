@@ -27,41 +27,43 @@ function Navbar() {
         scrolled ? 'bg-white shadow-md' : 'bg-transparent'
       }`}
     >
-      <div className="flex justify-between items-center px-8 py-4">
-        <div className="font-bold text-2xl" style={{ color: '#17236a' }}>
-          Ερμείον
+      <div className="grid grid-cols-3 items-center px-8 py-1">
+        <div className="flex justify-start items-center">
+          <img src="/logo.png" alt="Ερμείον" style={{ height: '76px' }} className="w-auto object-contain" />
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex justify-center items-center gap-8">
           <a
             href="#services"
-            className="text-sm font-medium transition-all duration-300 hover:opacity-80"
-            style={{ color: '#71788f' }}
+            className="text-base font-semibold transition-all duration-300 hover:opacity-80"
+            style={{ color: '#17236a' }}
           >
             Υπηρεσίες
           </a>
           <a
             href="#process"
-            className="text-sm font-medium transition-all duration-300 hover:opacity-80"
-            style={{ color: '#71788f' }}
+            className="text-base font-semibold transition-all duration-300 hover:opacity-80"
+            style={{ color: '#17236a' }}
           >
             Διαδικασία
           </a>
           <a
             href="#why-us"
-            className="text-sm font-medium transition-all duration-300 hover:opacity-80"
-            style={{ color: '#71788f' }}
+            className="text-base font-semibold transition-all duration-300 hover:opacity-80"
+            style={{ color: '#17236a' }}
           >
             Αξιολογήσεις
           </a>
           <a
             href="#faq"
-            className="text-sm font-medium transition-all duration-300 hover:opacity-80"
-            style={{ color: '#71788f' }}
+            className="text-base font-semibold transition-all duration-300 hover:opacity-80"
+            style={{ color: '#17236a' }}
           >
             FAQ
           </a>
+        </div>
+        <div className="flex justify-end items-center">
           <button
-            className="ml-6 px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-300 hover:opacity-90"
+            className="px-6 py-2.5 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#17236a' }}
           >
             Κλείστε Ραντεβού
