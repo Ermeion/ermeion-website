@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, createContext, useContext, forwardRef, useCallback } from 'react';
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
