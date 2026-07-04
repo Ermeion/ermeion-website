@@ -945,7 +945,7 @@ function TestimonialsSection() {
     const update = () => {
       const isDesktop = window.matchMedia('(min-width: 640px)').matches;
       setIsMobile(!isDesktop);
-      setCardDims(isDesktop ? { width: 360, height: 310 } : { width: 300, height: 300 });
+      setCardDims(isDesktop ? { width: 360, height: 320 } : { width: 300, height: 300 });
     };
     update();
     window.addEventListener('resize', update);
@@ -1041,7 +1041,7 @@ function TestimonialsSection() {
                 className="mb-3 h-12 w-12 rounded-full object-cover object-top"
                 style={{ boxShadow: '3px 3px 0px #ffffff' }}
               />
-              <div className="max-h-[62%] overflow-y-auto pr-1">
+              <div className="max-h-[75%] overflow-y-auto pr-1">
                 <p
                   className="text-xs sm:text-sm font-medium leading-relaxed"
                   style={{ color: isCenter ? '#ffffff' : '#17236a' }}
