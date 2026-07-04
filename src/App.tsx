@@ -146,7 +146,7 @@ function HeroSection() {
             className="px-8 py-3 rounded-lg font-bold text-base transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#ffffff', color: '#17236a' }}
           >
-            Κλείστε Ραντεβού Τώρα
+            Κλείστε Ραντεβού
           </button>
           <button
             className="px-8 py-3 rounded-lg font-bold text-base transition-all duration-300 hover:bg-white hover:text-[#17236a]"
