@@ -139,7 +139,7 @@ function HeroSection() {
           className="text-lg md:text-xl font-medium mb-10"
           style={{ color: '#eaf0f7' }}
         >
-          Χωρίς παραπεμπτικό. Χωρίς αναμονή. Με αποτελέσματα που μετράς.
+          Εξατομικευμένη & επιστημονικά τεκμηριωμένη φυσιοθεραπεία που αντιμετωπίζει την πραγματική αιτία του προβλήματος σας.
         </h2>
         <div className="flex flex-row justify-center gap-4 flex-wrap">
           <button
