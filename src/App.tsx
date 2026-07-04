@@ -133,7 +133,7 @@ function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-[700px] text-center px-6">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-          Νιώστε άμεση ανακούφιση από τους πόνους που σας ενοχλούν.
+          Νιώστε άμεση ανακούφιση από τον πόνο που σας ενοχλεί.
         </h1>
         <h2
           className="text-lg md:text-xl font-medium mb-10"
