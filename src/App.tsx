@@ -26,7 +26,7 @@ function Navbar() {
   const navLinks = [
     { href: '#services', label: 'Υπηρεσίες' },
     { href: '#process', label: 'Διαδικασία' },
-    { href: '#why-us', label: 'Αξιολογήσεις' },
+    { href: '#testimonials', label: 'Αξιολογήσεις' },
     { href: '#faq', label: 'FAQ' },
   ];
 
@@ -1096,119 +1096,7 @@ function TestimonialsSection() {
   );
 }
 
-// Why Us Section Component
-function WhyUsSection() {
-  const reasons = [
-    {
-      emoji: '🔍',
-      title: 'Αξιολόγηση πριν από οτιδήποτε άλλο',
-      desc: 'Η πρώτη συνεδρία είναι πάντα αξιολόγηση. Βρίσκουμε την αιτία — όχι μόνο το σύμπτωμα — πριν ξεκινήσουμε οποιαδήποτε θεραπεία.',
-    },
-    {
-      emoji: '📋',
-      title: 'Εξατομικευμένο πλάνο θεραπείας',
-      desc: 'Δεν υπάρχει ένα πρόγραμμα για όλους. Σου λέμε πόσες συνεδρίες χρειάζονται και τι να περιμένεις σε κάθε βήμα.',
-    },
-    {
-      emoji: '📊',
-      title: 'Αποτελέσματα που μετράς',
-      desc: 'Βλέπεις διαφορά. Οι περισσότεροι ασθενείς μας παρατηρούν βελτίωση εντός των πρώτων 3 συνεδριών.',
-    },
-    {
-      emoji: '✓',
-      title: 'Δεν χρειάζεσαι παραπεμπτικό',
-      desc: 'Μπορείς να κλείσεις ραντεβού απευθείας, χωρίς να χρειαστεί να επισκεφθείς πρώτα γιατρό.',
-    },
-  ];
 
-  return (
-    <section
-      id="why-us"
-      className="relative py-24 px-6 md:px-16"
-      style={{
-        backgroundImage: 'url(https://picsum.photos/seed/physio/1600/900)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      {/* Dark Overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: 'rgba(23, 35, 106, 0.72)' }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10">
-        {/* Top Section */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-            Γιατί οι ασθενείς μας επιστρέφουν — και μας προτείνουν
-          </h2>
-          <h3
-            className="text-lg font-medium mb-4"
-            style={{ color: '#eaf0f7' }}
-          >
-            Δεν αρκεί να περνάει ο πόνος. Θέλουμε να μη γυρίσει.
-          </h3>
-          <p
-            className="text-base opacity-80"
-            style={{ color: '#eaf0f7' }}
-          >
-            Αυτά είναι τα τέσσερα πράγματα που κάνουν τη διαφορά στο Ερμείον.
-          </p>
-        </div>
-
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-          {reasons.map((reason, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-6 shadow-md"
-            >
-              <div className="flex gap-4 items-start">
-                <span className="text-3xl">{reason.emoji}</span>
-                <div>
-                  <h4
-                    className="font-bold text-lg mb-2"
-                    style={{ color: '#17236a' }}
-                  >
-                    {reason.title}
-                  </h4>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: '#71788f' }}
-                  >
-                    {reason.desc}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTAs */}
-        <div className="flex justify-center gap-4 flex-wrap">
-          <button
-            className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-[#17236a]"
-            style={{
-              backgroundColor: 'transparent',
-              border: '2px solid #ffffff',
-              color: '#ffffff',
-            }}
-          >
-            Μάθετε Περισσότερα για εμάς
-          </button>
-          <button
-            className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:opacity-90"
-            style={{ backgroundColor: '#ffffff', color: '#17236a' }}
-          >
-            Κλείστε Ραντεβού
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // FAQ Section Component
 function FAQSection() {
@@ -1345,7 +1233,6 @@ function App() {
       <ServiceCarouselSection />
       <ProcessSection />
       <TestimonialsSection />
-      <WhyUsSection />
       <FAQSection />
       <FinalCTASection />
     </div>
