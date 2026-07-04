@@ -703,7 +703,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
 function ProcessSection() {
   const processSteps: TimelineEntry[] = [
     {
-      title: 'Βήμα 1',
+      <span style={{ color: '#17236a' }}>Βήμα 1</span>,
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
