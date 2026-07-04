@@ -131,7 +131,7 @@ function HeroSection() {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[700px] text-center px-6">
+      <div className="relative z-10 max-w-[900px] text-center px-6">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
           Νιώστε άμεση ανακούφιση <br /> από τον πόνο που σας ενοχλεί.
         </h1>
