@@ -32,11 +32,7 @@ function Navbar() {
 
   return (
     <>
-      <nav
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled || mobileOpen ? 'bg-white shadow-md' : 'bg-transparent'
-        }`}
-      >
+      <nav className="sticky top-0 z-50 bg-white shadow-md">
         <div className="flex items-center justify-between px-6 md:px-8 py-1">
           {/* Logo */}
           <img src="/logo.png" alt="Ερμείον" style={{ height: '76px' }} className="w-auto object-contain" />
