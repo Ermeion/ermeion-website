@@ -703,7 +703,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
 function ProcessSection() {
   const processSteps: TimelineEntry[] = [
     {
-      title: 'Βήμα 1',
+      title: 'Αξιολόγηση',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
@@ -728,7 +728,7 @@ function ProcessSection() {
       ),
     },
     {
-      title: 'Βήμα 2',
+      title: 'Πλάνο',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
@@ -767,7 +767,7 @@ function ProcessSection() {
       ),
     },
     {
-      title: 'Βήμα 3',
+      title: 'Θεραπεία',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
@@ -792,7 +792,7 @@ function ProcessSection() {
       ),
     },
     {
-      title: 'Βήμα 4',
+      title: 'Πρόοδος',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
@@ -817,7 +817,7 @@ function ProcessSection() {
       ),
     },
     {
-      title: 'Βήμα 5',
+      title: 'Πρόληψη',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
