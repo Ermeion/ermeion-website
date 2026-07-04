@@ -6,7 +6,7 @@ import {
   useInView,
 } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronRight, ChevronDown, Activity, Bone, Brain, Heart, Scissors, Target, Menu, X } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, Activity, Bone, Brain, Heart, Scissors, Target, Menu, X } from 'lucide-react';
 
 // Navbar Component
 function Navbar() {
@@ -858,6 +858,238 @@ function ProcessSection() {
   return <Timeline data={processSteps} />;
 }
 
+// Testimonials Section Component
+const SQRT_5000 = Math.sqrt(5000);
+
+const testimonialsData = [
+  {
+    tempId: 0,
+    testimonial: "Ο Γιάννης είναι ένας εξαιρετικά καταρτισμένος επαγγελματίας. Με βοήθησε να ξεπεράσω το πρόβλημα με τη μέση μου. Ήταν παρών καθ'όλη τη διάρκεια της συνεδρίας και την προσάρμοζε κάθε φορά στις ανάγκες που είχα..",
+    by: "Μαρία Μεταξά",
+    imgSrc: "https://lh3.googleusercontent.com/a-/ALV-UjUgZltsIxQABh7ryvFBldW5CIqvF87g23eMcCPN0EEaUub68G8=w72-h72-p-rp-mo-br100",
+  },
+  {
+    tempId: 1,
+    testimonial: "Εξειδικευμένος άνθρωπος με βοήθησε πολύ να αντιμετωπίσω τις ζαλάδες μου με την ενδυνάμωση της αυχενικής μου μοίρας. Αλλά και όχι μόνο σε οποιοδήποτε προβληματισμό μου και πιθανό τραυματισμό ήταν εκεί να με βοηθήσει και να μου δείξει τρόπους…",
+    by: "Ιορδάνης Καραγιάννης",
+    imgSrc: "https://lh3.googleusercontent.com/a-/ALV-UjXcgyGgnRUP12O-3TDMpQNvn-2yT6vm2VG-BqJCo2ZVMaZVLaAl=w72-h72-p-rp-mo-br100",
+  },
+  {
+    tempId: 2,
+    testimonial: "Εξαιρετικός επαγγελματίας! Ο Γιάννης δείχνει πραγματικό ενδιαφέρον για τον ασθενή, εξηγεί με απλό τρόπο κάθε στάδιο της θεραπείας και προσαρμόζει τις ασκήσεις στις ανάγκες του. Από την πρώτη κιόλας συνεδρία έβγαλα το κολάρο που φορούσα σχεδόν μήνα. Τον συστήνω ανεπιφύλακτα!",
+    by: "Νίκη Ντανάκα",
+    imgSrc: "https://lh3.googleusercontent.com/a-/ALV-UjX4dd3cHH5dwQ8NI_7tTCTXRIlGZPWJzS-Esv2LuZB0rYG0apU=w72-h72-p-rp-mo-ba12-br100",
+  },
+  {
+    tempId: 3,
+    testimonial: "Ο Γιάννης είναι εξαιρετικός και ως επαγγελματίας αλλά και σαν άνθρωπος. Με βοήθησε με το πολυετές πρόβλημα στους ώμους μέσα σε λίγες μόνο συνεδρίες και έχει καταφέρει να κάνει κάτι που συνήθως βαριέμαι πολύ ευχάριστο.",
+    by: "Παντελής Μανίκας",
+    imgSrc: "https://lh3.googleusercontent.com/a-/ALV-UjXLI3KlEu3CBmYDHF4Nu6h0GebsAQ9RvtcPj59ocgwN1i3dBs6q=w72-h72-p-rp-mo-br100",
+  },
+  {
+    tempId: 4,
+    testimonial: "Είχα αρκετά μεγάλο πρόβλημα με τα γόνατα, επισκέφτηκα ένα άλλο φυσικοθεραπευτήριο κ δεν είχα καμία εξέλιξη. Με τον Γιάννη μέσα σε ένα πολύ μικρό διάστημα μπορέσαμε να ξανά επανέλθω με επιτυχία στον χορό μου κ τον ευχαριστώ πολύ ❤️",
+    by: "Φένια Δημοπούλου",
+    imgSrc: "https://lh3.googleusercontent.com/a/ACg8ocJ3aJ1dv-sXzqkvBZwU7s7FkH186KgnWRr5SE9jTA71GNw4RA=w72-h72-p-rp-mo-br100",
+  },
+  {
+    tempId: 5,
+    testimonial: "Μετά από έναν σοβαρό τραυματισμό ο ορθοπεδικός μου σύστησε τον Γιάννη και άμεσα κατάλαβα ότι ήταν η καλύτερη επιλογή!!! Άριστος επαγγελματίας με πολύ καλή γνώση πάνω στο αντικείμενο, πλήρως εξοπλισμένος χώρος, δουλεύει στοχευμένα και μεθοδικά! Τον συστήνω ανεπιφύλακτα 👌🏽",
+    by: "Κατερίνα Παρίση",
+    imgSrc: "https://lh3.googleusercontent.com/a-/ALV-UjUhVM2_kI7UCxLrYnU4YOaq3fFIuaiGjABr790IeFT1AFar37Pc=w72-h72-p-rp-mo-br100",
+  },
+  {
+    tempId: 6,
+    testimonial: "Πρώτη φορά χρειάστηκε να πάω σε φυσικοθεραπευτήριο. Τελικά, δεν είναι τυχαία τα 5αρια. Άψογος επαγγελματίας, γνώστης του αντικειμένου. Από την πρώτη συνεδρία ανακουφίστηκε το πρόβλημα στο γόνατο. Ο χώρος πλήρως εξοπλισμένος με σύγχρονα μηχανήματα.",
+    by: "Ευαγγελία Δροσάκη",
+    imgSrc: "https://lh3.googleusercontent.com/a/ACg8ocId6ZoYQ_4pMpMVKyWZVU4m4wNrQWU28-O8SoHWUvhk0_7fEA=w72-h72-p-rp-mo-ba12-br100",
+  },
+  {
+    tempId: 7,
+    testimonial: "Πολύ καθαρό περιβάλλον, ευχάριστες θεραπείες με θετική ενέργεια και επαγγελματισμό. Το συστήνω ανεπιφύλακτα σε όποιον θέλει να γίνει καλά — εγώ με την αποθεραπεία στο γόνατό μου έμεινα κάτι παραπάνω από ευχαριστημένος.",
+    by: "Θεόδωρος Τσιτιρίδης",
+    imgSrc: "https://lh3.googleusercontent.com/a-/ALV-UjXwuKSAMi8t4azb1XuECUZrcnsiCF98F_jaKpU0hOSETpfdkTs=w72-h72-p-rp-mo-br100",
+  },
+  {
+    tempId: 8,
+    testimonial: "Πονούσα τρομερά πίσω στην πλάτη από τραυματισμό στην δουλειά μου. Ο Γιάννης με βοήθησε πάρα πολύ και μετά από ελάχιστες επισκέψεις ένιωσα πολύ καλύτερα και μου έμαθε να κάνω μόνος μου ασκήσεις McKenzie στο σπίτι. Ευχαριστώ πολύ για την βοήθεια.",
+    by: "Γιώργος Μαδεμτζίδης",
+    imgSrc: "https://lh3.googleusercontent.com/a-/ALV-UjVCRUH4uclOekkSSOKQUXLDt7pWkbWVW6KRSapQr6xpYY92HExYPg=w72-h72-p-rp-mo-ba12-br100",
+  },
+  {
+    tempId: 9,
+    testimonial: "Ο Γιάννης ασχολείται εξατομικευμένα με τον ασθενή ανάλογα με το πρόβλημα του. Στόχος του είναι ο εντοπισμός και η διόρθωση των πραγματικών αιτιών πόνου με την καλύτερη και ασφαλέστερη μέθοδο. Σε ευχαριστώ θερμά 🌹!!!!",
+    by: "Ελένη",
+    imgSrc: "https://lh3.googleusercontent.com/a/ACg8ocLigyKCFUWoVIWC9e5qtjmhqefc3LUSSG5Es0Ye9zAeiilh2g=w72-h72-p-rp-mo-ba12-br100",
+  },
+  {
+    tempId: 10,
+    testimonial: "Εξαιρετικός φυσικοθεραπευτής ο Γιάννης, πήγα με μουδιασμένο χέρι και πρόβλημα στον αυχένα — σε μια μόνο επίσκεψη είδα απίστευτη βελτίωση. Μαγικά χέρια θα έλεγα και με τις ασκήσεις που μου έδειξε έγινα τελείως καλά!!!",
+    by: "Κωνσταντίνα",
+    imgSrc: "https://lh3.googleusercontent.com/a/ACg8ocLeRootj3ykCXY4cpglTed2DjhufpVxquJonp6JJ5x5YQHZLA=w72-h72-p-rp-mo-br100",
+  },
+  {
+    tempId: 11,
+    testimonial: "Πολύ θετική εμπειρία συνολικά. Η φυσικοθεραπεία είχε άμεσα αποτελέσματα, κάτι που δεν είναι δεδομένο. Το περιβάλλον άνετο, η επικοινωνία φιλική αλλά επαγγελματική. Σε ευχαριστώ πολύ για όλα Γιάννη 🙏🏽",
+    by: "Χριστίνα Μ.",
+    imgSrc: "https://lh3.googleusercontent.com/a-/ALV-UjVWDncUQHnnHuQ1A87Zw0RRoKKmtdIrA0bpuzTsvjqE5u5NqPyn=w72-h72-p-rp-mo-br100",
+  },
+];
+
+function TestimonialsSection() {
+  const [cardSize, setCardSize] = useState(365);
+  const [list, setList] = useState(testimonialsData);
+
+  useEffect(() => {
+    const update = () => {
+      setCardSize(window.matchMedia('(min-width: 640px)').matches ? 380 : 300);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const handleMove = (steps: number) => {
+    const newList = [...list];
+    if (steps > 0) {
+      for (let i = steps; i > 0; i--) {
+        const item = newList.shift();
+        if (!item) return;
+        newList.push({ ...item, tempId: Math.random() });
+      }
+    } else {
+      for (let i = steps; i < 0; i++) {
+        const item = newList.pop();
+        if (!item) return;
+        newList.unshift({ ...item, tempId: Math.random() });
+      }
+    }
+    setList(newList);
+  };
+
+  return (
+    <section id="testimonials" className="py-24 px-6 md:px-16" style={{ backgroundColor: '#eaf0f7' }}>
+      {/* Header */}
+      <div className="max-w-7xl mx-auto mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-3" style={{ color: '#17236a' }}>
+              Τι λένε οι ασθενείς μας
+            </h2>
+            <p className="text-base md:text-lg max-w-xl" style={{ color: '#71788f' }}>
+              Διαβάστε τις εμπειρίες των ασθενών μας και πώς τους βοηθήσαμε να ανακάμψουν.
+            </p>
+          </div>
+          {/* Google Trust Badge */}
+          <div className="flex items-center gap-3 bg-white rounded-2xl px-5 py-3 shadow-sm border border-gray-100 w-fit shrink-0">
+            <svg width="26" height="26" viewBox="0 0 48 48" aria-label="Google">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.34-8.16 2.34-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            <div>
+              <div className="flex items-center gap-0.5 mb-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4" fill="#FBBC05" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-xs font-bold" style={{ color: '#17236a' }}>5/5 · 913+ κριτικές</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Stagger Carousel */}
+      <div className="relative w-full overflow-hidden" style={{ height: 620 }}>
+        {list.map((t, index) => {
+          const position = list.length % 2
+            ? index - (list.length + 1) / 2
+            : index - list.length / 2;
+          const isCenter = position === 0;
+          return (
+            <div
+              key={t.tempId}
+              onClick={() => handleMove(position)}
+              className="absolute left-1/2 top-1/2 cursor-pointer border-2 p-6 sm:p-8 transition-all duration-500 ease-in-out"
+              style={{
+                width: cardSize,
+                height: cardSize,
+                clipPath: 'polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)',
+                transform: `translate(-50%, -50%) translateX(${(cardSize / 1.5) * position}px) translateY(${isCenter ? -65 : position % 2 ? 15 : -15}px) rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)`,
+                zIndex: isCenter ? 10 : 0,
+                backgroundColor: isCenter ? '#17236a' : '#ffffff',
+                borderColor: isCenter ? '#17236a' : '#dce5ef',
+                boxShadow: isCenter ? '0px 8px 0px 4px #c7d2e8' : 'none',
+              }}
+            >
+              <span
+                className="absolute block origin-top-right rotate-45"
+                style={{ right: -2, top: 48, width: SQRT_5000, height: 2, backgroundColor: '#dce5ef' }}
+              />
+              <img
+                src={t.imgSrc}
+                alt={t.by}
+                className="mb-3 h-12 w-12 rounded-full object-cover object-top"
+                style={{ boxShadow: '3px 3px 0px #ffffff' }}
+              />
+              <div className="max-h-[55%] overflow-y-auto pr-1">
+                <p
+                  className="text-xs sm:text-sm font-medium leading-relaxed"
+                  style={{ color: isCenter ? '#ffffff' : '#17236a' }}
+                >
+                  "{t.testimonial}"
+                </p>
+              </div>
+              <p
+                className="absolute bottom-6 left-6 right-6 text-xs sm:text-sm italic font-semibold tracking-wide"
+                style={{ color: isCenter ? 'rgba(255,255,255,0.8)' : '#71788f' }}
+              >
+                — {t.by}
+              </p>
+            </div>
+          );
+        })}
+
+        {/* Navigation Buttons */}
+        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+          <button
+            onClick={() => handleMove(-1)}
+            className="flex h-12 w-12 items-center justify-center border-2 transition-all duration-200 hover:border-[#17236a]"
+            style={{ backgroundColor: '#ffffff', borderColor: '#dce5ef', color: '#17236a' }}
+            aria-label="Προηγούμενη κριτική"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            onClick={() => handleMove(1)}
+            className="flex h-12 w-12 items-center justify-center border-2 transition-all duration-200 hover:border-[#17236a]"
+            style={{ backgroundColor: '#ffffff', borderColor: '#dce5ef', color: '#17236a' }}
+            aria-label="Επόμενη κριτική"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="flex justify-center mt-8">
+        <a
+          href="#"
+          className="px-8 py-3 rounded-lg font-semibold border-2 transition-all duration-300 hover:text-white"
+          style={{ borderColor: '#17236a', color: '#17236a' }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#17236a')}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+        >
+          Δείτε όλες τις κριτικές μας
+        </a>
+      </div>
+    </section>
+  );
+}
+
 // Why Us Section Component
 function WhyUsSection() {
   const reasons = [
@@ -1106,6 +1338,7 @@ function App() {
       <ServicesSection />
       <ServiceCarouselSection />
       <ProcessSection />
+      <TestimonialsSection />
       <WhyUsSection />
       <FAQSection />
       <FinalCTASection />
