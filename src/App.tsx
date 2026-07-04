@@ -662,7 +662,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
               </div>
               <h3
                 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold"
-                style={{ color: '#71788f' }}
+                style={{ color: '#17236a' }}
               >
                 {item.title}
               </h3>
@@ -671,7 +671,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <h3
                 className="md:hidden block text-2xl mb-4 text-left font-bold"
-                style={{ color: '#71788f' }}
+                style={{ color: '#17236a' }}
               >
                 {item.title}
               </h3>
