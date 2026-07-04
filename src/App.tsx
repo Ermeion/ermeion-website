@@ -159,12 +159,6 @@ function HeroSection() {
             Δείτε τις Υπηρεσίες μας
           </button>
         </div>
-        <p
-          className="text-sm mt-6 opacity-80"
-          style={{ color: '#eaf0f7' }}
-        >
-          Πρώτη αξιολόγηση 45 λεπτά — φύγετε ξέροντας τι ακριβώς συμβαίνει.
-        </p>
       </div>
     </section>
   );
