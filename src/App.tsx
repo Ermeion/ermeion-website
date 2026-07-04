@@ -937,12 +937,15 @@ const testimonialsData = [
 ];
 
 function TestimonialsSection() {
-  const [cardSize, setCardSize] = useState(365);
+  const [cardDims, setCardDims] = useState({ width: 360, height: 280 });
+  const [isMobile, setIsMobile] = useState(false);
   const [list, setList] = useState(testimonialsData);
 
   useEffect(() => {
     const update = () => {
-      setCardSize(window.matchMedia('(min-width: 640px)').matches ? 380 : 300);
+      const isDesktop = window.matchMedia('(min-width: 640px)').matches;
+      setIsMobile(!isDesktop);
+      setCardDims(isDesktop ? { width: 360, height: 280 } : { width: 300, height: 300 });
     };
     update();
     window.addEventListener('resize', update);
@@ -1003,22 +1006,25 @@ function TestimonialsSection() {
       </div>
 
       {/* Stagger Carousel */}
-      <div className="relative w-full overflow-hidden" style={{ height: 620 }}>
+      <div className="relative w-full overflow-hidden" style={{ height: isMobile ? 500 : 620 }}>
         {list.map((t, index) => {
           const position = list.length % 2
             ? index - (list.length + 1) / 2
             : index - list.length / 2;
           const isCenter = position === 0;
+          const translateY = isMobile
+            ? (isCenter ? -40 : position % 2 ? 8 : -12)
+            : (isCenter ? -65 : position % 2 ? 15 : -15);
           return (
             <div
               key={t.tempId}
               onClick={() => handleMove(position)}
               className="absolute left-1/2 top-1/2 cursor-pointer border-2 p-6 sm:p-8 transition-all duration-500 ease-in-out"
               style={{
-                width: cardSize,
-                height: cardSize,
+                width: cardDims.width,
+                height: cardDims.height,
                 clipPath: 'polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)',
-                transform: `translate(-50%, -50%) translateX(${(cardSize / 1.5) * position}px) translateY(${isCenter ? -65 : position % 2 ? 15 : -15}px) rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)`,
+                transform: `translate(-50%, -50%) translateX(${(cardDims.width / 1.5) * position}px) translateY(${translateY}px) rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)`,
                 zIndex: isCenter ? 10 : 0,
                 backgroundColor: isCenter ? '#17236a' : '#ffffff',
                 borderColor: isCenter ? '#17236a' : '#dce5ef',
