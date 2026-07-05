@@ -142,7 +142,7 @@ function HeroSection() {
           </p>
 
           {/* Value Proposition Checkmarks */}
-          <ul className="flex flex-col gap-1.5 md:gap-2.5 mb-4 md:mb-7">
+          <ul className="flex flex-col gap-1.5 md:gap-2.5 mb-6 md:mb-7">
             {[
               '15+ χρόνια εμπειρίας',
               'Συμβεβλημένος με ΕΟΠΥΥ',
