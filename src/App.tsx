@@ -127,7 +127,7 @@ function HeroSection() {
         <div className="flex flex-col md:text-left md:max-w-2xl">
           {/* Title */}
           <h1
-            className="text-1xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-3 md:mb-5"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-3 md:mb-5"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
             Βραβευμένη & Πιστοποιημένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
