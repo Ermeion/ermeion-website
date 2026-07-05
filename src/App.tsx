@@ -288,13 +288,13 @@ function WhyErmeionSection() {
 
           {/* Body paragraphs */}
           <div className="flex flex-col gap-4 mb-8">
-            <p className="text-sm sm:sm leading-relaxed" style={{ color: '#3d3d3d' }}>
+            <p className="text-sm sm:text-sm leading-relaxed" style={{ color: '#3d3d3d' }}>
               Αυτό εξαρτάται από τη σωστή αξιολόγηση, τη σωστή θεραπεία και το κατάλληλο πλάνο αποκατάστασης.
             </p>
-            <p className="text-sm sm:sm leading-relaxed" style={{ color: '#3d3d3d' }}>
+            <p className="text-sm sm:text-sm leading-relaxed" style={{ color: '#3d3d3d' }}>
               Στο ΕΡΜΕΙΟΝ δεν επικεντρωνόμαστε απλώς στο σημείο που πονάει και ελπίζουμε για το καλύτερο αποτέλεσμα. Ο φυσικοθεραπευτής σας θα αξιολογήσει τι προκαλεί τα συμπτώματά σας, θα σας το εξηγήσει με σαφήνεια, θα εφαρμόσει τη κατάλληλη θεραπεία και θα δημιουργήσει ένα πρόγραμμα αποκατάστασης προσαρμοσμένο στο σώμα, τους στόχους και τον τρόπο ζωής σας.
             </p>
-            <p className="text-sm sm:sm leading-relaxed" style={{ color: '#3d3d3d' }}>
+            <p className="text-sm sm:text-sm leading-relaxed" style={{ color: '#3d3d3d' }}>
               Η φυσικοθεραπεία μπορεί να βοηθήσει στην αντιμετώπιση του πόνου, της δυσκαμψίας, των τραυματισμών, της μετεγχειρητικής αποκατάστασης και των προβλημάτων κίνησης σε ολόκληρο το σώμα, όχι μόνο στον πόνο της μέσης ή του γόνατος.
             </p>
           </div>
