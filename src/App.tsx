@@ -164,7 +164,7 @@ function HeroSection() {
             style={{ backgroundColor: '#17236a' }}
           >
             <CalendarCheck className="w-5 h-5" />
-            Κλείστε Δωρεάν Συμβουλευτική
+            Κλείστε Ραντεβού
           </button>
         </div>
 
