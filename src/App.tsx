@@ -129,15 +129,15 @@ function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-[1000px] text-center px-6">
         <h1 className="text-3xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-          Νιώστε άμεση ανακούφιση{' '}
+          Πιστοποιημένη Φυσιοθεραπεία{' '}
           <br className="hidden md:block" />
-          από τον πόνο που σας ενοχλεί.
+          για πόνους, τραυματισμούς και αποκατάσταση.
         </h1>
         <h2
           className="text-sm md:text-xl font-medium mb-10 opacity-80 md:opacity-100"
           style={{ color: '#eaf0f7' }}
         >
-          Εξατομικευμένη & επιστημονικά τεκμηριωμένη φυσιοθεραπεία που αντιμετωπίζει την πραγματική αιτία του προβλήματος σας.
+          Από πόνους στη μέση, τον αυχένα και τους ώμους έως τραυματισμούς στο ισχίο, το γόνατο, τον αστράγαλο και αθλητικούς τραυματισμούς, εντοπίζουμε την αιτία και καταρτίζουμε για εσάς ένα σαφές πλάνο αποκατάστασης.
         </h2>
         <div className="flex flex-row justify-center gap-3 md:gap-4">
           <button
