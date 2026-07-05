@@ -122,7 +122,7 @@ function HeroSection() {
 
       {/* Desktop: Left-Aligned Content + Right Badge */}
       {/* Mobile: Vertical Stack Above Fold */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-10">
+     <div className="relative z-10 max-w-[900px] text-left px-6">
         {/* Left: Text + CTA */}
         <div className="flex flex-col md:text-left md:max-w-2xl">
           {/* Title */}
