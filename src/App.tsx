@@ -144,7 +144,7 @@ function HeroSection() {
           {/* Value Proposition Checkmarks */}
           <ul className="flex flex-col gap-2 md:gap-2.5 mb-7 md:mb-7">
             {[
-              '15+ χρόνια εμπειρίας',
+              '10+ χρόνια εμπειρίας',
               'Συμβεβλημένος με ΕΟΠΥΥ',
               'Αποδεκτές όλες οι ιδιωτικές ασφαλιστικές',
               'Κράτηση σε λιγότερο από 1 λεπτό',
