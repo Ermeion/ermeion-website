@@ -221,7 +221,7 @@ function InsuranceCarouselSection() {
     <section className="bg-white py-14 md:py-20">
       {/* Heading */}
       <p
-        className="text-center text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-10 md:mb-14 px-4"
+        className="text-center text-s sm:text-sm font-extrabold tracking-[0.25em] mb-10 md:mb-14 px-4"
         style={{ color: '#71788f' }}
       >
         ΔΕΚΤΕΣ ΟΛΕΣ ΟΙ ΑΣΦΑΛΙΣΤΙΚΕΣ
