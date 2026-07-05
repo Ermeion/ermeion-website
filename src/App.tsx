@@ -314,7 +314,7 @@ function WhyErmeionSection() {
                 >
                   &#10003;
                 </span>
-                <span className="text-sm sm:text-base font-bold text-gray-900 leading-snug">{item}</span>
+                <span className="text-sm sm:text-sm font-bold text-gray-900 leading-snug">{item}</span>
               </li>
             ))}
           </ul>
