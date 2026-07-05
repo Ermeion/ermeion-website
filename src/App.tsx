@@ -343,7 +343,7 @@ function WhyErmeionSection() {
             style={{ backgroundColor: '#17236a' }}
           >
             <CalendarCheck className="w-5 h-5 shrink-0" />
-            Κλείστε Δωρεάν Συμβουλευτική
+            Κλείστε Ραντεβού
           </button>
         </div>
 
