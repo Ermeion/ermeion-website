@@ -101,7 +101,7 @@ function Navbar() {
 // Hero Section Component
 function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center overflow-hidden">
       {/* Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -122,12 +122,12 @@ function HeroSection() {
 
       {/* Desktop: Left-Aligned Content + Right Badge */}
       {/* Mobile: Vertical Stack Above Fold */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-10">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 pt-4 pb-6 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16">
         {/* Left: Text + CTA */}
-        <div className="flex flex-col md:text-left md:max-w-2xl">
+        <div className="flex flex-col md:max-w-[560px]">
           {/* Title */}
           <h1
-            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-3 md:mb-5"
+            className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-2 md:mb-4"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
             Βραβευμένη & Πιστοποιημένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
@@ -135,22 +135,22 @@ function HeroSection() {
 
           {/* Subtitle */}
           <p
-            className="text-sm sm:text-base md:text-lg text-white/90 mb-4 md:mb-6"
+            className="text-sm sm:text-base md:text-base text-white/90 mb-3 md:mb-5"
             style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
           >
             Από πόνους στη μέση, στον αυχένα και τους ώμους έως τραυματισμούς στο ισχίο, το γόνατο, τον αστράγαλο και αθλητικούς τραυματισμούς, εντοπίζουμε την αιτία και σας παρέχουμε ένα σαφές πλάνο αποκατάστασης.
           </p>
 
           {/* Value Proposition Checkmarks */}
-          <ul className="flex flex-col gap-2 md:gap-3 mb-5 md:mb-8">
+          <ul className="flex flex-col gap-1.5 md:gap-2.5 mb-4 md:mb-7">
             {[
               '15+ χρόνια εμπειρίας',
               'Συμβεβλημένος με ΕΟΠΥΥ',
               'Αποδεκτές όλες οι ιδιωτικές ασφαλιστικές',
               'Κράτηση σε λιγότερο από 1 λεπτό',
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-2 text-white text-sm md:text-base font-medium">
-                <span className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center text-xs md:text-sm font-bold text-white" style={{ backgroundColor: '#17236a' }}>
+              <li key={i} className="flex items-center gap-2 text-white text-sm md:text-base font-bold">
+                <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: '#17236a' }}>
                   &#10003;
                 </span>
                 <span style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>{item}</span>
@@ -160,18 +160,18 @@ function HeroSection() {
 
           {/* Main CTA */}
           <button
-            className="flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 md:py-5 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
+            className="flex items-center justify-center gap-2 w-full md:w-fit px-8 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
             style={{ backgroundColor: '#17236a' }}
           >
-            <CalendarCheck className="w-5 h-5 md:w-6 md:h-6" />
+            <CalendarCheck className="w-5 h-5" />
             Κλείστε Δωρεάν Συμβουλευτική
           </button>
         </div>
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
-        <div className="flex justify-center md:justify-end mt-2 md:mt-0">
+        <div className="flex justify-center md:justify-end mt-1 md:mt-0 md:shrink-0">
           <div
-            className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[200px] md:w-[240px]"
+            className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[190px] md:w-[240px]"
             style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}
           >
             {/* Google Logo */}
