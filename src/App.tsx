@@ -309,7 +309,7 @@ function WhyErmeionSection() {
             {checklistItems.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <span
-                  className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                  className="shrink-0 mt-0.5 w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold text-white"
                   style={{ backgroundColor: '#17236a' }}
                 >
                   &#10003;
