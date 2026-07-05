@@ -124,7 +124,7 @@ function HeroSection() {
       {/* Mobile: Vertical Stack Above Fold */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 pt-12 pb-6 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16">
         {/* Left: Text + CTA */}
-        <div className="flex flex-col md:max-w-[1000px]">
+        <div className="flex flex-col md:max-w-[1200px]">
           {/* Title */}
           <h1
             className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6 md:mb-7"
