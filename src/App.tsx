@@ -136,7 +136,7 @@ function HeroSection() {
           {/* Subtitle */}
           <p
             className="text-sm sm:text-base md:text-lg text-white/90 mb-3 md:mb-7"
-            style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
           >
             Από πόνους στη μέση, στον αυχένα και τους ώμους έως τραυματισμούς στο ισχίο, το γόνατο, τον αστράγαλο και αθλητικούς τραυματισμούς, εντοπίζουμε την αιτία και σας παρέχουμε ένα σαφές πλάνο αποκατάστασης.
           </p>
