@@ -169,7 +169,7 @@ function HeroSection() {
         </div>
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
-        <div className="flex justify-center md:justify-end mt-3 md:mt-0 md:shrink-0">
+        <div className="flex justify-center md:justify-end mt-5 md:mt-0 md:shrink-0">
           <div
             className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[190px] md:w-[240px]"
             style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}
