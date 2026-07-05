@@ -273,7 +273,7 @@ function WhyErmeionSection() {
         {/* Left Column */}
         <div className="w-full lg:w-[55%] flex flex-col">
           {/* Headline */}
-          <h2 className="text-3xl sm:text-xl md:text-4xl font-extrabold leading-tight mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl font-extrabold leading-tight mb-8">
             <span style={{ color: '#17236a' }}>2000+ Θεσσαλονικείς</span>
             <span className="text-gray-900"> έχουν εμπιστευτεί τη φυσικοθεραπεία στο ΕΡΜΕΙΟΝ για ανακούφιση από τον πόνο, αποκατάσταση τραυματισμών και αποθεραπεία.</span>
           </h2>
