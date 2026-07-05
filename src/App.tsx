@@ -142,7 +142,7 @@ function HeroSection() {
           </p>
 
           {/* Value Proposition Checkmarks */}
-          <ul className="flex flex-col gap-2 md:gap-2.5 mb-6 md:mb-7">
+          <ul className="flex flex-col gap-2 md:gap-2.5 mb-7 md:mb-7">
             {[
               '15+ χρόνια εμπειρίας',
               'Συμβεβλημένος με ΕΟΠΥΥ',
@@ -169,7 +169,7 @@ function HeroSection() {
         </div>
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
-        <div className="flex justify-center md:justify-end mt-5 md:mt-0 md:shrink-0">
+        <div className="flex justify-center md:justify-end mt-7 md:mt-0 md:shrink-0">
           <div
             className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[190px] md:w-[240px]"
             style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}
