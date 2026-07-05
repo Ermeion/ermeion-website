@@ -146,16 +146,6 @@ function HeroSection() {
           >
             Κλείστε Ραντεβού
           </button>
-          <button
-            className="px-5 py-2.5 md:px-8 md:py-3 rounded-lg font-bold text-sm md:text-base whitespace-nowrap transition-all duration-300 hover:bg-white hover:text-[#17236a]"
-            style={{
-              backgroundColor: 'transparent',
-              border: '2px solid #ffffff',
-              color: '#ffffff',
-            }}
-          >
-            Δείτε τις Υπηρεσίες μας
-          </button>
         </div>
       </div>
     </section>
