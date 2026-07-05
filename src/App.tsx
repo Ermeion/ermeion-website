@@ -280,7 +280,7 @@ function WhyErmeionSection() {
 
           {/* Subheading */}
           <h3
-            className="text-md sm:text-lg font-bold mb-5"
+            className="text-lg sm:text-lg font-bold mb-5"
             style={{ color: '#17236a' }}
           >
             Μπορεί η φυσικοθεραπεία να με βοηθήσει πραγματικά;
