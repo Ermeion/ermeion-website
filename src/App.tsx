@@ -255,6 +255,121 @@ function InsuranceCarouselSection() {
   );
 }
 
+// Why Ermeion Section Component
+function WhyErmeionSection() {
+  const checklistItems = [
+    'Πόνο στη μέση, ισχιαλγία και νευροπαθητικό πόνο',
+    'Πόνο στον αυχένα, στους ώμους και προβλήματα στάσης σώματος',
+    'Τραυματισμούς στο γόνατο, το ισχίο, τον αστράγαλο και τραυματισμούς από τρέξιμο',
+    'Πόνο στον καρπό, τον αγκώνα και το χέρι, καθώς και κακώσεις από επαναλαμβανόμενες κινήσεις',
+    'Αθλητικούς τραυματισμούς, ενοχλήσεις από την άσκηση στο γυμναστήριο και μυϊκή δυσκαμψία',
+    'Μετεγχειρητική φυσικοθεραπεία και μακροχρόνια αποκατάσταση',
+  ];
+
+  return (
+    <section className="bg-white py-16 md:py-24 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+
+        {/* Left Column */}
+        <div className="w-full lg:w-[55%] flex flex-col">
+          {/* Headline */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+            <span style={{ color: '#17236a' }}>2000+ Θεσσαλονικείς</span>
+            <span className="text-gray-900"> έχουν εμπιστευτεί τη φυσικοθεραπεία στο ΕΡΜΕΙΟΝ για ανακούφιση από τον πόνο, αποκατάσταση τραυματισμών και αποθεραπεία.</span>
+          </h2>
+
+          {/* Subheading */}
+          <h3
+            className="text-lg sm:text-xl font-bold mb-5"
+            style={{ color: '#17236a' }}
+          >
+            Μπορεί η φυσικοθεραπεία να με βοηθήσει πραγματικά;
+          </h3>
+
+          {/* Body paragraphs */}
+          <div className="flex flex-col gap-4 mb-8">
+            <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+              Αυτό εξαρτάται από τη σωστή αξιολόγηση, τη σωστή θεραπεία και το κατάλληλο πλάνο αποκατάστασης.
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+              Στο ΕΡΜΕΙΟΝ δεν επικεντρωνόμαστε απλώς στο σημείο που πονάει και ελπίζουμε για το καλύτερο αποτέλεσμα. Ο φυσικοθεραπευτής σας θα αξιολογήσει τι προκαλεί τα συμπτώματά σας, θα σας το εξηγήσει με σαφήνεια, θα εφαρμόσει τη κατάλληλη θεραπεία και θα δημιουργήσει ένα πρόγραμμα αποκατάστασης προσαρμοσμένο στο σώμα, τους στόχους και τον τρόπο ζωής σας.
+            </p>
+            <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+              Η φυσικοθεραπεία μπορεί να βοηθήσει στην αντιμετώπιση του πόνου, της δυσκαμψίας, των τραυματισμών, της μετεγχειρητικής αποκατάστασης και των προβλημάτων κίνησης σε ολόκληρο το σώμα, όχι μόνο στον πόνο της μέσης ή του γόνατος.
+            </p>
+          </div>
+
+          {/* Checklist header */}
+          <p className="text-sm sm:text-base font-bold text-gray-900 mb-4">
+            Συχνά βοηθάμε ασθενείς με:
+          </p>
+
+          {/* Checklist */}
+          <ul className="flex flex-col gap-3 mb-10 lg:mb-10">
+            {checklistItems.map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span
+                  className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                  style={{ backgroundColor: '#17236a' }}
+                >
+                  &#10003;
+                </span>
+                <span className="text-sm sm:text-base font-bold text-gray-900 leading-snug">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile: image + below-image block */}
+          <div className="lg:hidden flex flex-col gap-6 mb-8">
+            <img
+              src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/john-ermeion.webp"
+              alt="Γιάννης Ερμείον Φυσικοθεραπευτής"
+              className="w-full rounded-2xl object-cover"
+              style={{ aspectRatio: '4/3' }}
+            />
+            <div>
+              <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
+                Πιστεύετε ότι ίσως δεν χρειάζεστε φυσικοθεραπεία;
+              </h4>
+              <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+                Αυτός είναι ακριβώς ο λόγος που γίνεται το πρώτο σας ραντεβού. Αν η φυσικοθεραπεία είναι η κατάλληλη επιλογή για εσάς, θα σας εξηγήσουμε το πλάνο θεραπείας. Αν δεν χρειάζεστε συνεχιζόμενη θεραπεία, θα σας το πούμε ξεκάθαρα.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <button
+            className="flex items-center justify-center gap-2 w-full lg:w-fit px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white transition-all duration-300 hover:opacity-90"
+            style={{ backgroundColor: '#17236a' }}
+          >
+            <CalendarCheck className="w-5 h-5 shrink-0" />
+            Κλείστε Δωρεάν Συμβουλευτική
+          </button>
+        </div>
+
+        {/* Right Column — desktop only */}
+        <div className="hidden lg:flex w-full lg:w-[45%] flex-col gap-6 sticky top-24 self-start">
+          <img
+            src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/john-ermeion.webp"
+            alt="Γιάννης Ερμείον Φυσικοθεραπευτής"
+            className="w-full rounded-2xl object-cover"
+            style={{ aspectRatio: '4/3' }}
+          />
+          <div>
+            <h4 className="text-lg font-bold text-gray-900 mb-3">
+              Πιστεύετε ότι ίσως δεν χρειάζεστε φυσικοθεραπεία;
+            </h4>
+            <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+              Αυτός είναι ακριβώς ο λόγος που γίνεται το πρώτο σας ραντεβού. Αν η φυσικοθεραπεία είναι η κατάλληλη επιλογή για εσάς, θα σας εξηγήσουμε το πλάνο θεραπείας. Αν δεν χρειάζεστε συνεχιζόμενη θεραπεία, θα σας το πούμε ξεκάθαρα.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 // Services Section Component
 function ServicesSection() {
   const services = [
@@ -1323,6 +1438,7 @@ function App() {
       <Navbar />
       <HeroSection />
       <InsuranceCarouselSection />
+      <WhyErmeionSection />
       <ServicesSection />
       <ServiceCarouselSection />
       <ProcessSection />
