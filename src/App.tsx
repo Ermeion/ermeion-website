@@ -127,7 +127,7 @@ function HeroSection() {
         <div className="flex flex-col md:max-w-[700px]">
           {/* Title */}
           <h1
-            className="text-2xl sm:text-3xl md:text-4,5xl font-extrabold text-white leading-tight mb-7 md:mb-7"
+            className="text-2xl sm:text-3xl md:text-4,5xl font-extrabold text-white leading-tight mb-6 md:mb-7"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
             Βραβευμένη & Πιστοποιημένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
@@ -135,7 +135,7 @@ function HeroSection() {
 
           {/* Subtitle */}
           <p
-            className="text-sm sm:text-base md:text-lg text-white/90 mb-7 md:mb-7"
+            className="text-sm sm:text-base md:text-lg text-white/90 mb-6 md:mb-7"
             style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
           >
             Από πόνους στη μέση, στον αυχένα και τους ώμους έως τραυματισμούς στο ισχίο, το γόνατο, τον αστράγαλο και αθλητικούς τραυματισμούς, εντοπίζουμε την αιτία και σας παρέχουμε ένα σαφές πλάνο αποκατάστασης.
