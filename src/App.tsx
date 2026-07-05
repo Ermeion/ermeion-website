@@ -200,6 +200,61 @@ function HeroSection() {
   );
 }
 
+// Insurance Carousel Section Component
+function InsuranceCarouselSection() {
+  const logos = [
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/Allianz-logo.webp', alt: 'Allianz' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/ERGO-logo.webp', alt: 'ERGO' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/ethniki-asfalistiki-logo.webp', alt: 'Εθνική Ασφαλιστική' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/eurolife_logo.webp', alt: 'Eurolife' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/Generali_group-logo.webp', alt: 'Generali' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/groupama-logo.webp', alt: 'Groupama' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/Interamerican-logo.webp', alt: 'Interamerican' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/interlife-logo.webp', alt: 'Interlife' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/MetLife-logo.webp', alt: 'MetLife' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Assurance-companies/NN_Group-logo.webp', alt: 'NN Group' },
+  ];
+
+  const doubled = [...logos, ...logos];
+
+  return (
+    <section className="bg-white py-14 md:py-20">
+      {/* Heading */}
+      <p
+        className="text-center text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-10 md:mb-14 px-4"
+        style={{ color: '#71788f' }}
+      >
+        ΔΕΚΤΕΣ ΟΛΕΣ ΟΙ ΑΣΦΑΛΙΣΤΙΚΕΣ
+      </p>
+
+      {/* Carousel */}
+      <div
+        className="relative overflow-hidden"
+        style={{
+          maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+        }}
+      >
+        <div className="insurance-track">
+          {doubled.map((logo, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-center shrink-0 px-8 md:px-12"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-8 sm:h-10 w-auto object-contain"
+                draggable={false}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Services Section Component
 function ServicesSection() {
   const services = [
@@ -1267,6 +1322,7 @@ function App() {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <InsuranceCarouselSection />
       <ServicesSection />
       <ServiceCarouselSection />
       <ProcessSection />

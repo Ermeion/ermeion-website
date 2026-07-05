@@ -9,3 +9,18 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes insurance-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.insurance-track {
+  display: flex;
+  width: max-content;
+  animation: insurance-scroll 28s linear infinite;
+}
+
+.insurance-track:hover {
+  animation-play-state: paused;
+}
