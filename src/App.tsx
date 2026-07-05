@@ -124,13 +124,13 @@ function HeroSection() {
       {/* Mobile: Vertical Stack Above Fold */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 pt-12 pb-6 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16">
         {/* Left: Text + CTA */}
-        <div className="flex flex-col md:max-w-[800px]">
+        <div className="flex flex-col md:max-w-[700px]">
           {/* Title */}
           <h1
-            className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-2 md:mb-7"
+            className="text-2xl sm:text-3xl md:text-4,5xl font-extrabold text-white leading-tight mb-2 md:mb-7"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
-            Βραβευμένη & Πιστοποιημένη Φυσικοθεραπεία<br className="hidden md:block" /> για Πόνους, Τραυματισμούς και Αποκατάσταση.
+            Βραβευμένη & Πιστοποιημένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
           </h1>
 
           {/* Subtitle */}
