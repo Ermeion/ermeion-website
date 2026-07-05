@@ -160,7 +160,7 @@ function HeroSection() {
 
           {/* Main CTA */}
           <button
-            className="flex items-center justify-center gap-2 w-full md:w-fit px-15 py-4 rounded-xl text-lg md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
+            className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
             style={{ backgroundColor: '#17236a' }}
           >
             <CalendarCheck className="w-5 h-5" />
