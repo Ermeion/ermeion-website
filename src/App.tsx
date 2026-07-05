@@ -6,21 +6,11 @@ import {
   useInView,
 } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronRight, ChevronLeft, ChevronDown, Activity, Bone, Brain, Heart, Scissors, Target, Menu, X } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, Activity, Bone, Brain, Heart, Scissors, Target, Menu, X, CalendarCheck } from 'lucide-react';
 
 // Navbar Component
 function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const closeMenu = () => setMobileOpen(false);
 
   const navLinks = [
@@ -31,37 +21,43 @@ function Navbar() {
   ];
 
   return (
-    <>
-      <nav className="sticky top-0 z-50 bg-white shadow-md">
-        <div className="flex items-center justify-between px-6 md:px-8 py-1">
-          {/* Logo */}
-          <img src="/logo.png" alt="Ερμείον" style={{ height: '76px' }} className="w-auto object-contain" />
+    <nav className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="flex items-center justify-between px-4 md:px-8 py-2">
+        {/* Logo */}
+        <img src="/logo.png" alt="Ερμείον" style={{ height: '72px' }} className="w-auto object-contain" />
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-base font-semibold transition-all duration-300 hover:opacity-80"
-                style={{ color: '#17236a' }}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-base font-semibold transition-all duration-300 hover:opacity-80"
+              style={{ color: '#17236a' }}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
 
-          {/* Desktop CTA */}
+        {/* Desktop CTA */}
+        <button
+          className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
+          style={{ backgroundColor: '#17236a' }}
+        >
+          Κλείστε Ραντεβού
+        </button>
+
+        {/* Mobile: CTA + Hamburger Row */}
+        <div className="md:hidden flex items-center gap-2">
           <button
-            className="hidden md:block px-6 py-2.5 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
+            className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
             style={{ backgroundColor: '#17236a' }}
           >
-            Κλείστε Ραντεβού
+            &#128197; Κράτηση
           </button>
-
-          {/* Mobile Hamburger */}
           <button
-            className="md:hidden p-2 rounded-lg transition-colors"
+            className="p-2 rounded-lg transition-colors"
             style={{ color: '#17236a' }}
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle menu"
@@ -69,43 +65,43 @@ function Navbar() {
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Dropdown Menu */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-          }`}
-        >
-          <div className="flex flex-col px-6 pb-6 gap-1 bg-white">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="py-3 text-base font-semibold border-b border-gray-100 transition-all duration-200 hover:opacity-70"
-                style={{ color: '#17236a' }}
-                onClick={closeMenu}
-              >
-                {link.label}
-              </a>
-            ))}
-            <button
-              className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
-              style={{ backgroundColor: '#17236a' }}
+      {/* Mobile Dropdown Menu */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
+          mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="flex flex-col px-4 pb-6 gap-1 bg-white">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="py-3 text-base font-semibold border-b border-gray-100 transition-all duration-200 hover:opacity-70"
+              style={{ color: '#17236a' }}
               onClick={closeMenu}
             >
-              Κλείστε Ραντεβού
-            </button>
-          </div>
+              {link.label}
+            </a>
+          ))}
+          <button
+            className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
+            style={{ backgroundColor: '#17236a' }}
+            onClick={closeMenu}
+          >
+            Κλείστε Ραντεβού
+          </button>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 }
 
 // Hero Section Component
 function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden">
       {/* Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -113,9 +109,7 @@ function HeroSection() {
         muted
         loop
         playsInline
-        style={{
-          backgroundColor: '#17236a',
-        }}
+        style={{ backgroundColor: '#17236a' }}
       >
         <source
           src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Ermeion-Hero-Section-Video/Manual-Therapy.mp4"
@@ -123,29 +117,83 @@ function HeroSection() {
         />
       </video>
 
-      {/* Dark Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* Dark Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/50" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-[1000px] text-center px-6">
-        <h1 className="text-3xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-          Bραβευμένη Φυσικοθεραπεία{' '}
-          <br className="hidden md:block" />
-          για Πόνους, Τραυματισμούς και Αποκατάσταση.
-        </h1>
-        <h2
-          className="text-sm md:text-xl font-medium mb-10 opacity-80 md:opacity-100"
-          style={{ color: '#eaf0f7' }}
-        >
-          Από πόνους στη μέση, τον αυχένα και τους ώμους έως τραυματισμούς στο ισχίο, το γόνατο, τον αστράγαλο και αθλητικούς τραυματισμούς, εντοπίζουμε την αιτία και σας παρέχουμε ένα <b>σαφές πλάνο αποκατάστασης.</b>
-        </h2>
-        <div className="flex flex-row justify-center gap-3 md:gap-4">
-          <button
-            className="px-5 py-2.5 md:px-8 md:py-3 rounded-lg font-bold text-sm md:text-base whitespace-nowrap transition-all duration-300 hover:opacity-90"
-            style={{ backgroundColor: '#ffffff', color: '#17236a' }}
+      {/* Desktop: Left-Aligned Content + Right Badge */}
+      {/* Mobile: Vertical Stack Above Fold */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-10">
+        {/* Left: Text + CTA */}
+        <div className="flex flex-col md:text-left md:max-w-2xl">
+          {/* Title */}
+          <h1
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-3 md:mb-5"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
-            Κλείστε Δωρεάν Συμβουλευτική 
+            Βραβευμένη & Πιστοποιημένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            className="text-sm sm:text-base md:text-lg text-white/90 mb-4 md:mb-6"
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
+          >
+            Εξατομικευμένη & επιστημονικά τεκμηριωμένη φυσικοθεραπεία που αντιμετωπίζει την πραγματική αιτία του προβλήματος σας.
+          </p>
+
+          {/* Value Proposition Checkmarks */}
+          <ul className="flex flex-col gap-2 md:gap-3 mb-5 md:mb-8">
+            {[
+              '15+ χρόνια εμπειρίας',
+              'Συμβεβλημένος με ΕΟΠΥΥ',
+              'Αποδεκτές όλες οι ιδιωτικές ασφαλιστικές',
+              'Κράτηση σε λιγότερο από 1 λεπτό',
+            ].map((item, i) => (
+              <li key={i} className="flex items-center gap-2 text-white text-sm md:text-base font-medium">
+                <span className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center text-xs md:text-sm font-bold text-white" style={{ backgroundColor: '#17236a' }}>
+                  &#10003;
+                </span>
+                <span style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Main CTA */}
+          <button
+            className="flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 md:py-5 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
+            style={{ backgroundColor: '#17236a' }}
+          >
+            <CalendarCheck className="w-5 h-5 md:w-6 md:h-6" />
+            Κλείστε Δωρεάν Συμβουλευτική
           </button>
+        </div>
+
+        {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
+        <div className="flex justify-center md:justify-end mt-2 md:mt-0">
+          <div
+            className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[200px] md:w-[240px]"
+            style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}
+          >
+            {/* Google Logo */}
+            <svg width="32" height="32" viewBox="0 0 48 48" className="mb-1">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.34-8.16 2.34-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+            </svg>
+            {/* 5 Gold Stars */}
+            <div className="flex items-center gap-0.5 mb-1">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="w-5 h-5" fill="#FBBC05" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+            </div>
+            {/* Rating Text */}
+            <p className="text-sm md:text-base font-semibold" style={{ color: '#17236a' }}>
+              4.9 · Βάσει 915+ αξιολογήσεων
+            </p>
+          </div>
         </div>
       </div>
     </section>
