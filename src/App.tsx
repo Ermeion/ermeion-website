@@ -300,7 +300,7 @@ function WhyErmeionSection() {
           </div>
 
           {/* Checklist header */}
-          <p className="text-sm sm:sm font-bold text-gray-900 mb-5">
+          <p className="text-sm sm:sm font-bold text-gray-900 mb-2">
             Συχνά βοηθάμε ασθενείς με:
           </p>
 
