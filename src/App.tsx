@@ -54,7 +54,7 @@ function Navbar() {
             className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
             style={{ backgroundColor: '#17236a' }}
           >
-            Κράτηση &#128197;
+            &#128197; Κράτηση 
           </button>
           <button
             className="p-2 rounded-lg transition-colors"
