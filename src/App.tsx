@@ -969,33 +969,99 @@ function FAQSection() {
 }
 
 // Final CTA Section Component
+const guaranteeItems = [
+  'Λεπτομερής αξιολόγηση και ειλικρινής εκτίμηση',
+  'Θεραπευτική προσέγγιση βασισμένη σε επιστημονικά δεδομένα (evidence-based)',
+  'Σαφής επικοινωνία και ενημέρωση',
+  'Μετρήσιμη παρακολούθηση της προόδου',
+];
+
 function FinalCTASection() {
   return (
-    <section
-      className="py-24 px-6"
-      style={{ backgroundColor: '#17236a' }}
-    >
-      <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
-          Ο πόνος δεν φεύγει μόνος του — αλλά υπάρχει λύση.
+    <section className="py-24 px-6 md:px-16 bg-white">
+      <div
+        className="max-w-4xl mx-auto rounded-3xl px-8 py-16 md:px-16 md:py-20 text-center shadow-2xl"
+        style={{ backgroundColor: '#17236a' }}
+      >
+        {/* Badge */}
+        <div className="flex justify-center mb-8">
+          <div
+            className="flex items-center justify-center w-20 h-20 rounded-full ring-4"
+            style={{ backgroundColor: 'rgba(255,255,255,0.12)', ringColor: 'rgba(255,255,255,0.2)' }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <polyline points="9 12 11 14 15 10" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight">
+          Η Εγγύηση ΕΡΜΕΙΟΝ
         </h2>
+
+        {/* Subtext */}
         <p
-          className="text-lg font-medium mb-10"
-          style={{ color: '#eaf0f7' }}
+          className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-12"
+          style={{ color: 'rgba(234,240,247,0.85)' }}
         >
-          Κλείστε ραντεβού σήμερα και ξεκινήστε με μια πλήρη αξιολόγηση.
+          Η ανάρρωσή σας είναι η δέσμευσή μας. Εάν αισθάνεστε ότι δεν σημειώνετε ουσιαστική πρόοδο μετά από τρεις συνεδρίες, θα συνεργαστούμε μαζί σας για να προσαρμόσουμε το θεραπευτικό σας πλάνο χωρίς κανένα επιπλέον κόστος.
         </p>
+
+        {/* Checklist grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12 text-left">
+          {guaranteeItems.map((item, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <span
+                className="mt-0.5 flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full"
+                style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+              <span className="text-white font-medium text-sm md:text-base leading-snug">
+                {item}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Button */}
         <button
-          className="px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:opacity-90"
+          className="px-10 py-4 rounded-xl font-bold text-base md:text-lg transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg"
           style={{ backgroundColor: '#ffffff', color: '#17236a' }}
         >
-          Κλείστε Ραντεβού Τώρα →
+          Θέλω να γίνω καλά
         </button>
+
+        {/* Small print */}
         <p
-          className="text-sm mt-6 opacity-70"
-          style={{ color: '#eaf0f7' }}
+          className="text-sm mt-5"
+          style={{ color: 'rgba(234,240,247,0.55)' }}
         >
-          Δεν χρειάζεστε παραπεμπτικό · Άμεση επικοινωνία · Πρώτη αξιολόγηση 45'
+          Περιορισμένη διαθεσιμότητα. Νέα ραντεβού κάθε εβδομάδα.
         </p>
       </div>
     </section>
