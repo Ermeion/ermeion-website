@@ -128,7 +128,7 @@ function HeroSection() {
             className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6 md:mb-7"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
-            Βραβευμένη & Πιστοποιημένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
+            Επιστημονικά Τερκμηριωμένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
           </h1>
 
           {/* Subtitle */}
