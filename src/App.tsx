@@ -628,6 +628,77 @@ function ProcessSection() {
   return <Timeline data={processSteps} />;
 }
 
+// Why Choose Ermeion Section Component
+const trustPoints = [
+  {
+    number: '1',
+    title: 'Δεν θεραπεύουμε το σύμπτωμα, βρίσκουμε την αιτία.',
+    body: 'Πριν από κάθε θεραπεία, γίνεται πλήρης αξιολόγηση. Θα μάθετε ακριβώς τι φταίει, γιατί συνέβη, και τι πρέπει να κάνετε — Στόχος μας η ανάρρωση σας.',
+  },
+  {
+    number: '2',
+    title: 'Πιστοποιημένες τεχνικές που δεν βρίσκετε παντού.',
+    body: 'McKenzie MDT, PNF, Mulligan Concept — μεθόδους υψηλού επιπέδου, εφαρμοσμένες με 10+ χρόνια πρακτικής εμπειρίας σε πραγματικούς ασθενείς, με εξαιρετικά αποτελέσματα.',
+  },
+  {
+    number: '3',
+    title: 'Οι περισσότερες 5★ αξιολογήσεις στη Θεσσαλονίκη.',
+    body: 'Το ΕΡΜΕΙΟΝ έχει τις περισσότερες 5 αστέρων αξιολογήσεις στη Θεσσαλονίκη και οι ασθενείς μας σας λένε γιατί. Εσείς επιλέγετε.',
+  },
+];
+
+function WhyChooseSection() {
+  return (
+    <section className="py-24 px-6 md:px-16 bg-white border-t border-gray-100">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="mb-16">
+          <h2
+            className="text-3xl md:text-4xl font-extrabold mb-3 leading-tight"
+            style={{ color: '#17236a' }}
+          >
+            Γιατί να επιλέξετε το ΕΡΜΕΙΟΝ
+          </h2>
+          <p className="text-sm uppercase tracking-widest font-semibold" style={{ color: '#71788f' }}>
+            Τρεις λόγοι που μας εμπιστεύονται οι ασθενείς μας.
+          </p>
+        </div>
+
+        {/* Three columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-200">
+          {trustPoints.map((point) => (
+            <div key={point.number} className="bg-white px-8 py-10 md:px-10 md:py-12 flex flex-col gap-6">
+              {/* Number */}
+              <span
+                className="text-5xl font-extrabold leading-none select-none"
+                style={{ color: '#eaf0f7' }}
+              >
+                {point.number}
+              </span>
+              {/* Divider */}
+              <div className="w-10 h-0.5" style={{ backgroundColor: '#17236a' }} />
+              {/* Title */}
+              <h3
+                className="text-lg font-bold leading-snug"
+                style={{ color: '#17236a' }}
+              >
+                {point.title}
+              </h3>
+              {/* Body */}
+              <p
+                className="text-sm leading-relaxed flex-1"
+                style={{ color: '#71788f' }}
+              >
+                {point.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Testimonials Section Component
 const SQRT_5000 = Math.sqrt(5000);
 
@@ -1078,6 +1149,7 @@ function App() {
       <WhyErmeionSection />
       <TestimonialsSection />
       <ProcessSection />
+      <WhyChooseSection />
       <FAQSection />
       <FinalCTASection />
     </div>
