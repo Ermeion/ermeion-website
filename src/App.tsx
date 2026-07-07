@@ -22,7 +22,7 @@ function Navbar() {
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="flex items-center justify-between px-4 md:px-8 py-2">
         {/* Logo */}
-        <img src="/logo.png" alt="Ερμείον" style={{ height: '72px' }} className="w-auto object-contain" />
+        <img src="/ermeion-logo1.webp" alt="Ερμείον" style={{ height: '72px' }} className="w-auto object-contain" />
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -1157,27 +1157,25 @@ function Footer() {
         {/* Brand column */}
         <div className="flex flex-col gap-5">
           <div>
-            <span className="text-2xl font-extrabold tracking-tight text-white">
-              ΕΡ<span style={{ color: '#5b8cff' }}>ΜΕΙΟΝ</span>
-            </span>
-            <p className="text-sm mt-2 leading-relaxed" style={{ color: '#8892a4' }}>
+            <img src="/ermeion-logo-white.webp" alt="Ερμείον" style={{ height: '48px' }} className="w-auto object-contain" />
+            <p className="text-sm mt-3 leading-relaxed" style={{ color: '#ffffff' }}>
               Ιδιωτικό φυσικοθεραπευτήριο στη Θεσσαλονίκη. Εξειδικευμένη αποκατάσταση, αποδεδειγμένα αποτελέσματα.
             </p>
           </div>
 
           {/* Contact details */}
-          <div className="flex flex-col gap-3 text-sm" style={{ color: '#8892a4' }}>
+          <div className="flex flex-col gap-3 text-sm" style={{ color: '#ffffff' }}>
             <div className="flex items-center gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <span>Θεσσαλονίκη</span>
             </div>
             <div className="flex items-center gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>2310940100</span>
+              <span>210 000 0000</span>
             </div>
             <div className="flex items-center gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>ermeion@outlook.com</span>
+              <span>info@ermeion.gr</span>
             </div>
             <div className="flex items-start gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1195,9 +1193,9 @@ function Footer() {
                 <a
                   href={link.href}
                   className="text-sm transition-colors duration-200"
-                  style={{ color: '#8892a4' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#8892a4')}
+                  style={{ color: '#ffffff' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}
                 >
                   {link.label}
                 </a>
@@ -1209,7 +1207,7 @@ function Footer() {
         {/* Services column */}
         <div>
           <p className="text-xs uppercase tracking-widest font-semibold mb-5" style={{ color: '#5b8cff' }}>Υπηρεσίες</p>
-          <ul className="flex flex-col gap-3 text-sm" style={{ color: '#8892a4' }}>
+          <ul className="flex flex-col gap-3 text-sm" style={{ color: '#ffffff' }}>
             {['Αξιολόγηση & Διάγνωση', 'Χειροθεραπεία', 'Μέθοδος McKenzie MDT', 'PNF – Νευρομυϊκή Διευκόλυνση', 'Mulligan Concept', 'Αθλητική Αποκατάσταση', 'Μετεγχειρητική Αποκατάσταση'].map((s) => (
               <li key={s}>{s}</li>
             ))}
@@ -1220,7 +1218,7 @@ function Footer() {
       {/* Bottom bar */}
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
         <div className="max-w-6xl mx-auto px-6 md:px-16 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs" style={{ color: '#4a5568' }}>
+          <p className="text-xs" style={{ color: '#ffffff' }}>
             © {new Date().getFullYear()} ΕΡΜΕΙΟΝ Φυσικοθεραπευτήριο. Με επιφύλαξη παντός δικαιώματος.
           </p>
           {/* Social icons */}
@@ -1235,9 +1233,9 @@ function Footer() {
                 href="#"
                 aria-label={social.label}
                 className="transition-colors duration-200"
-                style={{ color: '#4a5568' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#4a5568')}
+                style={{ color: '#ffffff' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d={social.path} />
