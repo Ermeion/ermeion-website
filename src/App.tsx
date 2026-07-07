@@ -1053,7 +1053,7 @@ function FinalCTASection() {
           className="px-10 py-4 rounded-xl font-bold text-base md:text-lg transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg"
           style={{ backgroundColor: '#ffffff', color: '#17236a' }}
         >
-          Θέλω να γίνω καλά
+          ΤΕΛΟΣ ΣΤΟΝ ΠΟΝΟ
         </button>
 
         {/* Small print */}
