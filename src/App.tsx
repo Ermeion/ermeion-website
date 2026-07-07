@@ -31,7 +31,7 @@ function Navbar() {
               key={link.href}
               href={link.href}
               className="text-base font-semibold transition-all duration-300 hover:opacity-80"
-              style={{ color: '#17236a' }}
+              style={{ color: '#000095' }}
             >
               {link.label}
             </a>
@@ -41,7 +41,7 @@ function Navbar() {
         {/* Desktop CTA */}
         <button
           className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
-          style={{ backgroundColor: '#17236a' }}
+          style={{ backgroundColor: '#000095' }}
         >
           Κλείστε Ραντεβού
         </button>
@@ -50,13 +50,13 @@ function Navbar() {
         <div className="md:hidden flex items-center gap-2">
           <button
             className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
-            style={{ backgroundColor: '#17236a' }}
+            style={{ backgroundColor: '#000095' }}
           >
             Κράτηση 
           </button>
           <button
             className="p-2 rounded-lg transition-colors"
-            style={{ color: '#17236a' }}
+            style={{ color: '#000095' }}
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle menu"
           >
@@ -77,7 +77,7 @@ function Navbar() {
               key={link.href}
               href={link.href}
               className="py-3 text-base font-semibold border-b border-gray-100 transition-all duration-200 hover:opacity-70"
-              style={{ color: '#17236a' }}
+              style={{ color: '#000095' }}
               onClick={closeMenu}
             >
               {link.label}
@@ -85,7 +85,7 @@ function Navbar() {
           ))}
           <button
             className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
-            style={{ backgroundColor: '#17236a' }}
+            style={{ backgroundColor: '#000095' }}
             onClick={closeMenu}
           >
             Κλείστε Ραντεβού
@@ -107,7 +107,7 @@ function HeroSection() {
         muted
         loop
         playsInline
-        style={{ backgroundColor: '#17236a' }}
+        style={{ backgroundColor: '#000095' }}
       >
         <source
           src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Ermeion-Hero-Section-Video/Manual-Therapy.mp4"
@@ -148,7 +148,7 @@ function HeroSection() {
               'Κράτηση σε λιγότερο από 1 λεπτό',
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-2 text-white text-sm md:text-base font-bold">
-                <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: '#17236a' }}>
+                <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: '#000095' }}>
                   &#10003;
                 </span>
                 <span style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>{item}</span>
@@ -159,7 +159,7 @@ function HeroSection() {
           {/* Main CTA */}
           <button
             className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
-            style={{ backgroundColor: '#17236a' }}
+            style={{ backgroundColor: '#000095' }}
           >
             <CalendarCheck className="w-5 h-5" />
             Κλείστε Ραντεβού
@@ -188,7 +188,7 @@ function HeroSection() {
               ))}
             </div>
             {/* Rating Text */}
-            <p className="text-sm md:text-base font-semibold" style={{ color: '#17236a' }}>
+            <p className="text-sm md:text-base font-semibold" style={{ color: '#000095' }}>
               5 · Βάσει 913+ αξιολογήσεων
             </p>
           </div>
@@ -272,14 +272,14 @@ function WhyErmeionSection() {
         <div className="w-full lg:w-[55%] flex flex-col">
           {/* Headline */}
           <h2 className="text-2xl sm:text-4xl md:text-4xl font-extrabold leading-tight mb-8">
-            <span style={{ color: '#17236a' }}>2000+ Θεσσαλονικείς</span>
+            <span style={{ color: '#000095' }}>2000+ Θεσσαλονικείς</span>
             <span className="text-gray-900"> έχουν εμπιστευτεί τη φυσικοθεραπεία στο ΕΡΜΕΙΟΝ για ανακούφιση από τον πόνο, αποκατάσταση τραυματισμών και αποθεραπεία.</span>
           </h2>
 
           {/* Subheading */}
           <h3
             className="text-base sm:text-lg font-bold mb-5"
-            style={{ color: '#17236a' }}
+            style={{ color: '#000095' }}
           >
             Μπορεί η φυσικοθεραπεία να με βοηθήσει πραγματικά;
           </h3>
@@ -308,7 +308,7 @@ function WhyErmeionSection() {
               <li key={i} className="flex items-start gap-3">
                 <span
                   className="shrink-0 mt-0.5 w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                  style={{ backgroundColor: '#17236a' }}
+                  style={{ backgroundColor: '#000095' }}
                 >
                   &#10003;
                 </span>
@@ -338,7 +338,7 @@ function WhyErmeionSection() {
           {/* CTA Button */}
           <button
             className="flex items-center justify-center gap-2 w-full lg:w-fit px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white transition-all duration-300 hover:opacity-90"
-            style={{ backgroundColor: '#17236a' }}
+            style={{ backgroundColor: '#000095' }}
           >
             <CalendarCheck className="w-5 h-5 shrink-0" />
             Κλείστε Ραντεβού
@@ -403,7 +403,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2
           className="text-3xl md:text-4xl font-extrabold mb-4 max-w-4xl"
-          style={{ color: '#17236a' }}
+          style={{ color: '#000095' }}
         >
           Ένα Ολοκληρωμένο Σύστημα Ανάρρωσης
         </h2>
@@ -425,12 +425,12 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white flex items-center justify-center shadow-md">
                 <div
                   className="h-4 w-4 rounded-full p-2"
-                  style={{ backgroundColor: '#17236a' }}
+                  style={{ backgroundColor: '#000095' }}
                 />
               </div>
               <h3
                 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold"
-                style={{ color: '#17236a' }}
+                style={{ color: '#000095' }}
               >
                 {item.title}
               </h3>
@@ -439,7 +439,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <h3
                 className="md:hidden block text-2xl mb-4 text-left font-bold"
-                style={{ color: '#17236a' }}
+                style={{ color: '#000095' }}
               >
                 {item.title}
               </h3>
@@ -457,7 +457,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
             style={{
               height: heightTransform,
               opacity: opacityTransform,
-              backgroundColor: '#17236a',
+              backgroundColor: '#000095',
             }}
             className="absolute inset-x-0 top-0 w-[2px] rounded-full"
           />
@@ -476,7 +476,7 @@ function ProcessSection() {
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
             className="font-bold text-xl mb-3"
-            style={{ color: '#17236a' }}
+            style={{ color: '#000095' }}
           >
             Ολοκληρωμένη Αξιολόγηση
           </h4>
@@ -488,7 +488,7 @@ function ProcessSection() {
           </p>
           <div
             className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
-            style={{ backgroundColor: '#eaf0f7', color: '#17236a' }}
+            style={{ backgroundColor: '#eaf0f7', color: '#000095' }}
           >
             Δυνατότητα κράτησης online 24/7
           </div>
@@ -501,7 +501,7 @@ function ProcessSection() {
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
             className="font-bold text-xl mb-3"
-            style={{ color: '#17236a' }}
+            style={{ color: '#000095' }}
           >
             Εξατομικευμένο Πλάνο Θεραπείας
           </h4>
@@ -514,19 +514,19 @@ function ProcessSection() {
           <div className="flex flex-wrap gap-2">
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: '#eaf0f7', color: '#17236a' }}
+              style={{ backgroundColor: '#eaf0f7', color: '#000095' }}
             >
               Λεπτομερής ιστορικό
             </span>
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: '#eaf0f7', color: '#17236a' }}
+              style={{ backgroundColor: '#eaf0f7', color: '#000095' }}
             >
               Κλινική εξέταση
             </span>
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: '#eaf0f7', color: '#17236a' }}
+              style={{ backgroundColor: '#eaf0f7', color: '#000095' }}
             >
               Εκτίμηση βημάτων
             </span>
@@ -540,7 +540,7 @@ function ProcessSection() {
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
             className="font-bold text-xl mb-3"
-            style={{ color: '#17236a' }}
+            style={{ color: '#000095' }}
           >
             θεραπεία & Άσκηση
           </h4>
@@ -552,7 +552,7 @@ function ProcessSection() {
           </p>
           <div
             className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
-            style={{ backgroundColor: '#eaf0f7', color: '#17236a' }}
+            style={{ backgroundColor: '#eaf0f7', color: '#000095' }}
           >
             Εξατομικευμένο πρόγραμμα για εσάς
           </div>
@@ -565,7 +565,7 @@ function ProcessSection() {
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
             className="font-bold text-xl mb-3"
-            style={{ color: '#17236a' }}
+            style={{ color: '#000095' }}
           >
             Μετρήσιμες βελτιώσεις
           </h4>
@@ -577,7 +577,7 @@ function ProcessSection() {
           </p>
           <div
             className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
-            style={{ backgroundColor: '#eaf0f7', color: '#17236a' }}
+            style={{ backgroundColor: '#eaf0f7', color: '#000095' }}
           >
             Σαφής ανάλυση προόδου
           </div>
@@ -590,7 +590,7 @@ function ProcessSection() {
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
             className="font-bold text-xl mb-3"
-            style={{ color: '#17236a' }}
+            style={{ color: '#000095' }}
           >
             Πρόληψη και Ανεξαρτησία
           </h4>
@@ -603,19 +603,19 @@ function ProcessSection() {
           <div className="flex flex-wrap gap-2">
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: '#eaf0f7', color: '#17236a' }}
+              style={{ backgroundColor: '#eaf0f7', color: '#000095' }}
             >
               Ασκήσεις συντήρησης
             </span>
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: '#eaf0f7', color: '#17236a' }}
+              style={{ backgroundColor: '#eaf0f7', color: '#000095' }}
             >
               Συμβουλές ergonomics
             </span>
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: '#eaf0f7', color: '#17236a' }}
+              style={{ backgroundColor: '#eaf0f7', color: '#000095' }}
             >
               Πρόγραμμα πρόληψης
             </span>
@@ -655,7 +655,7 @@ function WhyChooseSection() {
         <div className="mb-16">
           <h2
             className="text-3xl md:text-4xl font-extrabold mb-3 leading-tight"
-            style={{ color: '#17236a' }}
+            style={{ color: '#000095' }}
           >
             Γιατί να επιλέξετε το ΕΡΜΕΙΟΝ
           </h2>
@@ -676,11 +676,11 @@ function WhyChooseSection() {
                 {point.number}
               </span>
               {/* Divider */}
-              <div className="w-10 h-0.5" style={{ backgroundColor: '#17236a' }} />
+              <div className="w-10 h-0.5" style={{ backgroundColor: '#000095' }} />
               {/* Title */}
               <h3
                 className="text-lg font-bold leading-snug"
-                style={{ color: '#17236a' }}
+                style={{ color: '#000095' }}
               >
                 {point.title}
               </h3>
@@ -817,7 +817,7 @@ function TestimonialsSection() {
       <div className="max-w-7xl mx-auto mb-10">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-3" style={{ color: '#17236a' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-3" style={{ color: '#000095' }}>
               Τι λένε οι ασθενείς μας
             </h2>
             <p className="text-base md:text-lg max-w-xl" style={{ color: '#71788f' }}>
@@ -840,7 +840,7 @@ function TestimonialsSection() {
                   </svg>
                 ))}
               </div>
-              <p className="text-xs font-bold" style={{ color: '#17236a' }}>5/5 · 913+ κριτικές</p>
+              <p className="text-xs font-bold" style={{ color: '#000095' }}>5/5 · 913+ κριτικές</p>
             </div>
           </div>
         </div>
@@ -867,8 +867,8 @@ function TestimonialsSection() {
                 clipPath: 'polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)',
                 transform: `translate(-50%, -50%) translateX(${(cardDims.width / 1.5) * position}px) translateY(${translateY}px) rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)`,
                 zIndex: isCenter ? 10 : 0,
-                backgroundColor: isCenter ? '#17236a' : '#ffffff',
-                borderColor: isCenter ? '#17236a' : '#dce5ef',
+                backgroundColor: isCenter ? '#000095' : '#ffffff',
+                borderColor: isCenter ? '#000095' : '#dce5ef',
                 boxShadow: isCenter ? '0px 8px 0px 4px #c7d2e8' : 'none',
               }}
             >
@@ -885,7 +885,7 @@ function TestimonialsSection() {
               <div className="max-h-[75%] overflow-y-auto pr-1">
                 <p
                   className="text-xs sm:text-sm font-medium leading-relaxed"
-                  style={{ color: isCenter ? '#ffffff' : '#17236a' }}
+                  style={{ color: isCenter ? '#ffffff' : '#000095' }}
                 >
                   "{t.testimonial}"
                 </p>
@@ -904,16 +904,16 @@ function TestimonialsSection() {
         <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
           <button
             onClick={() => handleMove(-1)}
-            className="flex h-12 w-12 items-center justify-center border-2 transition-all duration-200 hover:border-[#17236a]"
-            style={{ backgroundColor: '#ffffff', borderColor: '#dce5ef', color: '#17236a' }}
+            className="flex h-12 w-12 items-center justify-center border-2 transition-all duration-200 hover:border-[#000095]"
+            style={{ backgroundColor: '#ffffff', borderColor: '#dce5ef', color: '#000095' }}
             aria-label="Προηγούμενη κριτική"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={() => handleMove(1)}
-            className="flex h-12 w-12 items-center justify-center border-2 transition-all duration-200 hover:border-[#17236a]"
-            style={{ backgroundColor: '#ffffff', borderColor: '#dce5ef', color: '#17236a' }}
+            className="flex h-12 w-12 items-center justify-center border-2 transition-all duration-200 hover:border-[#000095]"
+            style={{ backgroundColor: '#ffffff', borderColor: '#dce5ef', color: '#000095' }}
             aria-label="Επόμενη κριτική"
           >
             <ChevronRight className="h-5 w-5" />
@@ -926,8 +926,8 @@ function TestimonialsSection() {
         <a
           href="#"
           className="px-8 py-3 rounded-lg font-semibold border-2 transition-all duration-300 hover:text-white"
-          style={{ borderColor: '#17236a', color: '#17236a' }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#17236a')}
+          style={{ borderColor: '#000095', color: '#000095' }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#000095')}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
         >
           Δείτε όλες τις κριτικές μας
@@ -1052,7 +1052,7 @@ function FinalCTASection() {
     <section className="py-24 px-6 md:px-16 bg-white">
       <div
         className="max-w-4xl mx-auto rounded-3xl px-8 py-16 md:px-16 md:py-20 text-center shadow-2xl"
-        style={{ backgroundColor: '#17236a' }}
+        style={{ backgroundColor: '#000095' }}
       >
         {/* Badge */}
         <div className="flex justify-center mb-8">
@@ -1122,7 +1122,7 @@ function FinalCTASection() {
         {/* Button */}
         <button
           className="px-10 py-4 rounded-xl font-bold text-base md:text-lg transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg"
-          style={{ backgroundColor: '#ffffff', color: '#17236a' }}
+          style={{ backgroundColor: '#ffffff', color: '#000095' }}
         >
           ΤΕΛΟΣ ΣΤΟΝ ΠΟΝΟ
         </button>
@@ -1139,6 +1139,118 @@ function FinalCTASection() {
   );
 }
 
+// Footer Component
+function Footer() {
+  const navLinks = [
+    { label: 'Αρχική', href: '#' },
+    { label: 'Υπηρεσίες', href: '#services' },
+    { label: 'Μαρτυρίες', href: '#testimonials' },
+    { label: 'Συχνές Ερωτήσεις', href: '#faq' },
+    { label: 'Επικοινωνία', href: '#contact' },
+  ];
+
+  return (
+    <footer style={{ backgroundColor: '#0d0d1a' }}>
+      {/* Main footer body */}
+      <div className="max-w-6xl mx-auto px-6 md:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+
+        {/* Brand column */}
+        <div className="flex flex-col gap-5">
+          <div>
+            <span className="text-2xl font-extrabold tracking-tight text-white">
+              ΕΡ<span style={{ color: '#5b8cff' }}>ΜΕΙΟΝ</span>
+            </span>
+            <p className="text-sm mt-2 leading-relaxed" style={{ color: '#8892a4' }}>
+              Ιδιωτικό φυσικοθεραπευτήριο στη Θεσσαλονίκη. Εξειδικευμένη αποκατάσταση, αποδεδειγμένα αποτελέσματα.
+            </p>
+          </div>
+
+          {/* Contact details */}
+          <div className="flex flex-col gap-3 text-sm" style={{ color: '#8892a4' }}>
+            <div className="flex items-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Θεσσαλονίκη</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>210 000 0000</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>info@ermeion.gr</span>
+            </div>
+            <div className="flex items-start gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Δευτ–Παρ: 09:00–21:00<br />Σάββατο: 09:00–15:00</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation column */}
+        <div>
+          <p className="text-xs uppercase tracking-widest font-semibold mb-5" style={{ color: '#5b8cff' }}>Σελίδες</p>
+          <ul className="flex flex-col gap-3">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className="text-sm transition-colors duration-200"
+                  style={{ color: '#8892a4' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#8892a4')}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Services column */}
+        <div>
+          <p className="text-xs uppercase tracking-widest font-semibold mb-5" style={{ color: '#5b8cff' }}>Υπηρεσίες</p>
+          <ul className="flex flex-col gap-3 text-sm" style={{ color: '#8892a4' }}>
+            {['Αξιολόγηση & Διάγνωση', 'Χειροθεραπεία', 'Μέθοδος McKenzie MDT', 'PNF – Νευρομυϊκή Διευκόλυνση', 'Mulligan Concept', 'Αθλητική Αποκατάσταση', 'Μετεγχειρητική Αποκατάσταση'].map((s) => (
+              <li key={s}>{s}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        <div className="max-w-6xl mx-auto px-6 md:px-16 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs" style={{ color: '#4a5568' }}>
+            © {new Date().getFullYear()} ΕΡΜΕΙΟΝ Φυσικοθεραπευτήριο. Με επιφύλαξη παντός δικαιώματος.
+          </p>
+          {/* Social icons */}
+          <div className="flex items-center gap-4">
+            {[
+              { label: 'Instagram', path: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2z' },
+              { label: 'Facebook', path: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' },
+              { label: 'LinkedIn', path: 'M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' },
+            ].map((social) => (
+              <a
+                key={social.label}
+                href="#"
+                aria-label={social.label}
+                className="transition-colors duration-200"
+                style={{ color: '#4a5568' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#4a5568')}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d={social.path} />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 // Main App Component
 function App() {
   return (
@@ -1152,6 +1264,7 @@ function App() {
       <WhyChooseSection />
       <FAQSection />
       <FinalCTASection />
+      <Footer />
     </div>
   );
 }
