@@ -299,7 +299,7 @@ function WhyErmeionSection() {
 
           {/* Checklist header */}
           <p className="text-base sm:text-sm font-bold text-gray-900 mb-5">
-            Συχνά βοηθάμε ασθενείς με:
+            Βοηθάμε ασθενείς με:
           </p>
 
           {/* Checklist */}
