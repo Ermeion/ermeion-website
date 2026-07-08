@@ -647,6 +647,109 @@ const trustPoints = [
   },
 ];
 
+const RECOVERY_STEPS = [
+  {
+    number: '1',
+    title: 'Η Υποκειμενική Αξιολόγηση (Το Ιστορικό σας)',
+    body: 'Θα ξεκινήσουμε παίρνοντας ένα πλήρες ιστορικό, συνήθως πρόκειται για 15–20 λεπτά στοχευμένης συζήτησης. Αυτό καλύπτει το πότε και πώς ξεκίνησε το πρόβλημα, τη φύση και τη συμπεριφορά των συμπτωμάτων σας, τι κάνει τα πράγματα καλύτερα ή χειρότερα, τη γενική σας υγεία, τυχόν προηγούμενες θεραπείες, καθώς και την καθημερινότητά σας, τις απαιτήσεις της εργασίας σας και τα επίπεδα δραστηριότητάς σας. Αυτή η εξιστόρηση είναι το θεμέλιο της σωστής φυσικοθεραπείας: όσο περισσότερα μοιράζεστε, τόσο πιο εξατομικευμένη θα είναι η θεραπεία σας.',
+  },
+  {
+    number: '2',
+    title: 'Η Φυσική Αξιολόγηση (Σωματική Εξέταση)',
+    body: 'Μετά τη λεκτική αξιολόγηση, θα πραγματοποιήσουμε μια κλινική/σωματική εξέταση. Αυτή συνήθως περιλαμβάνει την αξιολόγηση του εύρους κίνησης, της κινητικότητας των αρθρώσεων, του μήκους και της δύναμης των μυών, της νευρολογικής κατάστασης, της στάσης του σώματος και των λειτουργικών κινητικών προτύπων. Ορισμένες κινήσεις μπορεί να προκαλέσουν μικρή δυσφορία, αυτό είναι σκόπιμο και έχει διαγνωστικό χαρακτήρα, δεν είναι επιβλαβές.',
+  },
+  {
+    number: '3',
+    title: 'Διάγνωση και Επεξήγηση',
+    body: 'Μετά την αξιολόγηση, θα σας εξηγήσουμε τα ευρήματά μας — συμπεριλαμβανομένης της πιθανής διάγνωσης, των ιστών που έχουν επηρεαστεί, των λόγων για τους οποίους εμφανίστηκε το πρόβλημα και του τρόπου με τον οποίο θα βοηθήσει η φυσικοθεραπεία. Στο ΕΡΜΕΙΟΝ, αφιερώνουμε χρόνο για να διασφαλίσουμε ότι κατανοείτε την πάθησή σας, καθώς οι ενημερωμένοι ασθενείς έχουν καλύτερα αποτελέσματα. Η ξεκάθαρη επικοινωνία αποτελεί βασικό πυλώνα της κλινικής μας προσέγγισης.',
+  },
+  {
+    number: '4',
+    title: 'Θεραπεία και Πλάνο Αποκατάστασης',
+    body: 'Όπου είναι εφικτό, η θεραπεία ξεκινά από το πρώτο κιόλας ραντεβού. Ο φυσικοθεραπευτής σας θα συζητήσει επίσης μαζί σας τον προτεινόμενο αριθμό και τη συχνότητα των συνεδριών, θα περιγράψει τι θα περιλαμβάνει το πρόγραμμα ασκήσεων για το σπίτι και θα θέσει μαζί σας ρεαλιστικούς στόχους αποκατάστασης.',
+  },
+];
+
+function RecoverySystemSection() {
+  const [openIndex, setOpenIndex] = React.useState(0);
+
+  return (
+    <section className="py-20 md:py-28 bg-white">
+      <div className="max-w-6xl mx-auto px-6 md:px-16">
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+            Το Αποδεδειγμένο Σύστημα Ανάρρωσης του ΕΡΜΕΙΟΝ.
+          </h2>
+          <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            Κάθε θεραπευτικό πλάνο ενσωματώνει τέσσερις βασικούς πυλώνες για τη διασφάλιση αποτελεσμάτων με διάρκεια και τη βέλτιστη αποκατάσταση της κίνησης.
+          </p>
+        </div>
+
+        {/* Two-column layout */}
+        <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
+          {/* Left: sticky image */}
+          <div className="w-full md:w-[44%] md:sticky md:top-24 shrink-0">
+            <img
+              src="https://images.pexels.com/photos/5473177/pexels-photo-5473177.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Φυσικοθεραπευτής με ασθενή σε αξιολόγηση"
+              className="w-full h-72 md:h-[480px] object-cover rounded-2xl shadow-lg"
+            />
+          </div>
+
+          {/* Right: accordion */}
+          <div className="flex-1 flex flex-col divide-y divide-gray-200 border border-gray-200 rounded-2xl overflow-hidden">
+            {RECOVERY_STEPS.map((step, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <div key={step.number} className="bg-white">
+                  <button
+                    onClick={() => setOpenIndex(i)}
+                    className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors duration-200 hover:bg-gray-50"
+                  >
+                    <span
+                      className="text-base font-bold pr-4 transition-colors duration-200"
+                      style={{ color: isOpen ? '#004aad' : '#111827' }}
+                    >
+                      {step.number}. {step.title}
+                    </span>
+                    <span
+                      className="shrink-0 flex items-center justify-center w-7 h-7 rounded-full border-2 transition-all duration-200 text-lg font-light leading-none"
+                      style={{
+                        borderColor: isOpen ? '#004aad' : '#d1d5db',
+                        color: isOpen ? '#004aad' : '#6b7280',
+                      }}
+                    >
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+
+                  {/* Animated expand */}
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateRows: isOpen ? '1fr' : '0fr',
+                      transition: 'grid-template-rows 0.3s ease',
+                    }}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-6 pb-6 pt-1">
+                        <p className="text-sm md:text-base text-gray-600 leading-relaxed bg-gray-50 rounded-xl px-5 py-4">
+                          {step.body}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function WhyChooseSection() {
   return (
     <section className="py-24 px-6 md:px-16 bg-white border-t border-gray-100">
@@ -1259,6 +1362,7 @@ function App() {
       <WhyErmeionSection />
       <TestimonialsSection />
       <ProcessSection />
+      <RecoverySystemSection />
       <WhyChooseSection />
       <FAQSection />
       <FinalCTASection />
