@@ -1040,7 +1040,146 @@ function TestimonialsSection() {
   );
 }
 
+const officeImages = [
+  {
+    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/grafeio.webp",
+    alt: "Γραφείο υποδοχής και αξιολόγησης"
+  },
+  {
+    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/gym.webp",
+    alt: "Χώρος θεραπευτικής άσκησης και αποκατάστασης"
+  },
+  {
+    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/gym2.webp",
+    alt: "Εξοπλισμός θεραπευτικής εκγύμνασης"
+  },
+  {
+    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/office3.webp",
+    alt: "Σύγχρονος εξοπλισμός φυσικοθεραπείας"
+  },
+  {
+    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/office4.webp",
+    alt: "Λεπτομέρεια χώρου θεραπείας"
+  },
+  {
+    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/therapy-office.webp",
+    alt: "Κύριο δωμάτιο φυσικοθεραπείας και χειροθεραπείας"
+  }
+];
 
+function OfficeCarouselSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % officeImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + officeImages.length) % officeImages.length);
+  };
+
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  return (
+    <section className="py-24 px-6 md:px-16 bg-white border-t border-gray-100">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="mb-12 text-center md:text-left">
+          <h2
+            className="text-3xl md:text-4xl font-extrabold mb-3 leading-tight"
+            style={{ color: '#004aad' }}
+          >
+            Ο Χώρος Θεραπείας
+          </h2>
+          <p className="text-sm md:text-base uppercase tracking-widest font-semibold" style={{ color: '#71788f' }}>
+            Ένας σύγχρονος, πλήρως εξοπλισμένος και φιλόξενος χώρος σχεδιασμένος για τη δική σας άνεση και αποκατάσταση.
+          </p>
+        </div>
+
+        {/* Carousel Container */}
+        <div
+          className="relative overflow-hidden rounded-2xl shadow-xl border border-gray-100"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Slides Track */}
+          <div className="relative aspect-[16/10] md:aspect-[21/9] w-full overflow-hidden bg-gray-50">
+            <motion.div
+              className="flex h-full w-full cursor-grab active:cursor-grabbing"
+              animate={{ x: `-${currentIndex * 100}%` }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(e, info) => {
+                const swipeThreshold = 50;
+                if (info.offset.x < -swipeThreshold) {
+                  nextSlide();
+                } else if (info.offset.x > swipeThreshold) {
+                  prevSlide();
+                }
+              }}
+            >
+              {officeImages.map((img, idx) => (
+                <div key={idx} className="h-full w-full shrink-0 select-none">
+                  <img
+                    src={img.url}
+                    alt={img.alt}
+                    className="h-full w-full object-cover pointer-events-none"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Navigation Controls - Left */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-gray-200/50 shadow-lg transition-all duration-300 hover:bg-[#004aad] hover:text-white"
+            style={{ color: '#004aad' }}
+            aria-label="Προηγούμενη εικόνα"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+
+          {/* Navigation Controls - Right */}
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-gray-200/50 shadow-lg transition-all duration-300 hover:bg-[#004aad] hover:text-white"
+            style={{ color: '#004aad' }}
+            aria-label="Επόμενη εικόνα"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          {/* Bottom Indicators & Alt Text Overlay */}
+          <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 pt-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <span className="text-white font-medium text-sm md:text-base tracking-wide select-none drop-shadow-md">
+              {officeImages[currentIndex].alt}
+            </span>
+            <div className="flex gap-2.5">
+              {officeImages.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    currentIndex === idx ? 'w-8 bg-white' : 'w-2.5 bg-white/40 hover:bg-white/70'
+                  }`}
+                  aria-label={`Μετάβαση στην εικόνα ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 // FAQ Section Component
 const faqItems = [
@@ -1364,6 +1503,7 @@ function App() {
       <ProcessSection />
       <RecoverySystemSection />
       <WhyChooseSection />
+      <OfficeCarouselSection />
       <FAQSection />
       <FinalCTASection />
       <Footer />
