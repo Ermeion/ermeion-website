@@ -14,6 +14,7 @@ function Navbar() {
   const navLinks = [
     { href: '#services', label: 'Υπηρεσίες' },
     { href: '#process', label: 'Διαδικασία' },
+    { href: '#about-owner', label: 'Γνωρίστε με' },
     { href: '#testimonials', label: 'Αξιολογήσεις' },
     { href: '#faq', label: 'FAQ' },
   ];
@@ -750,6 +751,87 @@ function RecoverySystemSection() {
   );
 }
 
+function AboutOwnerSection() {
+  return (
+    <section id="about-owner" className="py-20 md:py-28 bg-gray-50 border-t border-gray-100 scroll-mt-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-16">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          {/* Left: Content */}
+          <div className="w-full lg:w-3/5">
+            <span
+              className="text-xs md:text-sm font-bold uppercase tracking-widest block mb-3"
+              style={{ color: '#004aad' }}
+            >
+              Ο Φυσικοθεραπευτής μας
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight text-gray-900"
+            >
+              Ιωάννης Μιχαηλίδης
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
+              Ονομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ.
+              Σπούδασα Φυσικοθεραπεία στο Διεθνές Πανεπιστήμιο Ελλάδας και Επιστήμη Φυσικής Αγωγής & Αθλητισμού στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης.
+            </p>
+            <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
+              Για να σας προσφέρω την καλύτερη δυνατή υποστήριξη, έχω εξειδικευτεί σε σύγχρονες, διεθνώς αναγνωρισμένες θεραπευτικές μεθόδους:
+            </p>
+            
+            {/* Specialization List */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mb-3">
+                  <span className="text-blue-600 font-bold text-xs">MDT</span>
+                </div>
+                <h4 className="font-bold text-sm text-gray-900 mb-1">Μέθοδος McKenzie</h4>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  Εξειδικευμένη αξιολόγηση και αντιμετώπιση πόνων στη σπονδυλική στήλη & τα άκρα.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mb-3">
+                  <span className="text-blue-600 font-bold text-xs">PNF</span>
+                </div>
+                <h4 className="font-bold text-sm text-gray-900 mb-1">Μέθοδος IPNFA</h4>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  Advanced επίπεδο επανεκπαίδευσης της κίνησης και νευρομυϊκής αποκατάστασης.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mb-3">
+                  <span className="text-blue-600 font-bold text-xs">MT</span>
+                </div>
+                <h4 className="font-bold text-sm text-gray-900 mb-1">Mulligan Concept</h4>
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  Manual Therapy και ήπιοι κινητοποιητικοί χειρισμοί για άμεση ανακούφιση.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Image */}
+          <div className="w-full lg:w-2/5 flex justify-center">
+            <div className="relative">
+              {/* Decorative background shape */}
+              <div 
+                className="absolute -inset-4 rounded-2xl opacity-10 blur-xl"
+                style={{ backgroundColor: '#004aad' }}
+              />
+              <img
+                src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/ABOUT/giannis.webp"
+                alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
+                className="relative z-10 w-full max-w-[340px] md:max-w-[380px] aspect-[4/5] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function WhyChooseSection() {
   return (
     <section className="py-24 px-6 md:px-16 bg-white border-t border-gray-100">
@@ -1386,6 +1468,7 @@ function Footer() {
   const navLinks = [
     { label: 'Αρχική', href: '#' },
     { label: 'Υπηρεσίες', href: '#services' },
+    { label: 'Γνωρίστε με', href: '#about-owner' },
     { label: 'Μαρτυρίες', href: '#testimonials' },
     { label: 'Συχνές Ερωτήσεις', href: '#faq' },
     { label: 'Επικοινωνία', href: '#contact' },
@@ -1502,6 +1585,7 @@ function App() {
       <TestimonialsSection />
       <ProcessSection />
       <RecoverySystemSection />
+      <AboutOwnerSection />
       <WhyChooseSection />
       <OfficeCarouselSection />
       <FAQSection />
