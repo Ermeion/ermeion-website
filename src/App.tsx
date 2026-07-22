@@ -135,6 +135,14 @@ function HeroSection() {
             Επιστημονικά Τεκμηριωμένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
           </h1>
 
+          {/* Subtitle */}
+          <p
+            className="text-sm sm:text-base md:text-lg text-white/90 mb-6 md:mb-7"
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
+          >
+            Από πόνους μέσης, αυχένα, ώμων έως τραυματισμούς σε ισχίο, γόνατο, αστράγαλο και αθλητικούς τραυματισμούς, εντοπίζουμε την αιτία και σας παρέχουμε ένα <b>σαφές πλάνο αποκατάστασης.</b>
+          </p>
+
           {/* Value Proposition Checkmarks */}
           <ul className="flex flex-col gap-2 md:gap-2.5 mb-7 md:mb-7">
             {[
@@ -286,7 +294,10 @@ function WhyErmeionSection() {
               Αυτό εξαρτάται από τη σωστή αξιολόγηση, θεραπεία και πλάνο.
             </p>
             <p className="text-sm sm:text-sm md:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
-              Στο ΕΡΜΕΙΟΝ δεν επικεντρωνόμαστε απλώς στο σημείο που πονάει και ελπίζουμε για το καλύτερο. Θα αξιολογήσουμε τι προκαλεί τα συμπτώματά σας, θα σας το εξηγήσουμε με σαφήνεια, θα εφαρμόσουμε χειροθεραπεία όπου κρίνεται σκόπιμο και θα δημιουργήσουμε ένα πρόγραμμα αποκατάστασης προσαρμοσμένο στο σώμα, τους στόχους και τον τρόπο ζωής σας. Επίσης κατέχουμε Διεπιστιμονική ομάδα & ειδικό διατροφολόγο, ώστε να καλύψουμε ολιστικά όλες τις παθήσεις.
+              Στο ΕΡΜΕΙΟΝ δεν επικεντρωνόμαστε απλώς στο σημείο που πονάει και ελπίζουμε για το καλύτερο. Ο φυσικοθεραπευτής σας θα αξιολογήσει τι προκαλεί τα συμπτώματά σας, θα σας το εξηγήσει με σαφήνεια, θα εφαρμόσει χειροθεραπεία όπου κρίνεται σκόπιμο και θα δημιουργήσει ένα πρόγραμμα αποκατάστασης προσαρμοσμένο στο σώμα, τους στόχους και τον τρόπο ζωής σας.
+            </p>
+            <p className="text-sm sm:text-sm md:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+              Η φυσικοθεραπεία μπορεί να βοηθήσει στην αντιμετώπιση του πόνου, δυσκαμψίας, τραυματισμών, μετεγχειρητικής αποκατάστασης και των προβλημάτων κίνησης σε ολόκληρο το σώμα, όχι μόνο στον πόνο της μέσης ή του γόνατος.
             </p>
           </div>
 
@@ -398,7 +409,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
           className="text-3xl md:text-4xl font-extrabold mb-4 max-w-4xl"
           style={{ color: '#004aad' }}
         >
-          Ένα Ολοκληρωμένο Σύστημα Αποκατάστασης
+          Ένα Ολοκληρωμένο Σύστημα Ανάρρωσης
         </h2>
         <p
           className="text-sm md:text-base max-w-xl"
@@ -477,7 +488,7 @@ function ProcessSection() {
             className="text-base leading-relaxed mb-4"
             style={{ color: '#71788f' }}
           >
-            Στην πρώτη επίσκεψη θα πάρoουμε λεπτομερές ιστορικό για τα συμπτώματα σας και το πώς αυτά συμπεριφέρονται. Μετά θα προχωρήσουμε στην κλινική εξέταση, όπου θα εκτελέσετε συγκεκριμένες επαναλαμβανόμενες κινήσεις ή/και θα μένετε σε συγκεκριμένες θέσεις. Οι αλλαγές των συμπτωμάτων και του εύρους κίνησης με τις επαναλαμβανόμενες κινήσεις, θα μας παρέχουν τις πληροφορίες για να κατατάξουμε το πρόβλημα σας.
+            Ξεκινάμε με μια ενδελεχή αξιολόγηση διάρκειας 60 λεπτών, ώστε να κατανοήσουμε το ιστορικό του πόνου σας, τους περιορισμούς στην κίνηση και τους παράγοντες του τρόπου ζωής σας. Θα ολοκληρώσετε τη συνεδρία έχοντας σαφή εικόνα για τα αίτια των συμπτωμάτων σας.
           </p>
           <div
             className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
@@ -489,7 +500,7 @@ function ProcessSection() {
       ),
     },
     {
-      title: 'Κατάταξη',
+      title: 'Πλάνο',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
@@ -502,7 +513,7 @@ function ProcessSection() {
             className="text-base leading-relaxed mb-4"
             style={{ color: '#71788f' }}
           >
-            Κάθε σύνδρομο αντιμετωπίζεται, σύμφωνα με τη μοναδική φύση του, με ειδικές μηχανικές διαδικασίες, συμπεριλαμβανομένων των επαναλαμβανόμενων κινήσεων και των παρατεταμένων θέσεων. Η Μηχανική Διάγνωση και Θεραπεία (ΜΔΘ) είναι ένα περιεκτικό σύστημα κατάταξης, το οποίο περιλαμβάνει και μία μικρότερη ομάδα ασθενών που δεν μπορούν να ταξινομηθούν σε ένα από τα τρία σύνδρομα, αλλά μπαίνουν στην κατηγορία «Άλλο», μία υπο-ομάδα που εμπεριέχει σοβαρές παθήσεις, μη μηχανικά προβλήματα, πραγματικό χρόνιο πόνο, κλπ.
+            Με βάση τη διάγνωση μας, δημιουργούμε ένα εξατομικευμένο πλάνο αποκατάστασης με συγκεκριμένους στόχους και χρονοδιαγράμματα. Εξηγούμε κάθε βήμα, ώστε να κατανοείτε ακριβώς τι να περιμένετε και πώς θα μετράμε την πρόοδο.
           </p>
           <div className="flex flex-wrap gap-2">
             <span
@@ -541,7 +552,7 @@ function ProcessSection() {
             className="text-base leading-relaxed mb-4"
             style={{ color: '#71788f' }}
           >
-            Χρησιμοποιώντας τις πληροφορίες από την αξιολόγηση, θα σας δώσω ειδικές ασκήσεις και συμβουλές, σχετικά με τις στάσεις που πρέπει να υιοθετήσετε και τις στάσεις που πρέπει να αποφύγετε προσωρινά. Εάν το πρόβλημα παρουσιάζει επιπλέον δυσκολίες τότε ίσως χρειαστεί να εφαρμόσω τεχνικές δια των χειρών (Manual Therapy), έως ότου μπορέσετε και πάλι να είστε ικανός/ικανή για αυτοθεραπεία.  Στόχος είναι να υπάρξει θετικό αποτέλεσμα με όσο το δυνατόν λιγότερο αριθμό συνεδριών. Μία θεραπεία που μπορείτε να την εκτελείτε πέντε ή έξι φορές την ημέρα, είναι πιο αποτελεσματική σε μικρότερο χρονικό διάστημα, από εκείνη που παρέχεται από εμένα μία ή δύο φορές την εβδομάδα. Δίνω έμφαση στην ενεργή συμμετοχή σας, ώστε μέσα από αυτήν να μειώσουμε τον αριθμό των συνεδριών, εξοικονομώντας χρόνο και χρήματα. Τελικά, οι περισσότεροι ασθενείς μπορούν να διαχειριστούν επιτυχώς το πρόβλημά τους με την κατάλληλη καθοδήγηση.
+            Κάθε συνεδρία συνδυάζει τεχνικές χειροθεραπείας με καθοδηγούμενες ασκήσεις, σχεδιασμένες για την αποκατάσταση της κινητικότητας, την ενδυνάμωση και την αντιμετώπιση της βασικής αιτίας του πόνου σας. Προσαρμόζουμε το πρόγραμμά σας καθώς σημειώνετε πρόοδο.
           </p>
           <div
             className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
@@ -553,7 +564,7 @@ function ProcessSection() {
       ),
     },
     {
-      title: 'Πρόληψη',
+      title: 'Πρόοδος',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
           <h4
@@ -566,13 +577,52 @@ function ProcessSection() {
             className="text-base leading-relaxed mb-4"
             style={{ color: '#71788f' }}
           >
-            Μαθαίνοντας πώς να αντιμετωπίζετε μόνος/μόνη σας το τρέχον πρόβλημα, μπορείτε να μάθετε και πώς να ελαχιστοποιήσετε τον κίνδυνο υποτροπής. Επίσης σε περίπτωση υποτροπής μπορείτε πλέον να ασχοληθείτε εγκαίρως με τα συμπτώματα και να έχετε τον έλεγχο της θεραπείας, ακίνδυνα και αποτελεσματικά. Τα υποτροπιάζοντα προβλήματα είναι πιθανότερο να προληφθούν μέσω της αυτοθεραπείας παρά μέσω μιας παθητικής φροντίδας.
+            Παρακολουθούμε την πρόοδό σας με αντικειμενικές μετρήσεις σε κάθε συνεδρία. Θα διαπιστώσετε απτές βελτιώσεις στην κινητικότητα, τη δύναμη και τα επίπεδα πόνου. Χωρίς εικασίες — μόνο σαφή στοιχεία για την αποκατάστασή σας.
           </p>
           <div
             className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
             style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
           >
             Σαφής ανάλυση προόδου
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Πρόληψη',
+      content: (
+        <div className="bg-white rounded-2xl p-6 shadow-md">
+          <h4
+            className="font-bold text-xl mb-3"
+            style={{ color: '#004aad' }}
+          >
+            Πρόληψη και Ανεξαρτησία
+          </h4>
+          <p
+            className="text-base leading-relaxed mb-4"
+            style={{ color: '#71788f' }}
+          >
+            Αφού αναρρώσετε, σας εφοδιάζουμε με τις γνώσεις και τις ασκήσεις που απαιτούνται για την πρόληψη μελλοντικών προβλημάτων. Στόχος μας είναι να σας βοηθήσουμε να επιστρέψετε στις δραστηριότητες που αγαπάτε, με αυτοπεποίθηση και ανεξαρτησία.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Ασκήσεις συντήρησης
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Συμβουλές ergonomics
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Πρόγραμμα πρόληψης
+            </span>
           </div>
         </div>
       ),
@@ -591,7 +641,7 @@ const trustPoints = [
   },
   {
     number: '2',
-    title: 'Επιστημονικά τεκμηριωμένες τεχνικές που δεν βρίσκετε παντού.',
+    title: 'Πιστοποιημένες τεχνικές που δεν βρίσκετε παντού.',
     body: 'McKenzie MDT, PNF, Mulligan Concept — μεθόδους υψηλού επιπέδου, εφαρμοσμένες με 10+ χρόνια πρακτικής εμπειρίας σε πραγματικούς ασθενείς, με εξαιρετικά αποτελέσματα.',
   },
   {
@@ -623,6 +673,86 @@ const RECOVERY_STEPS = [
     body: 'Όπου είναι εφικτό, η θεραπεία ξεκινά από το πρώτο κιόλας ραντεβού. Ο φυσικοθεραπευτής σας θα συζητήσει επίσης μαζί σας τον προτεινόμενο αριθμό και τη συχνότητα των συνεδριών, θα περιγράψει τι θα περιλαμβάνει το πρόγραμμα ασκήσεων για το σπίτι και θα θέσει μαζί σας ρεαλιστικούς στόχους αποκατάστασης.',
   },
 ];
+
+function RecoverySystemSection() {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  return (
+    <section className="py-20 md:py-28 bg-white">
+      <div className="max-w-6xl mx-auto px-6 md:px-16">
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+            Το Αποδεδειγμένο Σύστημα Ανάρρωσης του ΕΡΜΕΙΟΝ.
+          </h2>
+          <p className="text-base md:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            Κάθε θεραπευτικό πλάνο ενσωματώνει τέσσερις βασικούς πυλώνες για τη διασφάλιση αποτελεσμάτων με διάρκεια και τη βέλτιστη αποκατάσταση της κίνησης.
+          </p>
+        </div>
+
+        {/* Two-column layout */}
+        <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
+          {/* Left: sticky image */}
+          <div className="w-full md:w-[44%] md:sticky md:top-24 shrink-0">
+            <img
+              src="https://images.pexels.com/photos/5473177/pexels-photo-5473177.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Φυσικοθεραπευτής με ασθενή σε αξιολόγηση"
+              className="w-full h-72 md:h-[480px] object-cover rounded-2xl shadow-lg"
+            />
+          </div>
+
+          {/* Right: accordion */}
+          <div className="flex-1 flex flex-col divide-y divide-gray-200 border border-gray-200 rounded-2xl overflow-hidden">
+            {RECOVERY_STEPS.map((step, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <div key={step.number} className="bg-white">
+                  <button
+                    onClick={() => setOpenIndex(i)}
+                    className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors duration-200 hover:bg-gray-50"
+                  >
+                    <span
+                      className="text-base font-bold pr-4 transition-colors duration-200"
+                      style={{ color: isOpen ? '#004aad' : '#111827' }}
+                    >
+                      {step.number}. {step.title}
+                    </span>
+                    <span
+                      className="shrink-0 flex items-center justify-center w-7 h-7 rounded-full border-2 transition-all duration-200 text-lg font-light leading-none"
+                      style={{
+                        borderColor: isOpen ? '#004aad' : '#d1d5db',
+                        color: isOpen ? '#004aad' : '#6b7280',
+                      }}
+                    >
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+
+                  {/* Animated expand */}
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateRows: isOpen ? '1fr' : '0fr',
+                      transition: 'grid-template-rows 0.3s ease',
+                    }}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-6 pb-6 pt-1">
+                        <p className="text-sm md:text-base text-gray-600 leading-relaxed bg-gray-50 rounded-xl px-5 py-4">
+                          {step.body}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function AboutOwnerSection() {
   return (
