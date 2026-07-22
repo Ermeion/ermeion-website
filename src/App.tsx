@@ -1098,7 +1098,7 @@ const officeImages = [
   },
   {
     url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/therapy-office.webp",
-    alt: "Κύριο δωμάτιο φυσικοθεραπείας και χειροθεραπείας"
+    alt: "Δωμάτιο Θεραπείας / Ηλεκτροθεραπείας"
   }
 ];
 
