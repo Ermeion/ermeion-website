@@ -1359,14 +1359,6 @@ function FinalCTASection() {
           Η Εγγύηση ΕΡΜΕΙΟΝ
         </h2>
 
-        {/* Subtext */}
-        <p
-          className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-12"
-          style={{ color: 'rgba(234,240,247,0.85)' }}
-        >
-          Η ανάρρωσή σας είναι η δέσμευσή μας. Εάν αισθάνεστε ότι δεν σημειώνετε ουσιαστική πρόοδο μετά από τρεις συνεδρίες, θα συνεργαστούμε μαζί σας για να προσαρμόσουμε το θεραπευτικό σας πλάνο χωρίς κανένα επιπλέον κόστος.
-        </p>
-
         {/* Checklist grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12 text-left">
           {guaranteeItems.map((item, i) => (
