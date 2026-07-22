@@ -4,7 +4,7 @@ import {
   useTransform,
   motion,
 } from 'framer-motion';
-import { ChevronRight, ChevronLeft, Menu, X, CalendarCheck, Check } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Menu, X, CalendarCheck, Check, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays } from 'lucide-react';
 
 // Navbar Component
 function Navbar() {
@@ -657,6 +657,150 @@ function AboutOwnerSection() {
               />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Why Choose Us Section Component
+function WhyChooseUsSection() {
+  const differentiators = [
+    {
+      badge: "Ταχύτητα",
+      title: "3x Γρηγορότερη Επίτευξη Στόχων",
+      description: "Φτάσε τον στόχο σου 3x φορές γρηγορότερα χωρίς να χρειαστεί να εγκαταλείψεις τον ενεργό τρόπο ζωής σου.",
+      icon: Zap,
+      highlight: true,
+    },
+    {
+      badge: "Υποστήριξη",
+      title: "24/7 Επικοινωνία & Υποστήριξη",
+      description: "Είμαστε δίπλα σου όποτε μας χρειαστείς μέσω τηλεφώνου, μηνυμάτων (SMS/Viber) και email.",
+      icon: PhoneCall,
+      highlight: false,
+    },
+    {
+      badge: "Εξατομίκευση",
+      title: "1 Ώρα Αποκλειστικής Φροντίδας",
+      description: "Κάθε συνεδρία περιλαμβάνει μία ολόκληρη ώρα εξατομικευμένης φροντίδας με εμένα προσωπικά.",
+      icon: Clock,
+      highlight: false,
+    },
+    {
+      badge: "Υποδομές",
+      title: "100 τ.μ. Χώρος Ατομικής Θεραπείας",
+      description: "Ένας υπερσύγχρονος, άνετος και πλήρως εξοπλισμένος χώρος αφιερωμένος αποκλειστικά στη δική σου αποκατάσταση.",
+      icon: Compass,
+      highlight: false,
+    },
+    {
+      badge: "Αξιολόγηση",
+      title: "Εστίαση στη Ρίζα του Προβλήματος",
+      description: "Δεν αντιμετωπίζουμε απλώς τα συμπτώματα. Αναλύουμε σε βάθος για να βρούμε την πραγματική αιτία του πόνου.",
+      icon: Target,
+      highlight: false,
+    },
+    {
+      badge: "Αποτέλεσμα",
+      title: "Μακροχρόνιες Λύσεις Ανακούφισης",
+      description: "Σχεδιάζουμε θεραπείες με μόνιμο χαρακτήρα, θωρακίζοντας το σώμα σου ενάντια σε μελλοντικές υποτροπές.",
+      icon: ShieldCheck,
+      highlight: false,
+    },
+    {
+      badge: "Ευελιξία",
+      title: "Δέσμευση Μόνο 1 Φορά την Εβδομάδα",
+      description: "Πρωινά και απογευματινά ραντεβού που προσαρμόζονται στο πρόγραμμά σου, με εστίαση στην ουσιαστική πρόοδο.",
+      icon: CalendarDays,
+      highlight: false,
+    },
+  ];
+
+  return (
+    <section id="why-choose-us-details" className="py-20 md:py-28 bg-gray-50 border-t border-b border-gray-100 scroll-mt-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-16">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span
+            className="text-xs md:text-sm font-bold uppercase tracking-widest block mb-3"
+            style={{ color: '#004aad' }}
+          >
+            Γιατί να επιλέξετε το ΕΡΜΕΙΟΝ
+          </span>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight text-gray-900">
+            Η διαφορά μας στην πράξη
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+            Σχεδιάσαμε μια εμπειρία φυσικοθεραπείας που σέβεται τον χρόνο σας, εστιάζει στην ουσία και φέρνει οριστικά αποτελέσματα.
+          </p>
+        </div>
+
+        {/* Bento Grid layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {differentiators.map((item, idx) => {
+            const IconComponent = item.icon;
+            
+            if (item.highlight) {
+              return (
+                <div 
+                  key={idx}
+                  className="col-span-1 md:col-span-2 lg:col-span-2 relative overflow-hidden rounded-3xl p-8 md:p-10 shadow-lg border border-transparent transition-all duration-300 hover:scale-[1.01] hover:shadow-xl flex flex-col justify-between text-white"
+                  style={{ 
+                    background: 'linear-gradient(135deg, #004aad 0%, #002d6a 100%)'
+                  }}
+                >
+                  <div className="absolute top-0 right-0 -mt-4 -mr-4 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+                  
+                  <div>
+                    <span className="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
+                      {item.badge}
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-extrabold mb-4 leading-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-2xl">
+                      {item.description}
+                    </p>
+                  </div>
+                  
+                  <div className="mt-8 flex items-center justify-between">
+                    <span className="text-sm font-semibold text-white/70">Μάθετε πώς δουλεύουμε &rarr;</span>
+                    <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white">
+                      <IconComponent className="w-6 h-6" />
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <div 
+                key={idx}
+                className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-md hover:border-gray-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                      {item.badge}
+                    </span>
+                    <div 
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+                    >
+                      <IconComponent className="w-5 h-5" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -1539,6 +1683,7 @@ function App() {
           <TestimonialsSection />
           <ProcessSection />
           <AboutOwnerSection />
+          <WhyChooseUsSection />
           <OfficeCarouselSection />
           <FAQSection />
           <FinalCTASection />
