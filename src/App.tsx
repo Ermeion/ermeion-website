@@ -577,45 +577,6 @@ function ProcessSection() {
         </div>
       ),
     },
-    {
-      title: 'Πρόληψη',
-      content: (
-        <div className="bg-white rounded-2xl p-6 shadow-md">
-          <h4
-            className="font-bold text-xl mb-3"
-            style={{ color: '#004aad' }}
-          >
-            Πρόληψη και Ανεξαρτησία
-          </h4>
-          <p
-            className="text-base leading-relaxed mb-4"
-            style={{ color: '#71788f' }}
-          >
-            Αφού αναρρώσετε, σας εφοδιάζουμε με τις γνώσεις και τις ασκήσεις που απαιτούνται για την πρόληψη μελλοντικών προβλημάτων. Στόχος μας είναι να σας βοηθήσουμε να επιστρέψετε στις δραστηριότητες που αγαπάτε, με αυτοπεποίθηση και ανεξαρτησία.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Ασκήσεις συντήρησης
-            </span>
-            <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Συμβουλές ergonomics
-            </span>
-            <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Πρόγραμμα πρόληψης
-            </span>
-          </div>
-        </div>
-      ),
-    },
   ];
 
   return <Timeline data={processSteps} />;
