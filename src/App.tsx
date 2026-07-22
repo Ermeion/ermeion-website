@@ -135,14 +135,6 @@ function HeroSection() {
             Επιστημονικά Τεκμηριωμένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
           </h1>
 
-          {/* Subtitle */}
-          <p
-            className="text-sm sm:text-base md:text-lg text-white/90 mb-6 md:mb-7"
-            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}
-          >
-            Από πόνους μέσης, αυχένα, ώμων έως τραυματισμούς σε ισχίο, γόνατο, αστράγαλο και αθλητικούς τραυματισμούς, εντοπίζουμε την αιτία και σας παρέχουμε ένα <b>σαφές πλάνο αποκατάστασης.</b>
-          </p>
-
           {/* Value Proposition Checkmarks */}
           <ul className="flex flex-col gap-2 md:gap-2.5 mb-7 md:mb-7">
             {[
