@@ -1288,90 +1288,86 @@ function FAQSection() {
 
 // Final CTA Section Component
 const guaranteeItems = [
-  'Λεπτομερής αξιολόγηση και ειλικρινής εκτίμηση',
-  'Θεραπευτική προσέγγιση βασισμένη σε επιστημονικά δεδομένα (evidence-based)',
-  'Σαφής επικοινωνία και ενημέρωση',
-  'Μετρήσιμη παρακολούθηση της προόδου',
+  'Λεπτομερής αξιολόγηση',
+  'Επιστημονική προσέγγιση',
+  'Σαφής επικοινωνία',
+  'Μετρήσιμη πρόοδος',
 ];
 
 function FinalCTASection() {
   return (
-    <section className="py-24 px-6 md:px-16 bg-white">
-      <div
-        className="max-w-4xl mx-auto rounded-3xl px-8 py-16 md:px-16 md:py-20 text-center shadow-2xl"
-        style={{ backgroundColor: '#004aad' }}
-      >
-        {/* Badge */}
-        <div className="flex justify-center mb-8">
-          <div
-            className="flex items-center justify-center w-20 h-20 rounded-full ring-4"
-            style={{ backgroundColor: 'rgba(255,255,255,0.12)', ringColor: 'rgba(255,255,255,0.2)' }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              <polyline points="9 12 11 14 15 10" />
-            </svg>
-          </div>
-        </div>
+    <section className="relative overflow-hidden py-24 md:py-32 w-full text-center bg-gradient-to-br from-[#003882] via-[#004aad] to-[#001f4d] scroll-mt-20">
+      {/* Custom Styles for Keyframe Animations */}
+      <style>{`
+        @keyframes shimmer {
+          100% {
+            transform: translateX(100%);
+          }
+        }
+        .animate-shimmer-hover:hover .shimmer-slide {
+          animation: shimmer 1.5s infinite;
+        }
+      `}</style>
 
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight">
-          Η Εγγύηση ΕΡΜΕΙΟΝ
+      {/* Subtle background glow effect */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20 blur-[100px]"
+        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(0,74,173,0) 70%)' }}
+      />
+      
+      <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
+        {/* Subtitle / Category */}
+        <span className="text-[#a5caff] text-sm md:text-base font-bold tracking-widest uppercase mb-4 block">
+          Η ΕΓΓΥΗΣΗ ΕΡΜΕΙΟΝ
+        </span>
+
+        {/* Dynamic & Persuasive Heading */}
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight max-w-3xl">
+          Είστε έτοιμοι να ζήσετε χωρίς πόνο;
         </h2>
 
-        {/* Checklist grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12 text-left">
+        <p className="text-lg md:text-xl text-[#eaefeb] opacity-90 max-w-2xl mb-10 leading-relaxed font-light">
+          Κάντε το πρώτο βήμα σήμερα για να ανακτήσετε την ελευθερία κινήσεών σας με ένα εξατομικευμένο πλάνο αποκατάστασης.
+        </p>
+
+        {/* Benefits Grid */}
+        <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-12 max-w-3xl">
           {guaranteeItems.map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <span
-                className="mt-0.5 flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full"
-                style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span className="text-white font-medium text-sm md:text-base leading-snug">
+            <div 
+              key={i} 
+              className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md bg-white/5"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#38bdf8]" />
+              <span className="text-white font-medium text-sm md:text-base">
                 {item}
               </span>
             </div>
           ))}
         </div>
 
-        {/* Button */}
-        <button
-          className="px-10 py-4 rounded-xl font-bold text-base md:text-lg transition-all duration-300 hover:opacity-90 active:scale-95 shadow-lg"
-          style={{ backgroundColor: '#ffffff', color: '#004aad' }}
-        >
-          ΤΕΛΟΣ ΣΤΟΝ ΠΟΝΟ
-        </button>
+        {/* Pulsing Animated Button */}
+        <div className="relative group">
+          {/* Button Outer Glow wrapper */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-xl blur-lg opacity-45 group-hover:opacity-80 transition duration-1000 group-hover:duration-200 animate-pulse" />
+          
+          <a
+            href="#contact"
+            className="relative flex items-center gap-3 px-12 py-5 rounded-xl font-extrabold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-2xl overflow-hidden bg-white text-[#004aad] animate-shimmer-hover"
+          >
+            {/* Shimmer overlay effect */}
+            <span className="shimmer-slide absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full" />
+            
+            <CalendarCheck className="w-6 h-6" />
+            ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ
+          </a>
+        </div>
 
-        {/* Small print */}
-        <p
-          className="text-sm mt-5"
-          style={{ color: 'rgba(234,240,247,0.55)' }}
-        >
-          Περιορισμένη διαθεσιμότητα. Νέα ραντεβού κάθε εβδομάδα.
+        {/* Urgency/Scarcity Text */}
+        <p className="text-sm mt-6 text-[#a5caff] opacity-80 flex items-center gap-2 font-medium">
+          <svg className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20">
+            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z" />
+          </svg>
+          Περιορισμένη διαθεσιμότητα για νέα ραντεβού αυτή την εβδομάδα.
         </p>
       </div>
     </section>
