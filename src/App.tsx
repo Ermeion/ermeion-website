@@ -600,11 +600,11 @@ function AboutOwnerSection() {
             >
               Ιωάννης Μιχαηλίδης
             </h2>
-            <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
               Ονομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ.
               Σπούδασα Φυσικοθεραπεία στο Διεθνές Πανεπιστήμιο Ελλάδας και Επιστήμη Φυσικής Αγωγής & Αθλητισμού στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης.
             </p>
-            <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-800 mb-8 leading-relaxed">
               Για να σας προσφέρω την καλύτερη δυνατή υποστήριξη, έχω εξειδικευτεί σε σύγχρονες, διεθνώς αναγνωρισμένες θεραπευτικές μεθόδους:
             </p>
             
@@ -615,7 +615,7 @@ function AboutOwnerSection() {
                   <span className="text-blue-600 font-bold text-xs">MDT</span>
                 </div>
                 <h4 className="font-bold text-sm text-gray-900 mb-1">Μέθοδος McKenzie</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">
+                <p className="text-xs text-gray-800 leading-relaxed">
                   Εξειδικευμένη αξιολόγηση και αντιμετώπιση πόνων στη σπονδυλική στήλη & τα άκρα.
                 </p>
               </div>
@@ -625,7 +625,7 @@ function AboutOwnerSection() {
                   <span className="text-blue-600 font-bold text-xs">PNF</span>
                 </div>
                 <h4 className="font-bold text-sm text-gray-900 mb-1">Μέθοδος IPNFA</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">
+                <p className="text-xs text-gray-800 leading-relaxed">
                   Advanced επίπεδο επανεκπαίδευσης της κίνησης και νευρομυϊκής αποκατάστασης.
                 </p>
               </div>
@@ -635,7 +635,7 @@ function AboutOwnerSection() {
                   <span className="text-blue-600 font-bold text-xs">MT</span>
                 </div>
                 <h4 className="font-bold text-sm text-gray-900 mb-1">Mulligan Concept</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">
+                <p className="text-xs text-gray-800 leading-relaxed">
                   Manual Therapy και ήπιοι κινητοποιητικοί χειρισμοί για άμεση ανακούφιση.
                 </p>
               </div>
@@ -731,7 +731,7 @@ function WhyChooseUsSection() {
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight text-gray-900">
             Η διαφορά μας στην πράξη
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
             Σχεδιάσαμε μια εμπειρία φυσικοθεραπείας που σέβεται τον χρόνο σας, εστιάζει στην ουσία και φέρνει οριστικά αποτελέσματα.
           </p>
         </div>
@@ -781,7 +781,7 @@ function WhyChooseUsSection() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                    <span className="inline-block bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                       {item.badge}
                     </span>
                     <div 
@@ -794,7 +794,7 @@ function WhyChooseUsSection() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
+                  <p className="text-sm text-gray-800 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -1259,7 +1259,7 @@ function FAQSection() {
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl text-gray-900">
             Συχνές Ερωτήσεις
           </h2>
-          <p className="text-gray-500 lg:text-lg">
+          <p className="text-gray-800 lg:text-lg">
             Βρείτε απαντήσεις στις πιο συχνές ερωτήσεις σχετικά με τη φυσικοθεραπεία, τα ραντεβού, τον ΕΟΠΥΥ και τη διαδικασία αποκατάστασης στο ΕΡΜΕΙΟΝ.
           </p>
         </div>
@@ -1278,7 +1278,7 @@ function FAQSection() {
                   <span className="font-medium text-gray-900 sm:py-1 lg:py-2 lg:text-lg">
                     {item.question}
                   </span>
-                  <span className="shrink-0 text-gray-400 transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                  <span className="shrink-0 text-gray-700 transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="6 9 12 15 18 9" />
                     </svg>
@@ -1289,7 +1289,7 @@ function FAQSection() {
                   style={{ maxHeight: isOpen ? '600px' : '0px', opacity: isOpen ? 1 : 0 }}
                 >
                   <div className="pb-5 sm:mb-1 lg:mb-2">
-                    <p className="text-gray-500 lg:text-lg leading-relaxed">
+                    <p className="text-gray-800 lg:text-lg leading-relaxed">
                       {item.answer}
                     </p>
                   </div>
@@ -1541,7 +1541,7 @@ function PhysiotherapyPage() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Breadcrumbs */}
-        <div className="text-sm text-gray-500 mb-6 flex items-center gap-2">
+        <div className="text-sm text-gray-800 mb-6 flex items-center gap-2">
           <a href="#" className="hover:underline hover:text-[#004aad]">Αρχική</a>
           <ChevronRight className="w-3 h-3" />
           <span className="font-semibold text-gray-800">Φυσικοθεραπεία</span>
@@ -1564,10 +1564,10 @@ function PhysiotherapyPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
               Τι είναι η φυσικοθεραπεία;
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
+            <p className="text-gray-800 leading-relaxed mb-6">
               Η φυσικοθεραπεία είναι ένα επάγγελμα υγείας με επίκεντρο την επιστήμη που βοηθά τους ανθρώπους να αποκαταστήσουν την κίνηση, να μειώσουν τον πόνο και να βελτιώσουν την ποιότητα ζωής τους όταν επηρεάζονται από τραυματισμό, ασθένεια ή αναπηρία.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-6">
+            <p className="text-gray-800 leading-relaxed mb-6">
               Σε αντίθεση με τις θεραπείες που απλώς καλύπτουν τον πόνο, η φυσικοθεραπεία είναι από τη φύση της αποκαταστατική. Ένας εξειδικευμένος φυσιοθεραπευτής θα αξιολογήσει τον τρόπο που κινείστε, θα εντοπίσει γιατί κάτι πήγε στραβά και θα δημιουργήσει ένα εξατομικευμένο πρόγραμμα σχεδιασμένο ειδικά για εσάς.
             </p>
 
@@ -1616,7 +1616,7 @@ function PhysiotherapyPage() {
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               Ποιος μπορεί να ωφεληθεί από τη φυσικοθεραπεία;
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-800 text-lg leading-relaxed">
               Η φυσικοθεραπεία εξυπηρετεί άτομα όλων των ηλικιών — από παιδιά με αναπτυξιακές διαταραχές έως ηλικιωμένους ενήλικες που διαχειρίζονται εκφυλιστικές αλλαγές. Δεν χρειάζεται να είστε σοβαρός αθλητής ή να έχετε υποστεί έναν δραματικό τραυματισμό για να ωφεληθείτε.
             </p>
           </div>
@@ -1630,7 +1630,7 @@ function PhysiotherapyPage() {
                 </span>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-gray-800 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -1638,7 +1638,7 @@ function PhysiotherapyPage() {
 
           {/* Concluding credibility paragraph */}
           <div className="border-t border-gray-100 pt-8 mt-6">
-            <p className="text-gray-600 text-sm leading-relaxed italic bg-blue-50/50 p-6 rounded-2xl border-l-4 border-[#004aad]">
+            <p className="text-gray-800 text-sm leading-relaxed italic bg-blue-50/50 p-6 rounded-2xl border-l-4 border-[#004aad]">
               «Τα μυοσκελετικά προβλήματα αποτελούν την κύρια αιτία πόνου και αναπηρίας, επηρεάζοντας περισσότερους από έναν στους τέσσερις ανθρώπους. Έρευνες δείχνουν ότι οι επενδύσεις σε εξειδικευμένες υπηρεσίες φυσικοθεραπείας για μυοσκελετικές παθήσεις βελτιώνουν θεαματικά τα αποτελέσματα των ασθενών και μειώνουν το συνολικό κόστος υγειονομικής περίθαλψης.»
             </p>
           </div>
