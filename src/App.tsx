@@ -1106,14 +1106,35 @@ function OfficeCarouselSection() {
           </p>
         </div>
 
-        {/* Carousel Container */}
+        {/* Desktop Grid View */}
+        <div className="hidden md:grid grid-cols-3 gap-4">
+          {officeImages.map((img, idx) => (
+            <div
+              key={idx}
+              className="group relative overflow-hidden rounded-xl shadow-lg border border-gray-100 aspect-[4/3]"
+            >
+              <img
+                src={img.url}
+                alt={img.alt}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <span className="text-white font-medium text-sm tracking-wide drop-shadow-md">
+                  {img.alt}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Carousel View */}
         <div
-          className="relative overflow-hidden rounded-2xl shadow-xl border border-gray-100"
+          className="md:hidden relative overflow-hidden rounded-2xl shadow-xl border border-gray-100"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Slides Track */}
-          <div className="relative aspect-[16/10] md:aspect-[21/9] w-full overflow-hidden bg-gray-50">
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-50">
             <motion.div
               className="flex h-full w-full cursor-grab active:cursor-grabbing"
               animate={{ x: `-${currentIndex * 100}%` }}
@@ -1163,8 +1184,8 @@ function OfficeCarouselSection() {
           </button>
 
           {/* Bottom Indicators & Alt Text Overlay */}
-          <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 pt-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <span className="text-white font-medium text-sm md:text-base tracking-wide select-none drop-shadow-md">
+          <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 pt-12 flex flex-col items-center justify-between gap-4">
+            <span className="text-white font-medium text-sm tracking-wide select-none drop-shadow-md">
               {officeImages[currentIndex].alt}
             </span>
             <div className="flex gap-2.5">
