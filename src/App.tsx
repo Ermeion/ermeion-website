@@ -43,12 +43,15 @@ function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <button
+        <a
+          href="https://cal.eu/ermeion/physiotherapy"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
           style={{ backgroundColor: '#004aad' }}
         >
           Κλείστε Ραντεβού
-        </button>
+        </a>
 
         {/* Mobile: CTA + Hamburger Row */}
         <div className="md:hidden flex items-center gap-2">
@@ -87,13 +90,16 @@ function Navbar() {
               {link.label}
             </a>
           ))}
-          <button
+          <a
+            href="https://cal.eu/ermeion/physiotherapy"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#004aad' }}
             onClick={closeMenu}
           >
             Κλείστε Ραντεβού
-          </button>
+          </a>
         </div>
       </div>
     </nav>
@@ -153,13 +159,16 @@ function HeroSection() {
           </ul>
 
           {/* Main CTA */}
-          <button
+          <a
+            href="https://cal.eu/ermeion/physiotherapy"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
             style={{ backgroundColor: '#004aad' }}
           >
             <CalendarCheck className="w-5 h-5" />
             Κλείστε Ραντεβού
-          </button>
+          </a>
         </div>
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
@@ -329,13 +338,16 @@ function WhyErmeionSection() {
           </div>
 
           {/* CTA Button */}
-          <button
+          <a
+            href="https://cal.eu/ermeion/physiotherapy"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full lg:w-fit px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#004aad' }}
           >
             <CalendarCheck className="w-5 h-5 shrink-0" />
             Κλείστε Ραντεβού
-          </button>
+          </a>
         </div>
 
         {/* Right Column — desktop only */}
@@ -1653,7 +1665,9 @@ function PhysiotherapyPage() {
             Κλείστε ένα ραντεβού αξιολόγησης σήμερα και ξεκινήστε το ταξίδι σας προς την πλήρη αποκατάσταση και την απαλλαγή από τον πόνο.
           </p>
           <a
-            href="#contact"
+            href="https://cal.eu/ermeion/physiotherapy"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-[#004aad] bg-white transition-all duration-300 hover:bg-gray-100 shadow-md active:scale-95 cursor-pointer"
           >
             <CalendarCheck className="w-5 h-5" />
