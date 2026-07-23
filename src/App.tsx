@@ -1340,7 +1340,7 @@ function FinalCTASection() {
 
         {/* Dynamic & Persuasive Heading */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight max-w-3xl">
-          Είστε έτοιμοι να ζήσετε χωρίς πόνο;
+          Είστε έτοιμοι να πείτε ΑΝΤΙΟ στον πόνο;
         </h2>
 
         <p className="text-lg md:text-xl text-[#eaefeb] opacity-90 max-w-2xl mb-10 leading-relaxed font-light">
