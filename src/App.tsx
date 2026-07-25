@@ -717,9 +717,6 @@ function AboutOwnerSection() {
             {/* Specialization List */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mb-3">
-                  <span className="text-blue-600 font-bold text-xs">MDT</span>
-                </div>
                 <h4 className="font-bold text-sm text-gray-900 mb-1">Μέθοδος McKenzie</h4>
                 <p className="text-xs text-gray-800 leading-relaxed">
                   Εξειδικευμένη αξιολόγηση και αντιμετώπιση πόνων στη σπονδυλική στήλη & τα άκρα.
@@ -727,9 +724,6 @@ function AboutOwnerSection() {
               </div>
 
               <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mb-3">
-                  <span className="text-blue-600 font-bold text-xs">PNF</span>
-                </div>
                 <h4 className="font-bold text-sm text-gray-900 mb-1">Μέθοδος IPNFA</h4>
                 <p className="text-xs text-gray-800 leading-relaxed">
                   Advanced επίπεδο επανεκπαίδευσης της κίνησης και νευρομυϊκής αποκατάστασης.
@@ -737,9 +731,6 @@ function AboutOwnerSection() {
               </div>
 
               <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mb-3">
-                  <span className="text-blue-600 font-bold text-xs">MT</span>
-                </div>
                 <h4 className="font-bold text-sm text-gray-900 mb-1">Mulligan Concept</h4>
                 <p className="text-xs text-gray-800 leading-relaxed">
                   Manual Therapy και ήπιοι κινητοποιητικοί χειρισμοί για άμεση ανακούφιση.
