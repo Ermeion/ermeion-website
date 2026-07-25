@@ -1410,7 +1410,7 @@ const guaranteeItems = [
 
 function FinalCTASection() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32 w-full text-center bg-gradient-to-br from-[#003882] via-[#004aad] to-[#001f4d] scroll-mt-20">
+    <section id="contact" className="relative overflow-hidden py-24 md:py-32 w-full text-center bg-gradient-to-br from-[#003882] via-[#004aad] to-[#001f4d] scroll-mt-20">
       {/* Custom Styles for Keyframe Animations */}
       <style>{`
         @keyframes shimmer {
@@ -1476,13 +1476,6 @@ function FinalCTASection() {
           </a>
         </div>
 
-        {/* Urgency/Scarcity Text */}
-        <p className="text-sm mt-6 text-[#a5caff] opacity-80 flex items-center gap-2 font-medium">
-          <svg className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z" />
-          </svg>
-          Περιορισμένη διαθεσιμότητα για νέα ραντεβού αυτή την εβδομάδα.
-        </p>
       </div>
     </section>
   );
@@ -1493,11 +1486,26 @@ function Footer() {
   const navLinks = [
     { label: 'Αρχική', href: '#' },
     { label: 'Φυσικοθεραπεία', href: '#physiotherapy' },
-    { label: 'Υπηρεσίες', href: '#services' },
+    { label: 'Υπηρεσίες', href: '#process' },
     { label: 'Γνωρίστε με', href: '#about-owner' },
     { label: 'Μαρτυρίες', href: '#testimonials' },
     { label: 'Συχνές Ερωτήσεις', href: '#faq' },
     { label: 'Επικοινωνία', href: '#contact' },
+  ];
+
+  const openingHours = [
+    { day: 'Δευτέρα', hours: '9 π.μ.–2 μ.μ., 4–9 μ.μ.' },
+    { day: 'Τρίτη', hours: '9 π.μ.–2 μ.μ., 4–9 μ.μ.' },
+    { day: 'Τετάρτη', hours: '9 π.μ.–2 μ.μ., 4–9 μ.μ.' },
+    { day: 'Πέμπτη', hours: '9 π.μ.–2 μ.μ., 4–9 μ.μ.' },
+    { day: 'Παρασκευή', hours: '9 π.μ.–2 μ.μ., 4–8 μ.μ.' },
+    { day: 'Σάββατο', hours: 'Κλειστά' },
+    { day: 'Κυριακή', hours: 'Κλειστά' },
+  ];
+
+  const socials = [
+    { label: 'Instagram', href: 'https://www.instagram.com/ermeionphysio/', path: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2z' },
+    { label: 'Facebook', href: 'https://www.facebook.com/ErmeionPhysio', path: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' },
   ];
 
   return (
@@ -1516,21 +1524,21 @@ function Footer() {
 
           {/* Contact details */}
           <div className="flex flex-col gap-3 text-sm" style={{ color: '#ffffff' }}>
-            <div className="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Θεσσαλονίκη</span>
+            <div className="flex items-start gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Παπάφη 92, Θεσσαλονίκη, 544 53</span>
             </div>
             <div className="flex items-center gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>210 000 0000</span>
+              <a href="tel:2310940100" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>231 094 0100</a>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:6988404234" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>698 840 4234</a>
             </div>
             <div className="flex items-center gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>info@ermeion.gr</span>
-            </div>
-            <div className="flex items-start gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Δευτ–Παρ: 09:00–21:00<br />Σάββατο: 09:00–15:00</span>
+              <a href="mailto:ermeion@outlook.com" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>ermeion@outlook.com</a>
             </div>
           </div>
         </div>
@@ -1555,12 +1563,15 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Services column */}
+        {/* Opening hours column */}
         <div>
-          <p className="text-xs uppercase tracking-widest font-semibold mb-5" style={{ color: '#5b8cff' }}>Υπηρεσίες</p>
-          <ul className="flex flex-col gap-3 text-sm" style={{ color: '#ffffff' }}>
-            {['Αξιολόγηση & Διάγνωση', 'Χειροθεραπεία', 'Μέθοδος McKenzie MDT', 'PNF – Νευρομυϊκή Διευκόλυνση', 'Mulligan Concept', 'Αθλητική Αποκατάσταση', 'Μετεγχειρητική Αποκατάσταση'].map((s) => (
-              <li key={s}>{s}</li>
+          <p className="text-xs uppercase tracking-widest font-semibold mb-5" style={{ color: '#5b8cff' }}>Ωράριο Λειτουργίας</p>
+          <ul className="flex flex-col gap-2 text-sm" style={{ color: '#ffffff' }}>
+            {openingHours.map((entry) => (
+              <li key={entry.day} className="flex flex-col gap-0.5">
+                <span className="font-semibold">{entry.day}</span>
+                <span className={entry.hours === 'Κλειστά' ? 'opacity-70' : 'opacity-90'}>{entry.hours}</span>
+              </li>
             ))}
           </ul>
         </div>
@@ -1574,14 +1585,12 @@ function Footer() {
           </p>
           {/* Social icons */}
           <div className="flex items-center gap-4">
-            {[
-              { label: 'Instagram', path: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2z' },
-              { label: 'Facebook', path: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' },
-              { label: 'LinkedIn', path: 'M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' },
-            ].map((social) => (
+            {socials.map((social) => (
               <a
                 key={social.label}
-                href="#"
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
                 className="transition-colors duration-200"
                 style={{ color: '#ffffff' }}
