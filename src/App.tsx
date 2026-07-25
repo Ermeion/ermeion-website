@@ -387,7 +387,7 @@ function CertificatesCarouselSection() {
   const doubled = [...certificates, ...certificates];
 
   return (
-    <section className="bg-gray-50 border-t border-gray-100 py-14 md:py-20">
+    <section className="bg-white border-t border-gray-100 py-14 md:py-20">
       <p
         className="text-center text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-10 md:mb-14 px-4"
         style={{ color: '#1f2937' }}
@@ -406,16 +406,14 @@ function CertificatesCarouselSection() {
           {doubled.map((cert, i) => (
             <div
               key={i}
-              className="flex items-center justify-center shrink-0 px-6 md:px-10"
+              className="flex items-center justify-center shrink-0 px-8 md:px-12"
             >
-              <div className="flex items-center justify-center bg-white rounded-xl shadow-sm border border-gray-100 p-6 h-28 sm:h-32 w-40 sm:w-48">
-                <img
-                  src={cert.src}
-                  alt={cert.alt}
-                  className="max-h-full max-w-full object-contain"
-                  draggable={false}
-                />
-              </div>
+              <img
+                src={cert.src}
+                alt={cert.alt}
+                className="h-32 sm:h-40 w-auto object-contain"
+                draggable={false}
+              />
             </div>
           ))}
         </div>
