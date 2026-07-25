@@ -719,7 +719,7 @@ function AboutOwnerSection() {
               <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
                 <h4 className="font-bold text-sm text-gray-900 mb-1">Cred.MDT</h4>
                 <p className="text-xs text-gray-800 leading-relaxed">
-                  Εξειδικευμένη αξιολόγηση και αντιμετώπιση πόνων στη σπονδυλική στήλη & τα άκρα.
+                  Αντιμετώπιση πόνου σπονδυλικής στήλης & περιφερειακών αρθρώσεων.
                 </p>
               </div>
 
