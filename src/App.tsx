@@ -291,10 +291,10 @@ function WhyErmeionSection() {
 
           {/* Body paragraphs */}
           <div className="flex flex-col gap-4 mb-8">
-            <p className="text-sm sm:text-sm md:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+            <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
               Αυτό εξαρτάται από τη σωστή αξιολόγηση, θεραπεία και πλάνο.
             </p>
-            <p className="text-sm sm:text-sm md:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+            <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
               Στο ΕΡΜΕΙΟΝ δεν επικεντρωνόμαστε απλώς στο σημείο που πονάει και ελπίζουμε για το καλύτερο. Θα αξιολογήσουμε τι προκαλεί τα συμπτώματά σας, θα σας εξηγήσουμε με σαφήνεια, θα εφαρμόσουμε χειροθεραπεία όπου κρίνεται σκόπιμο και θα δημιουργήσουμε ένα πρόγραμμα αποκατάστασης προσαρμοσμένο στο σώμα, τους στόχους και τον τρόπο ζωής σας. Επίσης έχουμε διεπιστημονική ομάδα & διατροφολόγο, ώστε να καλύψουμε ολιστικά όλες τις παθήσεις.
             </p>
           </div>
@@ -331,7 +331,7 @@ function WhyErmeionSection() {
               <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
                 Πιστεύετε ότι ίσως δεν χρειάζεστε φυσικοθεραπεία;
               </h4>
-              <p className="text-sm sm:text-sm md:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+              <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
                 Αυτός είναι ακριβώς ο λόγος που γίνεται το πρώτο σας ραντεβού. Αν η φυσικοθεραπεία είναι η κατάλληλη επιλογή για εσάς, θα σας εξηγήσουμε το πλάνο. Αν δεν χρειάζεστε συνεχιζόμενη θεραπεία, θα σας το πούμε ξεκάθαρα.
               </p>
             </div>
@@ -362,7 +362,7 @@ function WhyErmeionSection() {
             <h4 className="text-lg font-bold text-gray-900 mb-3">
               Πιστεύετε ότι ίσως δεν χρειάζεστε φυσικοθεραπεία;
             </h4>
-            <p className="text-sm sm:text-sm leading-relaxed" style={{ color: '#3d3d3d' }}>
+            <p className="text-sm sm:text-sm leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
               Αυτός είναι ακριβώς ο λόγος που γίνεται το πρώτο σας ραντεβού. Αν η φυσικοθεραπεία είναι η κατάλληλη επιλογή για εσάς, θα σας εξηγήσουμε το πλάνο θεραπείας. Αν δεν χρειάζεστε συνεχιζόμενη θεραπεία, θα σας το πούμε ξεκάθαρα.
             </p>
           </div>
@@ -1372,7 +1372,7 @@ function FAQSection() {
                   onClick={() => setOpenId(isOpen ? null : item.id)}
                   aria-expanded={isOpen}
                 >
-                  <span className="font-medium text-gray-900 sm:py-1 lg:py-2 lg:text-lg">
+                  <span className="font-bold text-gray-900 sm:py-1 lg:py-2 lg:text-lg">
                     {item.question}
                   </span>
                   <span className="shrink-0 text-gray-700 transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
