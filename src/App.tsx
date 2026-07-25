@@ -4,7 +4,7 @@ import {
   useTransform,
   motion,
 } from 'framer-motion';
-import { ChevronRight, ChevronLeft, Menu, X, CalendarCheck, Check, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Menu, X, CalendarCheck, Check, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, Stethoscope, ClipboardCheck, Activity, Shield } from 'lucide-react';
 
 // Navbar Component
 function Navbar() {
@@ -479,49 +479,32 @@ function ProcessSection() {
       title: 'Αξιολόγηση',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
-          <h4
-            className="font-bold text-xl mb-3"
-            style={{ color: '#004aad' }}
-          >
-            Ολοκληρωμένη Αξιολόγηση
-          </h4>
-          <p
-            className="text-base leading-relaxed mb-4"
-            style={{ color: '#1f2937' }}
-          >
-            Στην πρώτη επίσκεψη θα πάρω λεπτομερές ιστορικό για τα συμπτώματα σας και το πώς αυτά συμπεριφέρονται.Μετά θα προχωρήσουμε στην κλινική εξέταση, όπου θα εκτελείτε συγκεκριμένες επαναλαμβανόμενες κινήσεις ή/και θα μένετε σε συγκεκριμένες θέσεις. Οι αλλαγές των συμπτωμάτων και του εύρους κίνησης με τις επαναλαμβανόμενες κινήσεις, θα μου παρέχουν τις πληροφορίες για να κατατάξω το πρόβλημα σας.
-          </p>
-          <div
-            className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
-            style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-          >
-            Δυνατότητα κράτησης online 24/7
+          <div className="flex items-center gap-3 mb-3">
+            <span
+              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              style={{ backgroundColor: '#004aad' }}
+            >
+              <Stethoscope className="w-5 h-5" />
+            </span>
+            <h4
+              className="font-bold text-xl"
+              style={{ color: '#004aad' }}
+            >
+              Αξιολόγηση
+            </h4>
           </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Κατάταξη',
-      content: (
-        <div className="bg-white rounded-2xl p-6 shadow-md">
-          <h4
-            className="font-bold text-xl mb-3"
-            style={{ color: '#004aad' }}
-          >
-            Εξατομικευμένο Πλάνο Θεραπείας
-          </h4>
           <p
             className="text-base leading-relaxed mb-4"
             style={{ color: '#1f2937' }}
           >
-            Κάθε σύνδρομο αντιμετωπίζεται, σύμφωνα με τη μοναδική φύση του, με ειδικές μηχανικές διαδικασίες, συμπεριλαμβανομένων των επαναλαμβανόμενων κινήσεων και των παρατεταμένων θέσεων. Η Μηχανική Διάγνωση και Θεραπεία (ΜΔΘ) είναι ένα περιεκτικό σύστημα κατάταξης, το οποίο περιλαμβάνει και μία μικρότερη ομάδα ασθενών που δεν μπορούν να ταξινομηθούν σε ένα από τα τρία σύνδρομα, αλλά μπαίνουν στην κατηγορία «Άλλο», μία υπο-ομάδα που εμπεριέχει σοβαρές παθήσεις, μη μηχανικά προβλήματα, πραγματικό χρόνιο πόνο, κλπ.
+            Η πρώτη επίσκεψη περιλαμβάνει τη λήψη λεπτομερούς ιστορικού. Μετά θα προχωρήσουμε στη κλινική εξέταση, όπου θα εκτελείτε συγκεκριμένες ασκήσεις ή/και θα μένετε σε συγκεκριμένες θέσεις. Οι αλλαγές των συμπτωμάτων και του εύρους κίνησης, θα μου παρέχουν τις πληροφορίες για την κατάταξη του προβλήματος σας.
           </p>
           <div className="flex flex-wrap gap-2">
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
-              Λεπτομερής ιστορικό
+              Λήψη ιστορικού
             </span>
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
@@ -533,7 +516,54 @@ function ProcessSection() {
               className="px-3 py-1 rounded-full text-xs font-medium"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
-              Εκτίμηση βημάτων
+              Δοκιμαστικές κινήσεις
+            </span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Κατάταξη',
+      content: (
+        <div className="bg-white rounded-2xl p-6 shadow-md">
+          <div className="flex items-center gap-3 mb-3">
+            <span
+              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              style={{ backgroundColor: '#004aad' }}
+            >
+              <ClipboardCheck className="w-5 h-5" />
+            </span>
+            <h4
+              className="font-bold text-xl"
+              style={{ color: '#004aad' }}
+            >
+              Κατάταξη
+            </h4>
+          </div>
+          <p
+            className="text-base leading-relaxed mb-4"
+            style={{ color: '#1f2937' }}
+          >
+            Κάθε σύνδρομο αντιμετωπίζεται, σύμφωνα με τη μοναδική φύση του, με ειδικές μηχανικές διαδικασίες, συμπεριλαμβανομένων των επαναλαμβανόμενων κινήσεων και των παρατεταμένων θέσεων.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Μηχανική διάγνωση
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Ταξινόμηση συνδρόμου
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Εξατομικευμένη προσέγγιση
             </span>
           </div>
         </div>
@@ -543,23 +573,65 @@ function ProcessSection() {
       title: 'Θεραπεία',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
-          <h4
-            className="font-bold text-xl mb-3"
-            style={{ color: '#004aad' }}
+          <div className="flex items-center gap-3 mb-3">
+            <span
+              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              style={{ backgroundColor: '#004aad' }}
+            >
+              <Activity className="w-5 h-5" />
+            </span>
+            <h4
+              className="font-bold text-xl"
+              style={{ color: '#004aad' }}
+            >
+              Θεραπεία
+            </h4>
+          </div>
+          <p
+            className="text-base leading-relaxed mb-3"
+            style={{ color: '#1f2937' }}
           >
-            θεραπεία & Άσκηση
-          </h4>
+            Χρησιμοποιώντας τα στοιχεία της αξιολόγησης:
+          </p>
+          <ul className="flex flex-col gap-2 mb-3">
+            <li className="flex items-start gap-2 text-base leading-relaxed" style={{ color: '#1f2937' }}>
+              <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#004aad' }} />
+              <span>Θα σας δώσω ειδικές ασκήσεις και συμβουλές σχετικά με τη στάση σώματος και τους επιβαρυντικούς παράγοντες.</span>
+            </li>
+            <li className="flex items-start gap-2 text-base leading-relaxed" style={{ color: '#1f2937' }}>
+              <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#004aad' }} />
+              <span>Αν χρειαστεί, θα εφαρμόσω τεχνικές Manual Therapy - Χειροθεραπεία</span>
+            </li>
+            <li className="flex items-start gap-2 text-base leading-relaxed" style={{ color: '#1f2937' }}>
+              <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#004aad' }} />
+              <span>Με τη σωστή αυτοθεραπεία και τη δική σας ενεργή συμμετοχή, εξοικονομούμε χρόνο και χρήμα.</span>
+            </li>
+          </ul>
           <p
             className="text-base leading-relaxed mb-4"
             style={{ color: '#1f2937' }}
           >
-            Χρησιμοποιώντας τις πληροφορίες από την αξιολόγηση, θα σας δώσω ειδικές ασκήσεις και συμβουλές, σχετικά με τις στάσεις που πρέπει να υιοθετήσετε και τις στάσεις που πρέπει να αποφύγετε προσωρινά. Εάν το πρόβλημα παρουσιάζει επιπλέον δυσκολίες τότε ίσως χρειαστεί να εφαρμόσω τεχνικές δια των χειρών (Manual Therapy), έως ότου μπορέσετε και πάλι να είστε ικανός/ικανή για αυτοθεραπεία.  Στόχος είναι να υπάρξει θετικό αποτέλεσμα με όσο το δυνατόν λιγότερο αριθμό συνεδριών. Μία θεραπεία που μπορείτε να την εκτελείτε πέντε ή έξι φορές την ημέρα, είναι πιο αποτελεσματική σε μικρότερο χρονικό διάστημα, από εκείνη που παρέχεται από εμένα μία ή δύο φορές την εβδομάδα. Δίνω έμφαση στην ενεργή συμμετοχή σας, ώστε μέσα από αυτήν να μειώσουμε τον αριθμό των συνεδριών, εξοικονομώντας χρόνο και χρήμα. Τελικά, οι περισσότεροι ασθενείς μπορούν να διαχειριστούν επιτυχώς το πρόβλημά τους με την κατάλληλη καθοδήγηση
+            Στόχος είναι το καλύτερο αποτέλεσμα με τις λιγότερες δυνατές συνεδρίες, μέσω της κατάλληλης καθοδήγησης.
           </p>
-          <div
-            className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
-            style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-          >
-            Εξατομικευμένο πρόγραμμα για εσάς
+          <div className="flex flex-wrap gap-2">
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Ειδικές ασκήσεις
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Manual Therapy
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Καθοδήγηση
+            </span>
           </div>
         </div>
       ),
@@ -568,23 +640,45 @@ function ProcessSection() {
       title: 'Πρόληψη',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
-          <h4
-            className="font-bold text-xl mb-3"
-            style={{ color: '#004aad' }}
-          >
-            Μετρήσιμες βελτιώσεις
-          </h4>
+          <div className="flex items-center gap-3 mb-3">
+            <span
+              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              style={{ backgroundColor: '#004aad' }}
+            >
+              <Shield className="w-5 h-5" />
+            </span>
+            <h4
+              className="font-bold text-xl"
+              style={{ color: '#004aad' }}
+            >
+              Πρόληψη
+            </h4>
+          </div>
           <p
             className="text-base leading-relaxed mb-4"
             style={{ color: '#1f2937' }}
           >
             Μαθαίνοντας πώς να αντιμετωπίζετε μόνος/μόνη σας το τρέχον πρόβλημα, μπορείτε να μάθετε και πώς να ελαχιστοποιήσετε τον κίνδυνο υποτροπής. Επίσης σε περίπτωση υποτροπής μπορείτε πλέον να ασχοληθείτε εγκαίρως με τα συμπτώματα και να έχετε τον έλεγχο της θεραπείας, ακίνδυνα και αποτελεσματικά. Τα υποτροπιάζοντα προβλήματα είναι πιθανότερο να προληφθούν μέσω της αυτοθεραπείας παρά μέσω μιας παθητικής φροντίδας.
           </p>
-          <div
-            className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
-            style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-          >
-            Σαφής ανάλυση προόδου
+          <div className="flex flex-wrap gap-2">
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Αυτοθεραπεία
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Πρόληψη υποτροπής
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Έλεγχος συμπτωμάτων
+            </span>
           </div>
         </div>
       ),
