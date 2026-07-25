@@ -800,7 +800,7 @@ function WhyChooseUsSection() {
     },
     {
       badge: "Αποτέλεσμα",
-      title: "Αποτελέσματα Μέσωη Ενδυνάμωσης",
+      title: "Αποτελέσματα Μέσω Ενδυνάμωσης",
       description: "Δίνουμε έμφαση στην ενδυνάμωση και την σωστή εκτέλεση των ασκήσεων.",
       icon: ShieldCheck,
       highlight: false,
