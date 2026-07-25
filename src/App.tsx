@@ -411,7 +411,7 @@ function CertificatesCarouselSection() {
               <img
                 src={cert.src}
                 alt={cert.alt}
-                className="h-32 sm:h-40 w-auto object-contain"
+                className="h-28 sm:h-32 w-40 sm:w-48 object-contain"
                 draggable={false}
               />
             </div>
