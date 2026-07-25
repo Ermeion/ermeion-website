@@ -373,6 +373,57 @@ function WhyErmeionSection() {
   );
 }
 
+// Certificates Carousel Section
+function CertificatesCarouselSection() {
+  const certificates = [
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/APTH-logo.webp', alt: 'APTH' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/dipae-logo.webp', alt: 'DIPAE' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/ipnfa-mainlogo.webp', alt: 'IPNFA' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/mckenzie-2.webp', alt: 'McKenzie MDT' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/mulligan-concept-logo.webp', alt: 'Mulligan Concept' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/psf-logo2.webp', alt: 'PSF' },
+  ];
+
+  const doubled = [...certificates, ...certificates];
+
+  return (
+    <section className="bg-gray-50 border-t border-gray-100 py-14 md:py-20">
+      <p
+        className="text-center text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-10 md:mb-14 px-4"
+        style={{ color: '#1f2937' }}
+      >
+        ΠΙΣΤΟΠΟΙΗΣΕΙΣ & ΕΞΕΙΔΙΚΕΥΣΕΙΣ
+      </p>
+
+      <div
+        className="relative overflow-hidden"
+        style={{
+          maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+        }}
+      >
+        <div className="insurance-track">
+          {doubled.map((cert, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-center shrink-0 px-6 md:px-10"
+            >
+              <div className="flex items-center justify-center bg-white rounded-xl shadow-sm border border-gray-100 p-6 h-28 sm:h-32 w-40 sm:w-48">
+                <img
+                  src={cert.src}
+                  alt={cert.alt}
+                  className="max-h-full max-w-full object-contain"
+                  draggable={false}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Timeline Section Component
 interface TimelineEntry {
   title: string;
@@ -1804,6 +1855,7 @@ function App() {
           <TestimonialsSection />
           <ProcessSection />
           <AboutOwnerSection />
+          <CertificatesCarouselSection />
           <WhyChooseUsSection />
           <OfficeCarouselSection />
           <FAQSection />
