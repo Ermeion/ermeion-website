@@ -147,6 +147,7 @@ function HeroSection() {
               '10+ χρόνια εμπειρίας',
               'Συμβεβλημένος με ΕΟΠΥΥ',
               'Αποδεκτές όλες οι ιδιωτικές ασφαλιστικές',
+              'Δίπλα σε στάσεις λεωφορείων και μετρό',
               'Κράτηση σε λιγότερο από 1 λεπτό',
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-2 text-white text-sm md:text-base font-bold">
@@ -746,14 +747,15 @@ function AboutOwnerSection() {
           <div className="w-full lg:w-3/5">
             <span
               className="text-xs md:text-sm font-bold uppercase tracking-widest block mb-3"
-              style={{ color: '#004aad' }}
+              style={{ color: '#3d3d3d' }}
             >
               Ο Φυσικοθεραπευτής μας
             </span>
             <h2
-              className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight text-gray-900"
+              className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight"
             >
-              Ιωάννης Μιχαηλίδης, PT, BSc, BSc, Cert. MDT, IPNFA Advanced
+              <span style={{ color: '#004aad', textShadow: '0 2px 8px rgba(0,74,173,0.25)' }}>Ιωάννης Μιχαηλίδης</span>
+              <span className="text-gray-900">, PT, BSc, BSc, Cert. MDT, IPNFA Advanced</span>
             </h2>
             <p className="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
               Ονομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ.
@@ -766,21 +768,21 @@ function AboutOwnerSection() {
             {/* Specialization List */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <h4 className="font-bold text-sm text-gray-900 mb-1">Cred.MDT</h4>
+                <h4 className="font-bold text-sm mb-1" style={{ color: '#004aad' }}>Cred.MDT</h4>
                 <p className="text-xs text-gray-800 leading-relaxed">
                   Αντιμετώπιση πόνου σπονδυλικής στήλης & περιφερειακών αρθρώσεων.
                 </p>
               </div>
 
               <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <h4 className="font-bold text-sm text-gray-900 mb-1">Μέθοδος IPNFA</h4>
+                <h4 className="font-bold text-sm mb-1" style={{ color: '#004aad' }}>Μέθοδος IPNFA</h4>
                 <p className="text-xs text-gray-800 leading-relaxed">
                   Αντιμετώπιση νευρολογικών παθήσεων & μετεγχειρητική αποκατάσταση.
                 </p>
               </div>
 
               <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <h4 className="font-bold text-sm text-gray-900 mb-1">Mulligan Concept</h4>
+                <h4 className="font-bold text-sm mb-1" style={{ color: '#004aad' }}>Mulligan Concept</h4>
                 <p className="text-xs text-gray-800 leading-relaxed">
                   Manual Therapy και ήπιοι κινητοποιητικοί χειρισμοί για άμεση ανακούφιση.
                 </p>
@@ -801,6 +803,9 @@ function AboutOwnerSection() {
                 alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
                 className="relative z-10 w-full max-w-[340px] md:max-w-[380px] aspect-[4/5] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02]"
               />
+              <p className="relative z-10 mt-4 text-center text-sm font-bold" style={{ color: '#3d3d3d' }}>
+                🏅 Μέλος του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών
+              </p>
             </div>
           </div>
         </div>
