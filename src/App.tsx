@@ -753,7 +753,7 @@ function AboutOwnerSection() {
             <h2
               className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight text-gray-900"
             >
-              Ιωάννης Μιχαηλίδης
+              Ιωάννης Μιχαηλίδης, PT, BSc, BSc, Cert. MDT, IPNFA Advanced
             </h2>
             <p className="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
               Ονομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ.
