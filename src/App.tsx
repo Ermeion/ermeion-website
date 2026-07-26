@@ -758,7 +758,7 @@ function AboutOwnerSection() {
               <span className="text-gray-900">, PT, BSc, BSc, Cert. MDT, IPNFA Advanced</span>
             </h2>
             <p className="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
-              ΟΟνομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ. Κατέχω πτυχίο Φυσικοθεραπείας από το ΔΙ.ΠΑ.Ε. και πτυχίο Τ.Ε.Φ.Α.Α. του ΑΠΘ, πιστοποιημένος θεραπευτής McKenzie MDT, IPNFA (advance), και Manual Therapy Mulligan concept.
+              Ονομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ. Κατέχω πτυχίο Φυσικοθεραπείας από το ΔΙ.ΠΑ.Ε. και πτυχίο Τ.Ε.Φ.Α.Α. του ΑΠΘ, πιστοποιημένος θεραπευτής McKenzie MDT, IPNFA (advance), και Manual Therapy Mulligan concept.
             </p>
             <p className="text-base md:text-lg text-gray-800 mb-8 leading-relaxed">
               Παραμένω ενημερωμένος για τις εξελίξεις στον τομέα μου και οι ασθενείς μου συχνά βλέπουν αποτελέσματα που η ‘συμβατική’ φυσικοθεραπεία δεν έχει καταφέρει να επιτύχει.
