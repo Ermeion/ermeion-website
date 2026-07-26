@@ -4,7 +4,7 @@ import {
   useTransform,
   motion,
 } from 'framer-motion';
-import { ChevronRight, ChevronLeft, Menu, X, CalendarCheck, Check, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, Stethoscope, ClipboardCheck, Activity, Shield } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Menu, X, CalendarCheck, Check, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, Stethoscope, ClipboardCheck, Activity, Shield, ClipboardPen, Dumbbell } from 'lucide-react';
 
 // Navbar Component
 function Navbar() {
@@ -534,14 +534,8 @@ function ProcessSection() {
               className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
               style={{ backgroundColor: '#004aad' }}
             >
-              <Stethoscope className="w-5 h-5" />
+              <ClipboardPen className="w-5 h-5" />
             </span>
-            <h4
-              className="font-bold text-xl"
-              style={{ color: '#004aad' }}
-            >
-              Αξιολόγηση
-            </h4>
           </div>
           <p
             className="text-base leading-relaxed mb-4"
@@ -583,12 +577,6 @@ function ProcessSection() {
             >
               <ClipboardCheck className="w-5 h-5" />
             </span>
-            <h4
-              className="font-bold text-xl"
-              style={{ color: '#004aad' }}
-            >
-              Κατάταξη
-            </h4>
           </div>
           <p
             className="text-base leading-relaxed mb-4"
@@ -628,14 +616,8 @@ function ProcessSection() {
               className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
               style={{ backgroundColor: '#004aad' }}
             >
-              <Activity className="w-5 h-5" />
+              <Dumbbell className="w-5 h-5" />
             </span>
-            <h4
-              className="font-bold text-xl"
-              style={{ color: '#004aad' }}
-            >
-              Θεραπεία
-            </h4>
           </div>
           <p
             className="text-base leading-relaxed mb-3"
@@ -697,12 +679,6 @@ function ProcessSection() {
             >
               <Shield className="w-5 h-5" />
             </span>
-            <h4
-              className="font-bold text-xl"
-              style={{ color: '#004aad' }}
-            >
-              Πρόληψη
-            </h4>
           </div>
           <p
             className="text-base leading-relaxed mb-4"
