@@ -130,19 +130,19 @@ function HeroSection() {
 
       {/* Desktop: Left-Aligned Content + Right Badge */}
       {/* Mobile: Vertical Stack Above Fold */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 pt-12 pb-6 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 pt-16 pb-10 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16">
         {/* Left: Text + CTA */}
         <div className="flex flex-col md:max-w-[850px]">
           {/* Title */}
           <h1
-            className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6 md:mb-7"
+            className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8 md:mb-7"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
             Επιστημονικά Τεκμηριωμένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
           </h1>
 
           {/* Value Proposition Checkmarks */}
-          <ul className="flex flex-col gap-2 md:gap-2.5 mb-7 md:mb-7">
+          <ul className="flex flex-col gap-3 md:gap-2.5 mb-10 md:mb-7">
             {[
               '10+ χρόνια εμπειρίας',
               'Συμβεβλημένος με ΕΟΠΥΥ',
@@ -173,7 +173,7 @@ function HeroSection() {
         </div>
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
-        <div className="flex justify-center md:justify-end mt-7 md:mt-0 md:shrink-0">
+        <div className="flex justify-center md:justify-end mt-10 md:mt-0 md:shrink-0">
           <div
             className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[190px] md:w-[240px]"
             style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}
@@ -718,9 +718,9 @@ function AboutOwnerSection() {
   return (
     <section id="about-owner" className="py-20 md:py-28 bg-gray-50 border-t border-gray-100 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6 md:px-16">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          {/* Left: Content */}
-          <div className="w-full lg:w-3/5">
+        <div className="flex flex-col lg:grid lg:grid-cols-5 lg:grid-rows-2 gap-12 lg:gap-16 lg:items-start">
+          {/* Left: Content (part 1) — subtitle, heading, intro paragraph */}
+          <div className="w-full lg:col-span-3 lg:col-start-1 lg:row-start-1 order-1">
             <span
               className="text-xs md:text-sm font-bold uppercase tracking-widest block mb-3"
               style={{ color: '#3d3d3d' }}
@@ -736,6 +736,29 @@ function AboutOwnerSection() {
             <p className="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
               Ονομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ. Κατέχω πτυχίο Φυσικοθεραπείας από το ΔΙ.ΠΑ.Ε. και πτυχίο Τ.Ε.Φ.Α.Α. του ΑΠΘ, πιστοποιημένος θεραπευτής McKenzie MDT, IPNFA (advance), και Manual Therapy Mulligan Concept.
             </p>
+          </div>
+
+          {/* Image + membership note — on mobile appears after intro paragraph, on desktop spans right column */}
+          <div className="w-full lg:col-span-2 lg:col-start-4 lg:row-start-1 lg:row-span-2 lg:self-center order-2 flex justify-center">
+            <div className="relative w-full max-w-[340px] md:max-w-[380px]">
+              {/* Decorative background shape */}
+              <div 
+                className="absolute -inset-4 rounded-2xl opacity-10 blur-xl"
+                style={{ backgroundColor: '#004aad' }}
+              />
+              <img
+                src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/ABOUT/giannis.webp"
+                alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
+                className="relative z-10 w-full aspect-[4/5] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02] mx-auto"
+              />
+              <p className="relative z-10 mt-4 text-center text-sm font-bold" style={{ color: '#3d3d3d' }}>
+                🏅 Μέλος του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών
+              </p>
+            </div>
+          </div>
+
+          {/* Left: Content (part 2) — remaining paragraph + specializations */}
+          <div className="w-full lg:col-span-3 lg:col-start-1 lg:row-start-2 order-3">
             <p className="text-base md:text-lg text-gray-800 mb-8 leading-relaxed">
               Παραμένω ενημερωμένος για τις εξελίξεις στον τομέα μου και οι ασθενείς μου συχνά βλέπουν αποτελέσματα που η ‘συμβατική’ φυσικοθεραπεία δεν έχει καταφέρει να επιτύχει.
             </p>
@@ -762,25 +785,6 @@ function AboutOwnerSection() {
                   Manual Therapy και ήπιοι κινητοποιητικοί χειρισμοί για άμεση ανακούφιση.
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Right: Image */}
-          <div className="w-full lg:w-2/5 flex justify-center">
-            <div className="relative">
-              {/* Decorative background shape */}
-              <div 
-                className="absolute -inset-4 rounded-2xl opacity-10 blur-xl"
-                style={{ backgroundColor: '#004aad' }}
-              />
-              <img
-                src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/ABOUT/giannis.webp"
-                alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
-                className="relative z-10 w-full max-w-[340px] md:max-w-[380px] aspect-[4/5] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02]"
-              />
-              <p className="relative z-10 mt-4 text-center text-sm font-bold" style={{ color: '#3d3d3d' }}>
-                🏅 Μέλος του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών
-              </p>
             </div>
           </div>
         </div>
