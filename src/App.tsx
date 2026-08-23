@@ -6,6 +6,7 @@ import {
   AnimatePresence,
 } from 'framer-motion';
 import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell } from 'lucide-react';
+import McKenziePage from './McKenziePage';
 
 // Navbar Component
 function Navbar() {
@@ -1776,7 +1777,7 @@ function App() {
           <FinalCTASection />
         </>
       ) : currentPage === 'mckenzie' ? (
-        <ServicePage title="Μέθοδος McKenzie" />
+        <McKenziePage onNavigate={(hash) => { window.location.hash = hash; }} />
       ) : currentPage === 'tecar' ? (
         <ServicePage title="Tecar Therapy" />
       ) : currentPage === 'spine-pain' ? (
