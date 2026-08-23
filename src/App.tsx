@@ -3,21 +3,33 @@ import {
   useScroll,
   useTransform,
   motion,
+  AnimatePresence,
 } from 'framer-motion';
-import { ChevronRight, ChevronLeft, Menu, X, CalendarCheck, Check, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Check, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays } from 'lucide-react';
 
 // Navbar Component
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const closeMenu = () => setMobileOpen(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMobileOpen(false);
+    setMobileAccordionOpen(false);
+  };
 
   const navLinks = [
-    { href: '#services', label: 'Υπηρεσίες' },
-    { href: '#physiotherapy', label: 'Φυσικοθεραπεία' },
     { href: '#process', label: 'Διαδικασία' },
     { href: '#about-owner', label: 'Γνωρίστε με' },
     { href: '#testimonials', label: 'Αξιολογήσεις' },
     { href: '#faq', label: 'FAQ' },
+  ];
+
+  const servicesList = [
+    { label: 'Μέθοδος McKenzie', href: '#mckenzie' },
+    { label: 'Tecar Therapy', href: '#tecar' },
+    { label: 'Θεραπεία & Πρόληψη Σπονδυλικού Πόνου', href: '#spine-pain' },
+    { label: 'Θεραπευτική Άσκηση', href: '#exercise' }
   ];
 
   return (
@@ -30,6 +42,43 @@ function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
+          {/* Services Hover Link */}
+          <div 
+            className="relative py-4"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <button
+              className="flex items-center gap-1 text-base font-semibold transition-all duration-300 hover:opacity-80 cursor-pointer"
+              style={{ color: '#004aad' }}
+            >
+              Υπηρεσίες
+              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <AnimatePresence>
+              {dropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute left-0 mt-2 w-64 bg-white rounded-2xl border border-gray-100 shadow-xl py-3 z-50 backdrop-blur-md"
+                >
+                  {servicesList.map((service) => (
+                    <a
+                      key={service.href}
+                      href={service.href}
+                      onClick={() => setDropdownOpen(false)}
+                      className="block px-5 py-2.5 text-sm font-semibold text-gray-700 hover:text-[#004aad] hover:bg-gray-50 transition-all duration-200"
+                    >
+                      {service.label}
+                    </a>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -72,10 +121,34 @@ function Navbar() {
       {/* Mobile Dropdown Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          mobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="flex flex-col px-4 pb-6 gap-1 bg-white">
+          {/* Services Accordion item */}
+          <div className="border-b border-gray-100 py-3">
+            <button
+              onClick={() => setMobileAccordionOpen(!mobileAccordionOpen)}
+              className="flex items-center justify-between w-full text-base font-semibold text-left transition-all duration-200"
+              style={{ color: '#004aad' }}
+            >
+              <span>Υπηρεσίες</span>
+              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileAccordionOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 flex flex-col gap-1 pl-4 ${mobileAccordionOpen ? 'max-h-60 mt-2 opacity-100' : 'max-h-0 opacity-0'}`}>
+              {servicesList.map((service) => (
+                <a
+                  key={service.href}
+                  href={service.href}
+                  className="py-2.5 text-sm font-semibold text-gray-600 hover:text-[#004aad] border-b border-gray-50 last:border-0"
+                  onClick={closeMenu}
+                >
+                  {service.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -1378,8 +1451,7 @@ function FinalCTASection() {
 function Footer() {
   const navLinks = [
     { label: 'Αρχική', href: '#' },
-    { label: 'Φυσικοθεραπεία', href: '#physiotherapy' },
-    { label: 'Υπηρεσίες', href: '#services' },
+    { label: 'Υπηρεσίες', href: '#mckenzie' },
     { label: 'Γνωρίστε με', href: '#about-owner' },
     { label: 'Μαρτυρίες', href: '#testimonials' },
     { label: 'Συχνές Ερωτήσεις', href: '#faq' },
@@ -1445,8 +1517,20 @@ function Footer() {
         <div>
           <p className="text-xs uppercase tracking-widest font-semibold mb-5" style={{ color: '#5b8cff' }}>Υπηρεσίες</p>
           <ul className="flex flex-col gap-3 text-sm" style={{ color: '#ffffff' }}>
-            {['Αξιολόγηση & Διάγνωση', 'Χειροθεραπεία', 'Μέθοδος McKenzie MDT', 'PNF – Νευρομυϊκή Διευκόλυνση', 'Mulligan Concept', 'Αθλητική Αποκατάσταση', 'Μετεγχειρητική Αποκατάσταση'].map((s) => (
-              <li key={s}>{s}</li>
+            {[
+              { label: 'Μέθοδος McKenzie', href: '#mckenzie' },
+              { label: 'Tecar Therapy', href: '#tecar' },
+              { label: 'Θεραπεία & Πρόληψη Σπονδυλικού Πόνου', href: '#spine-pain' },
+              { label: 'Θεραπευτική Άσκηση', href: '#exercise' }
+            ].map((s) => (
+              <li key={s.label}>
+                <a
+                  href={s.href}
+                  className="transition-colors duration-200 hover:text-[#5b8cff]"
+                >
+                  {s.label}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
@@ -1486,164 +1570,16 @@ function Footer() {
   );
 }
 
-// Physiotherapy Page Component
-function PhysiotherapyPage() {
-  const benefits = [
-    {
-      title: 'Επίμονος ή επαναλαμβανόμενος πόνος',
-      desc: 'Στη μέση, τον αυχένα, τους ώμους, τους γοφούς, τα γόνατα ή σε άλλα σημεία του σώματος.',
-    },
-    {
-      title: 'Αθλητικοί τραυματισμοί',
-      desc: 'Διαστρέμματα, θλάσεις μυών, προβλήματα τενόντων και κακώσεις συνδέσμων από κάθε είδους δραστηριότητα.',
-    },
-    {
-      title: 'Μετεγχειρητική αποκατάσταση',
-      desc: 'Στοχευμένο πρόγραμμα για την πλήρη αποκατάσταση της δύναμης, της σταθερότητας και του εύρους κίνησης μετά από χειρουργείο.',
-    },
-    {
-      title: 'Νευρολογικές παθήσεις',
-      desc: 'Ανάρρωση από εγκεφαλικό επεισόδιο, διαχείριση της νόσου του Πάρκινσον, της σκλήρυνσης κατά πλάκας κ.ά.',
-    },
-    {
-      title: 'Προβλήματα στάσης σώματος',
-      desc: 'Πόνοι που σχετίζονται με την καθιστική εργασία στο γραφείο, πονοκέφαλοι τάσης και σύνδρομα επαναλαμβανόμενης καταπόνησης.',
-    },
-    {
-      title: 'Προγεννητικά & μεταγεννητικά προβλήματα',
-      desc: 'Αντιμετώπιση πόνου στην πυελική ζώνη και δυσλειτουργίας του πυελικού εδάφους κατά την εγκυμοσύνη και μετά τον τοκετό.',
-    },
-    {
-      title: 'Χρόνιες παθήσεις',
-      desc: 'Ανακούφιση και βελτίωση της κινητικότητας σε οστεοαρθρίτιδα, ρευματοειδή αρθρίτιδα, ινομυαλγία και χρόνιο πόνο.',
-    },
-  ];
-
+// Service Page Component
+function ServicePage({ title }: { title: string }) {
   return (
-    <div className="bg-gray-50 min-h-screen py-10 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        
-        {/* Breadcrumbs */}
-        <div className="text-sm text-gray-500 mb-6 flex items-center gap-2">
-          <a href="#" className="hover:underline hover:text-[#004aad]">Αρχική</a>
-          <ChevronRight className="w-3 h-3" />
-          <span className="font-semibold text-gray-800">Φυσικοθεραπεία</span>
-        </div>
-
-        {/* Hero Section / Main Header */}
-        <div className="bg-gradient-to-r from-[#004aad] to-[#0066cc] rounded-3xl p-8 md:p-12 text-white mb-12 shadow-xl">
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
-            Φυσικοθεραπεία: Η πλήρης λύση για θεραπεία, ανάρρωση και ανακούφιση από τον πόνο
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed">
-            Επιστημονικά τεκμηριωμένες μέθοδοι σχεδιασμένες να σας επαναφέρουν στις καθημερινές σας δραστηριότητες με ασφάλεια.
-          </p>
-        </div>
-
-        {/* What is Physiotherapy Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 bg-white rounded-3xl p-8 md:p-12 shadow-md">
-          {/* Left: Text & Bullets */}
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Τι είναι η φυσικοθεραπεία;
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Η φυσικοθεραπεία είναι ένα επάγγελμα υγείας με επίκεντρο την επιστήμη που βοηθά τους ανθρώπους να αποκαταστήσουν την κίνηση, να μειώσουν τον πόνο και να βελτιώσουν την ποιότητα ζωής τους όταν επηρεάζονται από τραυματισμό, ασθένεια ή αναπηρία.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Σε αντίθεση με τις θεραπείες που απλώς καλύπτουν τον πόνο, η φυσικοθεραπεία είναι από τη φύση της αποκαταστατική. Ένας εξειδικευμένος φυσιοθεραπευτής θα αξιολογήσει τον τρόπο που κινείστε, θα εντοπίσει γιατί κάτι πήγε στραβά και θα δημιουργήσει ένα εξατομικευμένο πρόγραμμα σχεδιασμένο ειδικά για εσάς.
-            </p>
-
-            <ul className="space-y-4">
-              <li className="flex gap-3">
-                <span className="shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[#004aad] mt-1 font-bold">
-                  ✓
-                </span>
-                <div>
-                  <strong>Ολιστική Προσέγγιση:</strong> Αντιμετώπιση τόσο των συμπτωμάτων όσο και των βασικών αιτιών του προβλήματος.
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <span className="shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[#004aad] mt-1 font-bold">
-                  ✓
-                </span>
-                <div>
-                  <strong>Συνδυαστική Θεραπεία:</strong> Χρήση δια χειρός θεραπείας (manual therapy), στοχευμένης άσκησης και συμβουλών τρόπου ζωής.
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <span className="shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[#004aad] mt-1 font-bold">
-                  ✓
-                </span>
-                <div>
-                  <strong>Επιστημονική Τεκμηρίωση:</strong> Κάθε πλάνο βασίζεται σε κλινικά δεδομένα για ασφαλή και αποτελεσματική πορεία προς τα εμπρός.
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          {/* Right: Image */}
-          <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
-              alt="Φυσικοθεραπεία στο Ερμείον"
-              className="w-full rounded-2xl object-cover shadow-lg aspect-[4/3]"
-            />
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#004aad]/10 rounded-2xl -z-10" />
-          </div>
-        </div>
-
-        {/* Who Benefits Section */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-md mb-16">
-          <div className="max-w-3xl mb-10">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-              Ποιος μπορεί να ωφεληθεί από τη φυσικοθεραπεία;
-            </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              Η φυσικοθεραπεία εξυπηρετεί άτομα όλων των ηλικιών — από παιδιά με αναπτυξιακές διαταραχές έως ηλικιωμένους ενήλικες που διαχειρίζονται εκφυλιστικές αλλαγές. Δεν χρειάζεται να είστε σοβαρός αθλητής ή να έχετε υποστεί έναν δραματικό τραυματισμό για να ωφεληθείτε.
-            </p>
-          </div>
-
-          {/* Side-by-side Benefit items */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            {benefits.map((item, index) => (
-              <div key={index} className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200">
-                <span className="shrink-0 w-6 h-6 rounded-full bg-[#004aad]/10 flex items-center justify-center text-[#004aad] mt-1">
-                  <Check className="w-4 h-4 font-extrabold" />
-                </span>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Concluding credibility paragraph */}
-          <div className="border-t border-gray-100 pt-8 mt-6">
-            <p className="text-gray-600 text-sm leading-relaxed italic bg-blue-50/50 p-6 rounded-2xl border-l-4 border-[#004aad]">
-              «Τα μυοσκελετικά προβλήματα αποτελούν την κύρια αιτία πόνου και αναπηρίας, επηρεάζοντας περισσότερους από έναν στους τέσσερις ανθρώπους. Έρευνες δείχνουν ότι οι επενδύσεις σε εξειδικευμένες υπηρεσίες φυσικοθεραπείας για μυοσκελετικές παθήσεις βελτιώνουν θεαματικά τα αποτελέσματα των ασθενών και μειώνουν το συνολικό κόστος υγειονομικής περίθαλψης.»
-            </p>
-          </div>
-        </div>
-
-        {/* CTA Card */}
-        <div className="bg-[#004aad] text-white rounded-3xl p-8 md:p-12 text-center shadow-xl flex flex-col items-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Θέλετε να μάθετε πώς η φυσικοθεραπεία μπορεί να βοηθήσει εσάς;
-          </h2>
-          <p className="text-white/80 max-w-2xl mb-8 leading-relaxed">
-            Κλείστε ένα ραντεβού αξιολόγησης σήμερα και ξεκινήστε το ταξίδι σας προς την πλήρη αποκατάσταση και την απαλλαγή από τον πόνο.
-          </p>
-          <a
-            href="#contact"
-            className="flex items-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-[#004aad] bg-white transition-all duration-300 hover:bg-gray-100 shadow-md active:scale-95 cursor-pointer"
-          >
-            <CalendarCheck className="w-5 h-5" />
-            Κλείστε Ραντεβού
-          </a>
-        </div>
-
+    <div className="bg-gray-50 min-h-screen py-24 px-6 flex flex-col items-center justify-center text-center">
+      <div className="bg-white p-8 md:p-12 rounded-3xl shadow-md max-w-lg w-full">
+        <h1 className="text-3xl font-extrabold text-gray-900 mb-4">{title}</h1>
+        <p className="text-gray-500 mb-8">Η σελίδα βρίσκεται υπό κατασκευή.</p>
+        <a href="#" className="px-6 py-3 bg-[#004aad] text-white font-semibold rounded-xl shadow-md hover:bg-opacity-90 transition-all duration-300">
+          Επιστροφή στην Αρχική
+        </a>
       </div>
     </div>
   );
@@ -1651,12 +1587,22 @@ function PhysiotherapyPage() {
 
 // Main App Component
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'physiotherapy'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'mckenzie' | 'tecar' | 'spine-pain' | 'exercise'>('home');
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === '#physiotherapy') {
-        setCurrentPage('physiotherapy');
+      const hash = window.location.hash;
+      if (hash === '#mckenzie') {
+        setCurrentPage('mckenzie');
+        window.scrollTo({ top: 0, behavior: 'instant' as any });
+      } else if (hash === '#tecar') {
+        setCurrentPage('tecar');
+        window.scrollTo({ top: 0, behavior: 'instant' as any });
+      } else if (hash === '#spine-pain') {
+        setCurrentPage('spine-pain');
+        window.scrollTo({ top: 0, behavior: 'instant' as any });
+      } else if (hash === '#exercise') {
+        setCurrentPage('exercise');
         window.scrollTo({ top: 0, behavior: 'instant' as any });
       } else {
         setCurrentPage('home');
@@ -1684,8 +1630,14 @@ function App() {
           <FAQSection />
           <FinalCTASection />
         </>
+      ) : currentPage === 'mckenzie' ? (
+        <ServicePage title="Μέθοδος McKenzie" />
+      ) : currentPage === 'tecar' ? (
+        <ServicePage title="Tecar Therapy" />
+      ) : currentPage === 'spine-pain' ? (
+        <ServicePage title="Θεραπεία & Πρόληψη Σπονδυλικού Πόνου" />
       ) : (
-        <PhysiotherapyPage />
+        <ServicePage title="Θεραπευτική Άσκηση" />
       )}
       <Footer />
     </div>
