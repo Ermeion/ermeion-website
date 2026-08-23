@@ -5,7 +5,7 @@ import {
   motion,
   AnimatePresence,
 } from 'framer-motion';
-import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Check, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell } from 'lucide-react';
 
 // Navbar Component
 function Navbar() {
@@ -92,12 +92,15 @@ function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <button
+        <a
+          href="https://cal.eu/ermeion/physiotherapy"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
           style={{ backgroundColor: '#004aad' }}
         >
           Κλείστε Ραντεβού
-        </button>
+        </a>
 
         {/* Mobile: CTA + Hamburger Row */}
         <div className="md:hidden flex items-center gap-2">
@@ -160,13 +163,16 @@ function Navbar() {
               {link.label}
             </a>
           ))}
-          <button
+          <a
+            href="https://cal.eu/ermeion/physiotherapy"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#004aad' }}
             onClick={closeMenu}
           >
             Κλείστε Ραντεβού
-          </button>
+          </a>
         </div>
       </div>
     </nav>
@@ -197,23 +203,24 @@ function HeroSection() {
 
       {/* Desktop: Left-Aligned Content + Right Badge */}
       {/* Mobile: Vertical Stack Above Fold */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 pt-12 pb-6 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 pt-16 pb-10 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16">
         {/* Left: Text + CTA */}
         <div className="flex flex-col md:max-w-[850px]">
           {/* Title */}
           <h1
-            className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6 md:mb-7"
+            className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8 md:mb-7"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
             Επιστημονικά Τεκμηριωμένη Φυσικοθεραπεία για Πόνους, Τραυματισμούς και Αποκατάσταση.
           </h1>
 
           {/* Value Proposition Checkmarks */}
-          <ul className="flex flex-col gap-2 md:gap-2.5 mb-7 md:mb-7">
+          <ul className="flex flex-col gap-3 md:gap-2.5 mb-10 md:mb-7">
             {[
               '10+ χρόνια εμπειρίας',
               'Συμβεβλημένος με ΕΟΠΥΥ',
               'Αποδεκτές όλες οι ιδιωτικές ασφαλιστικές',
+              'Δίπλα σε στάσεις λεωφορείων και μετρό',
               'Κράτηση σε λιγότερο από 1 λεπτό',
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-2 text-white text-sm md:text-base font-bold">
@@ -226,17 +233,20 @@ function HeroSection() {
           </ul>
 
           {/* Main CTA */}
-          <button
+          <a
+            href="https://cal.eu/ermeion/physiotherapy"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
             style={{ backgroundColor: '#004aad' }}
           >
             <CalendarCheck className="w-5 h-5" />
             Κλείστε Ραντεβού
-          </button>
+          </a>
         </div>
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
-        <div className="flex justify-center md:justify-end mt-7 md:mt-0 md:shrink-0">
+        <div className="flex justify-center md:justify-end mt-10 md:mt-0 md:shrink-0">
           <div
             className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[190px] md:w-[240px]"
             style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}
@@ -289,7 +299,7 @@ function InsuranceCarouselSection() {
       {/* Heading */}
       <p
         className="text-center text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-10 md:mb-14 px-4"
-        style={{ color: '#71788f' }}
+        style={{ color: '#1f2937' }}
       >
         ΔΕΚΤΕΣ ΟΛΕΣ ΟΙ ΑΣΦΑΛΙΣΤΙΚΕΣ
       </p>
@@ -325,12 +335,12 @@ function InsuranceCarouselSection() {
 // Why Ermeion Section Component
 function WhyErmeionSection() {
   const checklistItems = [
-    'Πόνο στη μέση, ισχιαλγία και νευροπαθητικό πόνο',
+    'Χρόνιο πόνο στη μέση, οσφυαλγία και δισκοκήλες',
+    'Τραυματισμό στο γόνατο, στο ισχίο ή στον αστράγαλο',
+    'Αθλητικούς τραυματισμούς (sports rehab) και δυσκαμψία',
     'Πόνο στον αυχένα, στους ώμους και προβλήματα στάσης σώματος',
-    'Τραυματισμούς στο γόνατο, το ισχίο, τον αστράγαλο και τραυματισμούς από τρέξιμο',
-    'Πόνο στον καρπό, τον αγκώνα και το χέρι, καθώς και κακώσεις από επαναλαμβανόμενες κινήσεις',
-    'Αθλητικούς τραυματισμούς, ενοχλήσεις από την άσκηση στο γυμναστήριο και μυϊκή δυσκαμψία',
-    'Μετεγχειρητική φυσικοθεραπεία και μακροχρόνια αποκατάσταση',
+    'Τενοντοπάθειες, τραυματισμό στροφικού πετάλου και ρήξη υπερακανθίου',
+    'Πόνο στον καρπό, στον αγκώνα, στο χέρι και κακώσεις από επαναλαμβανόμενες κινήσεις',
   ];
 
   return (
@@ -355,10 +365,10 @@ function WhyErmeionSection() {
 
           {/* Body paragraphs */}
           <div className="flex flex-col gap-4 mb-8">
-            <p className="text-sm sm:text-sm md:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+            <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
               Αυτό εξαρτάται από τη σωστή αξιολόγηση, θεραπεία και πλάνο.
             </p>
-            <p className="text-sm sm:text-sm md:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+            <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
               Στο ΕΡΜΕΙΟΝ δεν επικεντρωνόμαστε απλώς στο σημείο που πονάει και ελπίζουμε για το καλύτερο. Θα αξιολογήσουμε τι προκαλεί τα συμπτώματά σας, θα σας εξηγήσουμε με σαφήνεια, θα εφαρμόσουμε χειροθεραπεία όπου κρίνεται σκόπιμο και θα δημιουργήσουμε ένα πρόγραμμα αποκατάστασης προσαρμοσμένο στο σώμα, τους στόχους και τον τρόπο ζωής σας. Επίσης έχουμε διεπιστημονική ομάδα & διατροφολόγο, ώστε να καλύψουμε ολιστικά όλες τις παθήσεις.
             </p>
           </div>
@@ -395,20 +405,23 @@ function WhyErmeionSection() {
               <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
                 Πιστεύετε ότι ίσως δεν χρειάζεστε φυσικοθεραπεία;
               </h4>
-              <p className="text-sm sm:text-sm md:text-base leading-relaxed" style={{ color: '#3d3d3d' }}>
+              <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
                 Αυτός είναι ακριβώς ο λόγος που γίνεται το πρώτο σας ραντεβού. Αν η φυσικοθεραπεία είναι η κατάλληλη επιλογή για εσάς, θα σας εξηγήσουμε το πλάνο. Αν δεν χρειάζεστε συνεχιζόμενη θεραπεία, θα σας το πούμε ξεκάθαρα.
               </p>
             </div>
           </div>
 
           {/* CTA Button */}
-          <button
+          <a
+            href="https://cal.eu/ermeion/physiotherapy"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full lg:w-fit px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#004aad' }}
           >
             <CalendarCheck className="w-5 h-5 shrink-0" />
             Κλείστε Ραντεβού
-          </button>
+          </a>
         </div>
 
         {/* Right Column — desktop only */}
@@ -423,12 +436,61 @@ function WhyErmeionSection() {
             <h4 className="text-lg font-bold text-gray-900 mb-3">
               Πιστεύετε ότι ίσως δεν χρειάζεστε φυσικοθεραπεία;
             </h4>
-            <p className="text-sm sm:text-sm leading-relaxed" style={{ color: '#3d3d3d' }}>
+            <p className="text-sm sm:text-sm leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
               Αυτός είναι ακριβώς ο λόγος που γίνεται το πρώτο σας ραντεβού. Αν η φυσικοθεραπεία είναι η κατάλληλη επιλογή για εσάς, θα σας εξηγήσουμε το πλάνο θεραπείας. Αν δεν χρειάζεστε συνεχιζόμενη θεραπεία, θα σας το πούμε ξεκάθαρα.
             </p>
           </div>
         </div>
 
+      </div>
+    </section>
+  );
+}
+
+// Certificates Carousel Section
+function CertificatesCarouselSection() {
+  const certificates = [
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/APTH-logo.webp', alt: 'APTH' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/dipae-logo.webp', alt: 'DIPAE' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/ipnfa-mainlogo.webp', alt: 'IPNFA' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/mckenzie-2.webp', alt: 'McKenzie MDT' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/mulligan-concept-logo.webp', alt: 'Mulligan Concept' },
+    { src: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/certificates/psf-logo2.webp', alt: 'PSF' },
+  ];
+
+  const doubled = [...certificates, ...certificates];
+
+  return (
+    <section className="bg-white border-t border-gray-100 py-14 md:py-20">
+      <p
+        className="text-center text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-10 md:mb-14 px-4"
+        style={{ color: '#1f2937' }}
+      >
+        ΠΙΣΤΟΠΟΙΗΣΕΙΣ & ΕΞΕΙΔΙΚΕΥΣΕΙΣ
+      </p>
+
+      <div
+        className="relative overflow-hidden"
+        style={{
+          maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+        }}
+      >
+        <div className="insurance-track">
+          {doubled.map((cert, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-center shrink-0 px-8 md:px-12"
+            >
+              <img
+                src={cert.src}
+                alt={cert.alt}
+                className="h-28 sm:h-32 w-40 sm:w-48 object-contain"
+                draggable={false}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -475,7 +537,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
         </h2>
         <p
           className="text-sm md:text-base max-w-xl"
-          style={{ color: '#71788f' }}
+          style={{ color: '#1f2937' }}
         >
           Κάθε θεραπευτικό πλάνο ενσωματώνει πέντε βασικούς πυλώνες για τη διασφάλιση αποτελεσμάτων με διάρκεια και τη βέλτιστη αποκατάσταση της κίνησης.
         </p>
@@ -540,49 +602,26 @@ function ProcessSection() {
       title: 'Αξιολόγηση',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
-          <h4
-            className="font-bold text-xl mb-3"
-            style={{ color: '#004aad' }}
-          >
-            Ολοκληρωμένη Αξιολόγηση
-          </h4>
-          <p
-            className="text-base leading-relaxed mb-4"
-            style={{ color: '#71788f' }}
-          >
-            Στην πρώτη επίσκεψη θα πάρω λεπτομερές ιστορικό για τα συμπτώματα σας και το πώς αυτά συμπεριφέρονται.Μετά θα προχωρήσουμε στην κλινική εξέταση, όπου θα εκτελείτε συγκεκριμένες επαναλαμβανόμενες κινήσεις ή/και θα μένετε σε συγκεκριμένες θέσεις. Οι αλλαγές των συμπτωμάτων και του εύρους κίνησης με τις επαναλαμβανόμενες κινήσεις, θα μου παρέχουν τις πληροφορίες για να κατατάξω το πρόβλημα σας.
-          </p>
-          <div
-            className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
-            style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-          >
-            Δυνατότητα κράτησης online 24/7
+          <div className="flex items-center gap-3 mb-3">
+            <span
+              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              style={{ backgroundColor: '#004aad' }}
+            >
+              <ClipboardEdit className="w-5 h-5" />
+            </span>
           </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Κατάταξη',
-      content: (
-        <div className="bg-white rounded-2xl p-6 shadow-md">
-          <h4
-            className="font-bold text-xl mb-3"
-            style={{ color: '#004aad' }}
-          >
-            Εξατομικευμένο Πλάνο Θεραπείας
-          </h4>
           <p
             className="text-base leading-relaxed mb-4"
-            style={{ color: '#71788f' }}
+            style={{ color: '#1f2937' }}
           >
-            Κάθε σύνδρομο αντιμετωπίζεται, σύμφωνα με τη μοναδική φύση του, με ειδικές μηχανικές διαδικασίες, συμπεριλαμβανομένων των επαναλαμβανόμενων κινήσεων και των παρατεταμένων θέσεων. Η Μηχανική Διάγνωση και Θεραπεία (ΜΔΘ) είναι ένα περιεκτικό σύστημα κατάταξης, το οποίο περιλαμβάνει και μία μικρότερη ομάδα ασθενών που δεν μπορούν να ταξινομηθούν σε ένα από τα τρία σύνδρομα, αλλά μπαίνουν στην κατηγορία «Άλλο», μία υπο-ομάδα που εμπεριέχει σοβαρές παθήσεις, μη μηχανικά προβλήματα, πραγματικό χρόνιο πόνο, κλπ.
+            Η πρώτη επίσκεψη περιλαμβάνει τη λήψη λεπτομερούς ιστορικού. Μετά θα προχωρήσουμε στη κλινική εξέταση, όπου θα εκτελείτε συγκεκριμένες ασκήσεις ή/και θα μένετε σε συγκεκριμένες θέσεις. Οι αλλαγές των συμπτωμάτων και του εύρους κίνησης, θα μου παρέχουν τις πληροφορίες για την κατάταξη του προβλήματος σας.
           </p>
           <div className="flex flex-wrap gap-2">
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
-              Λεπτομερής ιστορικό
+              Λήψη ιστορικού
             </span>
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"
@@ -594,7 +633,48 @@ function ProcessSection() {
               className="px-3 py-1 rounded-full text-xs font-medium"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
-              Εκτίμηση βημάτων
+              Δοκιμαστικές κινήσεις
+            </span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Κατάταξη',
+      content: (
+        <div className="bg-white rounded-2xl p-6 shadow-md">
+          <div className="flex items-center gap-3 mb-3">
+            <span
+              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              style={{ backgroundColor: '#004aad' }}
+            >
+              <ClipboardCheck className="w-5 h-5" />
+            </span>
+          </div>
+          <p
+            className="text-base leading-relaxed mb-4"
+            style={{ color: '#1f2937' }}
+          >
+            Κάθε σύνδρομο αντιμετωπίζεται, σύμφωνα με τη μοναδική φύση του, με ειδικές μηχανικές διαδικασίες, συμπεριλαμβανομένων των επαναλαμβανόμενων κινήσεων και των παρατεταμένων θέσεων.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Μηχανική διάγνωση
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Ταξινόμηση συνδρόμου
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Εξατομικευμένη προσέγγιση
             </span>
           </div>
         </div>
@@ -604,23 +684,59 @@ function ProcessSection() {
       title: 'Θεραπεία',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
-          <h4
-            className="font-bold text-xl mb-3"
-            style={{ color: '#004aad' }}
+          <div className="flex items-center gap-3 mb-3">
+            <span
+              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              style={{ backgroundColor: '#004aad' }}
+            >
+              <Dumbbell className="w-5 h-5" />
+            </span>
+          </div>
+          <p
+            className="text-base leading-relaxed mb-3"
+            style={{ color: '#1f2937' }}
           >
-            θεραπεία & Άσκηση
-          </h4>
+            Χρησιμοποιώντας τα στοιχεία της αξιολόγησης:
+          </p>
+          <ul className="flex flex-col gap-2 mb-3">
+            <li className="flex items-start gap-2 text-base leading-relaxed" style={{ color: '#1f2937' }}>
+              <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#004aad' }} />
+              <span>Θα σας δώσω ειδικές ασκήσεις και συμβουλές σχετικά με τη στάση σώματος και τους επιβαρυντικούς παράγοντες.</span>
+            </li>
+            <li className="flex items-start gap-2 text-base leading-relaxed" style={{ color: '#1f2937' }}>
+              <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#004aad' }} />
+              <span>Αν χρειαστεί, θα εφαρμόσω τεχνικές Manual Therapy - Χειροθεραπεία</span>
+            </li>
+            <li className="flex items-start gap-2 text-base leading-relaxed" style={{ color: '#1f2937' }}>
+              <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#004aad' }} />
+              <span>Με τη σωστή αυτοθεραπεία και τη δική σας ενεργή συμμετοχή, εξοικονομούμε χρόνο και χρήμα.</span>
+            </li>
+          </ul>
           <p
             className="text-base leading-relaxed mb-4"
-            style={{ color: '#71788f' }}
+            style={{ color: '#1f2937' }}
           >
-            Χρησιμοποιώντας τις πληροφορίες από την αξιολόγηση, θα σας δώσω ειδικές ασκήσεις και συμβουλές, σχετικά με τις στάσεις που πρέπει να υιοθετήσετε και τις στάσεις που πρέπει να αποφύγετε προσωρινά. Εάν το πρόβλημα παρουσιάζει επιπλέον δυσκολίες τότε ίσως χρειαστεί να εφαρμόσω τεχνικές δια των χειρών (Manual Therapy), έως ότου μπορέσετε και πάλι να είστε ικανός/ικανή για αυτοθεραπεία.  Στόχος είναι να υπάρξει θετικό αποτέλεσμα με όσο το δυνατόν λιγότερο αριθμό συνεδριών. Μία θεραπεία που μπορείτε να την εκτελείτε πέντε ή έξι φορές την ημέρα, είναι πιο αποτελεσματική σε μικρότερο χρονικό διάστημα, από εκείνη που παρέχεται από εμένα μία ή δύο φορές την εβδομάδα. Δίνω έμφαση στην ενεργή συμμετοχή σας, ώστε μέσα από αυτήν να μειώσουμε τον αριθμό των συνεδριών, εξοικονομώντας χρόνο και χρήμα. Τελικά, οι περισσότεροι ασθενείς μπορούν να διαχειριστούν επιτυχώς το πρόβλημά τους με την κατάλληλη καθοδήγηση
+            Στόχος είναι το καλύτερο αποτέλεσμα με τις λιγότερες δυνατές συνεδρίες, μέσω της κατάλληλης καθοδήγησης.
           </p>
-          <div
-            className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
-            style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-          >
-            Εξατομικευμένο πρόγραμμα για εσάς
+          <div className="flex flex-wrap gap-2">
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Ειδικές ασκήσεις
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Manual Therapy
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Καθοδήγηση
+            </span>
           </div>
         </div>
       ),
@@ -629,23 +745,39 @@ function ProcessSection() {
       title: 'Πρόληψη',
       content: (
         <div className="bg-white rounded-2xl p-6 shadow-md">
-          <h4
-            className="font-bold text-xl mb-3"
-            style={{ color: '#004aad' }}
-          >
-            Μετρήσιμες βελτιώσεις
-          </h4>
+          <div className="flex items-center gap-3 mb-3">
+            <span
+              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              style={{ backgroundColor: '#004aad' }}
+            >
+              <Shield className="w-5 h-5" />
+            </span>
+          </div>
           <p
             className="text-base leading-relaxed mb-4"
-            style={{ color: '#71788f' }}
+            style={{ color: '#1f2937' }}
           >
             Μαθαίνοντας πώς να αντιμετωπίζετε μόνος/μόνη σας το τρέχον πρόβλημα, μπορείτε να μάθετε και πώς να ελαχιστοποιήσετε τον κίνδυνο υποτροπής. Επίσης σε περίπτωση υποτροπής μπορείτε πλέον να ασχοληθείτε εγκαίρως με τα συμπτώματα και να έχετε τον έλεγχο της θεραπείας, ακίνδυνα και αποτελεσματικά. Τα υποτροπιάζοντα προβλήματα είναι πιθανότερο να προληφθούν μέσω της αυτοθεραπείας παρά μέσω μιας παθητικής φροντίδας.
           </p>
-          <div
-            className="inline-block px-4 py-2 rounded-lg text-sm font-medium"
-            style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-          >
-            Σαφής ανάλυση προόδου
+          <div className="flex flex-wrap gap-2">
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Αυτοθεραπεία
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Πρόληψη υποτροπής
+            </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-medium"
+              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
+            >
+              Έλεγχος συμπτωμάτων
+            </span>
           </div>
         </div>
       ),
@@ -659,65 +791,29 @@ function AboutOwnerSection() {
   return (
     <section id="about-owner" className="py-20 md:py-28 bg-gray-50 border-t border-gray-100 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6 md:px-16">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          {/* Left: Content */}
-          <div className="w-full lg:w-3/5">
+        <div className="flex flex-col lg:grid lg:grid-cols-5 lg:grid-rows-2 gap-12 lg:gap-16 lg:items-start">
+          {/* Left: Content (part 1) — subtitle, heading, intro paragraph */}
+          <div className="w-full lg:col-span-3 lg:col-start-1 lg:row-start-1 order-1">
             <span
               className="text-xs md:text-sm font-bold uppercase tracking-widest block mb-3"
-              style={{ color: '#004aad' }}
+              style={{ color: '#3d3d3d' }}
             >
               Ο Φυσικοθεραπευτής μας
             </span>
             <h2
-              className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight text-gray-900"
+              className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight"
             >
-              Ιωάννης Μιχαηλίδης
+              <span style={{ color: '#004aad', textShadow: '0 2px 8px rgba(0,74,173,0.25)' }}>Ιωάννης Μιχαηλίδης</span>
+              <span className="text-gray-900">, PT, BSc, BSc, Cert. MDT, IPNFA Advanced</span>
             </h2>
-            <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
-              Ονομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ.
-              Σπούδασα Φυσικοθεραπεία στο Διεθνές Πανεπιστήμιο Ελλάδας και Επιστήμη Φυσικής Αγωγής & Αθλητισμού στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης.
+            <p className="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
+              Ονομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ. Κατέχω πτυχίο Φυσικοθεραπείας από το ΔΙ.ΠΑ.Ε. και πτυχίο Τ.Ε.Φ.Α.Α. του ΑΠΘ, πιστοποιημένος θεραπευτής McKenzie MDT, IPNFA (advance), και Manual Therapy Mulligan Concept.
             </p>
-            <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
-              Για να σας προσφέρω την καλύτερη δυνατή υποστήριξη, έχω εξειδικευτεί σε σύγχρονες, διεθνώς αναγνωρισμένες θεραπευτικές μεθόδους:
-            </p>
-            
-            {/* Specialization List */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mb-3">
-                  <span className="text-blue-600 font-bold text-xs">MDT</span>
-                </div>
-                <h4 className="font-bold text-sm text-gray-900 mb-1">Μέθοδος McKenzie</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Εξειδικευμένη αξιολόγηση και αντιμετώπιση πόνων στη σπονδυλική στήλη & τα άκρα.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mb-3">
-                  <span className="text-blue-600 font-bold text-xs">PNF</span>
-                </div>
-                <h4 className="font-bold text-sm text-gray-900 mb-1">Μέθοδος IPNFA</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Advanced επίπεδο επανεκπαίδευσης της κίνησης και νευρομυϊκής αποκατάστασης.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mb-3">
-                  <span className="text-blue-600 font-bold text-xs">MT</span>
-                </div>
-                <h4 className="font-bold text-sm text-gray-900 mb-1">Mulligan Concept</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Manual Therapy και ήπιοι κινητοποιητικοί χειρισμοί για άμεση ανακούφιση.
-                </p>
-              </div>
-            </div>
           </div>
 
-          {/* Right: Image */}
-          <div className="w-full lg:w-2/5 flex justify-center">
-            <div className="relative">
+          {/* Image + membership note — on mobile appears after intro paragraph, on desktop spans right column */}
+          <div className="w-full lg:col-span-2 lg:col-start-4 lg:row-start-1 lg:row-span-2 lg:self-center order-2 flex justify-center">
+            <div className="relative w-full max-w-[340px] md:max-w-[380px]">
               {/* Decorative background shape */}
               <div 
                 className="absolute -inset-4 rounded-2xl opacity-10 blur-xl"
@@ -726,8 +822,42 @@ function AboutOwnerSection() {
               <img
                 src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/ABOUT/giannis.webp"
                 alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
-                className="relative z-10 w-full max-w-[340px] md:max-w-[380px] aspect-[4/5] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02]"
+                className="relative z-10 w-full aspect-[4/5] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02] mx-auto"
               />
+              <p className="relative z-10 mt-4 text-center text-sm font-bold" style={{ color: '#3d3d3d' }}>
+                🏅 Μέλος του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών
+              </p>
+            </div>
+          </div>
+
+          {/* Left: Content (part 2) — remaining paragraph + specializations */}
+          <div className="w-full lg:col-span-3 lg:col-start-1 lg:row-start-2 order-3">
+            <p className="text-base md:text-lg text-gray-800 mb-8 leading-relaxed">
+              Παραμένω ενημερωμένος για τις εξελίξεις στον τομέα μου και οι ασθενείς μου συχνά βλέπουν αποτελέσματα που η ‘συμβατική’ φυσικοθεραπεία δεν έχει καταφέρει να επιτύχει.
+            </p>
+            
+            {/* Specialization List */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
+                <h4 className="font-bold text-sm mb-1" style={{ color: '#004aad' }}>Cred.MDT</h4>
+                <p className="text-xs text-gray-800 leading-relaxed">
+                  Αντιμετώπιση πόνου σπονδυλικής στήλης & περιφερειακών αρθρώσεων.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
+                <h4 className="font-bold text-sm mb-1" style={{ color: '#004aad' }}>Μέθοδος IPNFA</h4>
+                <p className="text-xs text-gray-800 leading-relaxed">
+                  Αντιμετώπιση νευρολογικών παθήσεων & μετεγχειρητική αποκατάσταση.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
+                <h4 className="font-bold text-sm mb-1" style={{ color: '#004aad' }}>Mulligan Concept</h4>
+                <p className="text-xs text-gray-800 leading-relaxed">
+                  Manual Therapy και ήπιοι κινητοποιητικοί χειρισμοί για άμεση ανακούφιση.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -755,8 +885,8 @@ function WhyChooseUsSection() {
     },
     {
       badge: "Εξατομίκευση",
-      title: "1 Ώρα Αποκλειστικής Φροντίδας",
-      description: "Κάθε συνεδρία περιλαμβάνει μία ολόκληρη ώρα εξατομικευμένης φροντίδας με εμένα προσωπικά.",
+      title: "1 Ώρα Ατομικής Συνεδρίας",
+      description: "Κάθε συνεδρία περιλαμβάνει μία ολόκληρη ώρα εξειδικευμένης φυσικοθεραπείας με εμένα προσωπικά.",
       icon: Clock,
       highlight: false,
     },
@@ -776,15 +906,15 @@ function WhyChooseUsSection() {
     },
     {
       badge: "Αποτέλεσμα",
-      title: "Μακροχρόνιες Λύσεις Ανακούφισης",
-      description: "Σχεδιάζουμε θεραπείες με μόνιμο χαρακτήρα, θωρακίζοντας το σώμα σου ενάντια σε μελλοντικές υποτροπές.",
+      title: "Αποτελέσματα Μέσω Ενδυνάμωσης",
+      description: "Δίνουμε έμφαση στην ενδυνάμωση και την σωστή εκτέλεση των ασκήσεων.",
       icon: ShieldCheck,
       highlight: false,
     },
     {
       badge: "Ευελιξία",
-      title: "Δέσμευση Μόνο 1 Φορά την Εβδομάδα",
-      description: "Πρωινά και απογευματινά ραντεβού που προσαρμόζονται στο πρόγραμμά σου, με εστίαση στην ουσιαστική πρόοδο.",
+      title: "Εξοικονόμηση Χρόνου",
+      description: "Δεσμεύομαι εξαιρετικά αποτελέσματα ακόμη και μία φορά την εβδομάδα φυσικοθεραπεία.",
       icon: CalendarDays,
       highlight: false,
     },
@@ -804,8 +934,8 @@ function WhyChooseUsSection() {
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight text-gray-900">
             Η διαφορά μας στην πράξη
           </h2>
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-            Σχεδιάσαμε μια εμπειρία φυσικοθεραπείας που σέβεται τον χρόνο σας, εστιάζει στην ουσία και φέρνει οριστικά αποτελέσματα.
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            Σχεδιάσαμε μια εμπειρία φυσικοθεραπείας που σέβεται τον χρόνο σας και εστιάζει στη ρίζα του προβλήματος.
           </p>
         </div>
 
@@ -854,7 +984,7 @@ function WhyChooseUsSection() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                    <span className="inline-block bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                       {item.badge}
                     </span>
                     <div 
@@ -867,7 +997,7 @@ function WhyChooseUsSection() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
+                  <p className="text-sm text-gray-800 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -1001,7 +1131,7 @@ function TestimonialsSection() {
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3" style={{ color: '#004aad' }}>
               Τι λένε οι ασθενείς μας
             </h2>
-            <p className="text-base md:text-lg max-w-xl" style={{ color: '#71788f' }}>
+            <p className="text-base md:text-lg max-w-xl" style={{ color: '#1f2937' }}>
               Διαβάστε τις εμπειρίες των ασθενών μας και πώς τους βοηθήσαμε να ανακάμψουν.
             </p>
           </div>
@@ -1073,7 +1203,7 @@ function TestimonialsSection() {
               </div>
               <p
                 className="absolute bottom-6 left-6 right-6 text-xs sm:text-sm italic font-semibold tracking-wide"
-                style={{ color: isCenter ? 'rgba(255,255,255,0.8)' : '#71788f' }}
+                style={{ color: isCenter ? 'rgba(255,255,255,0.8)' : '#1f2937' }}
               >
                 — {t.by}
               </p>
@@ -1174,7 +1304,7 @@ function OfficeCarouselSection() {
           >
             Ο Χώρος Θεραπείας
           </h2>
-          <p className="text-sm md:text-base uppercase tracking-widest font-semibold" style={{ color: '#71788f' }}>
+          <p className="text-sm md:text-base uppercase tracking-widest font-semibold" style={{ color: '#1f2937' }}>
             Ένας σύγχρονος, πλήρως εξοπλισμένος και φιλόξενος χώρος σχεδιασμένος για τη δική σας άνεση και αποκατάσταση.
           </p>
         </div>
@@ -1194,7 +1324,7 @@ function OfficeCarouselSection() {
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.2}
-              onDragEnd={(e, info) => {
+              onDragEnd={(_, info) => {
                 const swipeThreshold = 50;
                 if (info.offset.x < -swipeThreshold) {
                   nextSlide();
@@ -1265,42 +1395,59 @@ const faqItems = [
     id: 'faq-1',
     question: 'Δέχεστε παραπεμπτικό από τον ΕΟΠΥΥ;',
     answer:
-      'Ναι, δεχόμαστε παραπεμπτικό από τον ΕΟΠΥΥ. Αυτό σημαίνει ότι μπορείτε να πραγματοποιήσετε τις συνεδρίες σας κάνοντας χρήση του ασφαλιστικού σας ταμείου και προσκομίζοντας το αντίστοιχο ηλεκτρονικό παραπεμπτικό. Λάβετε υπόψη ότι η ισχύς του παραπεμπτικού πρέπει να εκτελεστεί εντός του χρονικού ορίου που αναγράφεται σε αυτό (συνήθως 15 ημέρες από την ημερομηνία έκδοσής του από τον γιατρό).',
+      'Ναι, δεχόμαστε παραπεμπτικό από τον ΕΟΠΥΥ. Αυτό σημαίνει ότι μπορείτε να πραγματοποιήσετε τις συνεδρίες σας κάνοντας χρήση του ασφαλιστικού σας ταμείου και προσκομίζοντας το αντίστοιχο παραπεμπτικό. Λάβετε υπόψη ότι η ισχύς του παραπεμπτικού είναι συνήθως 60 ημέρες.',
   },
   {
     id: 'faq-2',
-    question: 'Θα βοηθήσει όντως η φυσικοθεραπεία το πρόβλημα μου;',
+    question: 'Πώς διαφέρει η συνεργασία μαζί σας σε σύγκριση με άλλους φυσικοθεραπευτές;',
     answer:
-      'Ναι, η φυσικοθεραπεία υποστηρίζεται από επιστημονικές έρευνες και χρησιμοποιείται ευρέως για πόνους σε μύες, αρθρώσεις και νεύρα, συμπεριλαμβανομένου του πόνου στην πλάτη/μέση, της ισχιαλγίας, του αυχενικού πόνου, των αθλητικών τραυματισμών και της μετεγχειρητικής αποκατάστασης. Στην ΕΡΜΕΙΟΝ, πρόκειται για ιδιωτική φυσικοθεραπεία και όχι κάτι γενικό. Αυτό σημαίνει περισσότερο χρόνο, περισσότερη πρακτική θεραπεία και ένα πλάνο δομημένο γύρω από το σώμα και τους στόχους σας. Συνδυάζουμε βαθιά, αποτελεσματική πρακτική θεραπεία με εξειδικευμένη αποκατάσταση. Δεν δίνουμε απλώς φυλλάδια με ασκήσεις, αντιμετωπίζουμε το πρόβλημα σωστά και σας εξηγούμε τι πρέπει να κάνετε στη συνέχεια.',
+      'Η φροντίδα ξεκινά με τη λήψη ενός συγκεκριμένου λεκτικού ιστορικού. Όσον αφορά το λεκτικό ιστορικό, οι ερωτήσεις που κάνω μπορεί να διαφέρουν από εκείνες άλλων επαγγελματιών. Το δεύτερο μέρος είναι η φυσική εξέταση· η μεγαλύτερη διαφορά εδώ είναι ότι μπορεί επίσης να εξετάσω μέρη του σώματος που είναι απομακρυσμένα από την περιοχή των παραπόνων. Το τρίτο μέρος της ορθοπεδικής μου αξιολόγησης είναι αυτό που διαφέρει περισσότερο. Ενώ χρησιμοποιώ σύντομα ειδικά ορθοπεδικά τεστ (όπως τεστ μηνίσκου) και μπορεί να προτείνω απεικονιστικές εξετάσεις, το τεστ στο οποίο βασίζομαι περισσότερο είναι το τεστ επαναλαμβανόμενων κινήσεων του McKenzie. Εδώ, ο ασθενής εκτελεί επαναλαμβανόμενες κινήσεις στο φυσικοθεραπευτήριο και στο σπίτι, καθώς αξιολογώ την επίδραση της συγκεκριμένης κίνησης στα συμπτώματα και τα ευρήματα της φυσικής εξέτασης από το δεύτερο μέρος. Στις περισσότερες περιπτώσεις, το πρόγραμμα στο σπίτι περιλαμβάνει την εκτέλεση μιας κίνησης περίπου κάθε 2 με 3 ώρες. Οι επόμενες επισκέψεις ακολουθούν παρόμοιο μοτίβο με την αρχική επίσκεψη, καθώς συνεχίζουμε να αξιολογούμε τις επιδράσεις των συγκεκριμένων κινήσεων όπως απαιτείται, καθορίζοντας τελικά τη διάγνωση και συνεπώς ποια θεραπεία είναι πιο αποτελεσματική για τον συγκεκριμένο ασθενή.',
   },
   {
     id: 'faq-3',
-    question: 'Αντιμετωπίζετε το δικό μου πρόβλημα ή πόνο; Αντιμετωπίζετε τη δική μου πάθηση;',
+    question: 'Τι είναι η Μηχανική Διάγνωση και Θεραπεία (ΜΔΘ - McKenzie);',
     answer:
-      'Αντιμετωπίζουμε καθημερινούς πόνους, αθλητικούς τραυματισμούς, σύνθετα περιστατικά και μετεγχειρητική αποκατάσταση, συμπεριλαμβανομένων του πόνου στην πλάτη/μέση και της ισχιαλγίας, του πόνου στον αυχένα και τον ώμο, τραυματισμών στο γόνατο και από το τρέξιμο, τραυματισμών στο γυμναστήριο, καθώς και της συνεχιζόμενης μυϊκής δυσκαμψίας και έντασης. Μπορείτε να μάθετε περισσότερα για τον τρόπο με τον οποίο αξιολογούμε και αντιμετωπίζουμε αυτά τα ζητήματα στη σελίδα μας για τη φυσικοθεραπεία. Κατέχω πτυχίο Φυσικοθεραπείας από το Διεθνές Πανεπιστήμιο της Ελλάδος και πτυχίο Επιστήμης Φυσικής Αγωγής και Αθλητισμού από το Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης. Είμαι πιστοποιημένος στη Μηχανική Διάγνωση και Θεραπεία (Μέθοδος McKenzie MDT), στην Ιδιοδεκτική Νευρομυϊκή Διευκόλυνση (PNF – προχωρημένο επίπεδο) και στη Χειροθεραπεία κατά το Mulligan Concept.',
+      'Η Μηχανική Διάγνωση και Θεραπεία (γνωστή και ως ΜΔΘ ή μέθοδος McKenzie) είναι ουσιαστικά μια κατανόηση της μηχανικής των αρθρώσεων. Οι φυσικοθεραπευτές που γνωρίζουν και είναι πιστοποιημένοι στην ΜΔΘ μπορούν να διαπιστώσουν ότι η πάθηση ενός ασθενούς είναι ένα μηχανικό πρόβλημα της άρθρωσης που μπορεί να διορθωθεί με 1-2 κινήσεις. Βρίσκω ότι το 70-80% των ορθοπεδικών παθήσεων ανήκουν σε αυτή την κατηγορία. Εάν η διάγνωση δεν είναι ένα μηχανικό πρόβλημα άρθρωσης, μπορούμε να κάνουμε με περισσότερη βεβαιότητα μια ξεχωριστή διάγνωση και να εφαρμόσουμε την αντίστοιχη θεραπεία. Η ΜΔΘ μου προσφέρει μια πιο ολοκληρωμένη κατανόηση του μυοσκελετικού συστήματος, που υποστηρίζω ότι οι περισσότεροι κλινικοί ιατροί δεν διαθέτουν. Δηλαδή, αναγνωρίζοντας ότι η μηχανική των αρθρώσεων παίζει καθοριστικό ρόλο στην υγεία του μυοσκελετικού συστήματος – όχι μόνο οι δομές όπως τα οστά, οι συσταλτοί ιστοί όπως οι τένοντες και οι μύες, τα νεύρα, ή οι μαλακοί ιστοί όπως οι σύνδεσμοι, οι μηνίσκοι ή ο χόνδρος. Με άλλα λόγια, πρέπει να διερευνούμε τη φυσιολογία και όχι απλώς να κατηγορούμε την ανατομία, ακόμα και αν οι εξειδικευμένες απεικονιστικές εξετάσεις (MRI, X-RAY κλπ) δείχνουν ότι η ανατομία δεν είναι τέλεια.',
   },
   {
     id: 'faq-4',
     question: 'Πόσες συνεδρίες θα χρειαστώ;',
     answer:
-      'Ο αριθμός των επισκέψεων που θα χρειαστούν εξαρτάται από τη διάγνωση και τις πληροφορίες που συλλέγονται από την αξιολόγηση και τις επόμενες επισκέψεις, αλλά ο μέσος όρος είναι 6. Ένας από τους στόχους μου είναι να δώσω τη δυνατότητα στους ασθενείς να θεραπεύουν τον εαυτό τους και οι επισκέψεις μειώνονται όσο το δυνατόν περισσότερο. Με αυτό κατά νου, ο αριθμός των απαραίτητων επισκέψεων βασίζεται επίσης στο πόσο συνεπείς μπορούν να είναι οι ασθενείς με το προβλεπόμενο πλάνο. Εάν η φυσικοθεραπεία δεν είναι η καλύτερη επιλογή για την επίλυση μιας διαταραχής, αυτό καθορίζεται μέσω προοδευτικών δοκιμών που συνήθως δεν υπερβαίνουν τις 5 επισκέψεις.',
+      'Ο αριθμός των επισκέψεων που θα χρειαστούν εξαρτάται από τη διάγνωση και τις πληροφορίες που συλλέγονται από την αξιολόγηση και τις επόμενες επισκέψεις, αλλά ο μέσος όρος είναι 6. Ένας από τους στόχους μου είναι να δώσω τη δυνατότητα στους ασθενείς να θεραπεύουν τον εαυτό τους και οι επισκέψεις μειώνονται όσο το δυνατόν περισσότερο. Με αυτό κατά νου, ο αριθμός των απαραίτητων επισκέψεων βασίζεται επίσης στο πόσο συνεπείς μπορούν να είναι οι ασθενείς με το προβλεπόμενο πρόγραμμα. Εάν η φυσικοθεραπεία δεν είναι η καλύτερη επιλογή για την επίλυση μιας διαταραχής, αυτό καθορίζεται μέσω προοδευτικών δοκιμών που συνήθως δεν υπερβαίνουν τις πέντε επισκέψεις.',
   },
   {
     id: 'faq-5',
-    question: 'Τι συμβαίνει σε μια συνεδρία θεραπείας στο ΕΡΜΕΙΟΝ; Θα πονέσω; Είναι ασφαλές;',
+    question: 'Πόσο καιρό χρειάζεται για να νιώσω καλύτερα;;',
     answer:
-      'Οι συνεδρίες φυσικοθεραπείας είναι ασφαλείς, επαγγελματικές και βασίζονται στην προσωπική επαφή, συνδυάζοντας μια σωστή αξιολόγηση με πρακτική θεραπεία (μασάζ, χειροθεραπεία και κινητοποίηση αρθρώσεων) και σαφείς συμβουλές αποκατάστασης. Κάποιες κινήσεις προσφέρουν αυτό τον «καλό πόνο» που αγαπούν οι πελάτες μας, αλλά η θεραπεία είναι πάντα ελεγχόμενη, επεξηγημένη και μέσα στα δικά σας όρια. Δεν θα σας αφήσουμε μόνο με ένα φυλλάδιο ασκήσεων. Θα φύγετε γνωρίζοντας τι ευθύνεται, γιατί συνέβη και τι πρέπει να κάνετε στη συνέχεια.',
+      'Όπως και με την παραπάνω ερώτηση, αυτό μπορεί να απαντηθεί καλύτερα μόλις μπορέσω να καθορίσω μια διάγνωση. Μπορεί να διαφέρει σημαντικά. Μερικές φορές μια διαταραχή αντιστρέφεται σε μία εβδομάδα. Από την άλλη πλευρά, σε περίπτωση που ένας ασθενής έχει συμπτώματα για πολλούς μήνες ή χρόνια, στην περίπτωση ορισμένων διαγνώσεων ή στην περίπτωση έλλειψης συνέπειας, η αναμενόμενη διάρκεια μπορεί να είναι μήνες. Σε αυτές τις περιπτώσεις, οι επισκέψεις γίνονται πιο αραιές και πραγματοποιούνται σε διαστήματα βάσει της αναγκαιότητας.',
   },
   {
     id: 'faq-6',
-    question: 'Δέχεστε ιδιωτική ασφάλιση υγείας;',
-    answer: 'Ναι, δεχόμαστε όλες τις ιδιωτικές ασφαλιστικές εταιρείες υγείας.',
+    question: 'Θα έχω ασκήσεις για το σπίτι;',
+    answer: 'Φυσικά! Οι περισσότεροι, όχι όλοι, ασθενείς θα χρειαστεί να εκτελούν μία κίνηση τουλάχιστον 6 φορές την ημέρα (χωρίς να μοιράζω τυποποιημένες ασκήσεις σε Α4 κόλλα). Συνήθως διαρκεί 1-2 λεπτά. Στις περισσότερες περιπτώσεις, θα σας δοθούν οδηγίες για να κάνετε χρήσιμες αλλαγές στη στάση του σώματος στην καθημερινή σας ζωή, οι οποίες περιλαμβάνουν κυρίως την προσαρμογή του τρόπου που κάθεστε, αλλά μπορεί να περιλαμβάνουν και άλλες καταστάσεις. Για την δική σας ευκολία μπορούμε, με το κινητό σας, να βγάλουμε βίντεο για να θυμάστε εύκολα τα τιπς και την άσκηση που θα χρειαστεί να εκτελέσετε.',
   },
   {
     id: 'faq-7',
-    question: 'Πόσο γρήγορα μπορείτε να με δείτε;',
+    question: 'Θα πονέσω στην θεραπεία;',
     answer:
-      'Οι περισσότεροι ασθενείς μπορούν να κλείσουν ραντεβού για φυσικοθεραπεία πολύ γρήγορα, καθώς συχνά υπάρχουν διαθέσιμα ραντεβού για την ίδια ημέρα ή την ίδια εβδομάδα. Η online κράτηση διαρκεί λιγότερο από 60 δευτερόλεπτα, διευκολύνοντάς σας να βρείτε μια ώρα που ταιριάζει στο πρόγραμμα σας.',
+      'Όχι απαραίτητα! Αν και σε ορισμένες περιπτώσεις ο πόνος μπορεί να μας καθοδηγεί προς τη σωστή θεραπευτική προσέγγιση, στις περισσότερες περιπτώσεις ο πόνος μειώνεται καθώς η θεραπεία προχωρά, και τα συμπτώματα βελτιώνονται σημαντικά.',
+  },
+  {
+    id: 'faq-8',
+    question: 'Μπορώ να πληρώσω με κάρτα ή IRIS;',
+    answer: 'Ναι. Διαθέτω POS και έχω ενεργοποιημένο το IRIS payments.',
+  },
+  {
+    id: 'faq-9',
+    question: 'Κάνετε online Φυσικοθεραπείες;',
+    answer:
+      'Έχω πραγματοποιήσει online θεραπείες με επιτυχία. Έχει τις προκλήσεις του, αλλά συνήθως ξεπερνιούνται. Τα τεστ με τις επαναλαμβανόμενες κίνησεις βασίζονται στην ενεργή κίνηση και έτσι, αυτή η μέθοδος είναι κατάλληλη για βιντεοκλήσεις. Αν και οι επισκέψεις δια ζώσης προσφέρουν μια πιο προσωπική εμπειρία και είναι η προτίμηση μου όταν υπάρχει επιλογή, οι βιντεοκλήσεις είναι συνήθως εξίσου αποτελεσματικές, αλλά όχι πάντα.',
+  },
+  {
+    id: 'faq-10',
+    question: 'Τα Σαββατοκύριακα εργάζεστε;',
+    answer:
+      'Εκτός από τις κανονικές ώρες εργασίας, μπορώ να δω ασθενείς και τα Σαββατοκύριακα αν είναι πραγματική ανάγκη.',
   },
 ];
 
@@ -1315,7 +1462,7 @@ function FAQSection() {
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl text-gray-900">
             Συχνές Ερωτήσεις
           </h2>
-          <p className="text-gray-500 lg:text-lg">
+          <p className="text-gray-800 lg:text-lg">
             Βρείτε απαντήσεις στις πιο συχνές ερωτήσεις σχετικά με τη φυσικοθεραπεία, τα ραντεβού, τον ΕΟΠΥΥ και τη διαδικασία αποκατάστασης στο ΕΡΜΕΙΟΝ.
           </p>
         </div>
@@ -1331,10 +1478,10 @@ function FAQSection() {
                   onClick={() => setOpenId(isOpen ? null : item.id)}
                   aria-expanded={isOpen}
                 >
-                  <span className="font-medium text-gray-900 sm:py-1 lg:py-2 lg:text-lg">
+                  <span className="font-bold text-gray-900 sm:py-1 lg:py-2 lg:text-lg">
                     {item.question}
                   </span>
-                  <span className="shrink-0 text-gray-400 transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                  <span className="shrink-0 text-gray-700 transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="6 9 12 15 18 9" />
                     </svg>
@@ -1345,7 +1492,7 @@ function FAQSection() {
                   style={{ maxHeight: isOpen ? '600px' : '0px', opacity: isOpen ? 1 : 0 }}
                 >
                   <div className="pb-5 sm:mb-1 lg:mb-2">
-                    <p className="text-gray-500 lg:text-lg leading-relaxed">
+                    <p className="text-gray-800 lg:text-lg leading-relaxed">
                       {item.answer}
                     </p>
                   </div>
@@ -1369,7 +1516,7 @@ const guaranteeItems = [
 
 function FinalCTASection() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32 w-full text-center bg-gradient-to-br from-[#003882] via-[#004aad] to-[#001f4d] scroll-mt-20">
+    <section id="contact" className="relative overflow-hidden py-24 md:py-32 w-full text-center bg-gradient-to-br from-[#003882] via-[#004aad] to-[#001f4d] scroll-mt-20">
       {/* Custom Styles for Keyframe Animations */}
       <style>{`
         @keyframes shimmer {
@@ -1396,7 +1543,7 @@ function FinalCTASection() {
 
         {/* Dynamic & Persuasive Heading */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight max-w-3xl">
-          Είστε έτοιμοι να ζήσετε χωρίς πόνο;
+          Είστε έτοιμοι να πείτε ΑΝΤΙΟ στον πόνο;
         </h2>
 
         <p className="text-lg md:text-xl text-[#eaefeb] opacity-90 max-w-2xl mb-10 leading-relaxed font-light">
@@ -1435,13 +1582,6 @@ function FinalCTASection() {
           </a>
         </div>
 
-        {/* Urgency/Scarcity Text */}
-        <p className="text-sm mt-6 text-[#a5caff] opacity-80 flex items-center gap-2 font-medium">
-          <svg className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20">
-            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z" />
-          </svg>
-          Περιορισμένη διαθεσιμότητα για νέα ραντεβού αυτή την εβδομάδα.
-        </p>
       </div>
     </section>
   );
@@ -1456,6 +1596,21 @@ function Footer() {
     { label: 'Μαρτυρίες', href: '#testimonials' },
     { label: 'Συχνές Ερωτήσεις', href: '#faq' },
     { label: 'Επικοινωνία', href: '#contact' },
+  ];
+
+  const openingHours = [
+    { day: 'Δευτέρα', hours: '9 π.μ.–2 μ.μ., 4–9 μ.μ.' },
+    { day: 'Τρίτη', hours: '9 π.μ.–2 μ.μ., 4–9 μ.μ.' },
+    { day: 'Τετάρτη', hours: '9 π.μ.–2 μ.μ., 4–9 μ.μ.' },
+    { day: 'Πέμπτη', hours: '9 π.μ.–2 μ.μ., 4–9 μ.μ.' },
+    { day: 'Παρασκευή', hours: '9 π.μ.–2 μ.μ., 4–8 μ.μ.' },
+    { day: 'Σάββατο', hours: 'Κλειστά' },
+    { day: 'Κυριακή', hours: 'Κλειστά' },
+  ];
+
+  const socials = [
+    { label: 'Instagram', href: 'https://www.instagram.com/ermeionphysio/', path: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2z' },
+    { label: 'Facebook', href: 'https://www.facebook.com/ErmeionPhysio', path: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' },
   ];
 
   return (
@@ -1474,21 +1629,21 @@ function Footer() {
 
           {/* Contact details */}
           <div className="flex flex-col gap-3 text-sm" style={{ color: '#ffffff' }}>
-            <div className="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Θεσσαλονίκη</span>
+            <div className="flex items-start gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Παπάφη 92, Θεσσαλονίκη, 544 53</span>
             </div>
             <div className="flex items-center gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>210 000 0000</span>
+              <a href="tel:2310940100" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>231 094 0100</a>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:6988404234" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>698 840 4234</a>
             </div>
             <div className="flex items-center gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>info@ermeion.gr</span>
-            </div>
-            <div className="flex items-start gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>Δευτ–Παρ: 09:00–21:00<br />Σάββατο: 09:00–15:00</span>
+              <a href="mailto:ermeion@outlook.com" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>ermeion@outlook.com</a>
             </div>
           </div>
         </div>
@@ -1513,23 +1668,14 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Services column */}
+        {/* Opening hours column */}
         <div>
-          <p className="text-xs uppercase tracking-widest font-semibold mb-5" style={{ color: '#5b8cff' }}>Υπηρεσίες</p>
-          <ul className="flex flex-col gap-3 text-sm" style={{ color: '#ffffff' }}>
-            {[
-              { label: 'Μέθοδος McKenzie', href: '#mckenzie' },
-              { label: 'Tecar Therapy', href: '#tecar' },
-              { label: 'Θεραπεία & Πρόληψη Σπονδυλικού Πόνου', href: '#spine-pain' },
-              { label: 'Θεραπευτική Άσκηση', href: '#exercise' }
-            ].map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  className="transition-colors duration-200 hover:text-[#5b8cff]"
-                >
-                  {s.label}
-                </a>
+          <p className="text-xs uppercase tracking-widest font-semibold mb-5" style={{ color: '#5b8cff' }}>Ωράριο Λειτουργίας</p>
+          <ul className="flex flex-col gap-2 text-sm" style={{ color: '#ffffff' }}>
+            {openingHours.map((entry) => (
+              <li key={entry.day} className="flex flex-col gap-0.5">
+                <span className="font-semibold">{entry.day}</span>
+                <span className={entry.hours === 'Κλειστά' ? 'opacity-70' : 'opacity-90'}>{entry.hours}</span>
               </li>
             ))}
           </ul>
@@ -1544,14 +1690,12 @@ function Footer() {
           </p>
           {/* Social icons */}
           <div className="flex items-center gap-4">
-            {[
-              { label: 'Instagram', path: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2z' },
-              { label: 'Facebook', path: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' },
-              { label: 'LinkedIn', path: 'M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' },
-            ].map((social) => (
+            {socials.map((social) => (
               <a
                 key={social.label}
-                href="#"
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
                 className="transition-colors duration-200"
                 style={{ color: '#ffffff' }}
@@ -1625,6 +1769,7 @@ function App() {
           <TestimonialsSection />
           <ProcessSection />
           <AboutOwnerSection />
+          <CertificatesCarouselSection />
           <WhyChooseUsSection />
           <OfficeCarouselSection />
           <FAQSection />
