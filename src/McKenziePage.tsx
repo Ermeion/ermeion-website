@@ -291,7 +291,7 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
                       <Award className="w-7 h-7" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-800">Μιχαήλ Σκαματζούρας</h4>
+                      <h4 className="text-lg font-bold text-slate-800">Ιωάννης Μιχαηλίδης</h4>
                       <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Cred. MDT Therapist</p>
                     </div>
                   </div>
