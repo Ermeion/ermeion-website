@@ -7,6 +7,9 @@ import {
 } from 'framer-motion';
 import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell } from 'lucide-react';
 import McKenziePage from './McKenziePage';
+import TecarPage from './TecarPage';
+import SpinePainPage from './SpinePainPage';
+import ExercisePage from './ExercisePage';
 
 // Navbar Component
 function Navbar() {
@@ -1715,21 +1718,6 @@ function Footer() {
   );
 }
 
-// Service Page Component
-function ServicePage({ title }: { title: string }) {
-  return (
-    <div className="bg-gray-50 min-h-screen py-24 px-6 flex flex-col items-center justify-center text-center">
-      <div className="bg-white p-8 md:p-12 rounded-3xl shadow-md max-w-lg w-full">
-        <h1 className="text-3xl font-extrabold text-gray-900 mb-4">{title}</h1>
-        <p className="text-gray-500 mb-8">Η σελίδα βρίσκεται υπό κατασκευή.</p>
-        <a href="#" className="px-6 py-3 bg-[#004aad] text-white font-semibold rounded-xl shadow-md hover:bg-opacity-90 transition-all duration-300">
-          Επιστροφή στην Αρχική
-        </a>
-      </div>
-    </div>
-  );
-}
-
 // Main App Component
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'mckenzie' | 'tecar' | 'spine-pain' | 'exercise'>('home');
@@ -1779,11 +1767,11 @@ function App() {
       ) : currentPage === 'mckenzie' ? (
         <McKenziePage onNavigate={(hash) => { window.location.hash = hash; }} />
       ) : currentPage === 'tecar' ? (
-        <ServicePage title="Tecar Therapy" />
+        <TecarPage onNavigate={(hash) => { window.location.hash = hash; }} />
       ) : currentPage === 'spine-pain' ? (
-        <ServicePage title="Θεραπεία & Πρόληψη Σπονδυλικού Πόνου" />
+        <SpinePainPage onNavigate={(hash) => { window.location.hash = hash; }} />
       ) : (
-        <ServicePage title="Θεραπευτική Άσκηση" />
+        <ExercisePage onNavigate={(hash) => { window.location.hash = hash; }} />
       )}
       <Footer />
     </div>
