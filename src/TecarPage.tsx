@@ -1,10 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
-  ShieldCheck, 
   Target, 
-  Award,
   Sparkles,
   Zap,
   Activity,
@@ -18,34 +14,10 @@ interface TecarPageProps {
 }
 
 export default function TecarPage({ onNavigate }: TecarPageProps) {
-  const [activeSection, setActiveSection] = useState('philosophy');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['philosophy', 'indications', 'related'];
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const navbarHeight = 150; // accounting for main navbar + sticky subnav
+      const navbarHeight = 90; // accounting for main navbar
       const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
       window.scrollTo({ top, behavior: 'smooth' });
     }
@@ -163,41 +135,6 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
         </div>
       </section>
 
-      {/* 2. Sticky Subnav Bar */}
-      <div className="sticky top-[72px] md:top-[88px] z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 py-3.5 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-center gap-1.5 md:gap-4 overflow-x-auto whitespace-nowrap">
-          <button
-            onClick={() => scrollToSection('philosophy')}
-            className={`px-4 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide uppercase transition-all duration-300 ${
-              activeSection === 'philosophy' 
-                ? 'bg-blue-50 text-[#004aad] border border-blue-200' 
-                : 'text-slate-500 hover:text-slate-800'
-            }`}
-          >
-            Η Θεραπεία
-          </button>
-          <button
-            onClick={() => scrollToSection('indications')}
-            className={`px-4 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide uppercase transition-all duration-300 ${
-              activeSection === 'indications' 
-                ? 'bg-blue-50 text-[#004aad] border border-blue-200' 
-                : 'text-slate-500 hover:text-slate-800'
-            }`}
-          >
-            Οξείες Φάσεις & Ενδείξεις
-          </button>
-          <button
-            onClick={() => scrollToSection('related')}
-            className={`px-4 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide uppercase transition-all duration-300 ${
-              activeSection === 'related' 
-                ? 'bg-blue-50 text-[#004aad] border border-blue-200' 
-                : 'text-slate-500 hover:text-slate-800'
-            }`}
-          >
-            Άλλες Υπηρεσίες
-          </button>
-        </div>
-      </div>
 
       {/* 3. Core Philosophy & Mechanism Section */}
       <section id="philosophy" className="py-20 bg-white scroll-mt-28">
