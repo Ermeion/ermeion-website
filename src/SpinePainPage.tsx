@@ -70,63 +70,14 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
             </div>
           </div>
 
-          {/* Right Column - Styled Spine Graphic and Postural Lines */}
+          {/* Right Column - Styled Spine Image */}
           <div className="lg:col-span-5 relative">
-            <div className="relative z-10 bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-xl shadow-slate-100">
-              <div className="w-full h-64 md:h-80 bg-white rounded-2xl border border-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
-                
-                {/* SVG Anatomy Postural Spine Alignment */}
-                <svg viewBox="0 0 200 200" className="w-full h-full text-slate-300 max-h-72">
-                  <g className="stroke-slate-100 stroke-[0.5]" strokeDasharray="4 4">
-                    <line x1="100" y1="0" x2="100" y2="200" />
-                    <line x1="0" y1="100" x2="200" y2="100" />
-                  </g>
-                  
-                  {/* Dynamic Posture Spine Column */}
-                  <g fill="none" strokeWidth="2.5">
-                    {/* Spine Curves */}
-                    <path d="M100,20 Q105,45 100,70 T100,120 Q92,150 100,180" className="stroke-slate-200" />
-                    
-                    {/* Vertebral Alignment nodes with highlight on stress points */}
-                    <circle cx="100" cy="30" r="4" fill="white" className="stroke-[#0082c8]" />
-                    <circle cx="102.5" cy="50" r="4" fill="white" className="stroke-[#0082c8]" />
-                    <circle cx="101" cy="70" r="4" fill="white" className="stroke-[#0082c8]" />
-                    <circle cx="100" cy="90" r="4" fill="white" className="stroke-[#0082c8]" />
-                    {/* Herniated / Stress Areas (Lumbar/Thoracic) highlighted in orange */}
-                    <circle cx="98" cy="115" r="5" fill="#f97316" className="stroke-[#004aad] stroke-[1]" />
-                    <circle cx="96" cy="135" r="5" fill="#f97316" className="stroke-[#004aad] stroke-[1]" />
-                    <circle cx="95.5" cy="155" r="4.5" fill="white" className="stroke-[#004aad]" />
-                    <circle cx="100" cy="175" r="4.5" fill="white" className="stroke-[#004aad]" />
-                  </g>
-                  
-                  {/* Force Distribution arrows representing decompression */}
-                  <g className="stroke-[#004aad] stroke-[1.5] fill-none">
-                    <path d="M75,115 L75,135" markerEnd="url(#decompression-down)" />
-                    <path d="M75,135 L75,115" markerEnd="url(#decompression-up)" />
-                    <text x="65" y="105" className="fill-[#004aad] text-[8px] font-bold font-mono">DECOMPRESSION</text>
-                  </g>
-                  
-                  <defs>
-                    <marker id="decompression-down" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#004aad" />
-                    </marker>
-                    <marker id="decompression-up" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#004aad" />
-                    </marker>
-                  </defs>
-                </svg>
-
-                {/* Floating clinical tag */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm border border-slate-100 rounded-xl p-3 shadow-md flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-blue-50 text-[#004aad]">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-xs font-semibold text-slate-800">Σπονδυλική Αποσυμπίεση</p>
-                    <p className="text-[10px] text-slate-500">Πρόληψη & Διαχείριση Φορτίων</p>
-                  </div>
-                </div>
-              </div>
+            <div className="relative z-10 overflow-hidden rounded-3xl border border-slate-100 shadow-xl shadow-slate-100">
+              <img 
+                src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/spine.webp" 
+                alt="Θεραπεία & Πρόληψη Σπονδυλικού Πόνου" 
+                className="w-full h-auto object-cover"
+              />
             </div>
             
             {/* Background elements */}

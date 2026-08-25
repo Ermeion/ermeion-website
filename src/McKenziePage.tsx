@@ -35,9 +35,9 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-t from-blue-50 to-transparent rounded-full filter blur-2xl translate-y-1/3 -translate-x-1/4" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+        <div className="relative max-w-4xl mx-auto px-4 md:px-8 text-center flex flex-col items-center">
+          {/* Centered Column */}
+          <div className="flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-semibold text-[#004aad] uppercase tracking-wider mb-6">
               <Activity className="w-3.5 h-3.5" />
               Υπηρεσίες / Μέθοδος McKenzie
@@ -47,11 +47,11 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
               Μέθοδος McKenzie
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 font-light leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-slate-600 font-light leading-relaxed mb-8 max-w-3xl">
               Η Μέθοδος McKenzie ή γνωστή και ως Μηχανική Διάγνωση & Θεραπεία (Mechanical Diagnosis and Therapy – MDT) είναι μια επιστημονικά τεκμηριωμένη φυσικοθεραπευτική προσέγγιση αξιολόγησης και διαχείρισης του μυοσκελετικού πόνου.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://cal.eu/ermeion/physiotherapy"
                 target="_blank"
@@ -69,66 +69,6 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
               </button>
             </div>
           </div>
-
-          {/* Right Column - Styled Clinical Image and Custom Diagnostic Diagram */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative z-10 bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-xl shadow-slate-100">
-              {/* Spine/Movement Vector Graphic */}
-              <div className="w-full h-64 md:h-80 bg-white rounded-2xl border border-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
-                <svg viewBox="0 0 200 200" className="w-full h-full text-slate-300 max-h-72">
-                  {/* Grid Lines */}
-                  <g className="stroke-slate-100 stroke-[0.5]" strokeDasharray="3 3">
-                    <line x1="0" y1="50" x2="200" y2="50" />
-                    <line x1="0" y1="100" x2="200" y2="100" />
-                    <line x1="0" y1="150" x2="200" y2="150" />
-                    <line x1="50" y1="0" x2="50" y2="200" />
-                    <line x1="100" y1="0" x2="100" y2="200" />
-                    <line x1="150" y1="0" x2="150" y2="200" />
-                  </g>
-                  {/* Stylized Vertebral Column */}
-                  <g className="stroke-[#004aad] stroke-[2.5] fill-none">
-                    {/* Lumbar Spine Curve */}
-                    <path d="M100,20 C103,45 105,70 102,95 C98,125 88,155 100,180" />
-                    {/* Vertebrae blocks */}
-                    <rect x="95" y="30" width="10" height="8" rx="2" fill="white" className="stroke-[#0082c8]" />
-                    <rect x="96" y="50" width="11" height="8" rx="2" fill="white" className="stroke-[#0082c8]" />
-                    <rect x="97" y="70" width="12" height="9" rx="2" fill="white" className="stroke-[#0082c8]" />
-                    <rect x="96" y="90" width="13" height="9" rx="2" fill="white" className="stroke-[#0082c8]" />
-                    <rect x="93" y="110" width="14" height="10" rx="2" fill="white" className="stroke-[#004aad]" />
-                    <rect x="89" y="130" width="15" height="10" rx="2" fill="white" className="stroke-[#004aad]" />
-                    <rect x="87" y="150" width="16" height="11" rx="2" fill="white" className="stroke-[#004aad]" />
-                  </g>
-                  {/* Mechanical Force Directional Preference Vectors */}
-                  <g className="stroke-emerald-500 stroke-[2] fill-none">
-                    {/* Motion Arrow Path */}
-                    <path d="M140,120 Q160,110 140,90" markerEnd="url(#arrow)" />
-                    {/* Force Vector Circles */}
-                    <circle cx="140" cy="120" r="3" fill="#10b981" />
-                    <circle cx="140" cy="90" r="3" fill="#10b981" />
-                  </g>
-                  <defs>
-                    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
-                    </marker>
-                  </defs>
-                </svg>
-                {/* Floating clinical tag */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm border border-slate-100 rounded-xl p-3 shadow-md flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-blue-50 text-[#004aad]">
-                    <Target className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-xs font-semibold text-slate-800">Μηχανική Διάγνωση & Θεραπεία</p>
-                    <p className="text-[10px] text-slate-500">Εστιασμένη στην κίνηση & αυτοδιαχείριση</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Background elements */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-50 rounded-2xl -z-10" />
-            <div className="absolute -top-6 -left-6 w-24 h-24 border-2 border-slate-100 rounded-full -z-10" />
-          </div>
         </div>
       </section>
 
@@ -144,46 +84,14 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Diagram Column - Movement direction vector visualizer */}
+            {/* Diagram Column - McKenzie Philosophy Image */}
             <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="relative p-8 bg-[#f8fafc] border border-slate-100 rounded-3xl overflow-hidden shadow-inner">
-                {/* Mechanical vectors illustration */}
-                <div className="w-full aspect-square bg-white border border-slate-100 rounded-2xl flex items-center justify-center p-6 relative">
-                  <svg viewBox="0 0 200 200" className="w-full h-full text-slate-200">
-                    <circle cx="100" cy="100" r="80" stroke="#f1f5f9" strokeWidth="1" fill="none" />
-                    <circle cx="100" cy="100" r="50" stroke="#f1f5f9" strokeWidth="1" fill="none" />
-                    
-                    {/* Active Joint Mechanics lines */}
-                    <g stroke="#0082c8" strokeWidth="1.5" fill="none">
-                      <line x1="100" y1="20" x2="100" y2="180" strokeDasharray="4 4" />
-                      <line x1="20" y1="100" x2="180" y2="100" strokeDasharray="4 4" />
-                    </g>
-                    
-                    {/* Directional Preference Arrow Rings */}
-                    <path d="M 50 100 A 50 50 0 0 1 150 100" fill="none" stroke="#004aad" strokeWidth="3" markerEnd="url(#arrow-blue)" />
-                    <path d="M 150 100 A 50 50 0 0 1 50 100" fill="none" stroke="#0082c8" strokeWidth="1.5" strokeDasharray="5 3" />
-                    
-                    {/* Pain relief target */}
-                    <g transform="translate(150, 100)">
-                      <circle cx="0" cy="0" r="12" fill="#e0f2fe" className="animate-pulse" />
-                      <circle cx="0" cy="0" r="6" fill="#004aad" />
-                    </g>
-                    
-                    <defs>
-                      <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#004aad" />
-                      </marker>
-                    </defs>
-                  </svg>
-                  
-                  {/* Small absolute tags */}
-                  <div className="absolute top-4 left-4 bg-blue-50 text-[#004aad] text-[10px] font-bold px-2 py-1 rounded-full border border-blue-100 uppercase tracking-wide">
-                    Κίνηση
-                  </div>
-                  <div className="absolute bottom-4 right-4 bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded-full border border-emerald-100 uppercase tracking-wide">
-                    Ανακούφιση
-                  </div>
-                </div>
+              <div className="relative overflow-hidden rounded-3xl border border-slate-100 shadow-md">
+                <img 
+                  src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/McKenzie.webp" 
+                  alt="Η Φιλοσοφία της Μεθόδου McKenzie" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
 

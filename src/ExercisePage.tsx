@@ -71,53 +71,14 @@ export default function ExercisePage({ onNavigate }: ExercisePageProps) {
             </div>
           </div>
 
-          {/* Right Column - Custom Movement Path / ROM Visualizer */}
+          {/* Right Column - Exercise Alignment Image */}
           <div className="lg:col-span-5 relative">
-            <div className="relative z-10 bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-xl shadow-slate-100">
-              <div className="w-full h-64 md:h-80 bg-white rounded-2xl border border-slate-100 flex items-center justify-center p-4 relative overflow-hidden">
-                
-                {/* SVG Motion Path/ROM Grid */}
-                <svg viewBox="0 0 200 200" className="w-full h-full text-slate-300 max-h-72">
-                  {/* Grid overlay */}
-                  <g className="stroke-slate-100 stroke-[0.5]" strokeDasharray="3 3">
-                    <line x1="100" y1="0" x2="100" y2="200" />
-                    <line x1="0" y1="100" x2="200" y2="100" />
-                  </g>
-                  
-                  {/* Range of motion dynamic arc */}
-                  <path d="M40,100 A60,60 0 0,1 160,100" fill="none" stroke="#e2e8f0" strokeWidth="6" strokeLinecap="round" />
-                  <path d="M40,100 A60,60 0 0,1 130,50" fill="none" stroke="#004aad" strokeWidth="6" strokeLinecap="round" strokeDasharray="500" strokeDashoffset="100" />
-                  
-                  {/* Angle indicator lines */}
-                  <line x1="100" y1="100" x2="130" y2="50" stroke="#0082c8" strokeWidth="1.5" strokeDasharray="3 3" />
-                  <line x1="100" y1="100" x2="40" y2="100" stroke="#0082c8" strokeWidth="1.5" />
-                  
-                  {/* Joint center node */}
-                  <circle cx="100" cy="100" r="8" fill="#1e293b" />
-                  <circle cx="100" cy="100" r="4" fill="#004aad" />
-                  
-                  {/* Active target handle (pulled up by user action) */}
-                  <g transform="translate(130, 50)" className="cursor-pointer">
-                    <circle cx="0" cy="0" r="10" fill="#004aad" />
-                    <circle cx="0" cy="0" r="4" fill="white" />
-                  </g>
-                  
-                  {/* Range degree labels */}
-                  <text x="145" y="45" className="fill-[#004aad] text-[10px] font-bold">120° ROM</text>
-                  <text x="35" y="120" className="fill-slate-400 text-[8px] font-semibold">0° (EXTENSION)</text>
-                </svg>
-
-                {/* Floating clinical tag */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm border border-slate-100 rounded-xl p-3 shadow-md flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-blue-50 text-[#004aad]">
-                    <Target className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-xs font-semibold text-slate-800">Προοδευτική Επιβάρυνση</p>
-                    <p className="text-[10px] text-slate-500">Επιστημονικός Σχεδιασμός ROM</p>
-                  </div>
-                </div>
-              </div>
+            <div className="relative z-10 overflow-hidden rounded-3xl border border-slate-100 shadow-xl shadow-slate-100">
+              <img 
+                src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/therapeftiki-askisi.webp" 
+                alt="Θεραπευτική Άσκηση" 
+                className="w-full h-auto object-cover"
+              />
             </div>
             
             {/* Background elements */}
