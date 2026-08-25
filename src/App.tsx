@@ -223,9 +223,9 @@ function HeroSection() {
             {[
               'Εξειδίκευση στη σπονδυλική στήλη',
               'Πιστοποιημένος McKenzie',
+              '10+ χρόνια εμπειρίας',
               'Συμβεβλημένος με ΕΟΠΥΥ',
               'Αποδεκτές όλες οι ιδιωτικές ασφαλιστικές',
-              'Κοντά σε στάσεις λεωφορείων και μετρό',
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-2 text-white text-sm md:text-base font-bold">
                 <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: '#004aad' }}>
