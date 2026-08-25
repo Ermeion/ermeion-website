@@ -197,13 +197,13 @@ function HeroSection() {
         style={{ backgroundColor: '#004aad' }}
       >
         <source
-          src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Ermeion-Hero-Section-Video/Manual-Therapy.mp4"
+          src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Ermeion-Hero-Section-Video/ERMEION%20VIDEO.mp4"
           type="video/mp4"
         />
       </video>
 
       {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/70 to-black/60" />
 
       {/* Desktop: Left-Aligned Content + Right Badge */}
       {/* Mobile: Vertical Stack Above Fold */}
