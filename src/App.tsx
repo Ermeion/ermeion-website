@@ -221,11 +221,11 @@ function HeroSection() {
           {/* Value Proposition Checkmarks */}
           <ul className="flex flex-col gap-3 md:gap-2.5 mb-10 md:mb-7">
             {[
-              '10+ χρόνια εμπειρίας',
+              'Εξειδίκευση στη σπονδυλική στήλη',
+              'Πιστοποιημένος McKenzie',
               'Συμβεβλημένος με ΕΟΠΥΥ',
               'Αποδεκτές όλες οι ιδιωτικές ασφαλιστικές',
               'Κοντά σε στάσεις λεωφορείων και μετρό',
-              'Κράτηση σε λιγότερο από 1 λεπτό',
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-2 text-white text-sm md:text-base font-bold">
                 <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: '#004aad' }}>
