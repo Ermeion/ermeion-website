@@ -237,16 +237,23 @@ function HeroSection() {
           </ul>
 
           {/* Main CTA */}
-          <a
-            href="https://cal.eu/ermeion/physiotherapy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
-            style={{ backgroundColor: '#004aad' }}
-          >
-            <CalendarCheck className="w-5 h-5" />
-            Κλείστε Ραντεβού
-          </a>
+          <div className="flex flex-col items-center md:items-start gap-3 w-full md:w-fit">
+            <a
+              href="https://cal.eu/ermeion/physiotherapy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
+              style={{ backgroundColor: '#004aad' }}
+            >
+              <CalendarCheck className="w-5 h-5" />
+              Κλείστε Ραντεβού
+            </a>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-xs md:text-sm text-white/70 font-medium text-center md:text-left">
+              <span>Κράτηση online σε 1 λεπτό</span>
+              <span className="hidden sm:inline text-white/30">•</span>
+              <span>Κοντά σε στάσεις λεωφορείων και μετρό</span>
+            </div>
+          </div>
         </div>
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
