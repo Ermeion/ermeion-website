@@ -544,12 +544,6 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
         >
           Μέθοδος ΜcKenzie
         </h2>
-        <p
-          className="text-sm md:text-base max-w-xl"
-          style={{ color: '#1f2937' }}
-        >
-          Κάθε θεραπευτικό πλάνο ενσωματώνει πέντε βασικούς πυλώνες για τη διασφάλιση αποτελεσμάτων με διάρκεια και τη βέλτιστη αποκατάσταση της κίνησης.
-        </p>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
