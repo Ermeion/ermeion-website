@@ -1546,7 +1546,7 @@ function FinalCTASection() {
 
         {/* Dynamic & Persuasive Heading */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight max-w-3xl">
-          Η ΕΓΓΥΗΣΗ ΤΟΥ ΕΡΜΕΙΟΝ ΕΡΜΕΙΟΝ
+          Η ΕΓΓΥΗΣΗ ΕΡΜΕΙΟΝ
         </h2>
 
         <p className="text-lg md:text-xl text-[#eaefeb] opacity-90 max-w-2xl mb-10 leading-relaxed font-light">
