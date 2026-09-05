@@ -542,7 +542,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
           className="text-3xl md:text-4xl font-extrabold mb-4 max-w-4xl"
           style={{ color: '#004aad' }}
         >
-          Ένα Ολοκληρωμένο Σύστημα Αποκατάστασης
+          Μέθοδος ΜcKenzie
         </h2>
         <p
           className="text-sm md:text-base max-w-xl"
