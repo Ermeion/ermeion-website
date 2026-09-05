@@ -392,6 +392,11 @@ function WhyErmeionSection() {
               className="w-full rounded-2xl object-cover"
               style={{ aspectRatio: '4/3' }}
             />
+            <div>
+              <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
+                Εξειδικευόμαστε στη Θεραπευτική Άσκηση & την Αυτοδιαχείριση, την Αποκατάσταση Τραυματισμών και τη Μετεγχειρητική Αποκατάσταση.
+              </h4>
+            </div>
           </div>
 
           {/* CTA Button */}
@@ -415,6 +420,11 @@ function WhyErmeionSection() {
             className="w-full rounded-2xl object-cover"
             style={{ aspectRatio: '4/3' }}
           />
+          <div>
+            <h4 className="text-lg font-bold text-gray-900 mb-3">
+              Εξειδικευόμαστε στη Θεραπευτική Άσκηση & την Αυτοδιαχείριση, την Αποκατάσταση Τραυματισμών και τη Μετεγχειρητική Αποκατάσταση.
+            </h4>
+          </div>
         </div>
 
       </div>
