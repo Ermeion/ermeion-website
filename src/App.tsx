@@ -249,7 +249,7 @@ function HeroSection() {
               Κλείστε Ραντεβού
             </a>
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-xs md:text-sm text-white/70 font-medium text-center md:text-left">
-              <span>Κοντά σε στάσεις λεωφορείων και μετρό</span>
+              <span>Δίπλα σε στάσεις λεωφορείων και μετρό</span>
             </div>
           </div>
         </div>
