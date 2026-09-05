@@ -215,7 +215,7 @@ function HeroSection() {
             className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8 md:mb-7"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
-            Επιστημονικά Τεκμηριωμένη Φυσικοθεραπεία στη Θεσσαλονίκη.
+            Εξειδικευμένο Κέντρο Φυσικοθεραπείας για Μυοσκελετικούς Πόνους στην Θεσσαλονίκη.
           </h1>
 
           {/* Value Proposition Checkmarks */}
