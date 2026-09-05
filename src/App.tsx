@@ -249,8 +249,6 @@ function HeroSection() {
               Κλείστε Ραντεβού
             </a>
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-xs md:text-sm text-white/70 font-medium text-center md:text-left">
-              <span>Κράτηση online σε 1 λεπτό</span>
-              <span className="hidden sm:inline text-white/30">•</span>
               <span>Κοντά σε στάσεις λεωφορείων και μετρό</span>
             </div>
           </div>
