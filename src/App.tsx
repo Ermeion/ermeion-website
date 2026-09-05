@@ -1604,7 +1604,7 @@ function Footer() {
     { label: 'Αρχική', href: '#' },
     { label: 'Υπηρεσίες', href: '#mckenzie' },
     { label: 'Γνωρίστε με', href: '#about-owner' },
-    { label: 'Μαρτυρίες', href: '#testimonials' },
+    { label: 'Αξιολογήσεις', href: '#testimonials' },
     { label: 'Συχνές Ερωτήσεις', href: '#faq' },
     { label: 'Επικοινωνία', href: '#contact' },
   ];
