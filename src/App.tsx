@@ -1540,9 +1540,6 @@ function FinalCTASection() {
       
       <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
         {/* Subtitle / Category */}
-        <span className="text-[#a5caff] text-sm md:text-base font-bold tracking-widest uppercase mb-4 block">
-          Η ΕΓΓΥΗΣΗ ΕΡΜΕΙΟΝ
-        </span>
 
         {/* Dynamic & Persuasive Heading */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight max-w-3xl">
