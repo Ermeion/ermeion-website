@@ -415,14 +415,6 @@ function WhyErmeionSection() {
             className="w-full rounded-2xl object-cover"
             style={{ aspectRatio: '4/3' }}
           />
-          <div>
-            <h4 className="text-lg font-bold text-gray-900 mb-3">
-              Πιστεύετε ότι ίσως δεν χρειάζεστε φυσικοθεραπεία;
-            </h4>
-            <p className="text-sm sm:text-sm leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
-              Αυτός είναι ακριβώς ο λόγος που γίνεται το πρώτο σας ραντεβού. Αν η φυσικοθεραπεία είναι η κατάλληλη επιλογή για εσάς, θα σας εξηγήσουμε το πλάνο θεραπείας. Αν δεν χρειάζεστε συνεχιζόμενη θεραπεία, θα σας το πούμε ξεκάθαρα.
-            </p>
-          </div>
         </div>
 
       </div>
