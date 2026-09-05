@@ -364,24 +364,6 @@ function WhyErmeionSection() {
             <span className="text-gray-900"> έχουν εμπιστευτεί τη φυσικοθεραπεία στο ΕΡΜΕΙΟΝ για ανακούφιση από τον πόνο, αποκατάσταση τραυματισμών και αποθεραπεία.</span>
           </h2>
 
-          {/* Subheading */}
-          <h3
-            className="text-base sm:text-lg font-bold mb-5"
-            style={{ color: '#004aad' }}
-          >
-            Μπορεί η φυσικοθεραπεία να με βοηθήσει πραγματικά;
-          </h3>
-
-          {/* Body paragraphs */}
-          <div className="flex flex-col gap-4 mb-8">
-            <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
-              Αυτό εξαρτάται από τη σωστή αξιολόγηση, θεραπεία και πλάνο.
-            </p>
-            <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
-              Στο ΕΡΜΕΙΟΝ δεν επικεντρωνόμαστε απλώς στο σημείο που πονάει και ελπίζουμε για το καλύτερο. Θα αξιολογήσουμε τι προκαλεί τα συμπτώματά σας, θα σας εξηγήσουμε με σαφήνεια, θα εφαρμόσουμε χειροθεραπεία όπου κρίνεται σκόπιμο και θα δημιουργήσουμε ένα πρόγραμμα αποκατάστασης προσαρμοσμένο στο σώμα, τους στόχους και τον τρόπο ζωής σας. Επίσης έχουμε διεπιστημονική ομάδα & διατροφολόγο, ώστε να καλύψουμε ολιστικά όλες τις παθήσεις.
-            </p>
-          </div>
-
           {/* Checklist header */}
           <p className="text-base sm:text-sm font-bold text-gray-900 mb-5">
             Βοηθάμε ασθενείς με:
