@@ -539,7 +539,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2
-          className="text-4xl md:text-5xl font-extrabold mb-4 max-w-4xl"
+          className="text-4xl md:text-6xl font-extrabold mb-4 max-w-4xl"
           style={{ color: '#004aad' }}
         >
           Μέθοδος ΜcKenzie
