@@ -366,7 +366,7 @@ function WhyErmeionSection() {
 
           {/* Checklist header */}
           <p className="text-base sm:text-sm font-bold text-gray-900 mb-5">
-            Βοηθάμε ασθενείς με:
+            Παρέχουμε εξατομικευμένη αξιολόγηση και θεραπεία για:
           </p>
 
           {/* Checklist */}
