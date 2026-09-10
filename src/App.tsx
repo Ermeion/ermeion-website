@@ -97,9 +97,7 @@ function Navbar() {
 
         {/* Desktop CTA */}
         <a
-          href="https://cal.eu/ermeion/physiotherapy"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="tel:+306988404234"
           className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
           style={{ backgroundColor: '#004aad' }}
         >
@@ -108,12 +106,13 @@ function Navbar() {
 
         {/* Mobile: CTA + Hamburger Row */}
         <div className="md:hidden flex items-center gap-2">
-          <button
-            className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
+          <a
+            href="tel:+306988404234"
+            className="px-4 py-2 rounded-lg text-sm font-semibold text-white flex items-center justify-center"
             style={{ backgroundColor: '#004aad' }}
           >
             Κράτηση 
-          </button>
+          </a>
           <button
             className="p-2 rounded-lg transition-colors"
             style={{ color: '#004aad' }}
@@ -168,10 +167,8 @@ function Navbar() {
             </a>
           ))}
           <a
-            href="https://cal.eu/ermeion/physiotherapy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
+            href="tel:+306988404234"
+            className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90 flex items-center justify-center"
             style={{ backgroundColor: '#004aad' }}
             onClick={closeMenu}
           >
@@ -239,9 +236,7 @@ function HeroSection() {
           {/* Main CTA */}
           <div className="flex flex-col items-center md:items-start gap-3 w-full md:w-fit">
             <a
-              href="https://cal.eu/ermeion/physiotherapy"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:+306988404234"
               className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
               style={{ backgroundColor: '#004aad' }}
             >
@@ -401,9 +396,7 @@ function WhyErmeionSection() {
 
           {/* CTA Button */}
           <a
-            href="https://cal.eu/ermeion/physiotherapy"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+306988404234"
             className="flex items-center justify-center gap-2 w-full lg:w-fit px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#004aad' }}
           >
@@ -1607,7 +1600,7 @@ function Footer() {
           <div className="flex flex-col gap-3 text-sm" style={{ color: '#ffffff' }}>
             <div className="flex items-start gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Παπάφη 92, Θεσσαλονίκη, 544 53</span>
+              <a href="https://maps.app.goo.gl/wgYPV5RU4dcuMGJHA" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Παπάφη 92, Θεσσαλονίκη, 544 53</a>
             </div>
             <div className="flex items-center gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>

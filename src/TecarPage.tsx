@@ -51,9 +51,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://cal.eu/ermeion/physiotherapy"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:+306988404234"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-lg shadow-blue-500/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
               >
                 Κλείστε Ραντεβού
@@ -274,15 +272,13 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://cal.eu/ermeion/physiotherapy"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:+306988404234"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-lg shadow-blue-500/10 hover:shadow-xl transition-all duration-300"
             >
               Κλείστε Ραντεβού Online
             </a>
             <a
-              href="tel:+30210000000"
+              href="tel:+306988404234"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-base font-semibold transition-all duration-300"
             >
               Επικοινωνήστε Τηλεφωνικώς
