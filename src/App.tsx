@@ -31,9 +31,9 @@ function Navbar() {
 
   const servicesList = [
     { label: 'Μέθοδος McKenzie', href: '#mckenzie' },
-    { label: 'Tecar Therapy', href: '#tecar' },
     { label: 'Θεραπεία & Πρόληψη Σπονδυλικού Πόνου', href: '#spine-pain' },
-    { label: 'Θεραπευτική Άσκηση', href: '#exercise' }
+    { label: 'Θεραπευτική Άσκηση', href: '#exercise' },
+    { label: 'Tecar Therapy', href: '#tecar' }
   ];
 
   return (
@@ -1760,12 +1760,12 @@ function App() {
       {currentPage === 'home' ? (
         <>
           <HeroSection />
-          <InsuranceCarouselSection />
+          <CertificatesCarouselSection />
           <WhyErmeionSection />
           <TestimonialsSection />
           <ProcessSection />
           <AboutOwnerSection />
-          <CertificatesCarouselSection />
+          <InsuranceCarouselSection />
           <WhyChooseUsSection />
           <OfficeCarouselSection />
           <FAQSection />
