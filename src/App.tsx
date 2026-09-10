@@ -215,7 +215,7 @@ function HeroSection() {
             className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8 md:mb-7"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
-            Επιστημονικά Τεκμηριωμένη Φυσικοθεραπεία στη Θεσσαλονίκη.
+            Εξειδικευμένο Κέντρο Φυσικοθεραπείας για Μυοσκελετικούς Πόνους στην Θεσσαλονίκη.
           </h1>
 
           {/* Value Proposition Checkmarks */}
@@ -249,9 +249,7 @@ function HeroSection() {
               Κλείστε Ραντεβού
             </a>
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-xs md:text-sm text-white/70 font-medium text-center md:text-left">
-              <span>Κράτηση online σε 1 λεπτό</span>
-              <span className="hidden sm:inline text-white/30">•</span>
-              <span>Κοντά σε στάσεις λεωφορείων και μετρό</span>
+              <span>Δίπλα σε στάσεις λεωφορείων και μετρό</span>
             </div>
           </div>
         </div>
@@ -346,12 +344,12 @@ function InsuranceCarouselSection() {
 // Why Ermeion Section Component
 function WhyErmeionSection() {
   const checklistItems = [
-    'Χρόνιο πόνο στη μέση, οσφυαλγία και δισκοκήλες',
-    'Τραυματισμό στο γόνατο, στο ισχίο ή στον αστράγαλο',
-    'Αθλητικούς τραυματισμούς (sports rehab) και δυσκαμψία',
-    'Πόνο στον αυχένα, στους ώμους και προβλήματα στάσης σώματος',
+    'Κήλη / Προβολή μεσοσπονδύλιου δίσκου',
+    'Χρόνιο πόνο στη μέση, οσφυαλγία και ισχιαλγία',
+    'Πόνο στον αυχένα και προβλήματα στάσης σώματος',
     'Τενοντοπάθειες, τραυματισμό στροφικού πετάλου και ρήξη υπερακανθίου',
-    'Πόνο στον καρπό, στον αγκώνα, στο χέρι και κακώσεις από επαναλαμβανόμενες κινήσεις',
+    'Έξω επικονδυλίτιδα, έσω επικονδυλίτιδα και κακώσεις από επαναλαμβανόμενες κινήσεις',
+    'Αποκατάσταση μετά από χειρουργείο & αθλητικούς τραυματισμούς',
   ];
 
   return (
@@ -366,27 +364,9 @@ function WhyErmeionSection() {
             <span className="text-gray-900"> έχουν εμπιστευτεί τη φυσικοθεραπεία στο ΕΡΜΕΙΟΝ για ανακούφιση από τον πόνο, αποκατάσταση τραυματισμών και αποθεραπεία.</span>
           </h2>
 
-          {/* Subheading */}
-          <h3
-            className="text-base sm:text-lg font-bold mb-5"
-            style={{ color: '#004aad' }}
-          >
-            Μπορεί η φυσικοθεραπεία να με βοηθήσει πραγματικά;
-          </h3>
-
-          {/* Body paragraphs */}
-          <div className="flex flex-col gap-4 mb-8">
-            <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
-              Αυτό εξαρτάται από τη σωστή αξιολόγηση, θεραπεία και πλάνο.
-            </p>
-            <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
-              Στο ΕΡΜΕΙΟΝ δεν επικεντρωνόμαστε απλώς στο σημείο που πονάει και ελπίζουμε για το καλύτερο. Θα αξιολογήσουμε τι προκαλεί τα συμπτώματά σας, θα σας εξηγήσουμε με σαφήνεια, θα εφαρμόσουμε χειροθεραπεία όπου κρίνεται σκόπιμο και θα δημιουργήσουμε ένα πρόγραμμα αποκατάστασης προσαρμοσμένο στο σώμα, τους στόχους και τον τρόπο ζωής σας. Επίσης έχουμε διεπιστημονική ομάδα & διατροφολόγο, ώστε να καλύψουμε ολιστικά όλες τις παθήσεις.
-            </p>
-          </div>
-
           {/* Checklist header */}
           <p className="text-base sm:text-sm font-bold text-gray-900 mb-5">
-            Βοηθάμε ασθενείς με:
+            Παρέχουμε εξατομικευμένη αξιολόγηση και θεραπεία για:
           </p>
 
           {/* Checklist */}
@@ -414,11 +394,8 @@ function WhyErmeionSection() {
             />
             <div>
               <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
-                Πιστεύετε ότι ίσως δεν χρειάζεστε φυσικοθεραπεία;
+                Εξειδικευόμαστε στη Θεραπευτική Άσκηση & την Αυτοδιαχείριση, την Αποκατάσταση Τραυματισμών και τη Μετεγχειρητική Αποκατάσταση.
               </h4>
-              <p className="text-sm sm:text-sm md:text-base leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
-                Αυτός είναι ακριβώς ο λόγος που γίνεται το πρώτο σας ραντεβού. Αν η φυσικοθεραπεία είναι η κατάλληλη επιλογή για εσάς, θα σας εξηγήσουμε το πλάνο. Αν δεν χρειάζεστε συνεχιζόμενη θεραπεία, θα σας το πούμε ξεκάθαρα.
-              </p>
             </div>
           </div>
 
@@ -445,11 +422,8 @@ function WhyErmeionSection() {
           />
           <div>
             <h4 className="text-lg font-bold text-gray-900 mb-3">
-              Πιστεύετε ότι ίσως δεν χρειάζεστε φυσικοθεραπεία;
+              Εξειδικευόμαστε στη Θεραπευτική Άσκηση & την Αυτοδιαχείριση, την Αποκατάσταση Τραυματισμών και τη Μετεγχειρητική Αποκατάσταση.
             </h4>
-            <p className="text-sm sm:text-sm leading-relaxed font-medium" style={{ color: '#3d3d3d' }}>
-              Αυτός είναι ακριβώς ο λόγος που γίνεται το πρώτο σας ραντεβού. Αν η φυσικοθεραπεία είναι η κατάλληλη επιλογή για εσάς, θα σας εξηγήσουμε το πλάνο θεραπείας. Αν δεν χρειάζεστε συνεχιζόμενη θεραπεία, θα σας το πούμε ξεκάθαρα.
-            </p>
           </div>
         </div>
 
@@ -541,17 +515,11 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2
-          className="text-3xl md:text-4xl font-extrabold mb-4 max-w-4xl"
+          className="text-4xl md:text-6xl font-extrabold mb-4 max-w-4xl"
           style={{ color: '#004aad' }}
         >
-          Ένα Ολοκληρωμένο Σύστημα Αποκατάστασης
+          Μέθοδος ΜcKenzie
         </h2>
-        <p
-          className="text-sm md:text-base max-w-xl"
-          style={{ color: '#1f2937' }}
-        >
-          Κάθε θεραπευτικό πλάνο ενσωματώνει πέντε βασικούς πυλώνες για τη διασφάλιση αποτελεσμάτων με διάρκεια και τη βέλτιστη αποκατάσταση της κίνησης.
-        </p>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
@@ -836,7 +804,7 @@ function AboutOwnerSection() {
                 className="relative z-10 w-full aspect-[4/5] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02] mx-auto"
               />
               <p className="relative z-10 mt-4 text-center text-sm font-bold" style={{ color: '#3d3d3d' }}>
-                🏅 Μέλος του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών
+                Μέλος του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών
               </p>
             </div>
           </div>
@@ -1548,13 +1516,10 @@ function FinalCTASection() {
       
       <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
         {/* Subtitle / Category */}
-        <span className="text-[#a5caff] text-sm md:text-base font-bold tracking-widest uppercase mb-4 block">
-          Η ΕΓΓΥΗΣΗ ΕΡΜΕΙΟΝ
-        </span>
 
         {/* Dynamic & Persuasive Heading */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight max-w-3xl">
-          Είστε έτοιμοι να πείτε ΑΝΤΙΟ στον πόνο;
+          Η ΕΓΓΥΗΣΗ ΕΡΜΕΙΟΝ
         </h2>
 
         <p className="text-lg md:text-xl text-[#eaefeb] opacity-90 max-w-2xl mb-10 leading-relaxed font-light">
@@ -1604,7 +1569,7 @@ function Footer() {
     { label: 'Αρχική', href: '#' },
     { label: 'Υπηρεσίες', href: '#mckenzie' },
     { label: 'Γνωρίστε με', href: '#about-owner' },
-    { label: 'Μαρτυρίες', href: '#testimonials' },
+    { label: 'Αξιολογήσεις', href: '#testimonials' },
     { label: 'Συχνές Ερωτήσεις', href: '#faq' },
     { label: 'Επικοινωνία', href: '#contact' },
   ];
