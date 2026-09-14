@@ -1584,7 +1584,7 @@ function Footer() {
   return (
     <footer style={{ backgroundColor: '#0d0d1a' }}>
       {/* Main footer body */}
-      <div className="max-w-6xl mx-auto px-6 md:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {/* Brand column */}
         <div className="flex flex-col gap-5">
@@ -1595,40 +1595,61 @@ function Footer() {
             </p>
           </div>
 
-          {/* Contact details */}
-          <div className="flex flex-col gap-3 text-sm" style={{ color: '#ffffff' }}>
-            <div className="flex items-start gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <a href="https://maps.app.goo.gl/wgYPV5RU4dcuMGJHA" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Παπάφη 92, Θεσσαλονίκη, 544 53</a>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:2310940100" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>231 094 0100</a>
-            </div>
-            <div className="flex items-center gap-2.5">
+          {/* Location address */}
+          <div className="flex items-start gap-2.5 text-sm" style={{ color: '#ffffff' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <a href="https://maps.app.goo.gl/wgYPV5RU4dcuMGJHA" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Παπάφη 92, Θεσσαλονίκη, 544 53</a>
+          </div>
+        </div>
+
+        {/* Support & Contact 24/7 column */}
+        <div>
+          <p className="text-xs uppercase tracking-widest font-semibold mb-5" style={{ color: '#5b8cff' }}>Υποστήριξη & Επικοινωνία 24/7</p>
+          <div className="flex flex-col gap-2.5 text-sm" style={{ color: '#ffffff' }}>
+            <a
+              href="tel:2310940100"
+              className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-fit group"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 transition-transform duration-200 group-hover:scale-110"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>231 094 0100</span>
+            </a>
+            <a
+              href="viber://chat?number=%2B306988404234"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-[#7360f2]/50 shadow-sm hover:shadow-[0_0_15px_rgba(115,96,242,0.25)] transition-all duration-200 text-white w-fit group"
+            >
               <img
                 src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Messaging%20Apps/viber.webp"
                 alt="Viber"
                 width="16"
                 height="16"
-                className="w-4 h-4 object-contain shrink-0"
+                className="w-4 h-4 object-contain shrink-0 transition-transform duration-200 group-hover:scale-110"
               />
-              <a href="viber://chat?number=%2B306988404234" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Μήνυμα στο Viber</a>
-            </div>
-            <div className="flex items-center gap-2.5">
+              <span>Μήνυμα στο Viber</span>
+            </a>
+            <a
+              href="https://wa.me/306988404234"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-[#25d366]/50 shadow-sm hover:shadow-[0_0_15px_rgba(37,211,102,0.25)] transition-all duration-200 text-white w-fit group"
+            >
               <img
                 src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Messaging%20Apps/whatsapp.webp"
                 alt="WhatsApp"
                 width="16"
                 height="16"
-                className="w-4 h-4 object-contain shrink-0"
+                className="w-4 h-4 object-contain shrink-0 transition-transform duration-200 group-hover:scale-110"
               />
-              <a href="https://wa.me/306988404234" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Μήνυμα στο WhatsApp</a>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:ermeion@outlook.com" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>ermeion@outlook.com</a>
-            </div>
+              <span>Μήνυμα στο WhatsApp</span>
+            </a>
+            <a
+              href="mailto:ermeion@outlook.com"
+              className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-fit group"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 transition-transform duration-200 group-hover:scale-110"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>ermeion@outlook.com</span>
+            </a>
           </div>
         </div>
 
