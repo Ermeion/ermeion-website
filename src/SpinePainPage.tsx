@@ -48,7 +48,7 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 font-light leading-relaxed mb-8">
-              Στο ΕΡΜΕΙΟΝ, αντιμετωπίζουμε αντιμετωπίζουμε τον σπονδυλικό πόνο με τρόπο σύγχρονο, εξατομικευμένο και βασισμένο σε επιστημονικά τεκμηριωμένες πρακτικές.
+              Στο ΕΡΜΕΙΟΝ, αντιμετωπίζουμε τον σπονδυλικό πόνο με τρόπο σύγχρονο, εξατομικευμένο και βασισμένο σε επιστημονικά τεκμηριωμένες πρακτικές.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -92,7 +92,7 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
           
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-6">
-              Ενδείξεις Σπονδυλικού Πόνου
+              Βοηθάμε καθημερινά άτομα με:
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
               Η φυσικοθεραπεία ενδείκνυται σε άτομα με:
@@ -109,7 +109,7 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
                 </div>
                 <h4 className="text-lg font-bold text-slate-800 mb-3">Οσφυαλγία</h4>
                 <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Οσφυαλγία (πόνος στη μέση) — με ή χωρίς ισχιαλγία και νευρολογικό έλλειμμα
+                  Πόνο στην μέση, με ή χωρίς ισχιαλγία και νευρολογικό έλλειμμα.
                 </p>
               </div>
             </div>
@@ -120,9 +120,9 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
                 <div className="w-12 h-12 rounded-2xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-6">
                   <Compass className="w-6 h-6" />
                 </div>
-                <h4 className="text-lg font-bold text-slate-800 mb-3">Αθλητικός Πόνος</h4>
+                <h4 className="text-lg font-bold text-slate-800 mb-3">Αθλητικούς Τραυματισμούς</h4>
                 <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Πόνο στη μέση ή τον αυχένα κατά την διάρκεια ασκήσεων ή παλιών τραυματισμών στο γυμναστήριο.
+                  Πόνο στον αυχένα ή την μέση κατά την διάρκεια των δραστηριοτήτων/αθλημάτων ή ασκήσεων στο γυμναστήριο.
                 </p>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
                 </div>
                 <h4 className="text-lg font-bold text-slate-800 mb-3">Αυχεναλγία</h4>
                 <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Αυχεναλγία (πόνος στον αυχένα) — με ή χωρίς πόνο στον ώμο/χέρι και νευρολογικό έλλειμμα
+                  Πόνο στον αυχένα, με ή χωρίς πόνο στον ώμο/χέρι και νευρολογικό έλλειμμα.
                 </p>
               </div>
             </div>
@@ -148,7 +148,7 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
                 </div>
                 <h4 className="text-lg font-bold text-slate-800 mb-3">Θωρακικός Πόνος</h4>
                 <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Θωρακικό πόνο
+                 Πόνο στην πλάτη, δυσκαμψία και προβλήματα στην κίνηση της.
                 </p>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
                 </div>
                 <h4 className="text-lg font-bold text-slate-800 mb-3">Κήλες & Εκφυλιστικές Αλλοιώσεις</h4>
                 <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Επώδυνες κήλες μεσοσπονδυλίου δίσκου ή άλλες εκφυλιστικές αλλοιώσεις
+                  Επώδυνες κήλες, χειρουργεία δισκεκτομής και εκφυλιστικές αλλοιώσεις.
                 </p>
               </div>
             </div>
@@ -177,11 +177,8 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
           
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-6">
-              Επιστημονικές Πρακτικές
-            </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
               Εφαρμόζουμε επιστημονικά τεκμηριωμένες πρακτικές όπως:
-            </p>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
@@ -252,9 +249,9 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
                   <div className="w-12 h-12 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center mb-6">
                     <Zap className="w-6 h-6" />
                   </div>
-                  <h4 className="text-lg font-bold text-slate-800 mb-4">Ηλεκτροθεραπεία & Ραδιοσυχνότητες</h4>
+                  <h4 className="text-lg font-bold text-slate-800 mb-4">Ηλεκτροθεραπεία - TECAR</h4>
                   <p className="text-slate-600 font-light text-base leading-relaxed">
-                    Και όταν ενδείκνυται, συνήθως στην οξεία φάση, χρησιμοποιούμε θεραπευτικά φυσικά μέσα ηλεκτροθεραπείας όπως TECAR - στοχευμένες ραδιοσυχνότητες.
+                   Όταν ενδείκνυται, και ιδιαίτερα σε οξεία φάση, χρησιμοποιούμε τα φυσικά μέσα ηλεκτροθεραπείας - TECAR, για την άμεση ανακούφιση των συμπτωμάτων.
                   </p>
                 </div>
               </div>

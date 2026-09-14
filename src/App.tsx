@@ -1564,7 +1564,6 @@ function Footer() {
     { label: 'Γνωρίστε με', href: '#about-owner' },
     { label: 'Αξιολογήσεις', href: '#testimonials' },
     { label: 'Συχνές Ερωτήσεις', href: '#faq' },
-    { label: 'Επικοινωνία', href: '#contact' },
   ];
 
   const openingHours = [
@@ -1607,8 +1606,12 @@ function Footer() {
               <a href="tel:2310940100" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>231 094 0100</a>
             </div>
             <div className="flex items-center gap-2.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:6988404234" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>698 840 4234</a>
+              <img src="/image.png" alt="" width="15" height="15" className="w-[15px] h-[15px] object-contain shrink-0" />
+              <a href="viber://chat?number=%2B306988404234" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Μήνυμα στο Viber</a>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <img src="/image copy.png" alt="" width="15" height="15" className="w-[15px] h-[15px] object-contain shrink-0" />
+              <a href="https://wa.me/306988404234" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Μήνυμα στο WhatsApp</a>
             </div>
             <div className="flex items-center gap-2.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>

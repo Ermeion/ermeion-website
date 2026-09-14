@@ -13,7 +13,7 @@ Since copy is provided for specific sections, we will implement only the active 
     *   Left side: Breadcrumb (`Υπηρεσίες / Θεραπεία & Πρόληψη Σπονδυλικού Πόνου`), main page title "Θεραπεία & Πρόληψη Σπονδυλικού Πόνου", and copy.
     *   Right side: Close-up professional photography representing vertebral column assessment, paired with a custom anatomical SVG model showing postural lines and load-bearing curves.
 *   **Active Greek Copy**:
-    > "Στο ΕΡΜΕΙΟΝ, αντιμετωπίζουμε αντιμετωπίζουμε τον σπονδυλικό πόνο με τρόπο σύγχρονο, εξατομικευμένο και βασισμένο σε επιστημονικά τεκμηριωμένες πρακτικές."
+    > "Στο ΕΡΜΕΙΟΝ, αντιμετωπίζουμε τον σπονδυλικό πόνο με τρόπο σύγχρονο, εξατομικευμένο και βασισμένο σε επιστημονικά τεκμηριωμένες πρακτικές."
 
 ### B. Indications & Focus Areas (Who it is for - Card Grid)
 *   **Visual Elements**:
