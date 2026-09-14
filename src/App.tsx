@@ -1606,11 +1606,23 @@ function Footer() {
               <a href="tel:2310940100" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>231 094 0100</a>
             </div>
             <div className="flex items-center gap-2.5">
-              <img src="/image.png" alt="" width="15" height="15" className="w-[15px] h-[15px] object-contain shrink-0" />
+              <img
+                src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Messaging%20Apps/viber.webp"
+                alt="Viber"
+                width="16"
+                height="16"
+                className="w-4 h-4 object-contain shrink-0"
+              />
               <a href="viber://chat?number=%2B306988404234" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Μήνυμα στο Viber</a>
             </div>
             <div className="flex items-center gap-2.5">
-              <img src="/image copy.png" alt="" width="15" height="15" className="w-[15px] h-[15px] object-contain shrink-0" />
+              <img
+                src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Messaging%20Apps/whatsapp.webp"
+                alt="WhatsApp"
+                width="16"
+                height="16"
+                className="w-4 h-4 object-contain shrink-0"
+              />
               <a href="https://wa.me/306988404234" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Μήνυμα στο WhatsApp</a>
             </div>
             <div className="flex items-center gap-2.5">
