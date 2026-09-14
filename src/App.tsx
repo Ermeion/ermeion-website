@@ -1610,7 +1610,7 @@ function Footer() {
           <div className="flex flex-col gap-2.5 text-sm" style={{ color: '#ffffff' }}>
             <a
               href="tel:2310940100"
-              className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-full sm:w-fit group"
+              className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-fit group"
             >
               <div className="w-7 h-7 rounded-lg bg-[#5b8cff]/10 flex items-center justify-center shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -1621,7 +1621,7 @@ function Footer() {
               href="viber://chat?number=%2B306988404234"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#7360f2]/50 shadow-sm hover:shadow-[0_0_15px_rgba(115,96,242,0.25)] transition-all duration-200 text-white w-full sm:w-fit group"
+              className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#7360f2]/50 shadow-sm hover:shadow-[0_0_15px_rgba(115,96,242,0.25)] transition-all duration-200 text-white w-fit group"
             >
               <div className="w-7 h-7 rounded-lg bg-[#7360f2]/10 flex items-center justify-center shrink-0">
                 <img
@@ -1638,7 +1638,7 @@ function Footer() {
               href="https://wa.me/306988404234"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#25d366]/50 shadow-sm hover:shadow-[0_0_15px_rgba(37,211,102,0.25)] transition-all duration-200 text-white w-full sm:w-fit group"
+              className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#25d366]/50 shadow-sm hover:shadow-[0_0_15px_rgba(37,211,102,0.25)] transition-all duration-200 text-white w-fit group"
             >
               <div className="w-7 h-7 rounded-lg bg-[#25d366]/10 flex items-center justify-center shrink-0">
                 <img
@@ -1653,7 +1653,7 @@ function Footer() {
             </a>
             <a
               href="mailto:ermeion@outlook.com"
-              className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-full sm:w-fit group"
+              className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-fit group"
             >
               <div className="w-7 h-7 rounded-lg bg-[#5b8cff]/10 flex items-center justify-center shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
