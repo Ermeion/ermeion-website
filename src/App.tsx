@@ -794,7 +794,7 @@ function AboutOwnerSection() {
               <img
                 src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/ermeion-1.webp"
                 alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
-                className="relative z-10 w-full aspect-[4/5] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02] mx-auto"
+                className="relative z-10 w-full aspect-[3/4] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02] mx-auto"
               />
               <p className="relative z-10 mt-4 text-center text-sm font-bold" style={{ color: '#3d3d3d' }}>
                 Μέλος του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών
