@@ -311,12 +311,6 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
             >
               Κλείστε Ραντεβού Online
             </a>
-            <a
-              href="tel:+306988404234"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-base font-semibold transition-all duration-300"
-            >
-              Επικοινωνήστε Τηλεφωνικώς
-            </a>
           </div>
         </div>
       </section>
