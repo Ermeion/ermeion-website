@@ -1389,7 +1389,7 @@ const faqItems = [
   },
   {
     id: 'faq-5',
-    question: 'Πόσο καιρό χρειάζεται για να νιώσω καλύτερα;;',
+    question: 'Πόσο καιρό χρειάζεται για να νιώσω καλύτερα;',
     answer:
       'Όπως και με την παραπάνω ερώτηση, αυτό μπορεί να απαντηθεί καλύτερα μόλις μπορέσω να καθορίσω μια διάγνωση. Μπορεί να διαφέρει σημαντικά. Μερικές φορές μια διαταραχή αντιστρέφεται σε μία εβδομάδα. Από την άλλη πλευρά, σε περίπτωση που ένας ασθενής έχει συμπτώματα για πολλούς μήνες ή χρόνια, στην περίπτωση ορισμένων διαγνώσεων ή στην περίπτωση έλλειψης συνέπειας, η αναμενόμενη διάρκεια μπορεί να είναι μήνες. Σε αυτές τις περιπτώσεις, οι επισκέψεις γίνονται πιο αραιές και πραγματοποιούνται σε διαστήματα βάσει της αναγκαιότητας.',
   },
@@ -1459,16 +1459,23 @@ function FAQSection() {
                     </svg>
                   </span>
                 </button>
-                <div
-                  className="overflow-hidden transition-all duration-300"
-                  style={{ maxHeight: isOpen ? '600px' : '0px', opacity: isOpen ? 1 : 0 }}
-                >
-                  <div className="pb-5 sm:mb-1 lg:mb-2">
-                    <p className="text-gray-800 lg:text-lg leading-relaxed">
-                      {item.answer}
-                    </p>
-                  </div>
-                </div>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pb-5 sm:mb-1 lg:mb-2">
+                        <p className="text-gray-800 lg:text-lg leading-relaxed">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             );
           })}
