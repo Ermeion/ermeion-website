@@ -1485,13 +1485,6 @@ function FAQSection() {
 }
 
 // Final CTA Section Component
-const guaranteeItems = [
-  'Λεπτομερής αξιολόγηση',
-  'Επιστημονική προσέγγιση',
-  'Σαφής επικοινωνία',
-  'Μετρήσιμη πρόοδος',
-];
-
 function FinalCTASection() {
   return (
     <section id="contact" className="relative overflow-hidden py-24 md:py-32 w-full text-center bg-gradient-to-br from-[#003882] via-[#004aad] to-[#001f4d] scroll-mt-20">
@@ -1524,21 +1517,6 @@ function FinalCTASection() {
         <p className="text-lg md:text-xl text-[#eaefeb] opacity-90 max-w-2xl mb-10 leading-relaxed font-light">
           Κάντε το πρώτο βήμα σήμερα για να ανακτήσετε την ελευθερία κινήσεών σας με ένα εξατομικευμένο πλάνο αποκατάστασης.
         </p>
-
-        {/* Benefits Grid */}
-        <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-12 max-w-3xl">
-          {guaranteeItems.map((item, i) => (
-            <div 
-              key={i} 
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md bg-white/5"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#38bdf8]" />
-              <span className="text-white font-medium text-sm md:text-base">
-                {item}
-              </span>
-            </div>
-          ))}
-        </div>
 
         {/* Pulsing Animated Button */}
         <div className="relative group">
