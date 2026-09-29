@@ -107,7 +107,7 @@ graph TD
 
 #### 9. High-Conversion End-of-Page CTA
 *   **Visual Treatment**: Full-width premium background block utilizing a soft gradient (`from-slate-50 to-blue-50/50`).
-*   **Components**: Direct title, text, and two buttons: "Κλείστε Ραντεβού Online" and "Επικοινωνήστε Τηλεφωνικώς".
+*   **Components**: Direct title, text, and two buttons: Κλείστε Ραντεβού.
 
 ---
 
