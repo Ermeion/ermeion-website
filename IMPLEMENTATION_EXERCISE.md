@@ -56,7 +56,7 @@ Since copy is provided for specific sections, we will implement only the active 
 *   **Service-Specific Copy**:
     *   Header: "Ξεκινήστε το Θεραπευτικό σας Πρόγραμμα"
     *   Subtext: "Επαναφέρετε τη λειτουργικότητα του σώματός σας με επιστημονική καθοδήγηση."
-    *   Buttons: "Κλείστε Ραντεβού Online" and "Επικοινωνήστε Τηλεφωνικώς"
+    *   Buttons: "Κλείστε Ραντεβού
 
 ---
 
