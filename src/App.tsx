@@ -251,8 +251,12 @@ function HeroSection() {
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
         <div className="flex justify-center md:justify-end mt-10 md:mt-0 md:shrink-0">
-          <div
-            className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[190px] md:w-[240px]"
+          <a
+            href="https://maps.app.goo.gl/hy7hgt4dZQAv1JdQ9"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Δείτε τις αξιολογήσεις μας στο Google"
+            className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[190px] md:w-[240px] transition-all duration-300 hover:scale-105 cursor-pointer group"
             style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}
           >
             {/* Google Logo */}
@@ -271,10 +275,10 @@ function HeroSection() {
               ))}
             </div>
             {/* Rating Text */}
-            <p className="text-sm md:text-base font-semibold" style={{ color: '#004aad' }}>
+            <p className="text-sm md:text-base font-semibold group-hover:underline" style={{ color: '#004aad' }}>
               5 · Βάσει 946+ αξιολογήσεων
             </p>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -360,7 +364,7 @@ function WhyErmeionSection() {
           </h2>
 
           {/* Checklist header */}
-          <p className="text-base sm:text-sm font-bold text-gray-900 mb-5">
+          <p className="text-lg md:text-xl font-bold text-gray-900 mb-5">
             Παρέχουμε εξατομικευμένη αξιολόγηση και θεραπεία για:
           </p>
 
@@ -369,12 +373,12 @@ function WhyErmeionSection() {
             {checklistItems.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <span
-                  className="shrink-0 mt-0.5 w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                  className="shrink-0 mt-1 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
                   style={{ backgroundColor: '#004aad' }}
                 >
                   &#10003;
                 </span>
-                <span className="text-sm sm:text-sm font-bold text-gray-900 leading-snug">{item}</span>
+                <span className="text-base md:text-lg font-normal text-gray-900 leading-snug">{item}</span>
               </li>
             ))}
           </ul>
@@ -388,7 +392,7 @@ function WhyErmeionSection() {
               style={{ aspectRatio: '4/3' }}
             />
             <div>
-              <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
+              <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-snug">
                 Εξειδικευόμαστε στη Θεραπευτική Άσκηση & την Αυτοδιαχείριση, την Αποκατάσταση Τραυματισμών και τη Μετεγχειρητική Αποκατάσταση.
               </h4>
             </div>
@@ -397,7 +401,7 @@ function WhyErmeionSection() {
           {/* CTA Button */}
           <a
             href="tel:+306988404234"
-            className="flex items-center justify-center gap-2 w-full lg:w-fit px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white transition-all duration-300 hover:opacity-90"
+            className="flex items-center justify-center gap-2 w-full lg:w-fit px-8 py-4 rounded-xl text-base font-bold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#004aad' }}
           >
             <CalendarCheck className="w-5 h-5 shrink-0" />
@@ -414,7 +418,7 @@ function WhyErmeionSection() {
             style={{ aspectRatio: '4/3' }}
           />
           <div>
-            <h4 className="text-lg font-bold text-gray-900 mb-3">
+            <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-snug">
               Εξειδικευόμαστε στη Θεραπευτική Άσκηση & την Αυτοδιαχείριση, την Αποκατάσταση Τραυματισμών και τη Μετεγχειρητική Αποκατάσταση.
             </h4>
           </div>
@@ -573,36 +577,35 @@ function ProcessSection() {
     {
       title: 'Αξιολόγηση',
       content: (
-        <div className="bg-white rounded-2xl p-6 shadow-md">
-          <div className="flex items-center gap-3 mb-3">
+        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md">
+          <div className="flex items-center gap-3 mb-4">
             <span
-              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              className="flex items-center justify-center w-10 h-10 rounded-full text-white shrink-0"
               style={{ backgroundColor: '#004aad' }}
             >
               <ClipboardEdit className="w-5 h-5" />
             </span>
           </div>
           <p
-            className="text-base leading-relaxed mb-4"
-            style={{ color: '#1f2937' }}
+            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed mb-6"
           >
             Η πρώτη επίσκεψη περιλαμβάνει τη λήψη λεπτομερούς ιστορικού. Μετά θα προχωρήσουμε στη κλινική εξέταση, όπου θα εκτελείτε συγκεκριμένες ασκήσεις ή/και θα μένετε σε συγκεκριμένες θέσεις. Οι αλλαγές των συμπτωμάτων και του εύρους κίνησης, θα μου παρέχουν τις πληροφορίες για την κατάταξη του προβλήματος σας.
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2.5">
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Λήψη ιστορικού
             </span>
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Κλινική εξέταση
             </span>
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Δοκιμαστικές κινήσεις
@@ -614,36 +617,35 @@ function ProcessSection() {
     {
       title: 'Κατάταξη',
       content: (
-        <div className="bg-white rounded-2xl p-6 shadow-md">
-          <div className="flex items-center gap-3 mb-3">
+        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md">
+          <div className="flex items-center gap-3 mb-4">
             <span
-              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              className="flex items-center justify-center w-10 h-10 rounded-full text-white shrink-0"
               style={{ backgroundColor: '#004aad' }}
             >
               <ClipboardCheck className="w-5 h-5" />
             </span>
           </div>
           <p
-            className="text-base leading-relaxed mb-4"
-            style={{ color: '#1f2937' }}
+            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed mb-6"
           >
             Κάθε σύνδρομο αντιμετωπίζεται, σύμφωνα με τη μοναδική φύση του, με ειδικές μηχανικές διαδικασίες, συμπεριλαμβανομένων των επαναλαμβανόμενων κινήσεων και των παρατεταμένων θέσεων.
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2.5">
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Μηχανική διάγνωση
             </span>
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Ταξινόμηση συνδρόμου
             </span>
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Εξατομικευμένη προσέγγιση
@@ -655,56 +657,54 @@ function ProcessSection() {
     {
       title: 'Θεραπεία',
       content: (
-        <div className="bg-white rounded-2xl p-6 shadow-md">
-          <div className="flex items-center gap-3 mb-3">
+        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md">
+          <div className="flex items-center gap-3 mb-4">
             <span
-              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              className="flex items-center justify-center w-10 h-10 rounded-full text-white shrink-0"
               style={{ backgroundColor: '#004aad' }}
             >
               <Dumbbell className="w-5 h-5" />
             </span>
           </div>
           <p
-            className="text-base leading-relaxed mb-3"
-            style={{ color: '#1f2937' }}
+            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed mb-4"
           >
             Χρησιμοποιώντας τα στοιχεία της αξιολόγησης:
           </p>
-          <ul className="flex flex-col gap-2 mb-3">
-            <li className="flex items-start gap-2 text-base leading-relaxed" style={{ color: '#1f2937' }}>
-              <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#004aad' }} />
+          <ul className="flex flex-col gap-3 mb-6">
+            <li className="flex items-start gap-2.5 text-base md:text-lg text-slate-800 font-normal leading-relaxed">
+              <span className="shrink-0 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#004aad' }} />
               <span>Θα σας δώσω ειδικές ασκήσεις και συμβουλές σχετικά με τη στάση σώματος και τους επιβαρυντικούς παράγοντες.</span>
             </li>
-            <li className="flex items-start gap-2 text-base leading-relaxed" style={{ color: '#1f2937' }}>
-              <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#004aad' }} />
+            <li className="flex items-start gap-2.5 text-base md:text-lg text-slate-800 font-normal leading-relaxed">
+              <span className="shrink-0 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#004aad' }} />
               <span>Αν χρειαστεί, θα εφαρμόσω τεχνικές Manual Therapy - Χειροθεραπεία</span>
             </li>
-            <li className="flex items-start gap-2 text-base leading-relaxed" style={{ color: '#1f2937' }}>
-              <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#004aad' }} />
+            <li className="flex items-start gap-2.5 text-base md:text-lg text-slate-800 font-normal leading-relaxed">
+              <span className="shrink-0 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#004aad' }} />
               <span>Με τη σωστή αυτοθεραπεία και τη δική σας ενεργή συμμετοχή, εξοικονομούμε χρόνο και χρήμα.</span>
             </li>
           </ul>
           <p
-            className="text-base leading-relaxed mb-4"
-            style={{ color: '#1f2937' }}
+            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed mb-6"
           >
             Στόχος είναι το καλύτερο αποτέλεσμα με τις λιγότερες δυνατές συνεδρίες, μέσω της κατάλληλης καθοδήγησης.
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2.5">
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Ειδικές ασκήσεις
             </span>
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Manual Therapy
             </span>
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Καθοδήγηση
@@ -716,36 +716,35 @@ function ProcessSection() {
     {
       title: 'Πρόληψη',
       content: (
-        <div className="bg-white rounded-2xl p-6 shadow-md">
-          <div className="flex items-center gap-3 mb-3">
+        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md">
+          <div className="flex items-center gap-3 mb-4">
             <span
-              className="flex items-center justify-center w-9 h-9 rounded-full text-white shrink-0"
+              className="flex items-center justify-center w-10 h-10 rounded-full text-white shrink-0"
               style={{ backgroundColor: '#004aad' }}
             >
               <Shield className="w-5 h-5" />
             </span>
           </div>
           <p
-            className="text-base leading-relaxed mb-4"
-            style={{ color: '#1f2937' }}
+            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed mb-6"
           >
             Μαθαίνοντας πώς να αντιμετωπίζετε μόνος/μόνη σας το τρέχον πρόβλημα, μπορείτε να μάθετε και πώς να ελαχιστοποιήσετε τον κίνδυνο υποτροπής. Επίσης σε περίπτωση υποτροπής μπορείτε πλέον να ασχοληθείτε εγκαίρως με τα συμπτώματα και να έχετε τον έλεγχο της θεραπείας, ακίνδυνα και αποτελεσματικά. Τα υποτροπιάζοντα προβλήματα είναι πιθανότερο να προληφθούν μέσω της αυτοθεραπείας παρά μέσω μιας παθητικής φροντίδας.
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2.5">
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Αυτοθεραπεία
             </span>
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Πρόληψη υποτροπής
             </span>
             <span
-              className="px-3 py-1 rounded-full text-xs font-medium"
+              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
               style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
             >
               Έλεγχος συμπτωμάτων
@@ -763,12 +762,11 @@ function AboutOwnerSection() {
   return (
     <section id="about-owner" className="py-20 md:py-28 bg-gray-50 border-t border-gray-100 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6 md:px-16">
-        <div className="flex flex-col lg:grid lg:grid-cols-5 lg:grid-rows-2 gap-12 lg:gap-16 lg:items-start">
-          {/* Left: Content (part 1) — subtitle, heading, intro paragraph */}
-          <div className="w-full lg:col-span-3 lg:col-start-1 lg:row-start-1 order-1">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+          {/* Left: All text content in a continuous unified flow */}
+          <div className="lg:col-span-3 flex flex-col">
             <span
-              className="text-xs md:text-sm font-bold uppercase tracking-widest block mb-3"
-              style={{ color: '#3d3d3d' }}
+              className="text-sm md:text-base font-bold uppercase tracking-widest block mb-3 text-[#004aad]"
             >
               Ο Φυσικοθεραπευτής μας
             </span>
@@ -778,14 +776,61 @@ function AboutOwnerSection() {
               <span style={{ color: '#004aad', textShadow: '0 2px 8px rgba(0,74,173,0.25)' }}>Ιωάννης Μιχαηλίδης</span>
               <span className="text-gray-900">, PT, BSc, BSc, Cert. MDT, IPNFA Advanced</span>
             </h2>
-            <p className="text-base md:text-lg text-gray-800 mb-6 leading-relaxed">
+
+            {/* Mobile photo display (between header and intro) */}
+            <div className="lg:hidden mb-6 flex justify-center">
+              <div className="relative w-full max-w-[320px]">
+                <div 
+                  className="absolute -inset-3 rounded-2xl opacity-10 blur-lg"
+                  style={{ backgroundColor: '#004aad' }}
+                />
+                <img
+                  src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/ermeion-1.webp"
+                  alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
+                  className="relative z-10 w-full aspect-[3/4] object-cover rounded-2xl shadow-lg border-4 border-white mx-auto"
+                />
+                <p className="relative z-10 mt-3 text-center text-sm font-bold text-gray-800">
+                  Μέλος του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών
+                </p>
+              </div>
+            </div>
+
+            <p className="text-lg md:text-xl text-gray-800 mb-4 leading-relaxed font-normal">
               Ονομάζομαι Ιωάννης Μιχαηλίδης, ιδιοκτήτης και υπεύθυνος φυσικοθεραπευτής του ΕΡΜΕΙΟΝ. Κατέχω πτυχίο Φυσικοθεραπείας από το ΔΙ.ΠΑ.Ε. και πτυχίο Τ.Ε.Φ.Α.Α. του ΑΠΘ, πιστοποιημένος θεραπευτής McKenzie MDT, IPNFA (advance), και Manual Therapy Mulligan Concept.
             </p>
+
+            <p className="text-lg md:text-xl text-gray-800 mb-8 leading-relaxed font-normal">
+              Παραμένω ενημερωμένος για τις εξελίξεις στον τομέα μου και οι ασθενείς μου συχνά βλέπουν αποτελέσματα που η ‘συμβατική’ φυσικοθεραπεία δεν έχει καταφέρει να επιτύχει.
+            </p>
+            
+            {/* Specialization List */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
+                <h4 className="font-bold text-base md:text-lg mb-2" style={{ color: '#004aad' }}>Cred.MDT</h4>
+                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                  Αντιμετώπιση πόνου σπονδυλικής στήλης & περιφερειακών αρθρώσεων.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
+                <h4 className="font-bold text-base md:text-lg mb-2" style={{ color: '#004aad' }}>Μέθοδος IPNFA</h4>
+                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                  Αντιμετώπιση νευρολογικών παθήσεων & μετεγχειρητική αποκατάσταση.
+                </p>
+              </div>
+
+              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
+                <h4 className="font-bold text-base md:text-lg mb-2" style={{ color: '#004aad' }}>Mulligan Concept</h4>
+                <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                  Manual Therapy και ήπιοι κινητοποιητικοί χειρισμοί για άμεση ανακούφιση.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Image + membership note — on mobile appears after intro paragraph, on desktop spans right column */}
-          <div className="w-full lg:col-span-2 lg:col-start-4 lg:row-start-1 lg:row-span-2 lg:self-center order-2 flex justify-center">
-            <div className="relative w-full max-w-[340px] md:max-w-[380px]">
+          {/* Desktop Right Column: Image + membership note */}
+          <div className="hidden lg:flex lg:col-span-2 justify-center sticky top-28">
+            <div className="relative w-full max-w-[340px] xl:max-w-[380px]">
               {/* Decorative background shape */}
               <div 
                 className="absolute -inset-4 rounded-2xl opacity-10 blur-xl"
@@ -796,40 +841,9 @@ function AboutOwnerSection() {
                 alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
                 className="relative z-10 w-full aspect-[3/4] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02] mx-auto"
               />
-              <p className="relative z-10 mt-4 text-center text-sm font-bold" style={{ color: '#3d3d3d' }}>
+              <p className="relative z-10 mt-4 text-center text-base font-bold text-gray-800">
                 Μέλος του Πανελλήνιου Συλλόγου Φυσικοθεραπευτών
               </p>
-            </div>
-          </div>
-
-          {/* Left: Content (part 2) — remaining paragraph + specializations */}
-          <div className="w-full lg:col-span-3 lg:col-start-1 lg:row-start-2 order-3">
-            <p className="text-base md:text-lg text-gray-800 mb-8 leading-relaxed">
-              Παραμένω ενημερωμένος για τις εξελίξεις στον τομέα μου και οι ασθενείς μου συχνά βλέπουν αποτελέσματα που η ‘συμβατική’ φυσικοθεραπεία δεν έχει καταφέρει να επιτύχει.
-            </p>
-            
-            {/* Specialization List */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <h4 className="font-bold text-sm mb-1" style={{ color: '#004aad' }}>Cred.MDT</h4>
-                <p className="text-xs text-gray-800 leading-relaxed">
-                  Αντιμετώπιση πόνου σπονδυλικής στήλης & περιφερειακών αρθρώσεων.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <h4 className="font-bold text-sm mb-1" style={{ color: '#004aad' }}>Μέθοδος IPNFA</h4>
-                <p className="text-xs text-gray-800 leading-relaxed">
-                  Αντιμετώπιση νευρολογικών παθήσεων & μετεγχειρητική αποκατάσταση.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
-                <h4 className="font-bold text-sm mb-1" style={{ color: '#004aad' }}>Mulligan Concept</h4>
-                <p className="text-xs text-gray-800 leading-relaxed">
-                  Manual Therapy και ήπιοι κινητοποιητικοί χειρισμοί για άμεση ανακούφιση.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -955,7 +969,7 @@ function WhyChooseUsSection() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="inline-block bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                    <span className="inline-block bg-gray-100 text-[#004aad] text-sm font-bold uppercase tracking-wider px-3.5 py-1 rounded-full">
                       {item.badge}
                     </span>
                     <div 
@@ -965,10 +979,10 @@ function WhyChooseUsSection() {
                       <IconComponent className="w-5 h-5" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-800 leading-relaxed">
+                  <p className="text-base md:text-lg text-gray-700 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -1174,7 +1188,7 @@ function TestimonialsSection() {
               </div>
               <p
                 className="absolute bottom-6 left-6 right-6 text-xs sm:text-sm italic font-semibold tracking-wide"
-                style={{ color: isCenter ? 'rgba(255,255,255,0.8)' : '#1f2937' }}
+                style={{ color: isCenter ? 'rgba(255,255,255,0.9)' : '#1f2937' }}
               >
                 — {t.by}
               </p>
@@ -1206,7 +1220,9 @@ function TestimonialsSection() {
       {/* CTA */}
       <div className="flex justify-center mt-8">
         <a
-          href="#"
+          href="https://maps.app.goo.gl/hy7hgt4dZQAv1JdQ9"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-8 py-3 rounded-lg font-semibold border-2 transition-all duration-300 hover:text-white"
           style={{ borderColor: '#004aad', color: '#004aad' }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#004aad')}

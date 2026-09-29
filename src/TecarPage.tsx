@@ -12,7 +12,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
       <section className="relative overflow-hidden bg-white pt-24 pb-16 md:pt-32 md:pb-24 border-b border-slate-100">
         <div className="relative max-w-4xl mx-auto px-4 md:px-8 text-center flex flex-col items-center">
           <div className="flex flex-col items-center text-center">
-            <div className="text-xs font-semibold text-[#004aad] uppercase tracking-wider mb-6">
+            <div className="text-sm font-bold text-[#004aad] uppercase tracking-wider mb-6">
               Υπηρεσίες / TECAR Therapy
             </div>
             
@@ -20,14 +20,14 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               TECAR Therapy
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 font-light leading-relaxed mb-8 max-w-3xl">
+            <p className="text-xl md:text-2xl text-slate-700 font-normal leading-relaxed mb-8 max-w-3xl">
               Στοχευμένες Ραδιοσυχνότητες.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="tel:+306988404234"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
               >
                 Κλείστε Ραντεβού
               </a>
@@ -36,7 +36,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
         </div>
       </section>
 
-      {/* 2. Core Philosophy & Mechanism Section */}
+      {/* 2. Core Philosophy & Mechanism Section (Enlarged High-Readability Text) */}
       <section id="philosophy" className="py-20 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -62,13 +62,13 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
             {/* Narrative text block */}
             <div className="lg:col-span-7 flex flex-col justify-center order-1 lg:order-2 text-left">
               <div className="space-y-6">
-                <p className="text-xl md:text-2xl text-slate-700 font-light leading-relaxed border-l-4 border-[#0082c8] pl-6 py-1">
+                <p className="text-xl md:text-2xl text-slate-800 font-normal leading-relaxed border-l-4 border-[#0082c8] pl-6 py-2">
                   Η θεραπεία TECAR είναι ουσιαστικά ο συνδυασμός της ικανότητας του θεραπευτή στους χειρισμούς και της επιλεκτικής στόχευσης ιστού με ραδιοσυχνότητες.
                 </p>
                 <div className="h-px bg-slate-100 w-full my-6" />
                 <div>
-                  <h4 className="text-lg font-bold text-slate-900 mb-3">Μηχανισμός Δράσης</h4>
-                  <p className="text-base text-slate-600 font-light leading-relaxed">
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">Μηχανισμός Δράσης</h3>
+                  <p className="text-lg md:text-xl text-slate-700 font-normal leading-relaxed">
                     To TECAR παράγει ένα υψηλής συχνότητας ηλεκτρομαγνητικό πεδίο που διεισδύει στο ανθρώπινο σώμα και προκαλεί εν τω βάθη υπερθερμία ώστε να ανακουφίσει το μυϊκό πόνο και τα σημεία πυροδότησής του αλλά και να βοηθήσει στην ταχύτερη αναγέννηση και επούλωση των μυών. Οι στοχευμένες ραδιοσυχνότητες χρησιμοποιούνται και για θεραπείες χωρίς θερμότητα για την αντιμετώπιση οιδημάτων σε οξεία φάση.
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
         </div>
       </section>
 
-      {/* 3. Focus Areas & Indications (Clean Unboxed Layout) */}
+      {/* 3. Focus Areas & Indications (Clean Enlarged Layout) */}
       <section id="indications" className="py-20 bg-[#fafbfc] border-t border-b border-slate-100 scroll-mt-28">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           
@@ -87,7 +87,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
             <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-4">
               Οξείες Φάσεις & Ενδείξεις
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-base font-light leading-relaxed">
+            <p className="text-slate-700 max-w-2xl mx-auto text-lg md:text-xl font-normal leading-relaxed">
               Στο ΕΡΜΕΙΟΝ, διαθέτουμε εξοπλισμό τελευταίας τεχνολογίας από την BTL, ο όποιος είναι ο σύμμαχός μας, σε οξείες φάσεις όπως:
             </p>
           </div>
@@ -95,33 +95,33 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 text-left">
             
             {/* Indication 1 */}
-            <div className="border-l-2 border-blue-100 pl-4">
-              <h4 className="text-base font-bold text-slate-900 mb-2">Μετεγχειρητική Αποκατάσταση</h4>
-              <p className="text-sm text-slate-600 font-light leading-relaxed">
+            <div className="border-l-4 border-blue-200 pl-4 py-1">
+              <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Μετεγχειρητική Αποκατάσταση</h4>
+              <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
                 Μετά από χειρουργεία μηνίσκου, πρόσθιου χιαστού, μερικής δισκεκτομής κλπ
               </p>
             </div>
 
             {/* Indication 2 */}
-            <div className="border-l-2 border-blue-100 pl-4">
-              <h4 className="text-base font-bold text-slate-900 mb-2">Οσφυαλγία</h4>
-              <p className="text-sm text-slate-600 font-light leading-relaxed">
+            <div className="border-l-4 border-blue-200 pl-4 py-1">
+              <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Οσφυαλγία</h4>
+              <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
                 Οξεία οσφυαλγία
               </p>
             </div>
 
             {/* Indication 3 */}
-            <div className="border-l-2 border-blue-100 pl-4">
-              <h4 className="text-base font-bold text-slate-900 mb-2">Αυχενικός Πόνος</h4>
-              <p className="text-sm text-slate-600 font-light leading-relaxed">
+            <div className="border-l-4 border-blue-200 pl-4 py-1">
+              <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Αυχενικός Πόνος</h4>
+              <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
                 Αυχεναλγία
               </p>
             </div>
 
             {/* Indication 4 */}
-            <div className="border-l-2 border-blue-100 pl-4">
-              <h4 className="text-base font-bold text-slate-900 mb-2">Μυϊκοί Τραυματισμοί</h4>
-              <p className="text-sm text-slate-600 font-light leading-relaxed">
+            <div className="border-l-4 border-blue-200 pl-4 py-1">
+              <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">Μυϊκοί Τραυματισμοί</h4>
+              <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
                 Μυϊκές θλάσεις
               </p>
             </div>
@@ -139,7 +139,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
               Άλλες Υπηρεσίες Αποκατάστασης
             </h2>
-            <p className="text-slate-500 font-light text-base">
+            <p className="text-slate-600 font-normal text-lg">
               Εξερευνήστε τις συμπληρωματικές θεραπείες που προσφέρουμε στο Ερμείον.
             </p>
           </div>
@@ -152,12 +152,12 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Μέθοδος McKenzie</h3>
-                <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed">
+                <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Μέθοδος McKenzie</h3>
+                <p className="text-base text-slate-700 font-normal mb-4 leading-relaxed">
                   Επιστημονικά τεκμηριωμένη φυσικοθεραπευτική προσέγγιση αξιολόγησης και αυτοδιαχείρισης.
                 </p>
               </div>
-              <div className="text-sm font-semibold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
+              <div className="text-base font-bold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
                 Περισσότερα <ArrowRight className="w-4 h-4" />
               </div>
             </div>
@@ -168,12 +168,12 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Θεραπεία & Πρόληψη Σπονδυλικού Πόνου</h3>
-                <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed">
+                <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Θεραπεία & Πρόληψη Σπονδυλικού Πόνου</h3>
+                <p className="text-base text-slate-700 font-normal mb-4 leading-relaxed">
                   Εξειδικευμένοι χειρισμοί και καθοδήγηση για την αντιμετώπιση του πόνου στη μέση και τον αυχένα.
                 </p>
               </div>
-              <div className="text-sm font-semibold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
+              <div className="text-base font-bold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
                 Περισσότερα <ArrowRight className="w-4 h-4" />
               </div>
             </div>
@@ -184,12 +184,12 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Θεραπευτική Άσκηση</h3>
-                <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed">
+                <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Θεραπευτική Άσκηση</h3>
+                <p className="text-base text-slate-700 font-normal mb-4 leading-relaxed">
                   Εξατομικευμένα θεραπευτικά προγράμματα εκγύμνασης για την πλήρη μυοσκελετική αποκατάσταση.
                 </p>
               </div>
-              <div className="text-sm font-semibold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
+              <div className="text-base font-bold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
                 Περισσότερα <ArrowRight className="w-4 h-4" />
               </div>
             </div>
@@ -208,7 +208,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:+306988404234"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300"
             >
               Κλείστε Ραντεβού
             </a>
