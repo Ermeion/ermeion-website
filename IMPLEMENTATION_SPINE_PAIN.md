@@ -52,7 +52,7 @@ Since copy is provided for specific sections, we will implement only the active 
 *   **Service-Specific Copy**:
     *   Header: "Απαλλαγείτε από τον Σπονδυλικό Πόνο"
     *   Subtext: "Σχεδιάστε το δικό σας εξατομικευμένο πλάνο αποκατάστασης σήμερα."
-    *   Buttons: "Κλείστε Ραντεβού Online" and "Επικοινωνήστε Τηλεφωνικώς"
+    *   Buttons: Κλείστε Ραντεβού.
 
 ---
 
