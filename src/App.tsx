@@ -272,7 +272,7 @@ function HeroSection() {
             </div>
             {/* Rating Text */}
             <p className="text-sm md:text-base font-semibold" style={{ color: '#004aad' }}>
-              5 · Βάσει 913+ αξιολογήσεων
+              5 · Βάσει 946+ αξιολογήσεων
             </p>
           </div>
         </div>
