@@ -225,9 +225,6 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">
             Ξεκινήστε με μια αξιολόγηση McKenzie σήμερα
           </h2>
-          <p className="text-slate-600 font-light mb-8 max-w-lg mx-auto">
-            Βρείτε την αιτία του πόνου σας και αποκτήστε τα κατάλληλα εργαλεία για μόνιμη ανακούφιση.
-          </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:+306988404234"
