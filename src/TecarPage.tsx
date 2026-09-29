@@ -205,9 +205,6 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">
             Ξεκινήστε τη θεραπεία TECAR σήμερα
           </h2>
-          <p className="text-slate-600 font-light mb-8 max-w-lg mx-auto">
-            Επιταχύνετε την αποκατάσταση των ιστών σας με την τεχνολογία BTL.
-          </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:+306988404234"
