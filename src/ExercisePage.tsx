@@ -253,9 +253,6 @@ export default function ExercisePage({ onNavigate }: ExercisePageProps) {
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">
             Ξεκινήστε το Θεραπευτικό σας Πρόγραμμα
           </h2>
-          <p className="text-slate-600 font-light mb-8 max-w-lg mx-auto">
-            Επαναφέρετε τη λειτουργικότητα του σώματός σας με επιστημονική καθοδήγηση.
-          </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:+306988404234"
