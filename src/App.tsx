@@ -1574,7 +1574,7 @@ function Footer() {
   ];
 
   const openingHours = [
-    { day: 'Δευτέρα', hours: '9–2, 4–9' },
+    { day: 'Δευτέρα', hours: '9:00 - 14:00, 16:00 – 21:00' },
     { day: 'Τρίτη', hours: '9–2, 4–9' },
     { day: 'Τετάρτη', hours: '9–2, 4–9' },
     { day: 'Πέμπτη', hours: '9–2, 4–9' },
