@@ -940,7 +940,6 @@ function WhyChooseUsSection() {
                   </div>
                   
                   <div className="mt-8 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-white/70">Μάθετε πώς δουλεύουμε &rarr;</span>
                     <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white">
                       <IconComponent className="w-6 h-6" />
                     </div>
