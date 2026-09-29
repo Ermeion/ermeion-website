@@ -51,7 +51,7 @@ Since copy is provided for specific sections, we will implement only the active 
 *   **Visual Elements**: Clean light gradient callout wrapper connecting directly to the central scheduling route.
 *   **Service-Specific Copy**:
     *   Header: "Ξεκινήστε με μια αξιολόγηση McKenzie σήμερα"
-    *   Buttons: "Κλείστε Ραντεβού Online" and "Επικοινωνήστε Τηλεφωνικώς"
+    *   Buttons: "Κλείστε Ραντεβού
 
 ---
 
