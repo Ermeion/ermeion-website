@@ -1,43 +1,18 @@
-import { 
-  ArrowRight, 
-  Target, 
-  Sparkles,
-  Zap,
-  Activity,
-  Compass,
-  FileCheck2,
-  CalendarCheck
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface TecarPageProps {
   onNavigate: (hash: string) => void;
 }
 
 export default function TecarPage({ onNavigate }: TecarPageProps) {
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const navbarHeight = 90; // accounting for main navbar
-      const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="bg-[#f8fafc] text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
+    <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
       
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden bg-white pt-24 pb-16 md:pt-32 md:pb-24 border-b border-slate-100">
-        <div className="absolute inset-0 opacity-40">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-b from-[#e0f2fe] to-transparent rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-t from-blue-50 to-transparent rounded-full filter blur-2xl translate-y-1/3 -translate-x-1/4" />
-        </div>
-
         <div className="relative max-w-4xl mx-auto px-4 md:px-8 text-center flex flex-col items-center">
-          {/* Centered Column */}
           <div className="flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-semibold text-[#004aad] uppercase tracking-wider mb-6">
-              <Zap className="w-3.5 h-3.5" />
+            <div className="text-xs font-semibold text-[#004aad] uppercase tracking-wider mb-6">
               Υπηρεσίες / TECAR Therapy
             </div>
             
@@ -52,24 +27,16 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="tel:+306988404234"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-lg shadow-blue-500/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
               >
                 Κλείστε Ραντεβού
-                <CalendarCheck className="w-5 h-5 ml-2.5" />
               </a>
-              <button
-                onClick={() => scrollToSection('philosophy')}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-base font-semibold transition-all duration-300"
-              >
-                Μάθετε Περισσότερα
-              </button>
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* 3. Core Philosophy & Mechanism Section */}
+      {/* 2. Core Philosophy & Mechanism Section */}
       <section id="philosophy" className="py-20 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -81,9 +48,9 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Diagram Column - Tecar Philosophy Image */}
+            {/* Image Column */}
             <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="relative overflow-hidden rounded-3xl border border-slate-100 shadow-md">
+              <div className="relative overflow-hidden rounded-2xl border border-slate-100 shadow-sm">
                 <img 
                   src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/TECAR.webp" 
                   alt="Η Φιλοσοφία της Θεραπείας Tecar" 
@@ -100,7 +67,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
                 </p>
                 <div className="h-px bg-slate-100 w-full my-6" />
                 <div>
-                  <h4 className="text-lg font-bold text-slate-800 mb-3">Μηχανισμός Δράσης</h4>
+                  <h4 className="text-lg font-bold text-slate-900 mb-3">Μηχανισμός Δράσης</h4>
                   <p className="text-base text-slate-600 font-light leading-relaxed">
                     To TECAR παράγει ένα υψηλής συχνότητας ηλεκτρομαγνητικό πεδίο που διεισδύει στο ανθρώπινο σώμα και προκαλεί εν τω βάθη υπερθερμία ώστε να ανακουφίσει το μυϊκό πόνο και τα σημεία πυροδότησής του αλλά και να βοηθήσει στην ταχύτερη αναγέννηση και επούλωση των μυών. Οι στοχευμένες ραδιοσυχνότητες χρησιμοποιούνται και για θεραπείες χωρίς θερμότητα για την αντιμετώπιση οιδημάτων σε οξεία φάση.
                   </p>
@@ -112,71 +79,51 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
         </div>
       </section>
 
-      {/* 4. Focus Areas & Indications (Acute Phases Card Grid) */}
-      <section id="indications" className="py-20 bg-[#f8fafc] border-t border-b border-slate-100 scroll-mt-28">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+      {/* 3. Focus Areas & Indications (Clean Unboxed Layout) */}
+      <section id="indications" className="py-20 bg-[#fafbfc] border-t border-b border-slate-100 scroll-mt-28">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-4">
               Οξείες Φάσεις & Ενδείξεις
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-slate-600 max-w-2xl mx-auto text-base font-light leading-relaxed">
               Στο ΕΡΜΕΙΟΝ, διαθέτουμε εξοπλισμό τελευταίας τεχνολογίας από την BTL, ο όποιος είναι ο σύμμαχός μας, σε οξείες φάσεις όπως:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 text-left">
             
-            {/* Card 1 */}
-            <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-orange-50 group-hover:bg-orange-100 text-orange-500 transition-colors flex items-center justify-center mb-6">
-                  <FileCheck2 className="w-6 h-6" />
-                </div>
-                <h4 className="text-base font-bold text-slate-800 mb-2">Μετεγχειρητική Αποκατάσταση</h4>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Μετά από χειρουργεία μηνίσκου, πρόσθιου χιαστού, μερικής δισκεκτομής κλπ
-                </p>
-              </div>
+            {/* Indication 1 */}
+            <div className="border-l-2 border-blue-100 pl-4">
+              <h4 className="text-base font-bold text-slate-900 mb-2">Μετεγχειρητική Αποκατάσταση</h4>
+              <p className="text-sm text-slate-600 font-light leading-relaxed">
+                Μετά από χειρουργεία μηνίσκου, πρόσθιου χιαστού, μερικής δισκεκτομής κλπ
+              </p>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-orange-50 group-hover:bg-orange-100 text-orange-500 transition-colors flex items-center justify-center mb-6">
-                  <Activity className="w-6 h-6" />
-                </div>
-                <h4 className="text-base font-bold text-slate-800 mb-2">Οσφυαλγία</h4>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Οξεία οσφυαλγία
-                </p>
-              </div>
+            {/* Indication 2 */}
+            <div className="border-l-2 border-blue-100 pl-4">
+              <h4 className="text-base font-bold text-slate-900 mb-2">Οσφυαλγία</h4>
+              <p className="text-sm text-slate-600 font-light leading-relaxed">
+                Οξεία οσφυαλγία
+              </p>
             </div>
 
-            {/* Card 3 */}
-            <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-orange-50 group-hover:bg-orange-100 text-orange-500 transition-colors flex items-center justify-center mb-6">
-                  <Compass className="w-6 h-6" />
-                </div>
-                <h4 className="text-base font-bold text-slate-800 mb-2">Αυχενικός Πόνος</h4>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Αυχεναλγία
-                </p>
-              </div>
+            {/* Indication 3 */}
+            <div className="border-l-2 border-blue-100 pl-4">
+              <h4 className="text-base font-bold text-slate-900 mb-2">Αυχενικός Πόνος</h4>
+              <p className="text-sm text-slate-600 font-light leading-relaxed">
+                Αυχεναλγία
+              </p>
             </div>
 
-            {/* Card 4 */}
-            <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-orange-50 group-hover:bg-orange-100 text-orange-500 transition-colors flex items-center justify-center mb-6">
-                  <Zap className="w-6 h-6" />
-                </div>
-                <h4 className="text-base font-bold text-slate-800 mb-2">Μυϊκοί Τραυματισμοί</h4>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Μυϊκές θλάσεις
-                </p>
-              </div>
+            {/* Indication 4 */}
+            <div className="border-l-2 border-blue-100 pl-4">
+              <h4 className="text-base font-bold text-slate-900 mb-2">Μυϊκοί Τραυματισμοί</h4>
+              <p className="text-sm text-slate-600 font-light leading-relaxed">
+                Μυϊκές θλάσεις
+              </p>
             </div>
 
           </div>
@@ -184,32 +131,29 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
         </div>
       </section>
 
-      {/* 5. Related Services Cross-Links */}
+      {/* 4. Related Services Cross-Links */}
       <section id="related" className="py-20 bg-white scroll-mt-28">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
               Άλλες Υπηρεσίες Αποκατάστασης
             </h2>
-            <p className="text-slate-500 font-light">
+            <p className="text-slate-500 font-light text-base">
               Εξερευνήστε τις συμπληρωματικές θεραπείες που προσφέρουμε στο Ερμείον.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             
-            {/* McKenzie card */}
+            {/* McKenzie */}
             <div 
               onClick={() => onNavigate('#mckenzie')}
-              className="bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col justify-between text-left group"
+              className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-4">
-                  <Activity className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2">Μέθοδος McKenzie</h3>
-                <p className="text-sm text-slate-500 font-light mb-4">
+                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Μέθοδος McKenzie</h3>
+                <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed">
                   Επιστημονικά τεκμηριωμένη φυσικοθεραπευτική προσέγγιση αξιολόγησης και αυτοδιαχείρισης.
                 </p>
               </div>
@@ -218,17 +162,14 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               </div>
             </div>
 
-            {/* Spine Pain Card */}
+            {/* Spine Pain */}
             <div 
               onClick={() => onNavigate('#spine-pain')}
-              className="bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col justify-between text-left group"
+              className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-4">
-                  <Target className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2">Θεραπεία & Πρόληψη Σπονδυλικού Πόνου</h3>
-                <p className="text-sm text-slate-500 font-light mb-4">
+                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Θεραπεία & Πρόληψη Σπονδυλικού Πόνου</h3>
+                <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed">
                   Εξειδικευμένοι χειρισμοί και καθοδήγηση για την αντιμετώπιση του πόνου στη μέση και τον αυχένα.
                 </p>
               </div>
@@ -237,17 +178,14 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               </div>
             </div>
 
-            {/* Exercise Card */}
+            {/* Exercise */}
             <div 
               onClick={() => onNavigate('#exercise')}
-              className="bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col justify-between text-left group"
+              className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-4">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2">Θεραπευτική Άσκηση</h3>
-                <p className="text-sm text-slate-500 font-light mb-4">
+                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Θεραπευτική Άσκηση</h3>
+                <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed">
                   Εξατομικευμένα θεραπευτικά προγράμματα εκγύμνασης για την πλήρη μυοσκελετική αποκατάσταση.
                 </p>
               </div>
@@ -261,8 +199,8 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
         </div>
       </section>
 
-      {/* 6. End of Page CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 border-t border-slate-100">
+      {/* 5. End of Page CTA */}
+      <section className="py-16 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">
             Ξεκινήστε τη θεραπεία TECAR σήμερα
@@ -273,15 +211,9 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:+306988404234"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-lg shadow-blue-500/10 hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300"
             >
               Κλείστε Ραντεβού Online
-            </a>
-            <a
-              href="tel:+306988404234"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-base font-semibold transition-all duration-300"
-            >
-              Επικοινωνήστε Τηλεφωνικώς
             </a>
           </div>
         </div>

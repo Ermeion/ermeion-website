@@ -1,45 +1,19 @@
-import { 
-  ArrowRight, 
-  ShieldCheck, 
-  Target, 
-  Award,
-  Sparkles,
-  Zap,
-  Activity,
-  Compass,
-  FileCheck2,
-  CalendarCheck
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface SpinePainPageProps {
   onNavigate: (hash: string) => void;
 }
 
 export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const navbarHeight = 90; // accounting for main navbar
-      const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="bg-[#f8fafc] text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
+    <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
       
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden bg-white pt-24 pb-16 md:pt-32 md:pb-24 border-b border-slate-100">
-        <div className="absolute inset-0 opacity-40">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-b from-[#e0f2fe] to-transparent rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-t from-blue-50 to-transparent rounded-full filter blur-2xl translate-y-1/3 -translate-x-1/4" />
-        </div>
-
         <div className="relative max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-semibold text-[#004aad] uppercase tracking-wider mb-6">
-              <Activity className="w-3.5 h-3.5" />
+            <div className="text-xs font-semibold text-[#004aad] uppercase tracking-wider mb-6">
               Υπηρεσίες / Θεραπεία & Πρόληψη Σπονδυλικού Πόνου
             </div>
             
@@ -54,116 +28,79 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
             <div className="flex flex-wrap gap-4">
               <a
                 href="tel:+306988404234"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-lg shadow-blue-500/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
               >
                 Κλείστε Ραντεβού
-                <CalendarCheck className="w-5 h-5 ml-2.5" />
               </a>
-              <button
-                onClick={() => scrollToSection('indications')}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-base font-semibold transition-all duration-300"
-              >
-                Μάθετε Περισσότερα
-              </button>
             </div>
           </div>
 
           {/* Right Column - Styled Spine Image */}
           <div className="lg:col-span-5 relative">
-            <div className="relative z-10 overflow-hidden rounded-3xl border border-slate-100 shadow-xl shadow-slate-100">
+            <div className="relative z-10 overflow-hidden rounded-2xl border border-slate-100 shadow-sm">
               <img 
                 src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/spine.webp" 
                 alt="Θεραπεία & Πρόληψη Σπονδυλικού Πόνου" 
                 className="w-full h-auto object-cover"
               />
             </div>
-            
-            {/* Background elements */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-50 rounded-2xl -z-10" />
-            <div className="absolute -top-6 -left-6 w-24 h-24 border-2 border-slate-100 rounded-full -z-10" />
           </div>
         </div>
       </section>
 
-
-      {/* 3. Indications Section (Who it is for - Card Grid) */}
+      {/* 2. Indications Section (Who it is for - Clean Typographic Layout) */}
       <section id="indications" className="py-20 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-4">
               Βοηθάμε καθημερινά άτομα με:
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-slate-600 max-w-2xl mx-auto text-base font-light leading-relaxed">
               Η φυσικοθεραπεία ενδείκνυται σε άτομα με:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 text-left">
             
-            {/* Card 1 */}
-            <div className="bg-[#f8fafc] border border-slate-100 rounded-3xl p-8 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-6">
-                  <Activity className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold text-slate-800 mb-3">Οσφυαλγία</h4>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Πόνο στην μέση, με ή χωρίς ισχιαλγία και νευρολογικό έλλειμμα.
-                </p>
-              </div>
+            {/* Indication 1 */}
+            <div className="border-l-2 border-blue-100 pl-5">
+              <h4 className="text-lg font-bold text-slate-800 mb-2">Οσφυαλγία</h4>
+              <p className="text-sm text-slate-600 font-light leading-relaxed">
+                Πόνο στην μέση, με ή χωρίς ισχιαλγία και νευρολογικό έλλειμμα.
+              </p>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-[#f8fafc] border border-slate-100 rounded-3xl p-8 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-6">
-                  <Compass className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold text-slate-800 mb-3">Αθλητικούς Τραυματισμούς</h4>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Πόνο στον αυχένα ή την μέση κατά την διάρκεια των δραστηριοτήτων/αθλημάτων ή ασκήσεων στο γυμναστήριο.
-                </p>
-              </div>
+            {/* Indication 2 */}
+            <div className="border-l-2 border-blue-100 pl-5">
+              <h4 className="text-lg font-bold text-slate-800 mb-2">Αθλητικούς Τραυματισμούς</h4>
+              <p className="text-sm text-slate-600 font-light leading-relaxed">
+                Πόνο στον αυχένα ή την μέση κατά την διάρκεια των δραστηριοτήτων/αθλημάτων ή ασκήσεων στο γυμναστήριο.
+              </p>
             </div>
 
-            {/* Card 3 */}
-            <div className="bg-[#f8fafc] border border-slate-100 rounded-3xl p-8 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-6">
-                  <Activity className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold text-slate-800 mb-3">Αυχεναλγία</h4>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Πόνο στον αυχένα, με ή χωρίς πόνο στον ώμο/χέρι και νευρολογικό έλλειμμα.
-                </p>
-              </div>
+            {/* Indication 3 */}
+            <div className="border-l-2 border-blue-100 pl-5">
+              <h4 className="text-lg font-bold text-slate-800 mb-2">Αυχεναλγία</h4>
+              <p className="text-sm text-slate-600 font-light leading-relaxed">
+                Πόνο στον αυχένα, με ή χωρίς πόνο στον ώμο/χέρι και νευρολογικό έλλειμμα.
+              </p>
             </div>
 
-            {/* Card 4 */}
-            <div className="bg-[#f8fafc] border border-slate-100 rounded-3xl p-8 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-6">
-                  <Target className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold text-slate-800 mb-3">Θωρακικός Πόνος</h4>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">
-                 Πόνο στην πλάτη, δυσκαμψία και προβλήματα στην κίνηση της.
-                </p>
-              </div>
+            {/* Indication 4 */}
+            <div className="border-l-2 border-blue-100 pl-5">
+              <h4 className="text-lg font-bold text-slate-800 mb-2">Θωρακικός Πόνος</h4>
+              <p className="text-sm text-slate-600 font-light leading-relaxed">
+                Πόνο στην πλάτη, δυσκαμψία και προβλήματα στην κίνηση της.
+              </p>
             </div>
 
-            {/* Card 5 */}
-            <div className="bg-[#f8fafc] border border-slate-100 rounded-3xl p-8 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between group col-span-1 md:col-span-2 lg:col-span-1">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-6">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-bold text-slate-800 mb-3">Κήλες & Εκφυλιστικές Αλλοιώσεις</h4>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">
-                  Επώδυνες κήλες, χειρουργεία δισκεκτομής και εκφυλιστικές αλλοιώσεις.
-                </p>
-              </div>
+            {/* Indication 5 */}
+            <div className="border-l-2 border-blue-100 pl-5 col-span-1 md:col-span-2 lg:col-span-1">
+              <h4 className="text-lg font-bold text-slate-800 mb-2">Κήλες & Εκφυλιστικές Αλλοιώσεις</h4>
+              <p className="text-sm text-slate-600 font-light leading-relaxed">
+                Επώδυνες κήλες, χειρουργεία δισκεκτομής και εκφυλιστικές αλλοιώσεις.
+              </p>
             </div>
 
           </div>
@@ -171,90 +108,61 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
         </div>
       </section>
 
-      {/* 4. Practices Applied Section */}
-      <section id="practices" className="py-20 bg-[#f8fafc] border-t border-b border-slate-100 scroll-mt-28">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+      {/* 3. Practices Applied Section (Unboxed Text Layout) */}
+      <section id="practices" className="py-20 bg-[#fafbfc] border-t border-b border-slate-100 scroll-mt-28">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-4">
               Εφαρμόζουμε επιστημονικά τεκμηριωμένες πρακτικές όπως:
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
             {/* Left practices list */}
-            <div className="lg:col-span-7 flex flex-col gap-4">
+            <div className="lg:col-span-7 flex flex-col space-y-8 text-left">
               
               {/* Practice 1 */}
-              <div className="bg-white border border-slate-100 rounded-2xl p-6 text-left flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#004aad] flex items-center justify-center flex-shrink-0">
-                  <Award className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-slate-800 mb-1">Μηχανική Διάγνωση & Θεραπεία</h4>
-                  <p className="text-sm text-slate-600 font-light leading-relaxed">
-                    Mέθοδος McKenzie - Μηχανική διάγνωση και θεραπεία
-                  </p>
-                </div>
+              <div>
+                <h4 className="text-base font-bold text-slate-900 mb-1">Μηχανική Διάγνωση & Θεραπεία</h4>
+                <p className="text-sm text-slate-600 font-light leading-relaxed">
+                  Mέθοδος McKenzie - Μηχανική διάγνωση και θεραπεία
+                </p>
               </div>
 
               {/* Practice 2 */}
-              <div className="bg-white border border-slate-100 rounded-2xl p-6 text-left flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#004aad] flex items-center justify-center flex-shrink-0">
-                  <Compass className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-slate-800 mb-1">Προοδευτική Φόρτιση</h4>
-                  <p className="text-sm text-slate-600 font-light leading-relaxed">
-                    Σταδιακή έκθεση στα φορτία και τις δραστηριότητες
-                  </p>
-                </div>
+              <div>
+                <h4 className="text-base font-bold text-slate-900 mb-1">Προοδευτική Φόρτιση</h4>
+                <p className="text-sm text-slate-600 font-light leading-relaxed">
+                  Σταδιακή έκθεση στα φορτία και τις δραστηριότητες
+                </p>
               </div>
 
               {/* Practice 3 */}
-              <div className="bg-white border border-slate-100 rounded-2xl p-6 text-left flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#004aad] flex items-center justify-center flex-shrink-0">
-                  <Target className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-slate-800 mb-1">Κινητικός Έλεγχος</h4>
-                  <p className="text-sm text-slate-600 font-light leading-relaxed">
-                    Νευρομυϊκή επανεκπαίδευση
-                  </p>
-                </div>
+              <div>
+                <h4 className="text-base font-bold text-slate-900 mb-1">Κινητικός Έλεγχος</h4>
+                <p className="text-sm text-slate-600 font-light leading-relaxed">
+                  Νευρομυϊκή επανεκπαίδευση
+                </p>
               </div>
 
               {/* Practice 4 */}
-              <div className="bg-white border border-slate-100 rounded-2xl p-6 text-left flex items-start gap-4 shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#004aad] flex items-center justify-center flex-shrink-0">
-                  <FileCheck2 className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-slate-800 mb-1">Πρόληψη & Αυτονομία</h4>
-                  <p className="text-sm text-slate-600 font-light leading-relaxed">
-                    Στρατηγικές αυτοδιαχείρισης και πρόληψης υποτροπών
-                  </p>
-                </div>
+              <div>
+                <h4 className="text-base font-bold text-slate-900 mb-1">Πρόληψη & Αυτονομία</h4>
+                <p className="text-sm text-slate-600 font-light leading-relaxed">
+                  Στρατηγικές αυτοδιαχείρισης και πρόληψης υποτροπών
+                </p>
               </div>
 
             </div>
 
-            {/* Right clinical technology quote card */}
-            <div className="lg:col-span-5 flex">
-              <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-md flex flex-col justify-between text-left relative overflow-hidden w-full">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-orange-50/50 rounded-bl-full -z-0" />
-                
-                <div className="relative z-10 flex-1 flex flex-col justify-center">
-                  <div className="w-12 h-12 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center mb-6">
-                    <Zap className="w-6 h-6" />
-                  </div>
-                  <h4 className="text-lg font-bold text-slate-800 mb-4">Ηλεκτροθεραπεία - TECAR</h4>
-                  <p className="text-slate-600 font-light text-base leading-relaxed">
-                   Όταν ενδείκνυται, και ιδιαίτερα σε οξεία φάση, χρησιμοποιούμε τα φυσικά μέσα ηλεκτροθεραπείας - TECAR, για την άμεση ανακούφιση των συμπτωμάτων.
-                  </p>
-                </div>
-              </div>
+            {/* Right clinical technology note */}
+            <div className="lg:col-span-5 text-left border-l-2 border-slate-200 pl-6 lg:pl-8 py-2">
+              <h4 className="text-lg font-bold text-slate-900 mb-3">Ηλεκτροθεραπεία - TECAR</h4>
+              <p className="text-slate-600 font-light text-base leading-relaxed">
+                Όταν ενδείκνυται, και ιδιαίτερα σε οξεία φάση, χρησιμοποιούμε τα φυσικά μέσα ηλεκτροθεραπείας - TECAR, για την άμεση ανακούφιση των συμπτωμάτων.
+              </p>
             </div>
 
           </div>
@@ -262,32 +170,29 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
         </div>
       </section>
 
-      {/* 5. Related Services Cross-Links */}
+      {/* 4. Related Services Cross-Links */}
       <section id="related" className="py-20 bg-white scroll-mt-28">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
               Άλλες Υπηρεσίες Αποκατάστασης
             </h2>
-            <p className="text-slate-500 font-light">
+            <p className="text-slate-500 font-light text-base">
               Εξερευνήστε τις συμπληρωματικές θεραπείες που προσφέρουμε στο Ερμείον.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             
-            {/* McKenzie card */}
+            {/* McKenzie */}
             <div 
               onClick={() => onNavigate('#mckenzie')}
-              className="bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col justify-between text-left group"
+              className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-4">
-                  <Activity className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2">Μέθοδος McKenzie</h3>
-                <p className="text-sm text-slate-500 font-light mb-4">
+                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Μέθοδος McKenzie</h3>
+                <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed">
                   Επιστημονικά τεκμηριωμένη φυσικοθεραπευτική προσέγγιση αξιολόγησης και αυτοδιαχείρισης.
                 </p>
               </div>
@@ -296,17 +201,14 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
               </div>
             </div>
 
-            {/* Tecar card */}
+            {/* Tecar */}
             <div 
               onClick={() => onNavigate('#tecar')}
-              className="bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col justify-between text-left group"
+              className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-4">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2">TECAR Therapy</h3>
-                <p className="text-sm text-slate-500 font-light mb-4">
+                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">TECAR Therapy</h3>
+                <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed">
                   Στοχευμένη θεραπεία με ραδιοσυχνότητες για ταχεία ανακούφιση και κυτταρική ανάπλαση.
                 </p>
               </div>
@@ -315,17 +217,14 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
               </div>
             </div>
 
-            {/* Exercise Card */}
+            {/* Exercise */}
             <div 
               onClick={() => onNavigate('#exercise')}
-              className="bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col justify-between text-left group"
+              className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-100 text-[#004aad] transition-colors flex items-center justify-center mb-4">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2">Θεραπευτική Άσκηση</h3>
-                <p className="text-sm text-slate-500 font-light mb-4">
+                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-[#004aad] transition-colors">Θεραπευτική Άσκηση</h3>
+                <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed">
                   Εξατομικευμένα θεραπευτικά προγράμματα εκγύμνασης για την πλήρη μυοσκελετική αποκατάσταση.
                 </p>
               </div>
@@ -339,8 +238,8 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
         </div>
       </section>
 
-      {/* 6. End of Page CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 border-t border-slate-100">
+      {/* 5. End of Page CTA */}
+      <section className="py-16 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">
             Απαλλαγείτε από τον Σπονδυλικό Πόνο
@@ -351,15 +250,9 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:+306988404234"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-lg shadow-blue-500/10 hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300"
             >
               Κλείστε Ραντεβού Online
-            </a>
-            <a
-              href="tel:+306988404234"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-base font-semibold transition-all duration-300"
-            >
-              Επικοινωνήστε Τηλεφωνικώς
             </a>
           </div>
         </div>
