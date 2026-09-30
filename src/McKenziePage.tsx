@@ -1,72 +1,197 @@
-import { ArrowRight } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { ArrowRight, Play, Pause, Maximize } from 'lucide-react';
 
 interface McKenziePageProps {
   onNavigate: (hash: string) => void;
 }
 
 export default function McKenziePage({ onNavigate }: McKenziePageProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [showControls, setShowControls] = useState(true);
+
+  const togglePlay = (e?: React.MouseEvent | React.TouchEvent) => {
+    if (e) e.stopPropagation();
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const handleFullscreen = (e?: React.MouseEvent | React.TouchEvent) => {
+    if (e) e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+
+    if ((video as any).webkitEnterFullscreen) {
+      (video as any).webkitEnterFullscreen();
+    } else if (video.requestFullscreen) {
+      video.requestFullscreen().catch(() => {});
+    } else if ((video as any).webkitRequestFullscreen) {
+      (video as any).webkitRequestFullscreen();
+    } else if ((video as any).msRequestFullscreen) {
+      (video as any).msRequestFullscreen();
+    }
+  };
+
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
       
-      {/* 1. Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-24 pb-16 md:pt-32 md:pb-24 border-b border-slate-100">
-        <div className="relative max-w-4xl mx-auto px-4 md:px-8 text-center flex flex-col items-center">
-          <div className="flex flex-col items-center text-center">
-            <div className="text-sm font-bold text-[#004aad] uppercase tracking-wider mb-6">
-              Υπηρεσίες / Μέθοδος McKenzie
-            </div>
+      {/* 1. Split-Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50/70 via-white to-white pt-20 pb-16 md:pt-28 md:pb-20 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-6">
-              Μέθοδος McKenzie
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-slate-700 font-normal leading-relaxed mb-8 max-w-3xl">
-              Η Μέθοδος McKenzie ή γνωστή και ως Μηχανική Διάγνωση & Θεραπεία (Mechanical Diagnosis and Therapy – MDT) είναι μια επιστημονικά τεκμηριωμένη φυσικοθεραπευτική προσέγγιση αξιολόγησης και διαχείρισης του μυοσκελετικού πόνου.
-            </p>
+            {/* Left Column: Headline, Details & CTA */}
+            <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#004aad] text-xs font-bold uppercase tracking-wider mb-4">
+                <span className="w-2 h-2 rounded-full bg-[#004aad] animate-pulse"></span>
+                Υπηρεσίες / Μέθοδος McKenzie
+              </div>
+              
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight mb-5">
+                Μέθοδος McKenzie
+              </h1>
+              
+              <p className="text-base sm:text-lg lg:text-xl text-slate-700 font-normal leading-relaxed mb-8">
+                Η Μέθοδος McKenzie ή γνωστή και ως Μηχανική Διάγνωση & Θεραπεία (Mechanical Diagnosis and Therapy – MDT) είναι μια επιστημονικά τεκμηριωμένη φυσικοθεραπευτική προσέγγιση αξιολόγησης και διαχείρισης του μυοσκελετικού πόνου.
+              </p>
 
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="tel:+306988404234"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
-              >
-                Κλείστε Ραντεβού
-              </a>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 w-full sm:w-auto">
+                <a
+                  href="tel:+306988404234"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base sm:text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 text-center"
+                >
+                  Κλείστε Ραντεβού
+                </a>
+              </div>
             </div>
+
+            {/* Right Column: High-Performance Video Showcase */}
+            <div className="lg:col-span-6 w-full">
+              <div
+                className="relative group overflow-hidden rounded-2xl md:rounded-3xl shadow-xl border border-gray-200/80 bg-slate-950 aspect-[16/9] w-full select-none"
+                onClick={() => setShowControls((prev) => !prev)}
+              >
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/McKenzie.webp"
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onClick={togglePlay}
+                  className="w-full h-full object-cover cursor-pointer"
+                >
+                  <source
+                    src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/McKenzie-video/McKenzie-therapy.mp4"
+                    type="video/mp4"
+                  />
+                  Το πρόγραμμα περιήγησής σας δεν υποστηρίζει την αναπαραγωγή βίντεο.
+                </video>
+
+                {/* Interactive Controls Overlay */}
+                <div
+                  className={`absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 flex flex-col justify-between p-3.5 sm:p-5 md:p-6 ${
+                    showControls ? 'opacity-100' : 'opacity-0'
+                  } md:opacity-0 md:group-hover:opacity-100`}
+                >
+                  {/* Top Bar */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/95 text-[11px] sm:text-xs md:text-sm font-medium tracking-wide bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
+                      Θεραπεία McKenzie σε εξέλιξη
+                    </span>
+
+                    {/* Fullscreen Button */}
+                    <button
+                      type="button"
+                      onClick={handleFullscreen}
+                      onTouchEnd={handleFullscreen}
+                      className="pointer-events-auto flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-black/80 active:bg-black text-white backdrop-blur-md border border-white/20 shadow-lg transition-transform active:scale-90"
+                      title="Πλήρης οθόνη"
+                      aria-label="Πλήρης οθόνη"
+                    >
+                      <Maximize className="w-5 h-5 text-white" />
+                    </button>
+                  </div>
+
+                  {/* Bottom Bar: Play/Pause */}
+                  <div className="flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={togglePlay}
+                      onTouchEnd={togglePlay}
+                      className="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white/95 hover:bg-white active:bg-white/80 text-[#004aad] font-semibold text-xs sm:text-sm shadow-xl backdrop-blur-md transition-all active:scale-95"
+                      aria-label={isPlaying ? 'Παύση' : 'Αναπαραγωγή'}
+                    >
+                      {isPlaying ? (
+                        <>
+                          <Pause className="w-4 h-4 fill-current" />
+                          <span>Παύση</span>
+                        </>
+                      ) : (
+                        <>
+                          <Play className="w-4 h-4 fill-current" />
+                          <span>Αναπαραγωγή</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* 2. Core Philosophy & Mechanical Concept Section */}
       <section id="philosophy" className="py-20 bg-white scroll-mt-28">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-4">
               Η Φιλοσοφία της Μεθόδου
             </h2>
-            <div className="h-1 w-20 bg-[#0082c8] mx-auto rounded-full" />
+            <div className="h-1 w-20 bg-[#0082c8] mx-auto rounded-full mb-6" />
+            <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
+              Μια προσέγγιση σχεδιασμένη να αναγνωρίζει την πραγματική αιτία του πόνου και να ενδυναμώνει τον ασθενή.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Diagram Column - McKenzie Philosophy Image */}
-            <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="relative overflow-hidden rounded-2xl border border-slate-100 shadow-sm">
-                <img 
-                  src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/McKenzie.webp" 
-                  alt="Η Φιλοσοφία της Μεθόδου McKenzie" 
-                  className="w-full h-auto object-cover"
-                />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {/* Card 1 */}
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col justify-between shadow-sm">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#004aad] flex items-center justify-center font-bold text-xl mb-6">
+                  01
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">
+                  Στοχευμένη Διάγνωση & Θεραπεία
+                </h3>
+                <p className="text-slate-700 text-base md:text-lg leading-relaxed">
+                  Η μέθοδος έχει σχεδιαστεί για να αναγνωρίζει τη μηχανική αιτία του πόνου, να οδηγεί σε στοχευμένη θεραπεία και να παρέχει εργαλεία αυτοδιαχείρισης, ενδυναμώνοντας το άτομο να ανακτήσει τον έλεγχο της λειτουργικότητάς του.
+                </p>
               </div>
             </div>
 
-            {/* Narrative text block */}
-            <div className="lg:col-span-7 flex flex-col justify-center order-1 lg:order-2 text-left">
-              <div className="space-y-6">
-                <p className="text-xl md:text-2xl text-slate-800 font-normal leading-relaxed border-l-4 border-[#0082c8] pl-6 py-2">
-                  Η μέθοδος έχει σχεδιαστεί για να αναγνωρίζει την αιτία του πόνου, να οδηγεί σε στοχευμένη θεραπεία και να παρέχει εργαλεία αυτοδιαχείρισης, ενδυναμώνοντας το άτομο να ανακτήσει τον έλεγχο της λειτουργικότητας και της ποιότητας ζωής του.
-                </p>
-                <div className="h-px bg-slate-100 w-full my-6" />
-                <p className="text-lg md:text-xl text-slate-700 font-normal leading-relaxed">
-                  Ο κύριος στόχος της Μεθόδου McKenzie είναι να ελαχιστοποιήσει την ανάγκη για παθητική θεραπεία, να δώσει στον ασθενή αυτονομία και αυτοπεποίθηση στην αντιμετώπιση του προβλήματος και να μειώσει τον κίνδυνο υποτροπών.
+            {/* Card 2 */}
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col justify-between shadow-sm">
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#004aad] flex items-center justify-center font-bold text-xl mb-6">
+                  02
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">
+                  Αυτονομία & Ελαχιστοποίηση Υποτροπών
+                </h3>
+                <p className="text-slate-700 text-base md:text-lg leading-relaxed">
+                  Ο κύριος στόχος είναι να ελαχιστοποιήσει την ανάγκη για παθητική θεραπεία, να δώσει στον ασθενή αυτονομία και αυτοπεποίθηση στην αντιμετώπιση του προβλήματος και να μειώσει δραστικά τον κίνδυνο μελλοντικών υποτροπών.
                 </p>
               </div>
             </div>
