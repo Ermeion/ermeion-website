@@ -5,7 +5,7 @@ import {
   motion,
   AnimatePresence,
 } from 'framer-motion';
-import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Play, Pause, Maximize } from 'lucide-react';
 import McKenziePage from './McKenziePage';
 import TecarPage from './TecarPage';
 import SpinePainPage from './SpinePainPage';
@@ -1235,139 +1235,108 @@ function TestimonialsSection() {
   );
 }
 
-const officeImages = [
-  {
-    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/grafeio.webp",
-    alt: "Γραφείο υποδοχής και αξιολόγησης"
-  },
-  {
-    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/gym.webp",
-    alt: "Χώρος θεραπευτικής άσκησης και αποκατάστασης"
-  },
-  {
-    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/gym2.webp",
-    alt: "Εξοπλισμός θεραπευτικής εκγύμνασης"
-  },
-  {
-    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/office3.webp",
-    alt: "Σύγχρονος εξοπλισμός φυσικοθεραπείας"
-  },
-  {
-    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/office4.webp",
-    alt: "Λεπτομέρεια χώρου θεραπείας"
-  },
-  {
-    url: "https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/therapy-office.webp",
-    alt: "Δωμάτιο Θεραπείας / Ηλεκτροθεραπείας"
-  }
-];
+function OfficeVideoSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
 
-function OfficeCarouselSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % officeImages.length);
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + officeImages.length) % officeImages.length);
+  const handleFullscreen = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.requestFullscreen) {
+      videoRef.current.requestFullscreen();
+    }
   };
-
-  useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, [isHovered]);
 
   return (
-    <section className="py-24 px-6 md:px-16 bg-white border-t border-gray-100">
+    <section className="py-20 md:py-28 px-6 md:px-16 bg-gradient-to-b from-white via-slate-50/50 to-white border-t border-gray-100">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-12 text-center md:text-left">
+        <div className="mb-10 text-center md:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#004aad] text-xs font-semibold uppercase tracking-wider mb-3">
+            <span className="w-2 h-2 rounded-full bg-[#004aad] animate-pulse"></span>
+            Εικονικη Περιηγηση
+          </div>
           <h2
-            className="text-3xl md:text-4xl font-extrabold mb-3 leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight tracking-tight"
             style={{ color: '#004aad' }}
           >
             Ο Χώρος Θεραπείας
           </h2>
-          <p className="text-sm md:text-base uppercase tracking-widest font-semibold" style={{ color: '#1f2937' }}>
-            Ένας σύγχρονος, πλήρως εξοπλισμένος και φιλόξενος χώρος σχεδιασμένος για τη δική σας άνεση και αποκατάσταση.
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl font-normal leading-relaxed">
+            Ένας σύγχρονος, πλήρως εξοπλισμένος και φιλόξενος χώρος σχεδιασμένος για τη δική σας άνεση, ασφάλεια και ταχύτερη αποκατάσταση.
           </p>
         </div>
 
-        {/* Carousel Container */}
-        <div
-          className="relative overflow-hidden rounded-2xl shadow-xl border border-gray-100"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {/* Slides Track */}
-          <div className="relative aspect-[16/10] md:aspect-[21/9] w-full overflow-hidden bg-gray-50">
-            <motion.div
-              className="flex h-full w-full cursor-grab active:cursor-grabbing"
-              animate={{ x: `-${currentIndex * 100}%` }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.2}
-              onDragEnd={(_, info) => {
-                const swipeThreshold = 50;
-                if (info.offset.x < -swipeThreshold) {
-                  nextSlide();
-                } else if (info.offset.x > swipeThreshold) {
-                  prevSlide();
-                }
-              }}
-            >
-              {officeImages.map((img, idx) => (
-                <div key={idx} className="h-full w-full shrink-0 select-none">
-                  <img
-                    src={img.url}
-                    alt={img.alt}
-                    className="h-full w-full object-cover pointer-events-none"
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Navigation Controls - Left */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-gray-200/50 shadow-lg transition-all duration-300 hover:bg-[#004aad] hover:text-white"
-            style={{ color: '#004aad' }}
-            aria-label="Προηγούμενη εικόνα"
+        {/* Video Showcase Container */}
+        <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl border border-gray-200/80 bg-slate-950 aspect-[16/9] w-full">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/grafeio.webp"
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            onClick={togglePlay}
+            className="w-full h-full object-cover cursor-pointer"
           >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
+            <source
+              src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/space-video/clinic-space.mp4"
+              type="video/mp4"
+            />
+            Το πρόγραμμα περιήγησής σας δεν υποστηρίζει την αναπαραγωγή βίντεο.
+          </video>
 
-          {/* Navigation Controls - Right */}
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-gray-200/50 shadow-lg transition-all duration-300 hover:bg-[#004aad] hover:text-white"
-            style={{ color: '#004aad' }}
-            aria-label="Επόμενη εικόνα"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
+          {/* Interactive Controls Overlay */}
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 md:p-6">
+            {/* Top Bar */}
+            <div className="flex items-center justify-between">
+              <span className="text-white/90 text-xs md:text-sm font-medium tracking-wide bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/10">
+                Φυσικοθεραπευτήριο Ερμείον
+              </span>
+              <button
+                type="button"
+                onClick={handleFullscreen}
+                className="pointer-events-auto p-2.5 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md border border-white/10 transition-transform active:scale-95"
+                title="Πλήρης οθόνη"
+                aria-label="Πλήρης οθόνη"
+              >
+                <Maximize className="w-4 h-4 md:w-5 md:h-5" />
+              </button>
+            </div>
 
-          {/* Bottom Indicators & Alt Text Overlay */}
-          <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 pt-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <span className="text-white font-medium text-sm md:text-base tracking-wide select-none drop-shadow-md">
-              {officeImages[currentIndex].alt}
-            </span>
-            <div className="flex gap-2.5">
-              {officeImages.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    currentIndex === idx ? 'w-8 bg-white' : 'w-2.5 bg-white/40 hover:bg-white/70'
-                  }`}
-                  aria-label={`Μετάβαση στην εικόνα ${idx + 1}`}
-                />
-              ))}
+            {/* Bottom Bar: Play/Pause */}
+            <div className="flex items-center justify-between">
+              <button
+                type="button"
+                onClick={togglePlay}
+                className="pointer-events-auto inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 hover:bg-white text-[#004aad] font-semibold text-xs md:text-sm shadow-lg backdrop-blur-md transition-all active:scale-95"
+                aria-label={isPlaying ? 'Παύση' : 'Αναπαραγωγή'}
+              >
+                {isPlaying ? (
+                  <>
+                    <Pause className="w-4 h-4 fill-current" />
+                    <span>Παύση</span>
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-4 h-4 fill-current" />
+                    <span>Αναπαραγωγή</span>
+                  </>
+                )}
+              </button>
             </div>
           </div>
         </div>
@@ -1780,7 +1749,7 @@ function App() {
           <AboutOwnerSection />
           <InsuranceCarouselSection />
           <WhyChooseUsSection />
-          <OfficeCarouselSection />
+          <OfficeVideoSection />
           <FAQSection />
           <FinalCTASection />
         </>
