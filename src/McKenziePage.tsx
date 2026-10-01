@@ -239,6 +239,31 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
 
 
 
+      {/* 2. Philosophy & Process Section */}
+      <section className="py-16 bg-white scroll-mt-28">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+              <div>
+                <span className="text-4xl font-extrabold text-[#004aad]/20 mb-4 block">01</span>
+                <p className="text-slate-700 text-base md:text-lg font-normal leading-relaxed">
+                  Η μέθοδος έχει σχεδιαστεί για να αναγνωρίζει την αιτία του πόνου, να οδηγεί σε στοχευμένη θεραπεία και να παρέχει εργαλεία αυτοδιαχείρισης, ενδυναμώνοντας το άτομο να ανακτήσει τον έλεγχο της λειτουργικότητας και της ποιότητας ζωής του.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+              <div>
+                <span className="text-4xl font-extrabold text-[#004aad]/20 mb-4 block">02</span>
+                <p className="text-slate-700 text-base md:text-lg font-normal leading-relaxed">
+                  Ο κύριος στόχος της Μεθόδου McKenzie είναι να ελαχιστοποιήσει την ανάγκη για παθητική θεραπεία, να δώσει στον ασθενή αυτονομία και αυτοπεποίθηση στην αντιμετώπιση του προβλήματος και να μειώσει τον κίνδυνο υποτροπών.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Trust & Credentials Section */}
       <section id="credentials" className="py-20 bg-[#fafbfc] border-t border-b border-slate-100 scroll-mt-28">
         <div className="max-w-6xl mx-auto px-4 md:px-8">

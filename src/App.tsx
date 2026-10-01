@@ -513,12 +513,12 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
       className="w-full bg-white md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto pt-12 md:pt-16 pb-2 md:pb-4 px-4 md:px-8 lg:px-10">
         <h2
-          className="text-4xl md:text-6xl font-extrabold mb-4 max-w-4xl"
+          className="text-3xl md:text-5xl lg:text-6xl font-extrabold max-w-5xl"
           style={{ color: '#004aad' }}
         >
-          Μέθοδος ΜcKenzie
+          Τι να περιμένετε στη πρώτη σας επίσκεψη:
         </h2>
       </div>
 
@@ -526,7 +526,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            className="flex justify-start pt-6 md:pt-16 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white flex items-center justify-center shadow-md">
