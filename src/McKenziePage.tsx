@@ -237,52 +237,7 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
         </div>
       </section>
 
-      {/* 2. Core Philosophy & Mechanical Concept Section */}
-      <section id="philosophy" className="py-20 bg-white scroll-mt-28">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-4">
-              Η Φιλοσοφία της Μεθόδου
-            </h2>
-            <div className="h-1 w-20 bg-[#0082c8] mx-auto rounded-full mb-6" />
-            <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">
-              Μια προσέγγιση σχεδιασμένη να αναγνωρίζει την πραγματική αιτία του πόνου και να ενδυναμώνει τον ασθενή.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-            {/* Card 1 */}
-            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col justify-between shadow-sm">
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#004aad] flex items-center justify-center font-bold text-xl mb-6">
-                  01
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">
-                  Στοχευμένη Διάγνωση & Θεραπεία
-                </h3>
-                <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-                  Η μέθοδος έχει σχεδιαστεί για να αναγνωρίζει τη μηχανική αιτία του πόνου, να οδηγεί σε στοχευμένη θεραπεία και να παρέχει εργαλεία αυτοδιαχείρισης, ενδυναμώνοντας το άτομο να ανακτήσει τον έλεγχο της λειτουργικότητάς του.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col justify-between shadow-sm">
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#004aad] flex items-center justify-center font-bold text-xl mb-6">
-                  02
-                </div>
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">
-                  Αυτονομία & Ελαχιστοποίηση Υποτροπών
-                </h3>
-                <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-                  Ο κύριος στόχος είναι να ελαχιστοποιήσει την ανάγκη για παθητική θεραπεία, να δώσει στον ασθενή αυτονομία και αυτοπεποίθηση στην αντιμετώπιση του προβλήματος και να μειώσει δραστικά τον κίνδυνο μελλοντικών υποτροπών.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 3. Trust & Credentials Section */}
       <section id="credentials" className="py-20 bg-[#fafbfc] border-t border-b border-slate-100 scroll-mt-28">
