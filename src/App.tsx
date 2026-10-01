@@ -5,7 +5,7 @@ import {
   motion,
   AnimatePresence,
 } from 'framer-motion';
-import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Play, Pause, Maximize, Phone } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Play, Pause, Maximize, Phone } from 'lucide-react';
 import McKenziePage from './McKenziePage';
 import TecarPage from './TecarPage';
 import SpinePainPage from './SpinePainPage';
