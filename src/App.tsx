@@ -518,7 +518,7 @@ function Timeline({ data }: { data: TimelineEntry[] }) {
           className="text-3xl md:text-6xl font-extrabold mb-4 max-w-4xl"
           style={{ color: '#004aad' }}
         >
-          Τι να περιμένετε στη πρώτη σας επίσκεψη:
+          Μέθοδος ΜcKenzie
         </h2>
       </div>
 
