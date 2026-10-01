@@ -5,11 +5,13 @@ import {
   motion,
   AnimatePresence,
 } from 'framer-motion';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Play, Pause, Maximize, Phone } from 'lucide-react';
 import McKenziePage from './McKenziePage';
 import TecarPage from './TecarPage';
 import SpinePainPage from './SpinePainPage';
 import ExercisePage from './ExercisePage';
+import ServicesPage from './ServicesPage';
 
 // Navbar Component
 function Navbar() {
@@ -23,26 +25,58 @@ function Navbar() {
   };
 
   const navLinks = [
-    { href: '#process', label: 'Διαδικασία' },
-    { href: '#about-owner', label: 'Γνωρίστε με' },
-    { href: '#testimonials', label: 'Αξιολογήσεις' },
-    { href: '#faq', label: 'FAQ' },
+    { path: '/#process', label: 'Διαδικασία' },
+    { path: '/#about-owner', label: 'Γνωρίστε με' },
+    { path: '/#testimonials', label: 'Αξιολογήσεις' },
+    { path: '/#faq', label: 'FAQ' },
   ];
 
-  const servicesList = [
-    { label: 'Μέθοδος McKenzie', href: '#mckenzie' },
-    { label: 'Θεραπεία & Πρόληψη Σπονδυλικού Πόνου', href: '#spine-pain' },
-    { label: 'Θεραπευτική Άσκηση', href: '#exercise' },
-    { label: 'Tecar Therapy', href: '#tecar' }
+  const [hoveredService, setHoveredService] = useState<{
+    label: string;
+    path: string;
+    description: string;
+    image: string;
+  }>({
+    label: 'Μέθοδος McKenzie',
+    path: '/ypiresies/McKenzie',
+    description: 'Μηχανική Διάγνωση & Θεραπεία για την αντιμετώπιση του πόνου.',
+    image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/McKenzie-video/McKenzie-thumbnail.png',
+  });
+
+  const megaServices = [
+    {
+      label: 'Μέθοδος McKenzie',
+      path: '/ypiresies/McKenzie',
+      description: 'Μηχανική Διάγνωση & Θεραπεία',
+      image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/McKenzie-video/McKenzie-thumbnail.png',
+    },
+    {
+      label: 'Σπονδυλικός Πόνος',
+      path: '/ypiresies/spine-pain',
+      description: 'Πρόληψη & Αποκατάσταση Οσφυαλγίας',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+      label: 'Tecar Therapy',
+      path: '/ypiresies/tecar',
+      description: 'Στοχευμένη θεραπεία ραδιοσυχνοτήτων',
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
+    },
+    {
+      label: 'Θεραπευτική Άσκηση',
+      path: '/ypiresies/exercise',
+      description: 'Ενδυνάμωση & Λειτουργική Αποκατάσταση',
+      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop',
+    },
   ];
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="flex items-center justify-between px-4 md:px-8 py-2">
         {/* Logo */}
-        <a href="#" className="flex items-center" onClick={() => closeMenu()}>
+        <Link to="/" className="flex items-center" onClick={() => closeMenu()}>
           <img src="/ermeion-main-logo.svg" alt="Ερμείον" style={{ height: '72px' }} className="w-auto object-contain" />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -52,32 +86,96 @@ function Navbar() {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <button
+            <Link
+              to="/ypiresies"
               className="flex items-center gap-1 text-base font-semibold transition-all duration-300 hover:opacity-80 cursor-pointer"
               style={{ color: '#004aad' }}
             >
               Υπηρεσίες
               <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
+            </Link>
+
             <AnimatePresence>
               {dropdownOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  initial={{ opacity: 0, y: 12, scale: 0.98 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  exit={{ opacity: 0, y: 12, scale: 0.98 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute left-0 mt-2 w-64 bg-white rounded-2xl border border-gray-100 shadow-xl py-3 z-50 backdrop-blur-md"
+                  className="absolute -left-12 top-full w-[760px] bg-white rounded-3xl border border-gray-100 shadow-2xl p-6 z-50 overflow-hidden"
                 >
-                  {servicesList.map((service) => (
-                    <a
-                      key={service.href}
-                      href={service.href}
-                      onClick={() => setDropdownOpen(false)}
-                      className="block px-5 py-2.5 text-sm font-semibold text-gray-700 hover:text-[#004aad] hover:bg-gray-50 transition-all duration-200"
-                    >
-                      {service.label}
-                    </a>
-                  ))}
+                  <div className="grid grid-cols-12 gap-6 items-stretch">
+                    
+                    {/* Left Column: Service Links List (2 columns grid inside) */}
+                    <div className="col-span-7 flex flex-col justify-between">
+                      <div className="grid grid-cols-2 gap-3">
+                        {megaServices.map((service) => {
+                          const isSelected = hoveredService.path === service.path;
+                          return (
+                            <Link
+                              key={service.path}
+                              to={service.path}
+                              onMouseEnter={() => setHoveredService(service)}
+                              onClick={() => setDropdownOpen(false)}
+                              className={`p-3.5 rounded-xl transition-all duration-200 text-left flex flex-col justify-center ${
+                                isSelected
+                                  ? 'bg-[#004aad] text-white shadow-md'
+                                  : 'hover:bg-slate-50 text-slate-800'
+                              }`}
+                            >
+                              <span className={`font-bold text-sm md:text-base leading-snug ${isSelected ? 'text-white' : 'text-slate-900'}`}>
+                                {service.label}
+                              </span>
+                              <span className={`text-xs mt-1 ${isSelected ? 'text-blue-100' : 'text-slate-500'}`}>
+                                {service.description}
+                              </span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      {/* Bottom 'See all services' link */}
+                      <div className="pt-4 mt-4 border-t border-slate-100">
+                        <Link
+                          to="/ypiresies"
+                          onClick={() => setDropdownOpen(false)}
+                          className="inline-flex items-center gap-2 text-sm font-bold text-[#004aad] hover:text-[#003884] transition-colors group"
+                        >
+                          <span>Δείτε όλες τις υπηρεσίες</span>
+                          <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Right Column: Featured Image Card */}
+                    <div className="col-span-5 relative group overflow-hidden rounded-2xl bg-slate-900 flex flex-col justify-end p-5 min-h-[240px]">
+                      <img
+                        src={hoveredService.image}
+                        alt={hoveredService.label}
+                        className="absolute inset-0 w-full h-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                      
+                      <div className="relative z-10 flex items-end justify-between">
+                        <div>
+                          <span className="text-[11px] font-bold tracking-wider uppercase text-blue-300 block mb-1">
+                            Επισκόπηση
+                          </span>
+                          <h4 className="text-white font-extrabold text-lg leading-snug">
+                            {hoveredService.label}
+                          </h4>
+                        </div>
+                        <Link
+                          to={hoveredService.path}
+                          onClick={() => setDropdownOpen(false)}
+                          className="w-9 h-9 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center transition-all"
+                        >
+                          <ChevronRight className="w-5 h-5 text-white" />
+                        </Link>
+                      </div>
+                    </div>
+
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -85,8 +183,8 @@ function Navbar() {
 
           {navLinks.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.path}
+              href={link.path}
               className="text-base font-semibold transition-all duration-300 hover:opacity-80"
               style={{ color: '#004aad' }}
             >
@@ -143,24 +241,31 @@ function Navbar() {
               <span>Υπηρεσίες</span>
               <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileAccordionOpen ? 'rotate-180' : ''}`} />
             </button>
-            <div className={`overflow-hidden transition-all duration-300 flex flex-col gap-1 pl-4 ${mobileAccordionOpen ? 'max-h-60 mt-2 opacity-100' : 'max-h-0 opacity-0'}`}>
-              {servicesList.map((service) => (
-                <a
-                  key={service.href}
-                  href={service.href}
+            <div className={`overflow-hidden transition-all duration-300 flex flex-col gap-1 pl-4 ${mobileAccordionOpen ? 'max-h-80 mt-2 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <Link
+                to="/ypiresies"
+                className="py-2.5 text-sm font-bold text-[#004aad] border-b border-gray-100"
+                onClick={closeMenu}
+              >
+                Όλες οι Υπηρεσίες
+              </Link>
+              {megaServices.map((service) => (
+                <Link
+                  key={service.path}
+                  to={service.path}
                   className="py-2.5 text-sm font-semibold text-gray-600 hover:text-[#004aad] border-b border-gray-50 last:border-0"
                   onClick={closeMenu}
                 >
                   {service.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
 
           {navLinks.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.path}
+              href={link.path}
               className="py-3 text-base font-semibold border-b border-gray-100 transition-all duration-200 hover:opacity-70"
               style={{ color: '#004aad' }}
               onClick={closeMenu}
@@ -1733,61 +1838,52 @@ function Footer() {
   );
 }
 
-// Main App Component
-function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'mckenzie' | 'tecar' | 'spine-pain' | 'exercise'>('home');
+// Scroll to top helper on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash === '#mckenzie') {
-        setCurrentPage('mckenzie');
-        window.scrollTo({ top: 0, behavior: 'instant' as any });
-      } else if (hash === '#tecar') {
-        setCurrentPage('tecar');
-        window.scrollTo({ top: 0, behavior: 'instant' as any });
-      } else if (hash === '#spine-pain') {
-        setCurrentPage('spine-pain');
-        window.scrollTo({ top: 0, behavior: 'instant' as any });
-      } else if (hash === '#exercise') {
-        setCurrentPage('exercise');
-        window.scrollTo({ top: 0, behavior: 'instant' as any });
-      } else {
-        setCurrentPage('home');
-      }
-    };
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as any });
+  }, [pathname]);
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+  return null;
+}
 
+// HomePage Component
+function HomePage() {
+  return (
+    <>
+      <HeroSection />
+      <CertificatesCarouselSection />
+      <WhyErmeionSection />
+      <TestimonialsSection />
+      <ProcessSection />
+      <AboutOwnerSection />
+      <InsuranceCarouselSection />
+      <WhyChooseUsSection />
+      <OfficeVideoSection />
+      <FAQSection />
+      <FinalCTASection />
+    </>
+  );
+}
+
+// Main App Component
+function App() {
   return (
     <div className="min-h-screen">
+      <ScrollToTop />
       <Navbar />
-      {currentPage === 'home' ? (
-        <>
-          <HeroSection />
-          <CertificatesCarouselSection />
-          <WhyErmeionSection />
-          <TestimonialsSection />
-          <ProcessSection />
-          <AboutOwnerSection />
-          <InsuranceCarouselSection />
-          <WhyChooseUsSection />
-          <OfficeVideoSection />
-          <FAQSection />
-          <FinalCTASection />
-        </>
-      ) : currentPage === 'mckenzie' ? (
-        <McKenziePage onNavigate={(hash) => { window.location.hash = hash; }} />
-      ) : currentPage === 'tecar' ? (
-        <TecarPage onNavigate={(hash) => { window.location.hash = hash; }} />
-      ) : currentPage === 'spine-pain' ? (
-        <SpinePainPage onNavigate={(hash) => { window.location.hash = hash; }} />
-      ) : (
-        <ExercisePage onNavigate={(hash) => { window.location.hash = hash; }} />
-      )}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/ypiresies" element={<ServicesPage />} />
+        <Route path="/ypiresies/McKenzie" element={<McKenziePage onNavigate={() => {}} />} />
+        <Route path="/ypiresies/tecar" element={<TecarPage onNavigate={() => {}} />} />
+        <Route path="/ypiresies/spine-pain" element={<SpinePainPage onNavigate={() => {}} />} />
+        <Route path="/ypiresies/exercise" element={<ExercisePage onNavigate={() => {}} />} />
+        {/* Backward compatibility fallback for legacy hash or direct paths */}
+        <Route path="*" element={<HomePage />} />
+      </Routes>
       <Footer />
     </div>
   );

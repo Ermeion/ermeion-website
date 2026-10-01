@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Pause, Maximize, Phone } from 'lucide-react';
 
 interface McKenziePageProps {
@@ -357,8 +358,8 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             
             {/* Tecar */}
-            <div 
-              onClick={() => onNavigate('#tecar')}
+            <Link 
+              to="/ypiresies/tecar"
               className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
@@ -370,11 +371,11 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
               <div className="text-base font-bold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
                 Περισσότερα <ArrowRight className="w-4 h-4" />
               </div>
-            </div>
+            </Link>
 
             {/* Spine Pain */}
-            <div 
-              onClick={() => onNavigate('#spine-pain')}
+            <Link 
+              to="/ypiresies/spine-pain"
               className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
@@ -386,11 +387,11 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
               <div className="text-base font-bold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
                 Περισσότερα <ArrowRight className="w-4 h-4" />
               </div>
-            </div>
+            </Link>
 
             {/* Exercise */}
-            <div 
-              onClick={() => onNavigate('#exercise')}
+            <Link 
+              to="/ypiresies/exercise"
               className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
@@ -402,7 +403,7 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
               <div className="text-base font-bold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
                 Περισσότερα <ArrowRight className="w-4 h-4" />
               </div>
-            </div>
+            </Link>
 
           </div>
 
