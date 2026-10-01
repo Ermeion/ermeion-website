@@ -5,7 +5,7 @@ import {
   motion,
   AnimatePresence,
 } from 'framer-motion';
-import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Play, Pause, Maximize } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, CalendarCheck, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Play, Pause, Maximize, Phone } from 'lucide-react';
 import McKenziePage from './McKenziePage';
 import TecarPage from './TecarPage';
 import SpinePainPage from './SpinePainPage';
@@ -101,6 +101,7 @@ function Navbar() {
           className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
           style={{ backgroundColor: '#004aad' }}
         >
+          <Phone className="w-4 h-4 shrink-0" />
           Κλείστε Ραντεβού
         </a>
 
@@ -108,9 +109,10 @@ function Navbar() {
         <div className="md:hidden flex items-center gap-2">
           <a
             href="tel:+306988404234"
-            className="px-4 py-2 rounded-lg text-sm font-semibold text-white flex items-center justify-center"
+            className="px-4 py-2 rounded-lg text-sm font-semibold text-white flex items-center justify-center gap-1.5"
             style={{ backgroundColor: '#004aad' }}
           >
+            <Phone className="w-4 h-4 shrink-0" />
             Κράτηση 
           </a>
           <button
@@ -168,10 +170,11 @@ function Navbar() {
           ))}
           <a
             href="tel:+306988404234"
-            className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90 flex items-center justify-center"
+            className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90 flex items-center justify-center gap-2"
             style={{ backgroundColor: '#004aad' }}
             onClick={closeMenu}
           >
+            <Phone className="w-4 h-4 shrink-0" />
             Κλείστε Ραντεβού
           </a>
         </div>
@@ -240,7 +243,7 @@ function HeroSection() {
               className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
               style={{ backgroundColor: '#004aad' }}
             >
-              <CalendarCheck className="w-5 h-5" />
+              <Phone className="w-5 h-5 shrink-0" />
               Κλείστε Ραντεβού
             </a>
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-xs md:text-sm text-white/70 font-medium text-center md:text-left">
@@ -404,7 +407,7 @@ function WhyErmeionSection() {
             className="flex items-center justify-center gap-2 w-full lg:w-fit px-8 py-4 rounded-xl text-base font-bold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#004aad' }}
           >
-            <CalendarCheck className="w-5 h-5 shrink-0" />
+            <Phone className="w-5 h-5 shrink-0" />
             Κλείστε Ραντεβού
           </a>
         </div>
@@ -1538,7 +1541,7 @@ function FinalCTASection() {
             {/* Shimmer overlay effect */}
             <span className="shimmer-slide absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full" />
             
-            <CalendarCheck className="w-6 h-6" />
+            <Phone className="w-6 h-6 shrink-0" />
             ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ
           </a>
         </div>

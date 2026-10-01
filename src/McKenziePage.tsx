@@ -1,40 +1,42 @@
 import { useState, useRef } from 'react';
-import { ArrowRight, Play, Pause, Maximize } from 'lucide-react';
+import { ArrowRight, Play, Pause, Maximize, Phone } from 'lucide-react';
 
 interface McKenziePageProps {
   onNavigate: (hash: string) => void;
 }
 
 export default function McKenziePage({ onNavigate }: McKenziePageProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [showControls, setShowControls] = useState(true);
 
-  const togglePlay = (e?: React.MouseEvent | React.TouchEvent) => {
+  const togglePlay = (isDesktop = false, e?: React.MouseEvent | React.TouchEvent) => {
     if (e) e.stopPropagation();
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
+    const vid = isDesktop ? desktopVideoRef.current : mobileVideoRef.current;
+    if (!vid) return;
+    if (vid.paused) {
+      vid.play();
       setIsPlaying(true);
     } else {
-      videoRef.current.pause();
+      vid.pause();
       setIsPlaying(false);
     }
   };
 
-  const handleFullscreen = (e?: React.MouseEvent | React.TouchEvent) => {
+  const handleFullscreen = (isDesktop = false, e?: React.MouseEvent | React.TouchEvent) => {
     if (e) e.stopPropagation();
-    const video = videoRef.current;
-    if (!video) return;
+    const vid = isDesktop ? desktopVideoRef.current : mobileVideoRef.current;
+    if (!vid) return;
 
-    if ((video as any).webkitEnterFullscreen) {
-      (video as any).webkitEnterFullscreen();
-    } else if (video.requestFullscreen) {
-      video.requestFullscreen().catch(() => {});
-    } else if ((video as any).webkitRequestFullscreen) {
-      (video as any).webkitRequestFullscreen();
-    } else if ((video as any).msRequestFullscreen) {
-      (video as any).msRequestFullscreen();
+    if ((vid as any).webkitEnterFullscreen) {
+      (vid as any).webkitEnterFullscreen();
+    } else if (vid.requestFullscreen) {
+      vid.requestFullscreen().catch(() => {});
+    } else if ((vid as any).webkitRequestFullscreen) {
+      (vid as any).webkitRequestFullscreen();
+    } else if ((vid as any).msRequestFullscreen) {
+      (vid as any).msRequestFullscreen();
     }
   };
 
@@ -51,16 +53,15 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
           onClick={() => setShowControls((prev) => !prev)}
         >
           <video
-            ref={videoRef}
+            ref={mobileVideoRef}
             autoPlay
             muted
             loop
             playsInline
             preload="metadata"
-            poster="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/McKenzie.webp"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
-            onClick={togglePlay}
+            onClick={(e) => togglePlay(false, e)}
             className="w-full h-full object-cover cursor-pointer"
           >
             <source
@@ -79,8 +80,8 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
             <div className="flex justify-end">
               <button
                 type="button"
-                onClick={handleFullscreen}
-                onTouchEnd={handleFullscreen}
+                onClick={(e) => handleFullscreen(false, e)}
+                onTouchEnd={(e) => handleFullscreen(false, e)}
                 className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/60 active:bg-black text-white backdrop-blur-md border border-white/20 shadow-lg"
                 title="Πλήρης οθόνη"
                 aria-label="Πλήρης οθόνη"
@@ -91,8 +92,8 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
             <div className="flex justify-start">
               <button
                 type="button"
-                onClick={togglePlay}
-                onTouchEnd={togglePlay}
+                onClick={(e) => togglePlay(false, e)}
+                onTouchEnd={(e) => togglePlay(false, e)}
                 className="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/95 text-[#004aad] font-semibold text-xs shadow-xl backdrop-blur-md"
                 aria-label={isPlaying ? 'Παύση' : 'Αναπαραγωγή'}
               >
@@ -129,8 +130,9 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
 
           <a
             href="tel:+306988404234"
-            className="w-full inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-bold shadow-md active:scale-95 text-center"
+            className="w-full inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-bold shadow-md active:scale-95 text-center"
           >
+            <Phone className="w-4 h-4 shrink-0" />
             Κλείστε Ραντεβού
           </a>
         </div>
@@ -160,26 +162,29 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
 
               <a
                 href="tel:+306988404234"
-                className="inline-flex items-center justify-center px-9 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 text-center"
+                className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 text-center"
               >
+                <Phone className="w-5 h-5 shrink-0" />
                 Κλείστε Ραντεβού
               </a>
             </div>
 
-            {/* Right Column: Video Container */}
+            {/* Right Column: Video Container with Interactive Controls */}
             <div className="col-span-6 w-full">
               <div
                 className="relative group overflow-hidden rounded-3xl shadow-xl border border-gray-200/80 bg-slate-950 aspect-[16/9] w-full select-none"
-                onClick={() => setShowControls((prev) => !prev)}
               >
                 <video
+                  ref={desktopVideoRef}
                   autoPlay
                   muted
                   loop
                   playsInline
                   preload="metadata"
-                  poster="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/McKenzie.webp"
-                  className="w-full h-full object-cover"
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onClick={(e) => togglePlay(true, e)}
+                  className="w-full h-full object-cover cursor-pointer"
                 >
                   <source
                     src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/McKenzie-video/McKenzie-therapy.mp4"
@@ -187,6 +192,44 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
                   />
                   Το πρόγραμμα περιήγησής σας δεν υποστηρίζει την αναπαραγωγή βίντεο.
                 </video>
+
+                {/* Desktop Interactive Hover Controls Overlay */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5">
+                  {/* Top Right: Fullscreen Button */}
+                  <div className="flex justify-end">
+                    <button
+                      type="button"
+                      onClick={(e) => handleFullscreen(true, e)}
+                      className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 active:bg-black text-white backdrop-blur-md border border-white/20 shadow-lg transition-transform active:scale-90"
+                      title="Πλήρης οθόνη"
+                      aria-label="Πλήρης οθόνη"
+                    >
+                      <Maximize className="w-5 h-5 text-white" />
+                    </button>
+                  </div>
+
+                  {/* Bottom Left: Play/Pause Button */}
+                  <div className="flex justify-start">
+                    <button
+                      type="button"
+                      onClick={(e) => togglePlay(true, e)}
+                      className="pointer-events-auto inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/95 hover:bg-white active:bg-white/80 text-[#004aad] font-semibold text-xs shadow-xl backdrop-blur-md transition-all active:scale-95"
+                      aria-label={isPlaying ? 'Παύση' : 'Αναπαραγωγή'}
+                    >
+                      {isPlaying ? (
+                        <>
+                          <Pause className="w-4 h-4 fill-current" />
+                          <span>Παύση</span>
+                        </>
+                      ) : (
+                        <>
+                          <Play className="w-4 h-4 fill-current" />
+                          <span>Αναπαραγωγή</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -395,8 +438,9 @@ export default function McKenziePage({ onNavigate }: McKenziePageProps) {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:+306988404234"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300"
             >
+              <Phone className="w-5 h-5 shrink-0" />
               Κλείστε Ραντεβού
             </a>
           </div>

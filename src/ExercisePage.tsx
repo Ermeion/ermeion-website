@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 
 interface ExercisePageProps {
   onNavigate: (hash: string) => void;
@@ -28,8 +28,9 @@ export default function ExercisePage({ onNavigate }: ExercisePageProps) {
             <div className="flex flex-wrap gap-4">
               <a
                 href="tel:+306988404234"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
               >
+                <Phone className="w-5 h-5 shrink-0" />
                 Κλείστε Ραντεβού
               </a>
             </div>
@@ -256,8 +257,9 @@ export default function ExercisePage({ onNavigate }: ExercisePageProps) {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:+306988404234"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300"
             >
+              <Phone className="w-5 h-5 shrink-0" />
               Κλείστε Ραντεβού
             </a>
           </div>

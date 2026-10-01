@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 
 interface SpinePainPageProps {
   onNavigate: (hash: string) => void;
@@ -28,8 +28,9 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
             <div className="flex flex-wrap gap-4">
               <a
                 href="tel:+306988404234"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
               >
+                <Phone className="w-5 h-5 shrink-0" />
                 Κλείστε Ραντεβού
               </a>
             </div>
@@ -56,14 +57,19 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
             <h2 className="text-3xl md:text-4xl font-bold text-[#004aad] mb-4">
               Βοηθάμε καθημερινά άτομα με:
             </h2>
-            <p className="text-slate-700 max-w-2xl mx-auto text-lg md:text-xl font-normal leading-relaxed">
-              Η φυσικοθεραπεία ενδείκνυται σε άτομα με:
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 text-left">
             
-            {/* Indication 1 */}
+            {/* Indication 1: Κήλες & Εκφυλιστικές Αλλοιώσεις */}
+            <div className="border-l-4 border-blue-200 pl-5">
+              <h4 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-2">Κήλες & Εκφυλιστικές Αλλοιώσεις</h4>
+              <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
+                Επώδυνες κήλες, χειρουργεία δισκεκτομής και εκφυλιστικές αλλοιώσεις.
+              </p>
+            </div>
+
+            {/* Indication 2: Οσφυαλγία */}
             <div className="border-l-4 border-blue-200 pl-5">
               <h4 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-2">Οσφυαλγία</h4>
               <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
@@ -71,15 +77,7 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
               </p>
             </div>
 
-            {/* Indication 2 */}
-            <div className="border-l-4 border-blue-200 pl-5">
-              <h4 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-2">Αθλητικούς Τραυματισμούς</h4>
-              <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
-                Πόνο στον αυχένα ή την μέση κατά την διάρκεια των δραστηριοτήτων/αθλημάτων ή ασκήσεων στο γυμναστήριο.
-              </p>
-            </div>
-
-            {/* Indication 3 */}
+            {/* Indication 3: Αυχεναλγία */}
             <div className="border-l-4 border-blue-200 pl-5">
               <h4 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-2">Αυχεναλγία</h4>
               <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
@@ -87,7 +85,7 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
               </p>
             </div>
 
-            {/* Indication 4 */}
+            {/* Indication 4: Θωρακικός Πόνος */}
             <div className="border-l-4 border-blue-200 pl-5">
               <h4 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-2">Θωρακικός Πόνος</h4>
               <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
@@ -95,11 +93,11 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
               </p>
             </div>
 
-            {/* Indication 5 */}
-            <div className="border-l-4 border-blue-200 pl-5 col-span-1 md:col-span-2 lg:col-span-1">
-              <h4 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-2">Κήλες & Εκφυλιστικές Αλλοιώσεις</h4>
+            {/* Indication 5: Αθλητικούς Τραυματισμούς */}
+            <div className="border-l-4 border-blue-200 pl-5">
+              <h4 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-2">Αθλητικούς Τραυματισμούς</h4>
               <p className="text-base md:text-lg text-slate-700 font-normal leading-relaxed">
-                Επώδυνες κήλες, χειρουργεία δισκεκτομής και εκφυλιστικές αλλοιώσεις.
+                Πόνο στον αυχένα ή την μέση κατά την διάρκεια των δραστηριοτήτων/αθλημάτων ή ασκήσεων στο γυμναστήριο.
               </p>
             </div>
 
@@ -247,8 +245,9 @@ export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="tel:+306988404234"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300"
             >
+              <Phone className="w-5 h-5 shrink-0" />
               Κλείστε Ραντεβού
             </a>
           </div>
