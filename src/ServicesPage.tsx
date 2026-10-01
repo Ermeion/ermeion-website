@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Phone, Target, Zap, Activity, Dumbbell } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 
 interface ServicesPageProps {
   onNavigate?: (path: string) => void;
@@ -10,38 +10,26 @@ export default function ServicesPage({}: ServicesPageProps) {
     {
       id: 'mckenzie',
       title: 'Μέθοδος McKenzie (MDT)',
-      tagline: 'Μηχανική Διάγνωση & Θεραπεία',
-      description: 'Εξειδικευμένη προσέγγιση αξιολόγησης και θεραπείας για τον πόνο στην πλάτη, τον αυχένα και τις αρθρώσεις. Εστιάζει στην αυτοδιαχείριση και την πρόληψη υποτροπών.',
+      description: 'Η Μέθοδος McKenzie ή γνωστή και ως Μηχανική Διάγνωση & Θεραπεία είναι μια επιστημονικά τεκμηριωμένη φυσικοθεραπευτική προσέγγιση αξιολόγησης και διαχείρισης του μυοσκελετικού πόνου.',
       path: '/ypiresies/McKenzie',
-      icon: Target,
-      badge: 'Πιστοποιημένος Θεραπευτής',
     },
     {
       id: 'spine-pain',
       title: 'Πρόληψη & Θεραπεία Σπονδυλικού Πόνου',
-      tagline: 'Οσφυαλγία, Αυχεναλγία & Κήλες',
-      description: 'Ολοκληρωμένη φροντίδα για οξείες και χρόνιες παθήσεις της σπονδυλικής στήλης. Εξατομικευμένα θεραπευτικά πρωτόκολλα για άμεση ανακούφιση και αποκατάσταση.',
+      description: 'Στο ΕΡΜΕΙΟΝ, αντιμετωπίζουμε τον σπονδυλικό πόνο με τρόπο σύγχρονο, εξατομικευμένο και βασισμένο σε επιστημονικά τεκμηριωμένες πρακτικές.',
       path: '/ypiresies/spine-pain',
-      icon: Activity,
-      badge: 'Εξειδικευμένη Φροντίδα',
     },
     {
       id: 'exercise',
       title: 'Θεραπευτική Άσκηση',
-      tagline: 'Ενδυνάμωση & Λειτουργική Αποκατάσταση',
-      description: 'Στοχευμένα προγράμματα θεραπευτικής γυμναστικής σχεδιασμένα για την αποκατάσταση της κινητικότητας, της δύναμης και της σταθερότητας του σώματος.',
+      description: 'Στο ΕΡΜΕΙΟΝ, η θεραπευτική άσκηση, δεν είναι απλώς γυμναστική, είναι μια επιστημονικά σχεδιασμένη παρέμβαση για κάθε άτομο ξεχωριστά. Προσαρμόζεται σε κάθε θεραπεία ανάλογα με την επαναξιολόγηση και την συμπεριφορά των συμπτωμάτων.',
       path: '/ypiresies/exercise',
-      icon: Dumbbell,
-      badge: 'Εξατομικευμένο Πρόγραμμα',
     },
     {
       id: 'tecar',
       title: 'Tecar Therapy',
-      tagline: 'Στοχευμένη Ραδιοσυχνότητα',
-      description: 'Προηγμένη τεχνολογία μεταφοράς ενέργειας που επιταχύνει τη φυσική διαδικασία αναγέννησης των ιστών, μειώνει τη φλεγμονή και ανακουφίζει από τον πόνο.',
+      description: 'Στο ΕΡΜΕΙΟΝ, η θεραπευτική άσκηση, δεν είναι απλώς γυμναστική, είναι μια επιστημονικά σχεδιασμένη παρέμβαση για κάθε άτομο ξεχωριστά. Προσαρμόζεται σε κάθε θεραπεία ανάλογα με την επαναξιολόγηση και την συμπεριφορά των συμπτωμάτων.',
       path: '/ypiresies/tecar',
-      icon: Zap,
-      badge: 'Σύγχρονη Τεχνολογία',
     },
   ];
 
@@ -73,12 +61,9 @@ export default function ServicesPage({}: ServicesPageProps) {
                 className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl border border-slate-100 transition-all duration-300 flex flex-col justify-between group cursor-pointer hover:-translate-y-1"
               >
                 <div>
-                  <h2 className="text-2xl font-bold text-slate-900 group-hover:text-[#004aad] transition-colors mb-2">
+                  <h2 className="text-2xl font-bold text-[#004aad] mb-4">
                     {service.title}
                   </h2>
-                  <p className="text-sm font-semibold text-[#004aad] mb-4">
-                    {service.tagline}
-                  </p>
                   <p className="text-slate-600 text-base leading-relaxed mb-6">
                     {service.description}
                   </p>
