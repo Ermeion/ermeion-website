@@ -461,10 +461,10 @@ function WhyErmeionSection() {
 
   return (
     <section className="bg-white py-16 md:py-24 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+      <div className="max-w-7xl mx-auto flex flex-col">
 
-        {/* Left Column */}
-        <div className="w-full lg:w-[55%] flex flex-col">
+        {/* Main Content */}
+        <div className="w-full flex flex-col">
           {/* Headline */}
           <h2 className="text-2xl sm:text-4xl md:text-4xl font-extrabold leading-tight mb-8">
             <span style={{ color: '#004aad' }}>2000+ Θεσσαλονικείς</span>
@@ -477,7 +477,7 @@ function WhyErmeionSection() {
           </p>
 
           {/* Checklist */}
-          <ul className="flex flex-col gap-3 mb-10 lg:mb-10">
+          <ul className="flex flex-col gap-3 mb-10">
             {checklistItems.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <span
@@ -491,45 +491,15 @@ function WhyErmeionSection() {
             ))}
           </ul>
 
-          {/* Mobile: image + below-image block */}
-          <div className="lg:hidden flex flex-col gap-6 mb-8">
-            <img
-              src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/john-ermeion.webp"
-              alt="Γιάννης Ερμείον Φυσικοθεραπευτής"
-              className="w-full rounded-2xl object-cover"
-              style={{ aspectRatio: '4/3' }}
-            />
-            <div>
-              <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-snug">
-                Εξειδικευόμαστε στη Θεραπευτική Άσκηση & την Αυτοδιαχείριση, την Αποκατάσταση Τραυματισμών και τη Μετεγχειρητική Αποκατάσταση.
-              </h4>
-            </div>
-          </div>
-
           {/* CTA Button */}
           <a
             href="tel:+306988404234"
-            className="flex items-center justify-center gap-2 w-full lg:w-fit px-8 py-4 rounded-xl text-base font-bold text-white transition-all duration-300 hover:opacity-90"
+            className="flex items-center justify-center gap-2 w-full sm:w-fit px-8 py-4 rounded-xl text-base font-bold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#004aad' }}
           >
             <Phone className="w-5 h-5 shrink-0" />
             Κλείστε Ραντεβού
           </a>
-        </div>
-
-        {/* Right Column — desktop only */}
-        <div className="hidden lg:flex w-full lg:w-[45%] flex-col gap-6 sticky top-24 self-start">
-          <img
-            src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/john-ermeion.webp"
-            alt="Γιάννης Ερμείον Φυσικοθεραπευτής"
-            className="w-full rounded-2xl object-cover"
-            style={{ aspectRatio: '4/3' }}
-          />
-          <div>
-            <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-snug">
-              Εξειδικευόμαστε στη Θεραπευτική Άσκηση & την Αυτοδιαχείριση, την Αποκατάσταση Τραυματισμών και τη Μετεγχειρητική Αποκατάσταση.
-            </h4>
-          </div>
         </div>
 
       </div>
@@ -1696,11 +1666,18 @@ function Footer() {
           </div>
 
           {/* Location address */}
-          <div className="flex items-start gap-3 text-sm pt-1" style={{ color: '#ffffff' }}>
-            <div className="w-7 h-7 rounded-lg bg-[#5b8cff]/10 flex items-center justify-center shrink-0 mt-0.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <a href="https://maps.app.goo.gl/wgYPV5RU4dcuMGJHA" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:underline pt-0.5 leading-snug" style={{ color: '#ffffff' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#5b8cff')} onMouseLeave={(e) => (e.currentTarget.style.color = '#ffffff')}>Παπάφη 92, Θεσσαλονίκη, 544 53</a>
+          <div className="pt-1">
+            <a
+              href="https://maps.app.goo.gl/wgYPV5RU4dcuMGJHA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-fit group"
+            >
+              <div className="w-7 h-7 rounded-lg bg-[#5b8cff]/10 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <span className="font-medium text-sm">Παπάφη 92, Θεσσαλονίκη, 544 53</span>
+            </a>
           </div>
         </div>
 
