@@ -195,7 +195,7 @@ function Navbar() {
 
         {/* Desktop CTA */}
         <a
-          href="tel:+306988404234"
+          href="tel:+302310940100"
           className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90"
           style={{ backgroundColor: '#004aad' }}
         >
@@ -274,7 +274,7 @@ function Navbar() {
             </a>
           ))}
           <a
-            href="tel:+306988404234"
+            href="tel:+302310940100"
             className="mt-4 w-full py-3 rounded-lg text-base font-semibold text-white transition-all duration-300 hover:opacity-90 flex items-center justify-center gap-2"
             style={{ backgroundColor: '#004aad' }}
             onClick={closeMenu}
@@ -344,7 +344,7 @@ function HeroSection() {
           {/* Main CTA */}
           <div className="flex flex-col items-center md:items-start gap-3 w-full md:w-fit">
             <a
-              href="tel:+306988404234"
+              href="tel:+302310940100"
               className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
               style={{ backgroundColor: '#004aad' }}
             >
@@ -493,7 +493,7 @@ function WhyErmeionSection() {
 
           {/* CTA Button */}
           <a
-            href="tel:+306988404234"
+            href="tel:+302310940100"
             className="flex items-center justify-center gap-2 w-full sm:w-fit px-8 py-4 rounded-xl text-base font-bold text-white transition-all duration-300 hover:opacity-90"
             style={{ backgroundColor: '#004aad' }}
           >
