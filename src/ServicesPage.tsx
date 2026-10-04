@@ -87,7 +87,7 @@ export default function ServicesPage({}: ServicesPageProps) {
             Επικοινωνήστε μαζί μας για να συζητήσουμε το πρόβλημά σας και να προγραμματίσουμε την πρώτη σας αξιολόγηση.
           </p>
           <a
-            href="tel:+306988404234"
+            href="tel:+302310940100"
             className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-white text-[#004aad] font-extrabold text-base shadow-lg hover:bg-blue-50 transition-all active:scale-95"
           >
             <Phone className="w-5 h-5 shrink-0" />
