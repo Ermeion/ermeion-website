@@ -384,7 +384,7 @@ function HeroSection() {
             </div>
             {/* Rating Text */}
             <p className="text-sm md:text-base font-semibold group-hover:underline" style={{ color: '#004aad' }}>
-              5 · Βάσει 946+ αξιολογήσεων
+              5 · Βάσει 950+ αξιολογήσεων
             </p>
           </a>
         </div>
@@ -1208,7 +1208,7 @@ function TestimonialsSection() {
                   </svg>
                 ))}
               </div>
-              <p className="text-xs font-bold" style={{ color: '#004aad' }}>5/5 · 913+ κριτικές</p>
+              <p className="text-xs font-bold" style={{ color: '#004aad' }}>5/5 · 950+ κριτικές</p>
             </div>
           </div>
         </div>
