@@ -256,7 +256,7 @@ export default function ExercisePage({ onNavigate }: ExercisePageProps) {
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="tel:+306988404234"
+              href="tel:+302310940100"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300"
             >
               <Phone className="w-5 h-5 shrink-0" />
