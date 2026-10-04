@@ -558,8 +558,6 @@ function ServicesShowcaseSection() {
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on('change', (v) => {
-      // Reserve 10% at start so first service is visible before transitions,
-      // and 5% at end so last service lingers before section unpins.
       const startBuffer = 0.08;
       const endBuffer = 0.05;
       const usable = 1 - startBuffer - endBuffer;
@@ -635,7 +633,6 @@ function ServicesShowcaseSection() {
                   <button
                     key={i}
                     onClick={() => {
-                      // Scroll to the right position for this service
                       if (sectionRef.current) {
                         const sectionTop = sectionRef.current.offsetTop;
                         const sectionHeight = sectionRef.current.offsetHeight;
@@ -659,7 +656,7 @@ function ServicesShowcaseSection() {
               </div>
             </div>
 
-            {/* Right column — Media (video or Ken Burns image) */}
+            {/* Right column — Media */}
             <div className="w-full md:w-1/2 order-first md:order-last">
               <div
                 className="relative w-full overflow-hidden rounded-2xl shadow-2xl"
