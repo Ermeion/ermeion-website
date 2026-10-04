@@ -507,6 +507,208 @@ function WhyErmeionSection() {
   );
 }
 
+// Services Showcase Section — Scroll-Pinned Sticky
+function ServicesShowcaseSection() {
+  const services = [
+    {
+      title: 'Μέθοδος McKenzie',
+      description:
+        'Η Μέθοδος McKenzie ή γνωστή και ως Μηχανική Διάγνωση & Θεραπεία (Mechanical Diagnosis and Therapy – MDT) είναι μια επιστημονικά τεκμηριωμένη φυσικοθεραπευτική προσέγγιση αξιολόγησης και διαχείρισης του μυοσκελετικού πόνου.',
+      mediaType: 'video' as const,
+      mediaSrc:
+        'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/McKenzie-video/McKenzie-therapy.mp4',
+      link: '/ypiresies/McKenzie',
+    },
+    {
+      title: 'Σπονδυλικός Πόνος',
+      description:
+        'Στο ΕΡΜΕΙΟΝ, αντιμετωπίζουμε τον σπονδυλικό πόνο με τρόπο σύγχρονο, εξατομικευμένο και βασισμένο σε επιστημονικά τεκμηριωμένες πρακτικές.',
+      mediaType: 'image' as const,
+      mediaSrc:
+        'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/spine.webp',
+      link: '/ypiresies/spine-pain',
+    },
+    {
+      title: 'Tecar Therapy',
+      description:
+        'To TECAR παράγει ένα υψηλής συχνότητας ηλεκτρομαγνητικό πεδίο που διεισδύει στο ανθρώπινο σώμα και προκαλεί εν τω βάθη υπερθερμία ώστε να ανακουφίσει το μυϊκό πόνο και τα σημεία πυροδότησής του αλλά και να βοηθήσει στην ταχύτερη αναγέννηση και επούλωση των μυών.',
+      mediaType: 'video' as const,
+      mediaSrc:
+        'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Tecar-video/Tecar.mp4',
+      link: '/ypiresies/tecar',
+    },
+    {
+      title: 'Θεραπευτική Άσκηση',
+      description:
+        'Στο ΕΡΜΕΙΟΝ, η θεραπευτική άσκηση, δεν είναι απλώς γυμναστική, είναι μια επιστημονικά σχεδιασμένη παρέμβαση για κάθε άτομο ξεχωριστά. Προσαρμόζεται σε κάθε θεραπεία ανάλογα με την επαναξιολόγηση και την συμπεριφορά των συμπτωμάτων.',
+      mediaType: 'image' as const,
+      mediaSrc:
+        'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/therapeftiki-askisi.webp',
+      link: '/ypiresies/exercise',
+    },
+  ];
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end end'],
+  });
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', (v) => {
+      // Reserve 10% at start so first service is visible before transitions,
+      // and 5% at end so last service lingers before section unpins.
+      const startBuffer = 0.08;
+      const endBuffer = 0.05;
+      const usable = 1 - startBuffer - endBuffer;
+      const adjusted = Math.max(0, Math.min((v - startBuffer) / usable, 0.999));
+      const idx = Math.min(
+        Math.floor(adjusted * services.length),
+        services.length - 1
+      );
+      setActiveIndex(idx);
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress, services.length]);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative bg-white"
+      style={{ height: `${(services.length + 1.5) * 100}vh` }}
+    >
+      {/* Sticky viewport-pinned container */}
+      <div
+        className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden"
+        style={{ minHeight: '100svh' }}
+      >
+        <div className="max-w-7xl mx-auto w-full px-5 sm:px-8 md:px-12 lg:px-16 py-10 md:py-0">
+          {/* Section Heading */}
+          <motion.h2
+            className="text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-8 md:mb-12"
+            style={{ color: '#004aad' }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            ΟΙ ΥΠΗΡΕΣΙΕΣ ΜΑΣ
+          </motion.h2>
+
+          {/* Two-column layout (desktop) / stacked (mobile) */}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
+            {/* Left column — Text content */}
+            <div className="w-full md:w-1/2 relative" style={{ minHeight: '220px' }}>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.45, ease: 'easeInOut' }}
+                >
+                  <h3
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 md:mb-6 leading-tight"
+                    style={{ color: '#004aad' }}
+                  >
+                    {services[activeIndex].title}
+                  </h3>
+                  <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg">
+                    {services[activeIndex].description}
+                  </p>
+                  <Link
+                    to={services[activeIndex].link}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm md:text-base font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                    style={{ backgroundColor: '#004aad' }}
+                  >
+                    Μάθετε περισσότερα
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Progress dots */}
+              <div className="flex gap-2.5 mt-8 md:mt-10">
+                {services.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      // Scroll to the right position for this service
+                      if (sectionRef.current) {
+                        const sectionTop = sectionRef.current.offsetTop;
+                        const sectionHeight = sectionRef.current.offsetHeight;
+                        const targetScroll =
+                          sectionTop + (i / services.length) * sectionHeight;
+                        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+                      }
+                    }}
+                    className="transition-all duration-300"
+                    style={{
+                      width: i === activeIndex ? '32px' : '10px',
+                      height: '10px',
+                      borderRadius: i === activeIndex ? '5px' : '50%',
+                      backgroundColor:
+                        i === activeIndex ? '#004aad' : 'transparent',
+                      border: `2px solid #004aad`,
+                    }}
+                    aria-label={`Υπηρεσία ${i + 1}: ${services[i].title}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Right column — Media (video or Ken Burns image) */}
+            <div className="w-full md:w-1/2 order-first md:order-last">
+              <div
+                className="relative w-full overflow-hidden rounded-2xl shadow-2xl"
+                style={{ aspectRatio: '16 / 10' }}
+              >
+                {services.map((service, i) => (
+                  <div
+                    key={i}
+                    className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+                    style={{ opacity: i === activeIndex ? 1 : 0 }}
+                  >
+                    {service.mediaType === 'video' ? (
+                      <video
+                        src={service.mediaSrc}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full overflow-hidden">
+                        <img
+                          src={service.mediaSrc}
+                          alt={service.title}
+                          className="w-full h-full object-cover services-ken-burns"
+                        />
+                      </div>
+                    )}
+                  </div>
+                ))}
+
+                {/* Subtle gradient overlay at bottom for depth */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-1/4 pointer-events-none"
+                  style={{
+                    background:
+                      'linear-gradient(to top, rgba(0,0,0,0.15), transparent)',
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Certificates Carousel Section
 function CertificatesCarouselSection() {
   const certificates = [
@@ -1837,6 +2039,7 @@ function HomePage() {
       <HeroSection />
       <CertificatesCarouselSection />
       <WhyErmeionSection />
+      <ServicesShowcaseSection />
       <TestimonialsSection />
       <ProcessSection />
       <AboutOwnerSection />
