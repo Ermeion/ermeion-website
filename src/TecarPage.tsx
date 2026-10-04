@@ -129,7 +129,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
           </p>
 
           <a
-            href="tel:+306988404234"
+            href="tel:+302310940100"
             className="w-full inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-base font-bold shadow-md active:scale-95 text-center"
           >
             <Phone className="w-4 h-4 shrink-0" />
@@ -161,7 +161,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               </p>
 
               <a
-                href="tel:+306988404234"
+                href="tel:+302310940100"
                 className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 text-center"
               >
                 <Phone className="w-5 h-5 shrink-0" />
@@ -390,7 +390,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="tel:+306988404234"
+              href="tel:+302310940100"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#004aad] hover:bg-[#003884] text-white text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300"
             >
               <Phone className="w-5 h-5 shrink-0" />
