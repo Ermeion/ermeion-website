@@ -1814,7 +1814,17 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as any });
+    // Temporarily override CSS scroll-behavior: smooth so the scroll
+    // happens instantly on route change (fixes mobile bug where the
+    // new page opens at the previous scroll position).
+    const html = document.documentElement;
+    const prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    // Restore after a frame so in-page anchor smooth scrolling still works
+    requestAnimationFrame(() => {
+      html.style.scrollBehavior = prev;
+    });
   }, [pathname]);
 
   return null;
