@@ -34,7 +34,7 @@ function Navbar() {
   const [hoveredService, setHoveredService] = useState<{
     label: string;
     path: string;
-    description: string;
+    description?: string;
     image: string;
   }>({
     label: 'Μέθοδος McKenzie',
