@@ -39,7 +39,6 @@ function Navbar() {
   }>({
     label: 'Μέθοδος McKenzie',
     path: '/ypiresies/McKenzie',
-    description: 'Μηχανική Διάγνωση & Θεραπεία για την αντιμετώπιση του πόνου.',
     image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/McKenzie.png',
   });
 
