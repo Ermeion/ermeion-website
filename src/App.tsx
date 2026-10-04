@@ -40,7 +40,7 @@ function Navbar() {
     label: 'Μέθοδος McKenzie',
     path: '/ypiresies/McKenzie',
     description: 'Μηχανική Διάγνωση & Θεραπεία για την αντιμετώπιση του πόνου.',
-    image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/McKenzie-video/McKenzie-thumbnail.png',
+    image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/McKenzie.png',
   });
 
   const megaServices = [
@@ -48,25 +48,25 @@ function Navbar() {
       label: 'Μέθοδος McKenzie',
       path: '/ypiresies/McKenzie',
       description: 'Μηχανική Διάγνωση & Θεραπεία',
-      image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/McKenzie-video/McKenzie-thumbnail.png',
+      image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/McKenzie.png',
     },
     {
       label: 'Σπονδυλικός Πόνος',
       path: '/ypiresies/spine-pain',
       description: 'Πρόληψη & Αποκατάσταση Οσφυαλγίας',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop',
+      image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/SpinePain.png',
     },
     {
       label: 'Tecar Therapy',
       path: '/ypiresies/tecar',
       description: 'Στοχευμένη θεραπεία ραδιοσυχνοτήτων',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
+      image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/Tecar.png',
     },
     {
       label: 'Θεραπευτική Άσκηση',
       path: '/ypiresies/exercise',
       description: 'Ενδυνάμωση & Λειτουργική Αποκατάσταση',
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=800&auto=format&fit=crop',
+      image: 'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/Rehab.png',
     },
   ];
 
@@ -1046,16 +1046,10 @@ function WhyChooseUsSection() {
                 className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-md hover:border-gray-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="mb-6">
                     <span className="inline-block bg-gray-100 text-[#004aad] text-sm font-bold uppercase tracking-wider px-3.5 py-1 rounded-full">
                       {item.badge}
                     </span>
-                    <div 
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </div>
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 leading-snug">
                     {item.title}
