@@ -507,7 +507,7 @@ function WhyErmeionSection() {
   );
 }
 
-// Services Showcase Section — Scroll-Pinned Sticky
+// Services Showcase Section — Interactive Carousel with Left/Right Controls
 function ServicesShowcaseSection() {
   const services = [
     {
@@ -548,44 +548,31 @@ function ServicesShowcaseSection() {
     },
   ];
 
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end end'],
-  });
-
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
 
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.on('change', (v) => {
-      const startBuffer = 0.08;
-      const endBuffer = 0.05;
-      const usable = 1 - startBuffer - endBuffer;
-      const adjusted = Math.max(0, Math.min((v - startBuffer) / usable, 0.999));
-      const idx = Math.min(
-        Math.floor(adjusted * services.length),
-        services.length - 1
-      );
-      setActiveIndex(idx);
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress, services.length]);
+  const goToNext = () => {
+    setDirection(1);
+    setActiveIndex((prev) => (prev + 1) % services.length);
+  };
+
+  const goToPrev = () => {
+    setDirection(-1);
+    setActiveIndex((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  const selectService = (index: number) => {
+    setDirection(index > activeIndex ? 1 : -1);
+    setActiveIndex(index);
+  };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative bg-white"
-      style={{ height: `${(services.length + 1.5) * 100}vh` }}
-    >
-      {/* Sticky viewport-pinned container */}
-      <div
-        className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden"
-        style={{ minHeight: '100svh' }}
-      >
-        <div className="max-w-7xl mx-auto w-full px-5 sm:px-8 md:px-12 lg:px-16 py-10 md:py-0">
-          {/* Section Heading */}
+    <section className="relative bg-white py-16 md:py-24 border-t border-gray-100 overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full px-5 sm:px-8 md:px-12 lg:px-16">
+        {/* Section Heading & Counter */}
+        <div className="flex items-center justify-between mb-8 md:mb-12">
           <motion.h2
-            className="text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-8 md:mb-12"
+            className="text-xs sm:text-sm font-extrabold tracking-[0.25em]"
             style={{ color: '#004aad' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -595,53 +582,56 @@ function ServicesShowcaseSection() {
             ΟΙ ΥΠΗΡΕΣΙΕΣ ΜΑΣ
           </motion.h2>
 
-          {/* Two-column layout (desktop) / stacked (mobile) */}
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
-            {/* Left column — Text content */}
-            <div className="w-full md:w-1/2 relative" style={{ minHeight: '220px' }}>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -30 }}
-                  transition={{ duration: 0.45, ease: 'easeInOut' }}
-                >
-                  <h3
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 md:mb-6 leading-tight"
-                    style={{ color: '#004aad' }}
-                  >
-                    {services[activeIndex].title}
-                  </h3>
-                  <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg">
-                    {services[activeIndex].description}
-                  </p>
-                  <Link
-                    to={services[activeIndex].link}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm md:text-base font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                    style={{ backgroundColor: '#004aad' }}
-                  >
-                    Μάθετε περισσότερα
-                    <ChevronRight className="w-4 h-4" />
-                  </Link>
-                </motion.div>
-              </AnimatePresence>
+          <div className="text-xs font-bold tracking-widest text-gray-400">
+            <span style={{ color: '#004aad' }} className="font-extrabold">
+              0{activeIndex + 1}
+            </span>{' '}
+            / 0{services.length}
+          </div>
+        </div>
 
+        {/* Two-column layout */}
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
+          {/* Left column — Text content & Controls */}
+          <div className="w-full md:w-1/2 relative" style={{ minHeight: '260px' }}>
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={activeIndex}
+                custom={direction}
+                initial={{ opacity: 0, x: direction * 25 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: direction * -25 }}
+                transition={{ duration: 0.35, ease: 'easeInOut' }}
+              >
+                <h3
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 md:mb-6 leading-tight"
+                  style={{ color: '#004aad' }}
+                >
+                  {services[activeIndex].title}
+                </h3>
+                <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg">
+                  {services[activeIndex].description}
+                </p>
+                <Link
+                  to={services[activeIndex].link}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm md:text-base font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  style={{ backgroundColor: '#004aad' }}
+                >
+                  Μάθετε περισσότερα
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Side-by-side Left & Right Navigation & Dots */}
+            <div className="flex items-center justify-between gap-4 mt-8 md:mt-12 pt-6 border-t border-gray-100">
               {/* Progress dots */}
-              <div className="flex gap-2.5 mt-8 md:mt-10">
+              <div className="flex items-center gap-2.5">
                 {services.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => {
-                      if (sectionRef.current) {
-                        const sectionTop = sectionRef.current.offsetTop;
-                        const sectionHeight = sectionRef.current.offsetHeight;
-                        const targetScroll =
-                          sectionTop + (i / services.length) * sectionHeight;
-                        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
-                      }
-                    }}
-                    className="transition-all duration-300"
+                    onClick={() => selectService(i)}
+                    className="transition-all duration-300 cursor-pointer"
                     style={{
                       width: i === activeIndex ? '32px' : '10px',
                       height: '10px',
@@ -654,50 +644,68 @@ function ServicesShowcaseSection() {
                   />
                 ))}
               </div>
-            </div>
 
-            {/* Right column — Media */}
-            <div className="w-full md:w-1/2 order-first md:order-last">
-              <div
-                className="relative w-full overflow-hidden rounded-2xl shadow-2xl"
-                style={{ aspectRatio: '16 / 10' }}
-              >
-                {services.map((service, i) => (
-                  <div
-                    key={i}
-                    className="absolute inset-0 transition-opacity duration-700 ease-in-out"
-                    style={{ opacity: i === activeIndex ? 1 : 0 }}
-                  >
-                    {service.mediaType === 'video' ? (
-                      <video
-                        src={service.mediaSrc}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full overflow-hidden">
-                        <img
-                          src={service.mediaSrc}
-                          alt={service.title}
-                          className="w-full h-full object-cover services-ken-burns"
-                        />
-                      </div>
-                    )}
-                  </div>
-                ))}
-
-                {/* Subtle gradient overlay at bottom for depth */}
-                <div
-                  className="absolute inset-x-0 bottom-0 h-1/4 pointer-events-none"
-                  style={{
-                    background:
-                      'linear-gradient(to top, rgba(0,0,0,0.15), transparent)',
-                  }}
-                />
+              {/* Side-by-side Left & Right Arrow Buttons */}
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={goToPrev}
+                  className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center text-gray-700 transition-all duration-200 hover:border-[#004aad] hover:text-[#004aad] hover:bg-blue-50/50 hover:scale-105 active:scale-95 shadow-sm cursor-pointer"
+                  aria-label="Προηγούμενη υπηρεσία"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={goToNext}
+                  className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center text-gray-700 transition-all duration-200 hover:border-[#004aad] hover:text-[#004aad] hover:bg-blue-50/50 hover:scale-105 active:scale-95 shadow-sm cursor-pointer"
+                  aria-label="Επόμενη υπηρεσία"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
+            </div>
+          </div>
+
+          {/* Right column — Media (video / image) */}
+          <div className="w-full md:w-1/2 order-first md:order-last">
+            <div
+              className="relative w-full overflow-hidden rounded-2xl shadow-2xl bg-gray-900"
+              style={{ aspectRatio: '16 / 10' }}
+            >
+              {services.map((service, i) => (
+                <div
+                  key={i}
+                  className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+                  style={{ opacity: i === activeIndex ? 1 : 0 }}
+                >
+                  {service.mediaType === 'video' ? (
+                    <video
+                      src={service.mediaSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full overflow-hidden">
+                      <img
+                        src={service.mediaSrc}
+                        alt={service.title}
+                        className="w-full h-full object-cover services-ken-burns"
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {/* Subtle gradient overlay at bottom for depth */}
+              <div
+                className="absolute inset-x-0 bottom-0 h-1/4 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(to top, rgba(0,0,0,0.15), transparent)',
+                }}
+              />
             </div>
           </div>
         </div>
