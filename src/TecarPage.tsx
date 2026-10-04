@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Pause, Maximize, Phone } from 'lucide-react';
 
 interface TecarPageProps {
@@ -330,8 +331,8 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             
             {/* McKenzie */}
-            <div 
-              onClick={() => onNavigate('#mckenzie')}
+            <Link 
+              to="/ypiresies/McKenzie"
               className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
@@ -343,11 +344,11 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               <div className="text-base font-bold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
                 Περισσότερα <ArrowRight className="w-4 h-4" />
               </div>
-            </div>
+            </Link>
 
             {/* Spine Pain */}
-            <div 
-              onClick={() => onNavigate('#spine-pain')}
+            <Link 
+              to="/ypiresies/spine-pain"
               className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
@@ -359,11 +360,11 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               <div className="text-base font-bold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
                 Περισσότερα <ArrowRight className="w-4 h-4" />
               </div>
-            </div>
+            </Link>
 
             {/* Exercise */}
-            <div 
-              onClick={() => onNavigate('#exercise')}
+            <Link 
+              to="/ypiresies/exercise"
               className="p-6 rounded-2xl hover:bg-slate-50 transition-all duration-200 cursor-pointer flex flex-col justify-between group border border-transparent hover:border-slate-100"
             >
               <div>
@@ -375,7 +376,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               <div className="text-base font-bold text-[#004aad] flex items-center gap-1 group-hover:gap-2 transition-all">
                 Περισσότερα <ArrowRight className="w-4 h-4" />
               </div>
-            </div>
+            </Link>
 
           </div>
 

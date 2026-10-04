@@ -6,7 +6,7 @@ import {
   AnimatePresence,
 } from 'framer-motion';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Play, Pause, Maximize, Phone } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Maximize, Phone } from 'lucide-react';
 import McKenziePage from './McKenziePage';
 import TecarPage from './TecarPage';
 import SpinePainPage from './SpinePainPage';
@@ -1515,20 +1515,7 @@ function TestimonialsSection() {
 
 function OfficeVideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [showControls, setShowControls] = useState(true);
-
-  const togglePlay = (e?: React.MouseEvent | React.TouchEvent) => {
-    if (e) e.stopPropagation();
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
 
   const handleFullscreen = (e?: React.MouseEvent | React.TouchEvent) => {
     if (e) e.stopPropagation();
@@ -1580,10 +1567,7 @@ function OfficeVideoSection() {
             playsInline
             preload="metadata"
             poster="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/grafeio.webp"
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            onClick={togglePlay}
-            className="w-full h-full object-cover cursor-pointer"
+            className="w-full h-full object-cover"
           >
             <source
               src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/space-video/clinic-space.mp4"
@@ -1614,29 +1598,6 @@ function OfficeVideoSection() {
                 aria-label="Πλήρης οθόνη"
               >
                 <Maximize className="w-5 h-5 text-white" />
-              </button>
-            </div>
-
-            {/* Bottom Bar: Play/Pause */}
-            <div className="flex items-center justify-between">
-              <button
-                type="button"
-                onClick={togglePlay}
-                onTouchEnd={togglePlay}
-                className="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white/95 hover:bg-white active:bg-white/80 text-[#004aad] font-semibold text-xs sm:text-sm shadow-xl backdrop-blur-md transition-all active:scale-95"
-                aria-label={isPlaying ? 'Παύση' : 'Αναπαραγωγή'}
-              >
-                {isPlaying ? (
-                  <>
-                    <Pause className="w-4 h-4 fill-current" />
-                    <span>Παύση</span>
-                  </>
-                ) : (
-                  <>
-                    <Play className="w-4 h-4 fill-current" />
-                    <span>Αναπαραγωγή</span>
-                  </>
-                )}
               </button>
             </div>
           </div>
@@ -2066,6 +2027,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/ypiresies" element={<ServicesPage />} />
         <Route path="/ypiresies/McKenzie" element={<McKenziePage onNavigate={() => {}} />} />
+        <Route path="/ypiresies/mckenzie" element={<McKenziePage onNavigate={() => {}} />} />
         <Route path="/ypiresies/tecar" element={<TecarPage onNavigate={() => {}} />} />
         <Route path="/ypiresies/spine-pain" element={<SpinePainPage onNavigate={() => {}} />} />
         <Route path="/ypiresies/exercise" element={<ExercisePage onNavigate={() => {}} />} />
