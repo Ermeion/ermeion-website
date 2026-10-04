@@ -206,7 +206,7 @@ function Navbar() {
         {/* Mobile: CTA + Hamburger Row */}
         <div className="md:hidden flex items-center gap-2">
           <a
-            href="tel:+306988404234"
+            href="tel:+302310940100"
             className="px-4 py-2 rounded-lg text-sm font-semibold text-white flex items-center justify-center gap-1.5"
             style={{ backgroundColor: '#004aad' }}
           >
