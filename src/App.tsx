@@ -290,7 +290,7 @@ function Navbar() {
 // Hero Section Component
 function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center overflow-hidden bg-[#004aad]">
       {/* Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -298,7 +298,11 @@ function HeroSection() {
         muted
         loop
         playsInline
-        style={{ backgroundColor: '#004aad' }}
+        style={{
+          backgroundColor: '#004aad',
+          transform: 'scale(0.88)',
+          transformOrigin: 'center',
+        }}
       >
         <source
           src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Ermeion-Hero-Section-Video/hero-video-main.mp4"
