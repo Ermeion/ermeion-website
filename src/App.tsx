@@ -301,7 +301,7 @@ function HeroSection() {
         style={{ backgroundColor: '#004aad' }}
       >
         <source
-          src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Ermeion-Hero-Section-Video/ERMEION%20VIDEO.mp4"
+          src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Ermeion-Hero-Section-Video/hero-video-main.mp4"
           type="video/mp4"
         />
       </video>
