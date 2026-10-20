@@ -540,9 +540,9 @@ function ServicesShowcaseSection() {
       title: 'Θεραπευτική Άσκηση',
       description:
         'Στο ΕΡΜΕΙΟΝ, η θεραπευτική άσκηση, δεν είναι απλώς γυμναστική, είναι μια επιστημονικά σχεδιασμένη παρέμβαση για κάθε άτομο ξεχωριστά. Προσαρμόζεται σε κάθε θεραπεία ανάλογα με την επαναξιολόγηση και την συμπεριφορά των συμπτωμάτων.',
-      mediaType: 'image' as const,
+      mediaType: 'video' as const,
       mediaSrc:
-        'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Services/therapeftiki-askisi.webp',
+        'https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Therapeytiki-askisi/therapeytiki-askisi.mp4',
       link: '/ypiresies/exercise',
     },
   ];
