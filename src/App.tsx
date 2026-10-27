@@ -575,6 +575,13 @@ function ServicesShowcaseSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(1);
 
+  // Touch gesture state for horizontal swipe on mobile
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const touchEndY = useRef<number | null>(null);
+  const swipedRef = useRef(false);
+
   const goToNext = () => {
     setDirection(1);
     setActiveIndex((prev) => (prev + 1) % services.length);
@@ -588,6 +595,69 @@ function ServicesShowcaseSection() {
   const selectService = (index: number) => {
     setDirection(index > activeIndex ? 1 : -1);
     setActiveIndex(index);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    touchEndX.current = e.touches[0].clientX;
+    touchEndY.current = e.touches[0].clientY;
+    swipedRef.current = false;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+    touchEndY.current = e.touches[0].clientY;
+    if (touchStartX.current !== null) {
+      const deltaX = Math.abs(touchEndX.current - touchStartX.current);
+      if (deltaX > 10) {
+        swipedRef.current = true;
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (
+      touchStartX.current === null ||
+      touchEndX.current === null ||
+      touchStartY.current === null ||
+      touchEndY.current === null
+    ) {
+      return;
+    }
+
+    const deltaX = touchStartX.current - touchEndX.current;
+    const deltaY = touchStartY.current - touchEndY.current;
+    const minSwipeDistance = 45; // Minimum horizontal px to register a swipe
+
+    // Ensure the swipe is horizontal and exceeds vertical displacement (prevents accidental swipe during scroll)
+    if (Math.abs(deltaX) > minSwipeDistance && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+      if (deltaX > 0) {
+        // Swiped left -> advance to next service
+        goToNext();
+      } else {
+        // Swiped right -> go to previous service
+        goToPrev();
+      }
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+    touchStartY.current = null;
+    touchEndY.current = null;
+
+    // Reset swipedRef after a short delay so any trailing click on the link/buttons is blocked
+    setTimeout(() => {
+      swipedRef.current = false;
+    }, 100);
+  };
+
+  const handleTouchCancel = () => {
+    touchStartX.current = null;
+    touchEndX.current = null;
+    touchStartY.current = null;
+    touchEndY.current = null;
+    swipedRef.current = false;
   };
 
   return (
@@ -615,7 +685,14 @@ function ServicesShowcaseSection() {
         </div>
 
         {/* Two-column layout */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
+        <div
+          className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center select-none"
+          style={{ touchAction: 'pan-y' }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchCancel}
+        >
           {/* Left column — Text content & Controls */}
           <div className="w-full md:w-1/2 relative" style={{ minHeight: '260px' }}>
             <AnimatePresence mode="wait" custom={direction}>
@@ -638,6 +715,9 @@ function ServicesShowcaseSection() {
                 </p>
                 <Link
                   to={services[activeIndex].link}
+                  onClick={(e) => {
+                    if (swipedRef.current) e.preventDefault();
+                  }}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm md:text-base font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   style={{ backgroundColor: '#004aad' }}
                 >
@@ -708,14 +788,15 @@ function ServicesShowcaseSection() {
                       muted
                       loop
                       playsInline
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover pointer-events-none"
                     />
                   ) : (
                     <div className="w-full h-full overflow-hidden">
                       <img
                         src={service.mediaSrc}
                         alt={service.title}
-                        className="w-full h-full object-cover services-ken-burns"
+                        draggable={false}
+                        className="w-full h-full object-cover services-ken-burns pointer-events-none"
                       />
                     </div>
                   )}
