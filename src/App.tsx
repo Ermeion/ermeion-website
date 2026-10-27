@@ -355,7 +355,7 @@ function HeroSection() {
         </div>
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
-        <div className="flex justify-center md:justify-end mt-10 md:mt-0 md:shrink-0">
+        <div className="flex justify-center md:justify-end mt-6 md:mt-0 md:shrink-0">
           <a
             href="https://maps.app.goo.gl/hy7hgt4dZQAv1JdQ9"
             target="_blank"
