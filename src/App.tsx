@@ -1095,7 +1095,7 @@ function AboutOwnerSection() {
                   style={{ backgroundColor: '#004aad' }}
                 />
                 <img
-                  src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/ermeion-1.webp"
+                  src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/DSC06334.webp"
                   alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
                   className="relative z-10 w-full aspect-[3/4] object-cover rounded-2xl shadow-lg border-4 border-white mx-auto"
                 />
