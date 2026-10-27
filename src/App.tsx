@@ -309,19 +309,19 @@ function HeroSection() {
 
       {/* Desktop: Left-Aligned Content + Right Badge */}
       {/* Mobile: Vertical Stack Above Fold */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 pt-16 pb-10 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-12 pt-6 pb-8 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-16">
         {/* Left: Text + CTA */}
         <div className="flex flex-col md:max-w-[850px]">
           {/* Title */}
           <h1
-            className="text-3xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-8 md:mb-7"
+            className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4 md:mb-7"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
             Εξειδικευμένο Κέντρο Φυσικοθεραπείας για Μυοσκελετικούς Πόνους στην Θεσσαλονίκη.
           </h1>
 
           {/* Value Proposition Checkmarks */}
-          <ul className="flex flex-col gap-3 md:gap-2.5 mb-10 md:mb-7">
+          <ul className="flex flex-col gap-2 md:gap-2.5 mb-5 md:mb-7">
             {[
               'Πιστοποιημένος θεραπευτής McKenzie',
               'Εξειδίκευση στη σπονδυλική στήλη',
@@ -329,7 +329,7 @@ function HeroSection() {
               'Συμβεβλημένος με ΕΟΠΥΥ',
               'Αποδεκτές όλες οι ασφαλιστικές',
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-2 text-white text-lg md:text-xl font-bold">
+              <li key={i} className="flex items-center gap-2 text-white text-base sm:text-lg md:text-xl font-bold">
                 <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: '#004aad' }}>
                   &#10003;
                 </span>
@@ -339,10 +339,10 @@ function HeroSection() {
           </ul>
 
           {/* Main CTA */}
-          <div className="flex flex-col items-center md:items-start gap-3 w-full md:w-fit">
+          <div className="flex flex-col items-center md:items-start gap-2 md:gap-3 w-full md:w-fit">
             <a
               href="tel:+302310940100"
-              className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
+              className="flex items-center justify-center gap-2 w-full md:w-fit px-12 py-3.5 md:py-4 rounded-xl text-base md:text-lg font-bold text-white transition-all duration-300 shadow-lg hover:scale-[1.02]"
               style={{ backgroundColor: '#004aad' }}
             >
               <Phone className="w-5 h-5 shrink-0" />
@@ -355,17 +355,17 @@ function HeroSection() {
         </div>
 
         {/* Right: Google Review Badge (Desktop) / Centered Below CTA (Mobile) */}
-        <div className="flex justify-center md:justify-end mt-10 md:mt-0 md:shrink-0">
+        <div className="flex justify-center md:justify-end mt-3.5 md:mt-0 md:shrink-0">
           <a
             href="https://maps.app.goo.gl/hy7hgt4dZQAv1JdQ9"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Δείτε τις αξιολογήσεις μας στο Google"
-            className="bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[190px] md:w-[240px] transition-all duration-300 hover:scale-105 cursor-pointer group"
+            className="bg-white rounded-2xl px-4 py-3 md:px-6 md:py-5 shadow-xl flex flex-col items-center text-center w-[185px] md:w-[240px] transition-all duration-300 hover:scale-105 cursor-pointer group"
             style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.25)' }}
           >
             {/* Google Logo */}
-            <svg width="32" height="32" viewBox="0 0 48 48" className="mb-1">
+            <svg width="28" height="28" viewBox="0 0 48 48" className="mb-1 md:w-8 md:h-8">
               <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
               <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
               <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
@@ -374,13 +374,13 @@ function HeroSection() {
             {/* 5 Gold Stars */}
             <div className="flex items-center gap-0.5 mb-1">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-5 h-5" fill="#FBBC05" viewBox="0 0 20 20">
+                <svg key={i} className="w-4 h-4 md:w-5 md:h-5" fill="#FBBC05" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
             </div>
             {/* Rating Text */}
-            <p className="text-sm md:text-base font-semibold group-hover:underline" style={{ color: '#004aad' }}>
+            <p className="text-xs md:text-base font-semibold group-hover:underline" style={{ color: '#004aad' }}>
               5 · Βάσει 950+ αξιολογήσεων
             </p>
           </a>
