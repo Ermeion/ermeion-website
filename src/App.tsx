@@ -80,7 +80,7 @@ function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {/* Services Hover Link */}
-          <div 
+          <div
             className="relative py-4"
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
@@ -104,7 +104,7 @@ function Navbar() {
                   className="absolute -left-12 top-full w-[760px] bg-white rounded-3xl border border-gray-100 shadow-2xl p-6 z-50 overflow-hidden"
                 >
                   <div className="grid grid-cols-12 gap-6 items-stretch">
-                    
+
                     {/* Left Column: Service Links List (2 columns grid inside) */}
                     <div className="col-span-7 flex flex-col justify-between">
                       <div className="grid grid-cols-2 gap-3">
@@ -116,11 +116,10 @@ function Navbar() {
                               to={service.path}
                               onMouseEnter={() => setHoveredService(service)}
                               onClick={() => setDropdownOpen(false)}
-                              className={`p-3.5 rounded-xl transition-all duration-200 text-left flex flex-col justify-center ${
-                                isSelected
+                              className={`p-3.5 rounded-xl transition-all duration-200 text-left flex flex-col justify-center ${isSelected
                                   ? 'bg-[#004aad] text-white shadow-md'
                                   : 'hover:bg-slate-50 text-slate-800'
-                              }`}
+                                }`}
                             >
                               <span className={`font-bold text-sm md:text-base leading-snug ${isSelected ? 'text-white' : 'text-slate-900'}`}>
                                 {service.label}
@@ -154,7 +153,7 @@ function Navbar() {
                         className="absolute inset-0 w-full h-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
-                      
+
                       <div className="relative z-10 flex items-end justify-between">
                         <div>
                           <span className="text-[11px] font-bold tracking-wider uppercase text-blue-300 block mb-1">
@@ -210,7 +209,7 @@ function Navbar() {
             style={{ backgroundColor: '#004aad' }}
           >
             <Phone className="w-4 h-4 shrink-0" />
-            Κράτηση 
+            Κράτηση
           </a>
           <button
             className="p-2 rounded-lg transition-colors"
@@ -225,9 +224,8 @@ function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          mobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
       >
         <div className="flex flex-col px-4 pb-6 gap-1 bg-white">
           {/* Services Accordion item */}
@@ -368,16 +366,16 @@ function HeroSection() {
           >
             {/* Google Logo */}
             <svg width="32" height="32" viewBox="0 0 48 48" className="mb-1">
-              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.34-8.16 2.34-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.34-8.16 2.34-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
             </svg>
             {/* 5 Gold Stars */}
             <div className="flex items-center gap-0.5 mb-1">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} className="w-5 h-5" fill="#FBBC05" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
             </div>
@@ -466,7 +464,34 @@ function WhyErmeionSection() {
         <div className="w-full flex flex-col">
           {/* Headline */}
           <h2 className="text-2xl sm:text-4xl md:text-4xl font-extrabold leading-tight mb-8">
-            <span style={{ color: '#004aad' }}>2000+ Θεσσαλονικείς</span>
+            <span className="relative inline-block px-1 sm:px-1.5" style={{ color: '#004aad' }}>
+              <span className="relative z-10">2000+ Θεσσαλονικείς</span>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 300 80"
+                fill="none"
+                preserveAspectRatio="none"
+                className="absolute -left-3 -right-3 -top-2.5 -bottom-2 sm:-left-4 sm:-right-4 sm:-top-3.5 sm:-bottom-3 w-[calc(100%+24px)] sm:w-[calc(100%+32px)] h-[calc(100%+18px)] sm:h-[calc(100%+26px)] pointer-events-none z-0"
+              >
+                <motion.path
+                  d="M 16 34 C 14 18, 50 10, 120 8 C 210 5, 276 9, 288 24 C 297 34, 294 52, 276 62 C 235 73, 130 75, 42 70 C 16 68, 8 56, 10 38 C 12 22, 42 13, 98 10 C 145 7, 185 8, 210 10"
+                  fill="none"
+                  stroke="#004aad"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  vectorEffect="non-scaling-stroke"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.6 }}
+                  transition={{
+                    duration: 1.15,
+                    ease: [0.16, 1, 0.3, 1],
+                    delay: 0.15,
+                  }}
+                />
+              </svg>
+            </span>
             <span className="text-gray-900"> έχουν εμπιστευτεί τη φυσικοθεραπεία στο ΕΡΜΕΙΟΝ για ανακούφιση από τον πόνο, αποκατάσταση τραυματισμών και αποθεραπεία.</span>
           </h2>
 
@@ -1064,7 +1089,7 @@ function AboutOwnerSection() {
             {/* Mobile photo display (between header and intro) */}
             <div className="lg:hidden mb-6 flex justify-center">
               <div className="relative w-full max-w-[320px]">
-                <div 
+                <div
                   className="absolute -inset-3 rounded-2xl opacity-10 blur-lg"
                   style={{ backgroundColor: '#004aad' }}
                 />
@@ -1086,7 +1111,7 @@ function AboutOwnerSection() {
             <p className="text-lg md:text-xl text-gray-800 mb-8 leading-relaxed font-normal">
               Παραμένω ενημερωμένος για τις εξελίξεις στον τομέα μου και οι ασθενείς μου συχνά βλέπουν αποτελέσματα που η ‘συμβατική’ φυσικοθεραπεία δεν έχει καταφέρει να επιτύχει.
             </p>
-            
+
             {/* Specialization List */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="bg-white p-5 rounded-xl border border-gray-200/60 shadow-sm">
@@ -1116,7 +1141,7 @@ function AboutOwnerSection() {
           <div className="hidden lg:flex lg:col-span-2 justify-center sticky top-28">
             <div className="relative w-full max-w-[340px] xl:max-w-[380px]">
               {/* Decorative background shape */}
-              <div 
+              <div
                 className="absolute -inset-4 rounded-2xl opacity-10 blur-xl"
                 style={{ backgroundColor: '#004aad' }}
               />
@@ -1213,18 +1238,18 @@ function WhyChooseUsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {differentiators.map((item, idx) => {
             const IconComponent = item.icon;
-            
+
             if (item.highlight) {
               return (
-                <div 
+                <div
                   key={idx}
                   className="col-span-1 md:col-span-2 lg:col-span-2 relative overflow-hidden rounded-3xl p-8 md:p-10 shadow-lg border border-transparent transition-all duration-300 hover:scale-[1.01] hover:shadow-xl flex flex-col justify-between text-white"
-                  style={{ 
+                  style={{
                     background: 'linear-gradient(135deg, #004aad 0%, #002d6a 100%)'
                   }}
                 >
                   <div className="absolute top-0 right-0 -mt-4 -mr-4 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none" />
-                  
+
                   <div>
                     <span className="inline-block bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
                       {item.badge}
@@ -1236,7 +1261,7 @@ function WhyChooseUsSection() {
                       {item.description}
                     </p>
                   </div>
-                  
+
                   <div className="mt-8 flex items-center justify-between">
                     <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white">
                       <IconComponent className="w-6 h-6" />
@@ -1247,7 +1272,7 @@ function WhyChooseUsSection() {
             }
 
             return (
-              <div 
+              <div
                 key={idx}
                 className="bg-white rounded-3xl p-8 border border-gray-200/60 shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-md hover:border-gray-300 flex flex-col justify-between"
               >
@@ -1471,16 +1496,16 @@ function TestimonialsSection() {
           {/* Google Trust Badge */}
           <div className="flex items-center gap-3 bg-white rounded-2xl px-5 py-3 shadow-sm border border-gray-100 w-fit shrink-0">
             <svg width="26" height="26" viewBox="0 0 48 48" aria-label="Google">
-              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.34-8.16 2.34-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.34-8.16 2.34-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
             </svg>
             <div>
               <div className="flex items-center gap-0.5 mb-0.5">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-4 h-4" fill="#FBBC05" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
@@ -1546,7 +1571,7 @@ function TestimonialsSection() {
                       viewBox="0 0 20 20"
                       aria-hidden="true"
                     >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
@@ -1621,7 +1646,7 @@ function OfficeVideoSection() {
     if ((video as any).webkitEnterFullscreen) {
       (video as any).webkitEnterFullscreen();
     } else if (video.requestFullscreen) {
-      video.requestFullscreen().catch(() => {});
+      video.requestFullscreen().catch(() => { });
     } else if ((video as any).webkitRequestFullscreen) {
       (video as any).webkitRequestFullscreen();
     } else if ((video as any).msRequestFullscreen) {
@@ -1673,9 +1698,8 @@ function OfficeVideoSection() {
 
           {/* Interactive Controls Overlay (always visible on mobile, hover-revealed on desktop) */}
           <div
-            className={`absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 flex flex-col justify-between p-3.5 sm:p-5 md:p-6 ${
-              showControls ? 'opacity-100' : 'opacity-0'
-            } md:opacity-0 md:group-hover:opacity-100`}
+            className={`absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 flex flex-col justify-between p-3.5 sm:p-5 md:p-6 ${showControls ? 'opacity-100' : 'opacity-0'
+              } md:opacity-0 md:group-hover:opacity-100`}
           >
             {/* Top Bar */}
             <div className="flex items-center justify-between">
@@ -1843,11 +1867,11 @@ function FinalCTASection() {
       `}</style>
 
       {/* Subtle background glow effect */}
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20 blur-[100px]"
         style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(0,74,173,0) 70%)' }}
       />
-      
+
       <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center">
         {/* Subtitle / Category */}
 
@@ -1864,14 +1888,14 @@ function FinalCTASection() {
         <div className="relative group">
           {/* Button Outer Glow wrapper */}
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-xl blur-lg opacity-45 group-hover:opacity-80 transition duration-1000 group-hover:duration-200 animate-pulse" />
-          
+
           <a
             href="#contact"
             className="relative flex items-center gap-3 px-12 py-5 rounded-xl font-extrabold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-2xl overflow-hidden bg-white text-[#004aad] animate-shimmer-hover"
           >
             {/* Shimmer overlay effect */}
             <span className="shimmer-slide absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full" />
-            
+
             <Phone className="w-6 h-6 shrink-0" />
             ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ
           </a>
@@ -1930,7 +1954,7 @@ function Footer() {
               className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-fit group"
             >
               <div className="w-7 h-7 rounded-lg bg-[#5b8cff]/10 flex items-center justify-center shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
               </div>
               <span className="font-medium text-sm">Παπάφη 92, Θεσσαλονίκη, 544 53</span>
             </a>
@@ -1946,7 +1970,7 @@ function Footer() {
               className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-fit group"
             >
               <div className="w-7 h-7 rounded-lg bg-[#5b8cff]/10 flex items-center justify-center shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
               </div>
               <span className="font-medium">698 840 4234</span>
             </a>
@@ -1955,7 +1979,7 @@ function Footer() {
               className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-fit group"
             >
               <div className="w-7 h-7 rounded-lg bg-[#5b8cff]/10 flex items-center justify-center shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.67A16 16 0 0 0 15.91 16.5l.77-.77a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
               </div>
               <span className="font-medium">231 094 0100</span>
             </a>
@@ -1998,7 +2022,7 @@ function Footer() {
               className="inline-flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] active:bg-white/[0.15] active:scale-[0.98] border border-white/10 hover:border-[#5b8cff]/50 shadow-sm hover:shadow-[0_0_15px_rgba(91,140,255,0.25)] transition-all duration-200 text-white w-fit group"
             >
               <div className="w-7 h-7 rounded-lg bg-[#5b8cff]/10 flex items-center justify-center shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b8cff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover:scale-110"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
               </div>
               <span className="font-medium">ermeion@outlook.com</span>
             </a>
@@ -2121,11 +2145,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/ypiresies" element={<ServicesPage />} />
-        <Route path="/ypiresies/McKenzie" element={<McKenziePage onNavigate={() => {}} />} />
-        <Route path="/ypiresies/mckenzie" element={<McKenziePage onNavigate={() => {}} />} />
-        <Route path="/ypiresies/tecar" element={<TecarPage onNavigate={() => {}} />} />
-        <Route path="/ypiresies/spine-pain" element={<SpinePainPage onNavigate={() => {}} />} />
-        <Route path="/ypiresies/exercise" element={<ExercisePage onNavigate={() => {}} />} />
+        <Route path="/ypiresies/McKenzie" element={<McKenziePage onNavigate={() => { }} />} />
+        <Route path="/ypiresies/mckenzie" element={<McKenziePage onNavigate={() => { }} />} />
+        <Route path="/ypiresies/tecar" element={<TecarPage onNavigate={() => { }} />} />
+        <Route path="/ypiresies/spine-pain" element={<SpinePainPage onNavigate={() => { }} />} />
+        <Route path="/ypiresies/exercise" element={<ExercisePage onNavigate={() => { }} />} />
         {/* Backward compatibility fallback for legacy hash or direct paths */}
         <Route path="*" element={<HomePage />} />
       </Routes>
