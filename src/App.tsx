@@ -1356,6 +1356,13 @@ function TestimonialsSection() {
   const [isMobile, setIsMobile] = useState(false);
   const [list, setList] = useState(testimonialsData);
 
+  // Touch gesture state for horizontal swipe on mobile
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const touchEndY = useRef<number | null>(null);
+  const swipedRef = useRef(false);
+
   useEffect(() => {
     const update = () => {
       const isDesktop = window.matchMedia('(min-width: 640px)').matches;
@@ -1383,6 +1390,69 @@ function TestimonialsSection() {
       }
     }
     setList(newList);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    touchEndX.current = e.touches[0].clientX;
+    touchEndY.current = e.touches[0].clientY;
+    swipedRef.current = false;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+    touchEndY.current = e.touches[0].clientY;
+    if (touchStartX.current !== null) {
+      const deltaX = Math.abs(touchEndX.current - touchStartX.current);
+      if (deltaX > 10) {
+        swipedRef.current = true;
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (
+      touchStartX.current === null ||
+      touchEndX.current === null ||
+      touchStartY.current === null ||
+      touchEndY.current === null
+    ) {
+      return;
+    }
+
+    const deltaX = touchStartX.current - touchEndX.current;
+    const deltaY = touchStartY.current - touchEndY.current;
+    const minSwipeDistance = 45; // Minimum horizontal px to register a swipe
+
+    // Ensure the swipe is horizontal and exceeds vertical displacement (prevents accidental swipe during scroll)
+    if (Math.abs(deltaX) > minSwipeDistance && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+      if (deltaX > 0) {
+        // Swiped left -> advance to next review
+        handleMove(1);
+      } else {
+        // Swiped right -> go to previous review
+        handleMove(-1);
+      }
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+    touchStartY.current = null;
+    touchEndY.current = null;
+
+    // Reset swipedRef after a short delay so any trailing click on the card is blocked
+    setTimeout(() => {
+      swipedRef.current = false;
+    }, 100);
+  };
+
+  const handleTouchCancel = () => {
+    touchStartX.current = null;
+    touchEndX.current = null;
+    touchStartY.current = null;
+    touchEndY.current = null;
+    swipedRef.current = false;
   };
 
   return (
@@ -1421,7 +1491,14 @@ function TestimonialsSection() {
       </div>
 
       {/* Stagger Carousel */}
-      <div className="relative w-full overflow-hidden" style={{ height: isMobile ? 500 : 620 }}>
+      <div
+        className="relative w-full overflow-hidden select-none"
+        style={{ height: isMobile ? 500 : 620, touchAction: 'pan-y' }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={handleTouchCancel}
+      >
         {list.map((t, index) => {
           const position = list.length % 2
             ? index - (list.length + 1) / 2
@@ -1433,7 +1510,10 @@ function TestimonialsSection() {
           return (
             <div
               key={t.tempId}
-              onClick={() => handleMove(position)}
+              onClick={() => {
+                if (swipedRef.current) return;
+                handleMove(position);
+              }}
               className="absolute left-1/2 top-1/2 cursor-pointer border-2 p-6 sm:p-8 transition-all duration-500 ease-in-out"
               style={{
                 width: cardDims.width,
