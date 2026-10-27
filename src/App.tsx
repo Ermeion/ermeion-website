@@ -977,30 +977,10 @@ function ProcessSection() {
             </span>
           </div>
           <p
-            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed mb-6"
+            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed"
           >
             Η πρώτη επίσκεψη περιλαμβάνει τη λήψη λεπτομερούς ιστορικού. Μετά θα προχωρήσουμε στη κλινική εξέταση, όπου θα εκτελείτε συγκεκριμένες ασκήσεις ή/και θα μένετε σε συγκεκριμένες θέσεις. Οι αλλαγές των συμπτωμάτων και του εύρους κίνησης, θα μου παρέχουν τις πληροφορίες για την κατάταξη του προβλήματος σας.
           </p>
-          <div className="flex flex-wrap gap-2.5">
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Λήψη ιστορικού
-            </span>
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Κλινική εξέταση
-            </span>
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Δοκιμαστικές κινήσεις
-            </span>
-          </div>
         </div>
       ),
     },
@@ -1017,30 +997,10 @@ function ProcessSection() {
             </span>
           </div>
           <p
-            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed mb-6"
+            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed"
           >
             Κάθε σύνδρομο αντιμετωπίζεται, σύμφωνα με τη μοναδική φύση του, με ειδικές μηχανικές διαδικασίες, συμπεριλαμβανομένων των επαναλαμβανόμενων κινήσεων και των παρατεταμένων θέσεων.
           </p>
-          <div className="flex flex-wrap gap-2.5">
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Μηχανική διάγνωση
-            </span>
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Ταξινόμηση συνδρόμου
-            </span>
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Εξατομικευμένη προσέγγιση
-            </span>
-          </div>
         </div>
       ),
     },
@@ -1076,30 +1036,10 @@ function ProcessSection() {
             </li>
           </ul>
           <p
-            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed mb-6"
+            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed"
           >
             Στόχος είναι το καλύτερο αποτέλεσμα με τις λιγότερες δυνατές συνεδρίες, μέσω της κατάλληλης καθοδήγησης.
           </p>
-          <div className="flex flex-wrap gap-2.5">
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Ειδικές ασκήσεις
-            </span>
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Manual Therapy
-            </span>
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Καθοδήγηση
-            </span>
-          </div>
         </div>
       ),
     },
@@ -1116,30 +1056,10 @@ function ProcessSection() {
             </span>
           </div>
           <p
-            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed mb-6"
+            className="text-lg md:text-xl text-slate-800 font-normal leading-relaxed"
           >
             Μαθαίνοντας πώς να αντιμετωπίζετε μόνος/μόνη σας το τρέχον πρόβλημα, μπορείτε να μάθετε και πώς να ελαχιστοποιήσετε τον κίνδυνο υποτροπής. Επίσης σε περίπτωση υποτροπής μπορείτε πλέον να ασχοληθείτε εγκαίρως με τα συμπτώματα και να έχετε τον έλεγχο της θεραπείας, ακίνδυνα και αποτελεσματικά. Τα υποτροπιάζοντα προβλήματα είναι πιθανότερο να προληφθούν μέσω της αυτοθεραπείας παρά μέσω μιας παθητικής φροντίδας.
           </p>
-          <div className="flex flex-wrap gap-2.5">
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Αυτοθεραπεία
-            </span>
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Πρόληψη υποτροπής
-            </span>
-            <span
-              className="px-3.5 py-1.5 rounded-full text-sm font-semibold"
-              style={{ backgroundColor: '#eaf0f7', color: '#004aad' }}
-            >
-              Έλεγχος συμπτωμάτων
-            </span>
-          </div>
         </div>
       ),
     },
