@@ -459,7 +459,7 @@ function WhyErmeionSection() {
   ];
 
   return (
-    <section className="bg-white py-16 md:py-24 px-6 md:px-16">
+    <section className="bg-white pt-6 pb-16 md:pt-10 md:pb-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto flex flex-col">
 
         {/* Main Content */}
@@ -566,7 +566,7 @@ function ServicesShowcaseSection() {
   };
 
   return (
-    <section className="relative bg-white py-16 md:py-24 border-t border-gray-100 overflow-hidden">
+    <section className="relative bg-white pt-16 pb-10 md:pt-24 md:pb-16 border-t border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-5 sm:px-8 md:px-12 lg:px-16">
         {/* Section Heading & Counter */}
         <div className="flex items-center justify-between mb-8 md:mb-12">
@@ -727,9 +727,9 @@ function CertificatesCarouselSection() {
   const doubled = [...certificates, ...certificates];
 
   return (
-    <section className="bg-white border-t border-gray-100 py-14 md:py-20">
+    <section className="bg-white border-t border-gray-100 pt-10 pb-6 md:pt-14 md:pb-10">
       <p
-        className="text-center text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-10 md:mb-14 px-4"
+        className="text-center text-xs sm:text-sm font-extrabold tracking-[0.25em] mb-6 md:mb-10 px-4"
         style={{ color: '#1f2937' }}
       >
         ΠΙΣΤΟΠΟΙΗΣΕΙΣ & ΕΞΕΙΔΙΚΕΥΣΕΙΣ
@@ -1456,10 +1456,10 @@ function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-24 px-6 md:px-16" style={{ backgroundColor: '#eaf0f7' }}>
+    <section id="testimonials" className="pt-8 pb-16 md:pt-16 md:pb-24 px-6 md:px-16" style={{ backgroundColor: '#eaf0f7' }}>
       {/* Header */}
-      <div className="max-w-7xl mx-auto mb-10">
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+      <div className="max-w-7xl mx-auto mb-3 sm:mb-6 md:mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-6">
           <div>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3" style={{ color: '#004aad' }}>
               Τι λένε οι ασθενείς μας
@@ -1493,7 +1493,7 @@ function TestimonialsSection() {
       {/* Stagger Carousel */}
       <div
         className="relative w-full overflow-hidden select-none"
-        style={{ height: isMobile ? 500 : 620, touchAction: 'pan-y' }}
+        style={{ height: isMobile ? 450 : 620, touchAction: 'pan-y' }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -1505,7 +1505,7 @@ function TestimonialsSection() {
             : index - list.length / 2;
           const isCenter = position === 0;
           const translateY = isMobile
-            ? (isCenter ? -40 : position % 2 ? 8 : -12)
+            ? (isCenter ? -35 : position % 2 ? 8 : -12)
             : (isCenter ? -65 : position % 2 ? 15 : -15);
           return (
             <div
@@ -1570,7 +1570,7 @@ function TestimonialsSection() {
         })}
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+        <div className="absolute bottom-2 sm:bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
           <button
             onClick={() => handleMove(-1)}
             className="flex h-12 w-12 items-center justify-center border-2 transition-all duration-200 hover:border-[#004aad]"
@@ -1630,7 +1630,7 @@ function OfficeVideoSection() {
   };
 
   return (
-    <section className="py-20 md:py-28 px-4 sm:px-6 md:px-16 bg-gradient-to-b from-white via-slate-50/50 to-white border-t border-gray-100">
+    <section className="pt-16 pb-8 md:pt-24 md:pb-14 px-4 sm:px-6 md:px-16 bg-gradient-to-b from-white via-slate-50/50 to-white border-t border-gray-100">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8 md:mb-10 text-center md:text-left">
@@ -1768,7 +1768,7 @@ function FAQSection() {
   const [openId, setOpenId] = useState<string | null>(null);
 
   return (
-    <section id="faq" className="py-32 px-6 md:px-16 bg-white">
+    <section id="faq" className="pt-8 pb-20 md:pt-14 md:pb-28 px-6 md:px-16 bg-white">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Header */}
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
