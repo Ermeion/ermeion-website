@@ -6,7 +6,7 @@ interface TecarPageProps {
   onNavigate: (hash: string) => void;
 }
 
-export default function TecarPage({ onNavigate }: TecarPageProps) {
+export default function TecarPage({ onNavigate: _onNavigate }: TecarPageProps) {
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);

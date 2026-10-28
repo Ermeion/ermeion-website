@@ -12,6 +12,7 @@ import TecarPage from './TecarPage';
 import SpinePainPage from './SpinePainPage';
 import ExercisePage from './ExercisePage';
 import ServicesPage from './ServicesPage';
+import CookieConsent, { openCookieSettings } from './components/CookieConsent';
 
 // Navbar Component
 function Navbar() {
@@ -2119,9 +2120,17 @@ function Footer() {
       {/* Bottom bar */}
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
         <div className="max-w-6xl mx-auto px-6 md:px-16 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs" style={{ color: '#ffffff' }}>
-            © {new Date().getFullYear()} ΕΡΜΕΙΟΝ Φυσικοθεραπευτήριο. Με επιφύλαξη παντός δικαιώματος.
-          </p>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 text-xs" style={{ color: '#ffffff' }}>
+            <span>© {new Date().getFullYear()} ΕΡΜΕΙΟΝ Φυσικοθεραπευτήριο. Με επιφύλαξη παντός δικαιώματος.</span>
+            <span className="hidden sm:inline text-white/30">•</span>
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="text-white/60 hover:text-[#5b8cff] underline underline-offset-2 transition-colors cursor-pointer text-xs"
+            >
+              Ρυθμίσεις Cookies
+            </button>
+          </div>
           {/* Social icons */}
           <div className="flex items-center gap-4">
             {socials.map((social) => (
@@ -2207,6 +2216,7 @@ function App() {
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }

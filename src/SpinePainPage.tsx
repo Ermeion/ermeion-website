@@ -5,7 +5,7 @@ interface SpinePainPageProps {
   onNavigate: (hash: string) => void;
 }
 
-export default function SpinePainPage({ onNavigate }: SpinePainPageProps) {
+export default function SpinePainPage({ onNavigate: _onNavigate }: SpinePainPageProps) {
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
       

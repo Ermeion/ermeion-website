@@ -6,7 +6,7 @@ interface ExercisePageProps {
   onNavigate: (hash: string) => void;
 }
 
-export default function ExercisePage({ onNavigate }: ExercisePageProps) {
+export default function ExercisePage({ onNavigate: _onNavigate }: ExercisePageProps) {
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);

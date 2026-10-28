@@ -6,7 +6,7 @@ interface McKenziePageProps {
   onNavigate: (hash: string) => void;
 }
 
-export default function McKenziePage({ onNavigate }: McKenziePageProps) {
+export default function McKenziePage({ onNavigate: _onNavigate }: McKenziePageProps) {
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
