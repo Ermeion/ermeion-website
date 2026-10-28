@@ -6,7 +6,7 @@ import {
   AnimatePresence,
 } from 'framer-motion';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Maximize, Phone } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Maximize, Phone, Play, Pause } from 'lucide-react';
 import McKenziePage from './McKenziePage';
 import TecarPage from './TecarPage';
 import SpinePainPage from './SpinePainPage';
@@ -1147,7 +1147,7 @@ function AboutOwnerSection() {
                 style={{ backgroundColor: '#004aad' }}
               />
               <img
-                src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/ermeion-1.webp"
+                src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/John/DSC06334.webp"
                 alt="Ιωάννης Μιχαηλίδης - Φυσικοθεραπευτής ΕΡΜΕΙΟΝ"
                 className="relative z-10 w-full aspect-[3/4] object-cover rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 hover:scale-[1.02] mx-auto"
               />
@@ -1636,7 +1636,21 @@ function TestimonialsSection() {
 
 function OfficeVideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [showControls, setShowControls] = useState(true);
+
+  const togglePlay = (e?: React.MouseEvent | React.TouchEvent) => {
+    if (e) e.stopPropagation();
+    const vid = videoRef.current;
+    if (!vid) return;
+    if (vid.paused) {
+      vid.play();
+      setIsPlaying(true);
+    } else {
+      vid.pause();
+      setIsPlaying(false);
+    }
+  };
 
   const handleFullscreen = (e?: React.MouseEvent | React.TouchEvent) => {
     if (e) e.stopPropagation();
@@ -1654,6 +1668,25 @@ function OfficeVideoSection() {
       (video as any).msRequestFullscreen();
     }
   };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const syncPlayState = () => {
+      setIsPlaying(!video.paused);
+    };
+
+    document.addEventListener('fullscreenchange', syncPlayState);
+    document.addEventListener('webkitfullscreenchange', syncPlayState);
+    video.addEventListener('webkitendfullscreen', syncPlayState);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', syncPlayState);
+      document.removeEventListener('webkitfullscreenchange', syncPlayState);
+      video.removeEventListener('webkitendfullscreen', syncPlayState);
+    };
+  }, []);
 
   return (
     <section className="pt-16 pb-8 md:pt-24 md:pb-14 px-4 sm:px-6 md:px-16 bg-gradient-to-b from-white via-slate-50/50 to-white border-t border-gray-100">
@@ -1687,6 +1720,8 @@ function OfficeVideoSection() {
             loop
             playsInline
             preload="metadata"
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
             poster="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Office%20images/grafeio.webp"
             className="w-full h-full object-cover"
           >
@@ -1697,27 +1732,44 @@ function OfficeVideoSection() {
             Το πρόγραμμα περιήγησής σας δεν υποστηρίζει την αναπαραγωγή βίντεο.
           </video>
 
-          {/* Interactive Controls Overlay (always visible on mobile, hover-revealed on desktop) */}
+          {/* Interactive Controls Overlay */}
           <div
-            className={`absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 flex flex-col justify-between p-3.5 sm:p-5 md:p-6 ${showControls ? 'opacity-100' : 'opacity-0'
-              } md:opacity-0 md:group-hover:opacity-100`}
+            className={`absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 flex flex-col justify-between p-3.5 sm:p-5 md:p-6 ${
+              !isPlaying || showControls ? 'opacity-100' : 'opacity-0'
+            } md:opacity-0 md:group-hover:opacity-100 ${!isPlaying ? 'md:!opacity-100' : ''}`}
           >
-            {/* Top Bar */}
-            <div className="flex items-center justify-between">
-              <span className="text-white/95 text-[11px] sm:text-xs md:text-sm font-medium tracking-wide bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-sm">
-                Φυσικοθεραπευτήριο Ερμείον
-              </span>
-
-              {/* Fullscreen Button (Optimized tap target for mobile touch) */}
+            {/* Top Bar: Fullscreen Button */}
+            <div className="flex items-center justify-end">
               <button
                 type="button"
                 onClick={handleFullscreen}
-                onTouchEnd={handleFullscreen}
                 className="pointer-events-auto flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-black/80 active:bg-black text-white backdrop-blur-md border border-white/20 shadow-lg transition-transform active:scale-90"
                 title="Πλήρης οθόνη"
                 aria-label="Πλήρης οθόνη"
               >
                 <Maximize className="w-5 h-5 text-white" />
+              </button>
+            </div>
+
+            {/* Bottom Bar: Play/Pause Button (TECAR style) */}
+            <div className="flex justify-start">
+              <button
+                type="button"
+                onClick={togglePlay}
+                className="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-white/95 hover:bg-white active:bg-white/80 text-[#004aad] font-semibold text-xs sm:text-sm shadow-xl backdrop-blur-md transition-all active:scale-95"
+                aria-label={isPlaying ? 'Παύση' : 'Αναπαραγωγή'}
+              >
+                {isPlaying ? (
+                  <>
+                    <Pause className="w-4 h-4 fill-current" />
+                    <span>Παύση</span>
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-4 h-4 fill-current" />
+                    <span>Αναπαραγωγή</span>
+                  </>
+                )}
               </button>
             </div>
           </div>

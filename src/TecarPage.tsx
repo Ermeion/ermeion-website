@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Pause, Maximize, Phone } from 'lucide-react';
 
@@ -41,6 +41,30 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
     }
   };
 
+  useEffect(() => {
+    const syncPlayState = () => {
+      const vid = desktopVideoRef.current || mobileVideoRef.current;
+      if (vid) {
+        setIsPlaying(!vid.paused);
+      }
+    };
+
+    document.addEventListener('fullscreenchange', syncPlayState);
+    document.addEventListener('webkitfullscreenchange', syncPlayState);
+
+    const mVid = mobileVideoRef.current;
+    const dVid = desktopVideoRef.current;
+    if (mVid) mVid.addEventListener('webkitendfullscreen', syncPlayState);
+    if (dVid) dVid.addEventListener('webkitendfullscreen', syncPlayState);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', syncPlayState);
+      document.removeEventListener('webkitfullscreenchange', syncPlayState);
+      if (mVid) mVid.removeEventListener('webkitendfullscreen', syncPlayState);
+      if (dVid) dVid.removeEventListener('webkitendfullscreen', syncPlayState);
+    };
+  }, []);
+
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
       
@@ -62,8 +86,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
             preload="metadata"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
-            onClick={(e) => togglePlay(false, e)}
-            className="w-full h-full object-cover cursor-pointer"
+            className="w-full h-full object-cover"
           >
             <source
               src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Tecar-video/Tecar.mp4"
@@ -75,15 +98,14 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
           {/* Minimal Controls */}
           <div
             className={`absolute inset-0 pointer-events-none transition-opacity duration-300 flex flex-col justify-between p-3.5 ${
-              showControls ? 'opacity-100' : 'opacity-0'
+              !isPlaying || showControls ? 'opacity-100' : 'opacity-0'
             }`}
           >
             <div className="flex justify-end">
               <button
                 type="button"
                 onClick={(e) => handleFullscreen(false, e)}
-                onTouchEnd={(e) => handleFullscreen(false, e)}
-                className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/60 active:bg-black text-white backdrop-blur-md border border-white/20 shadow-lg"
+                className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 active:bg-black text-white backdrop-blur-md border border-white/20 shadow-lg"
                 title="Πλήρης οθόνη"
                 aria-label="Πλήρης οθόνη"
               >
@@ -94,8 +116,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
               <button
                 type="button"
                 onClick={(e) => togglePlay(false, e)}
-                onTouchEnd={(e) => togglePlay(false, e)}
-                className="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/95 text-[#004aad] font-semibold text-xs shadow-xl backdrop-blur-md"
+                className="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/95 hover:bg-white active:bg-white/80 text-[#004aad] font-semibold text-xs shadow-xl backdrop-blur-md transition-all active:scale-95"
                 aria-label={isPlaying ? 'Παύση' : 'Αναπαραγωγή'}
               >
                 {isPlaying ? (
@@ -184,8 +205,7 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
                   preload="metadata"
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
-                  onClick={(e) => togglePlay(true, e)}
-                  className="w-full h-full object-cover cursor-pointer"
+                  className="w-full h-full object-cover"
                 >
                   <source
                     src="https://dcmekuaqoafogwlgnugs.supabase.co/storage/v1/object/public/Tecar-video/Tecar.mp4"
@@ -195,7 +215,11 @@ export default function TecarPage({ onNavigate }: TecarPageProps) {
                 </video>
 
                 {/* Desktop Interactive Hover Controls Overlay */}
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-5">
+                <div
+                  className={`absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 flex flex-col justify-between p-5 ${
+                    !isPlaying ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                  }`}
+                >
                   {/* Top Right: Fullscreen Button */}
                   <div className="flex justify-end">
                     <button
