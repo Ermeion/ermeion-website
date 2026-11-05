@@ -13,6 +13,7 @@ import SpinePainPage from './SpinePainPage';
 import ExercisePage from './ExercisePage';
 import ServicesPage from './ServicesPage';
 import CookieConsent, { openCookieSettings } from './components/CookieConsent';
+import SEO from './components/SEO';
 
 // Navbar Component
 function Navbar() {
@@ -2182,6 +2183,7 @@ function ScrollToTop() {
 function HomePage() {
   return (
     <>
+      <SEO />
       <HeroSection />
       <CertificatesCarouselSection />
       <WhyErmeionSection />

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Pause, Maximize, Phone } from 'lucide-react';
+import SEO from './components/SEO';
 
 interface TecarPageProps {
   onNavigate: (hash: string) => void;
@@ -67,6 +68,11 @@ export default function TecarPage({ onNavigate: _onNavigate }: TecarPageProps) {
 
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
+      <SEO
+        title="Tecar Therapy"
+        description="Στοχευμένη θεραπεία ραδιοσυχνοτήτων Tecar στο Ερμείον Θεσσαλονίκη. Ταχεία μείωση φλεγμονής, ανακούφιση μυϊκού πόνου και ταχύτερη επούλωση."
+        canonicalPath="/ypiresies/tecar"
+      />
       
       {/* ========================================================================= */}
       {/* 1. MOBILE ONLY HERO (Full-width video on top, text & CTA underneath)       */}

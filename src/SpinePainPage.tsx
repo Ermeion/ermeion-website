@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
+import SEO from './components/SEO';
 
 interface SpinePainPageProps {
   onNavigate: (hash: string) => void;
@@ -8,6 +9,11 @@ interface SpinePainPageProps {
 export default function SpinePainPage({ onNavigate: _onNavigate }: SpinePainPageProps) {
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
+      <SEO
+        title="Θεραπεία & Πρόληψη Σπονδυλικού Πόνου"
+        description="Αντιμετώπιση οσφυαλγίας, ισχιαλγίας και αυχενικού πόνου στο Ερμείον Θεσσαλονίκη. Σύγχρονες, επιστημονικά τεκμηριωμένες τεχνικές αποκατάστασης."
+        canonicalPath="/ypiresies/spine-pain"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden bg-white pt-24 pb-16 md:pt-32 md:pb-24 border-b border-slate-100">

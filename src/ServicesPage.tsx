@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
+import SEO from './components/SEO';
 
 interface ServicesPageProps {
   onNavigate?: (path: string) => void;
@@ -35,6 +36,11 @@ export default function ServicesPage({}: ServicesPageProps) {
 
   return (
     <div className="bg-slate-50 min-h-screen pt-12 pb-24 text-slate-800">
+      <SEO
+        title="Υπηρεσίες Φυσικοθεραπείας"
+        description="Ανακαλύψτε τις εξειδικευμένες υπηρεσίες του Ερμείον στη Θεσσαλονίκη: Μέθοδος McKenzie, Tecar Therapy, Θεραπευτική Άσκηση & Σπονδυλικός Πόνος."
+        canonicalPath="/ypiresies"
+      />
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
         {/* Header section */}

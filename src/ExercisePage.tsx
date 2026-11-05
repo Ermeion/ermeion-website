@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Pause, Maximize, Phone } from 'lucide-react';
+import SEO from './components/SEO';
 
 interface ExercisePageProps {
   onNavigate: (hash: string) => void;
@@ -67,6 +68,11 @@ export default function ExercisePage({ onNavigate: _onNavigate }: ExercisePagePr
 
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
+      <SEO
+        title="Θεραπευτική Άσκηση"
+        description="Εξατομικευμένη θεραπευτική άσκηση και λειτουργική αποκατάσταση στο Ερμείον Θεσσαλονίκη. Στοχευμένη ενδυνάμωση για μακροχρόνια ανακούφιση."
+        canonicalPath="/ypiresies/exercise"
+      />
       
       {/* ========================================================================= */}
       {/* 1. MOBILE ONLY HERO (Full-width video on top, text & CTA underneath)       */}

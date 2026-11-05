@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play, Pause, Maximize, Phone } from 'lucide-react';
+import SEO from './components/SEO';
 
 interface McKenziePageProps {
   onNavigate: (hash: string) => void;
@@ -67,6 +68,11 @@ export default function McKenziePage({ onNavigate: _onNavigate }: McKenziePagePr
 
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
+      <SEO
+        title="Μέθοδος McKenzie (MDT)"
+        description="Μηχανική Διάγνωση & Θεραπεία (MDT) McKenzie για οσφυαλγία, αυχεναλγία και μυοσκελετικό πόνο στο Ερμείον Θεσσαλονίκη."
+        canonicalPath="/ypiresies/McKenzie"
+      />
       
       {/* ========================================================================= */}
       {/* 1. MOBILE ONLY HERO (Full-width video on top, text & CTA underneath)       */}

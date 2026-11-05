@@ -1,0 +1,22 @@
+{
+  "name": "Ερμείον — Φυσικοθεραπεία",
+  "short_name": "Ερμείον",
+  "description": "Ιδιωτικό φυσικοθεραπευτήριο στη Θεσσαλονίκη. Εξειδικευμένη αποκατάσταση, μέθοδος McKenzie, Tecar Therapy & θεραπευτική άσκηση.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d1a",
+  "theme_color": "#004aad",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
+
