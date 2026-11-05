@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import {
   useScroll,
   useTransform,
   motion,
   AnimatePresence,
 } from 'framer-motion';
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronRight, ChevronLeft, ChevronDown, Menu, X, Zap, PhoneCall, Clock, Compass, Target, ShieldCheck, CalendarDays, ClipboardCheck, Shield, ClipboardEdit, Dumbbell, Maximize, Phone, Play, Pause } from 'lucide-react';
 import McKenziePage from './McKenziePage';
 import TecarPage from './TecarPage';
@@ -20,10 +20,26 @@ function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const closeMenu = () => {
     setMobileOpen(false);
     setMobileAccordionOpen(false);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    closeMenu();
+    if (location.pathname === '/' && !location.hash) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (location.pathname === '/') {
+      e.preventDefault();
+      navigate('/', { replace: true });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
   };
 
   const navLinks = [
@@ -75,8 +91,18 @@ function Navbar() {
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="flex items-center justify-between px-4 md:px-8 py-2">
         {/* Logo */}
-        <Link to="/" className="flex items-center" onClick={() => closeMenu()}>
-          <img src="/ermeion-main-logo.svg" alt="Ερμείον" style={{ height: '72px' }} className="w-auto object-contain" />
+        <Link
+          to="/"
+          className="flex items-center cursor-pointer transition-transform duration-200 active:scale-95"
+          onClick={handleLogoClick}
+          aria-label="Ερμείον — Αρχική σελίδα"
+        >
+          <img
+            src="/ermeion-main-logo.svg"
+            alt="Ερμείον"
+            style={{ height: '72px' }}
+            className="w-auto object-contain cursor-pointer"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -1994,7 +2020,14 @@ function Footer() {
         {/* Brand column */}
         <div className="flex flex-col gap-4">
           <div>
-            <img src="/ermeion-logo-white.webp" alt="Ερμείον" style={{ height: '44px' }} className="w-auto object-contain" />
+            <Link
+              to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="inline-block transition-transform duration-200 active:scale-95"
+              aria-label="Ερμείον — Αρχική σελίδα"
+            >
+              <img src="/ermeion-logo-white.webp" alt="Ερμείον" style={{ height: '44px' }} className="w-auto object-contain cursor-pointer" />
+            </Link>
             <p className="text-sm mt-3 leading-relaxed opacity-90" style={{ color: '#ffffff' }}>
               Ιδιωτικό φυσικοθεραπευτήριο στη Θεσσαλονίκη. Εξειδικευμένη αποκατάσταση, αποδεδειγμένα αποτελέσματα.
             </p>
@@ -2160,21 +2193,53 @@ function Footer() {
 
 // Scroll to top helper on route change
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
-  useEffect(() => {
-    // Temporarily override CSS scroll-behavior: smooth so the scroll
-    // happens instantly on route change (fixes mobile bug where the
-    // new page opens at the previous scroll position).
+  useLayoutEffect(() => {
+    // 1. If there's a hash anchor (e.g. /#faq or /#process), scroll directly to it
+    if (hash) {
+      const targetId = hash.replace('#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      // Retry in case DOM hasn't rendered the target section yet
+      const frameId = requestAnimationFrame(() => {
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+      return () => cancelAnimationFrame(frameId);
+    }
+
+    // 2. Standard page navigation (e.g. clicking a service link from anywhere in the page):
+    // Force immediate scroll to top BEFORE browser paints
     const html = document.documentElement;
-    const prev = html.style.scrollBehavior;
+    const body = document.body;
+
+    const prevHtmlScroll = html.style.scrollBehavior;
+    const prevBodyScroll = body.style.scrollBehavior;
+
     html.style.scrollBehavior = 'auto';
-    window.scrollTo(0, 0);
-    // Restore after a frame so in-page anchor smooth scrolling still works
-    requestAnimationFrame(() => {
-      html.style.scrollBehavior = prev;
-    });
-  }, [pathname]);
+    body.style.scrollBehavior = 'auto';
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    html.scrollTop = 0;
+    body.scrollTop = 0;
+
+    // Keep scroll locked at 0 across initial mount frames so videos/images
+    // sizing in do not trigger viewport clamping, then restore smooth scrolling.
+    const timer = setTimeout(() => {
+      html.style.scrollBehavior = prevHtmlScroll;
+      body.style.scrollBehavior = prevBodyScroll;
+    }, 120);
+
+    return () => {
+      clearTimeout(timer);
+      html.style.scrollBehavior = prevHtmlScroll;
+      body.style.scrollBehavior = prevBodyScroll;
+    };
+  }, [pathname, hash]);
 
   return null;
 }

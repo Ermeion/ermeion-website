@@ -112,12 +112,12 @@
   </g>
 
   <!-- Main Headline / Tagline -->
-  <g transform="translate(90, 310)">
-    <text x="0" y="0" fill="url(#textGrad)" font-size="38" font-weight="800" letter-spacing="-0.5" class="font-sans">
-      Χωρίς παραπεμπτικό. Χωρίς αναμονή.
+  <g transform="translate(90, 325)">
+    <text x="0" y="0" fill="url(#textGrad)" font-size="34" font-weight="800" letter-spacing="-0.5" class="font-sans">
+      Εξειδικευμένο Κέντρο Φυσικοθεραπείας
     </text>
-    <text x="0" y="44" fill="#94a3b8" font-size="23" font-weight="500" class="font-sans">
-      Εξειδικευμένη φυσικοθεραπεία &amp; αποκατάσταση με αποτελέσματα που μετράς.
+    <text x="0" y="44" fill="#94a3b8" font-size="24" font-weight="500" class="font-sans">
+      για Μυοσκελετικούς Πόνους στην Θεσσαλονίκη
     </text>
   </g>
 
