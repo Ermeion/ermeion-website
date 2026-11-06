@@ -12,6 +12,8 @@ import TecarPage from './TecarPage';
 import SpinePainPage from './SpinePainPage';
 import ExercisePage from './ExercisePage';
 import ServicesPage from './ServicesPage';
+import ArticlesIndexPage from './ArticlesIndexPage';
+import ArticleDetailPage from './ArticleDetailPage';
 import CookieConsent, { openCookieSettings } from './components/CookieConsent';
 import SEO from './components/SEO';
 
@@ -47,6 +49,7 @@ function Navbar() {
     { path: '/#about-owner', label: 'Γνωρίστε με' },
     { path: '/#testimonials', label: 'Αξιολογήσεις' },
     { path: '/#faq', label: 'FAQ' },
+    { path: '/arthra', label: 'Άρθρα' },
   ];
 
   const [hoveredService, setHoveredService] = useState<{
@@ -2279,6 +2282,8 @@ function App() {
         <Route path="/ypiresies/tecar" element={<TecarPage onNavigate={() => { }} />} />
         <Route path="/ypiresies/spine-pain" element={<SpinePainPage onNavigate={() => { }} />} />
         <Route path="/ypiresies/exercise" element={<ExercisePage onNavigate={() => { }} />} />
+        <Route path="/arthra" element={<ArticlesIndexPage />} />
+        <Route path="/arthra/:slug" element={<ArticleDetailPage />} />
         {/* Backward compatibility fallback for legacy hash or direct paths */}
         <Route path="*" element={<HomePage />} />
       </Routes>
