@@ -66,12 +66,40 @@ export default function TecarPage({ onNavigate: _onNavigate }: TecarPageProps) {
     };
   }, []);
 
+  const tecarSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalProcedure',
+    name: 'Tecar Therapy (Στοχευμένη Θεραπεία Ραδιοσυχνοτήτων)',
+    alternateName: 'Capacitive and Resistive Energy Transfer (TECAR)',
+    description: 'Στοχευμένη θεραπεία ραδιοσυχνοτήτων Tecar στο Ερμείον Θεσσαλονίκη για ταχεία μείωση φλεγμονής, ανακούφιση μυϊκού πόνου και επιτάχυνση της βιολογικής επούλωσης των ιστών.',
+    procedureType: 'https://schema.org/PhysicalTherapy',
+    relevantSpecialty: {
+      '@type': 'MedicalSpecialty',
+      name: 'Physiotherapy',
+    },
+    howPerformed: 'Εφαρμογή ηλεκτρομαγνητικής ενέργειας υψηλής συχνότητας μέσω χωρητικών (capacitive) και αντιστατικών (resistive) ηλεκτροδίων.',
+    provider: {
+      '@type': 'MedicalBusiness',
+      name: 'Ερμείον Φυσικοθεραπευτήριο',
+      url: 'https://ermeion.gr',
+      telephone: '+302310940100',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Παπάφη 92',
+        addressLocality: 'Θεσσαλονίκη',
+        postalCode: '54453',
+        addressCountry: 'GR',
+      },
+    },
+  };
+
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
       <SEO
         title="Tecar Therapy"
         description="Στοχευμένη θεραπεία ραδιοσυχνοτήτων Tecar στο Ερμείον Θεσσαλονίκη. Ταχεία μείωση φλεγμονής, ανακούφιση μυϊκού πόνου και ταχύτερη επούλωση."
         canonicalPath="/ypiresies/tecar"
+        schemaData={tecarSchema}
       />
       
       {/* ========================================================================= */}

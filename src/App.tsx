@@ -148,8 +148,8 @@ function Navbar() {
                               onMouseEnter={() => setHoveredService(service)}
                               onClick={() => setDropdownOpen(false)}
                               className={`p-3.5 rounded-xl transition-all duration-200 text-left flex flex-col justify-center ${isSelected
-                                  ? 'bg-[#004aad] text-white shadow-md'
-                                  : 'hover:bg-slate-50 text-slate-800'
+                                ? 'bg-[#004aad] text-white shadow-md'
+                                : 'hover:bg-slate-50 text-slate-800'
                                 }`}
                             >
                               <span className={`font-bold text-sm md:text-base leading-snug ${isSelected ? 'text-white' : 'text-slate-900'}`}>
@@ -1765,9 +1765,8 @@ function OfficeVideoSection() {
 
           {/* Interactive Controls Overlay */}
           <div
-            className={`absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 flex flex-col justify-between p-3.5 sm:p-5 md:p-6 ${
-              !isPlaying || showControls ? 'opacity-100' : 'opacity-0'
-            } md:opacity-0 md:group-hover:opacity-100 ${!isPlaying ? 'md:!opacity-100' : ''}`}
+            className={`absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/30 transition-opacity duration-300 flex flex-col justify-between p-3.5 sm:p-5 md:p-6 ${!isPlaying || showControls ? 'opacity-100' : 'opacity-0'
+              } md:opacity-0 md:group-hover:opacity-100 ${!isPlaying ? 'md:!opacity-100' : ''}`}
           >
             {/* Top Bar: Fullscreen Button */}
             <div className="flex items-center justify-end">
@@ -2249,9 +2248,22 @@ function ScrollToTop() {
 
 // HomePage Component
 function HomePage() {
+  const homeFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
-      <SEO />
+      <SEO schemaData={homeFaqSchema} />
       <HeroSection />
       <CertificatesCarouselSection />
       <WhyErmeionSection />

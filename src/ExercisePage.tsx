@@ -66,12 +66,40 @@ export default function ExercisePage({ onNavigate: _onNavigate }: ExercisePagePr
     };
   }, []);
 
+  const exerciseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalProcedure',
+    name: 'Θεραπευτική Άσκηση & Λειτουργική Αποκατάσταση',
+    alternateName: 'Therapeutic Exercise and Functional Rehabilitation',
+    description: 'Εξατομικευμένη θεραπευτική άσκηση και λειτουργική κινησιοθεραπεία στο Ερμείον Θεσσαλονίκη. Στοχευμένη ενδυνάμωση, σταθεροποίηση και αποκατάσταση κινητικού ελέγχου.',
+    procedureType: 'https://schema.org/PhysicalTherapy',
+    relevantSpecialty: {
+      '@type': 'MedicalSpecialty',
+      name: 'Physiotherapy',
+    },
+    howPerformed: 'Εξατομικευμένο κινησιολογικό πρόγραμμα ασκήσεων ενδυνάμωσης, ιδιοδεκτικότητας και διάτασης υπό την επίβλεψη φυσικοθεραπευτή.',
+    provider: {
+      '@type': 'MedicalBusiness',
+      name: 'Ερμείον Φυσικοθεραπευτήριο',
+      url: 'https://ermeion.gr',
+      telephone: '+302310940100',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Παπάφη 92',
+        addressLocality: 'Θεσσαλονίκη',
+        postalCode: '54453',
+        addressCountry: 'GR',
+      },
+    },
+  };
+
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
       <SEO
         title="Θεραπευτική Άσκηση"
         description="Εξατομικευμένη θεραπευτική άσκηση και λειτουργική αποκατάσταση στο Ερμείον Θεσσαλονίκη. Στοχευμένη ενδυνάμωση για μακροχρόνια ανακούφιση."
         canonicalPath="/ypiresies/exercise"
+        schemaData={exerciseSchema}
       />
       
       {/* ========================================================================= */}

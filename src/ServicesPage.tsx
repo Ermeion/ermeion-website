@@ -34,12 +34,35 @@ export default function ServicesPage({}: ServicesPageProps) {
     },
   ];
 
+  const servicesCatalogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    name: 'Υπηρεσίες Φυσικοθεραπείας — Ερμείον Θεσσαλονίκη',
+    description: 'Εξειδικευμένες υπηρεσίες φυσικοθεραπείας στη Θεσσαλονίκη: Μέθοδος McKenzie (MDT), Tecar Therapy, Θεραπευτική Άσκηση και Αντιμετώπιση Σπονδυλικού Πόνου.',
+    url: 'https://ermeion.gr/ypiresies',
+    about: {
+      '@type': 'MedicalSpecialty',
+      name: 'Physiotherapy',
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: services.map((s, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: s.title,
+        description: s.description,
+        url: `https://ermeion.gr${s.path}`,
+      })),
+    },
+  };
+
   return (
     <div className="bg-slate-50 min-h-screen pt-12 pb-24 text-slate-800">
       <SEO
         title="Υπηρεσίες Φυσικοθεραπείας"
         description="Ανακαλύψτε τις εξειδικευμένες υπηρεσίες του Ερμείον στη Θεσσαλονίκη: Μέθοδος McKenzie, Tecar Therapy, Θεραπευτική Άσκηση & Σπονδυλικός Πόνος."
         canonicalPath="/ypiresies"
+        schemaData={servicesCatalogSchema}
       />
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         

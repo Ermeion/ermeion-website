@@ -7,12 +7,57 @@ interface SpinePainPageProps {
 }
 
 export default function SpinePainPage({ onNavigate: _onNavigate }: SpinePainPageProps) {
+  const spinePainSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalTherapy',
+    name: 'Θεραπεία & Πρόληψη Σπονδυλικού Πόνου',
+    alternateName: 'Spine Pain Rehabilitation and Prevention',
+    description: 'Ολοκληρωμένη αντιμετώπιση οσφυαλγίας, ισχιαλγίας, δισκοπάθειας και αυχενικού συνδρόμου στο Ερμείον Θεσσαλονίκη με επιστημονικά τεκμηριωμένες τεχνικές αποκατάστασης.',
+    relevantSpecialty: {
+      '@type': 'MedicalSpecialty',
+      name: 'Physiotherapy',
+    },
+    seriousAdverseOutcome: 'Χρόνιος πόνος, κινητικός περιορισμός',
+    indication: [
+      {
+        '@type': 'MedicalCondition',
+        name: 'Οσφυαλγία (Lumbago)',
+      },
+      {
+        '@type': 'MedicalCondition',
+        name: 'Ισχιαλγία (Sciatica)',
+      },
+      {
+        '@type': 'MedicalCondition',
+        name: 'Αυχενικό Σύνδρομο (Cervicalgia)',
+      },
+      {
+        '@type': 'MedicalCondition',
+        name: 'Κήλη Μεσοσπονδυλίου Δίσκου (Disc Herniation)',
+      },
+    ],
+    provider: {
+      '@type': 'MedicalBusiness',
+      name: 'Ερμείον Φυσικοθεραπευτήριο',
+      url: 'https://ermeion.gr',
+      telephone: '+302310940100',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Παπάφη 92',
+        addressLocality: 'Θεσσαλονίκη',
+        postalCode: '54453',
+        addressCountry: 'GR',
+      },
+    },
+  };
+
   return (
     <div className="bg-white text-slate-800 min-h-screen font-sans selection:bg-[#e0f2fe] selection:text-[#004aad]">
       <SEO
         title="Θεραπεία & Πρόληψη Σπονδυλικού Πόνου"
         description="Αντιμετώπιση οσφυαλγίας, ισχιαλγίας και αυχενικού πόνου στο Ερμείον Θεσσαλονίκη. Σύγχρονες, επιστημονικά τεκμηριωμένες τεχνικές αποκατάστασης."
         canonicalPath="/ypiresies/spine-pain"
+        schemaData={spinePainSchema}
       />
       
       {/* 1. Hero Section */}

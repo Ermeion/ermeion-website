@@ -16,12 +16,46 @@ export default function ArticleDetailPage() {
     .filter((a) => a.categorySlug === article.categorySlug && a.slug !== article.slug)
     .slice(0, 3);
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    headline: article.title,
+    description: article.excerpt,
+    url: `https://ermeion.gr/arthra/${article.slug}`,
+    image: 'https://ermeion.gr/og-image.jpg',
+    inLanguage: 'el-GR',
+    about: {
+      '@type': 'MedicalCondition',
+      name: article.title,
+    },
+    author: {
+      '@type': 'MedicalOrganization',
+      name: 'Ερμείον Φυσικοθεραπεία',
+      url: 'https://ermeion.gr',
+    },
+    publisher: {
+      '@type': 'MedicalOrganization',
+      name: 'Ερμείον Φυσικοθεραπεία',
+      url: 'https://ermeion.gr',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://ermeion.gr/ermeion-main-logo.svg',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://ermeion.gr/arthra/${article.slug}`,
+    },
+  };
+
   return (
     <div className="bg-slate-50 min-h-screen text-slate-800">
       <SEO
         title={article.title}
         description={article.excerpt}
         canonicalPath={`/arthra/${article.slug}`}
+        ogType="article"
+        schemaData={articleSchema}
       />
 
       {/* Breadcrumb & Navigation */}
