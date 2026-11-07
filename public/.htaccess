@@ -1,0 +1,260 @@
+# ==============================================================================
+# .htaccess for Ermeion Physiotherapy (Vite + React SPA on Plesk / Apache)
+# Automatically generated with full 301 SEO redirects and SPA routing fallback.
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Force HTTPS and non-www canonical domain
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\.ermeion\.gr$ [NC]
+  RewriteRule ^(.*)$ https://ermeion.gr/$1 [L,R=301]
+
+  # 2. Permanent 301 Redirects for Old WordPress URLs
+  # Main services page
+  RewriteCond %{REQUEST_URI} ^/(υπηρεσίες|%cf%85%cf%80%ce%b7%cf%81%ce%b5%cf%83%ce%af%ce%b5%cf%82)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/ypiresies [R=301,NE,L]
+
+  # McKenzie service
+  RewriteCond %{REQUEST_URI} ^/(mckenzie)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/ypiresies/mckenzie [R=301,NE,L]
+
+  # Tecar service
+  RewriteCond %{REQUEST_URI} ^/(tecar)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/ypiresies/tecar [R=301,NE,L]
+
+  # Therapeutic exercise
+  RewriteCond %{REQUEST_URI} ^/(therapeytiki-askisi)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/ypiresies/exercise [R=301,NE,L]
+
+  # Spine and pelvic conditions
+  RewriteCond %{REQUEST_URI} ^/(παθήσεις-σπονδυλικής-στήλης-λεκάνης|%cf%80%ce%b1%ce%b8%ce%ae%cf%83%ce%b5%ce%b9%cf%82-%cf%83%cf%80%ce%bf%ce%bd%ce%b4%cf%85%ce%bb%ce%b9%ce%ba%ce%ae%cf%82-%cf%83%cf%84%ce%ae%ce%bb%ce%b7%cf%82-%ce%bb%ce%b5%ce%ba%ce%ac%ce%bd%ce%b7%cf%82)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/ypiresies/spine-pain [R=301,NE,L]
+
+  # Process section
+  RewriteCond %{REQUEST_URI} ^/(διαδικασία|%ce%b4%ce%b9%ce%b1%ce%b4%ce%b9%ce%ba%ce%b1%cf%83%ce%af%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/#process [R=301,NE,L]
+
+  # About owner section
+  RewriteCond %{REQUEST_URI} ^/(γνωρίστε-με|%ce%b3%ce%bd%cf%89%cf%81%ce%af%cf%83%cf%84%ce%b5-%ce%bc%ce%b5)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/#about-owner [R=301,NE,L]
+
+  # FAQ section
+  RewriteCond %{REQUEST_URI} ^/(συχνές-ερωτήσεις|%cf%83%cf%85%cf%87%ce%bd%ce%ad%cf%82-%ce%b5%cf%81%cf%89%cf%84%ce%ae%cf%83%ce%b5%ce%b9%cf%82)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/#faq [R=301,NE,L]
+
+  # Contact section
+  RewriteCond %{REQUEST_URI} ^/(epikoinonia)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/#contact [R=301,NE,L]
+
+  # Space / facilities section
+  RewriteCond %{REQUEST_URI} ^/(χώρος|%cf%87%cf%8e%cf%81%ce%bf%cf%82)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/#why-choose-us-details [R=301,NE,L]
+
+  # News / Blog index
+  RewriteCond %{REQUEST_URI} ^/(νέα|%ce%bd%ce%ad%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra [R=301,NE,L]
+
+  # Sample page & ermeion-2
+  RewriteCond %{REQUEST_URI} ^/(sample-page|ermeion-2|hello-world)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/ [R=301,NE,L]
+
+  # Services mapping
+  RewriteCond %{REQUEST_URI} ^/(nevromyioskeletiki-apokatastasi|athlitiki-apokatastasi|pnf-2|manual-therapy|ergon-iastm|mulligan-concept-manual-therapy|massage-gun|%ce%bcassage-gun|μassage-gun|αθλητική-αποκατάσταση|%ce%b1%ce%b8%ce%bb%ce%b7%cf%84%ce%b9%ce%ba%ce%ae-%ce%b1%cf%80%ce%bf%ce%ba%ce%b1%cf%84%ce%ac%cf%83%cf%84%ce%b1%cf%83%ce%b7|πρεσσοθεραπεία-therabody-reccoveryair-pro|%cf%80%cf%81%ce%b5%cf%83%cf%83%ce%bf%ce%b8%ce%b5%cf%81%ce%b1%cf%80%ce%b5%ce%af%ce%b1-therabody-reccoveryair-pro|prehab-πρόληψη-τραυματισμών|prehab-%cf%80%cf%81%cf%8c%ce%bb%ce%b7%cf%88%ce%b7-%cf%84%cf%81%ce%b1%cf%85%ce%bc%ce%b1%cf%84%ce%b9%cf%83%ce%bc%cf%8e%ce%bd|νευρομυοσκελετική-αποκατάσταση|%ce%bd%ce%b5%cf%85%cf%81%ce%bf%ce%bc%cf%85%ce%bf%cf%83%ce%ba%ce%b5%ce%bb%ce%b5%cf%84%ce%b9%ce%ba%ce%ae-%ce%b1%cf%80%ce%bf%ce%ba%ce%b1%cf%84%ce%ac%cf%83%cf%84%ce%b1%cf%83%ce%b7|μετεγχειρητικη-αποκατασταση-καταγμα|%ce%bc%ce%b5%cf%84%ce%b5%ce%b3%cf%87%ce%b5%ce%b9%cf%81%ce%b7%cf%84%ce%b9%ce%ba%ce%b7-%ce%b1%cf%80%ce%bf%ce%ba%ce%b1%cf%84%ce%b1%cf%83%cf%84%ce%b1%cf%83%ce%b7-%ce%ba%ce%b1%cf%84%ce%b1%ce%b3%ce%bc%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/ypiresies [R=301,NE,L]
+
+  # Tele-therapy to contact
+  RewriteCond %{REQUEST_URI} ^/(τηλεθεραπεία-απομακρυσμένη-συνεδρί|%cf%84%ce%b7%ce%bb%ce%b5%ce%b8%ce%b5%cf%81%ce%b1%cf%80%ce%b5%ce%af%ce%b1-%ce%b1%cf%80%ce%bf%ce%bc%ce%b1%ce%ba%cf%81%cf%85%cf%83%ce%bc%ce%ad%ce%bd%ce%b7-%cf%83%cf%85%ce%bd%ce%b5%ce%b4%cf%81%ce%af)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/#contact [R=301,NE,L]
+
+  # Old categories & taxonomies
+  RewriteCond %{REQUEST_URI} ^/(παθήσεις-άνω-άκρου|%cf%80%ce%b1%ce%b8%ce%ae%cf%83%ce%b5%ce%b9%cf%82-%ce%ac%ce%bd%cf%89-%ce%ac%ce%ba%cf%81%ce%bf%cf%85|παθήσεις-κάτω-άκρου|%cf%80%ce%b1%ce%b8%ce%ae%cf%83%ce%b5%ce%b9%cf%82-%ce%ba%ce%ac%cf%84%cf%89-%ce%ac%ce%ba%cf%81%ce%bf%cf%85|παθήσεις-κεφαλής|%cf%80%ce%b1%ce%b8%ce%ae%cf%83%ce%b5%ce%b9%cf%82-%ce%ba%ce%b5%cf%86%ce%b1%ce%bb%ce%ae%cf%82)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra [R=301,NE,L]
+
+  # WordPress category archives
+  RewriteCond %{REQUEST_URI} ^/(category/.*) [NC]
+  RewriteRule ^ https://ermeion.gr/arthra [R=301,NE,L]
+
+  # Thoracic outlet syndrome
+  RewriteCond %{REQUEST_URI} ^/(σύνδρομο-θωρακικής-εξόδου|%cf%83%cf%8d%ce%bd%ce%b4%cf%81%ce%bf%ce%bc%ce%bf-%ce%b8%cf%89%cf%81%ce%b1%ce%ba%ce%b9%ce%ba%ce%ae%cf%82-%ce%b5%ce%be%cf%8c%ce%b4%ce%bf%cf%85)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/syndromo-thorakikis-exodou [R=301,NE,L]
+
+  # Lumbago / Osfyalgia
+  RewriteCond %{REQUEST_URI} ^/(οσφυαλγία|%ce%bf%cf%83%cf%86%cf%85%ce%b1%ce%bb%ce%b3%ce%af%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/osfyalgia [R=301,NE,L]
+
+  # Lumbar stenosis
+  RewriteCond %{REQUEST_URI} ^/(σπονδυλική-στένωση-οσφυϊκής-μοίρας-σ|%cf%83%cf%80%ce%bf%ce%bd%ce%b4%cf%85%ce%bb%ce%b9%ce%ba%ce%ae-%cf%83%cf%84%ce%ad%ce%bd%cf%89%cf%83%ce%b7-%ce%bf%cf%83%cf%86%cf%85%cf%8a%ce%ba%ce%ae%cf%82-%ce%bc%ce%bf%ce%af%cf%81%ce%b1%cf%82-%cf%83)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/spondyliki-stenosi-osfyikis-moiras [R=301,NE,L]
+
+  # Sacroiliac joint pathologies
+  RewriteCond %{REQUEST_URI} ^/(παθολογίες-ιερολαγόνιων-αρθρώσεων-κ|%cf%80%ce%b1%ce%b8%ce%bf%ce%bb%ce%bf%ce%b3%ce%af%ce%b5%cf%82-%ce%b9%ce%b5%cf%81%ce%bf%ce%bb%ce%b1%ce%b3%cf%8c%ce%bd%ce%b9%cf%89%ce%bd-%ce%b1%cf%81%ce%b8%cf%81%cf%8e%cf%83%ce%b5%cf%89%ce%bd-%ce%ba)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/pathologies-ierolagonion-arthroseon [R=301,NE,L]
+
+  # Herniated lumbar disc
+  RewriteCond %{REQUEST_URI} ^/(κήλη-μεσοσπονδυλίου-δίσκου-οσφυϊκής|κυλη-μεσοσπονδυλιου-δισκου-οσφυϊκης|%ce%ba%ce%ae%ce%bb%ce%b7-%ce%bc%ce%b5%cf%83%ce%bf%cf%83%cf%80%ce%bf%ce%bd%ce%b4%cf%85%ce%bb%ce%af%ce%bf%cf%85-%ce%b4%ce%af%cf%83%ce%ba%ce%bf%cf%85-%ce%bf%cf%83%cf%86%cf%85%cf%8a%ce%ba%ce%ae%cf%82|%ce%ba%cf%85%ce%bb%ce%b7-%ce%bc%ce%b5%cf%83%ce%bf%cf%83%cf%80%ce%bf%ce%bd%ce%b4%cf%85%ce%bb%ce%b9%ce%bf%cf%85-%ce%b4%ce%b9%cf%83%ce%ba%ce%bf%cf%85-%ce%bf%cf%83%cf%86%cf%85%cf%8a%ce%ba%ce%b7%cf%82)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/kili-mesospondyliou-diskou-osfyikis-moiras [R=301,NE,L]
+
+  # Cervical pain / Neck pain
+  RewriteCond %{REQUEST_URI} ^/(αυχεναλγία|ayxenalgia|%ce%b1%cf%85%cf%87%ce%b5%ce%bd%ce%b1%ce%bb%ce%b3%ce%af%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/ayxenalgia [R=301,NE,L]
+
+  # Osteoporosis
+  RewriteCond %{REQUEST_URI} ^/(οστεοπόρωση|%ce%bf%cf%83%cf%84%ce%b5%ce%bf%cf%80%cf%8c%cf%81%cf%89%cf%83%ce%b7)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/osteoporosi [R=301,NE,L]
+
+  # Cervical spinal stenosis
+  RewriteCond %{REQUEST_URI} ^/(σπονδυλική-στένωση-αυχενικής-μοίρας|%cf%83%cf%80%ce%bf%ce%bd%ce%b4%cf%85%ce%bb%ce%b9%ce%ba%ce%ae-%cf%83%cf%84%ce%ad%ce%bd%cf%89%cf%83%ce%b7-%ce%b1%cf%85%cf%87%ce%b5%ce%bd%ce%b9%ce%ba%ce%ae%cf%82-%ce%bc%ce%bf%ce%af%cf%81%ce%b1%cf%82)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/spondyliki-stenosi-avchenikis-moiras [R=301,NE,L]
+
+  # Whiplash injury
+  RewriteCond %{REQUEST_URI} ^/(τραυματισμός-δίκην-μαστιγίου-whiplash|%cf%84%cf%81%ce%b1%cf%85%ce%bc%ce%b1%cf%84%ce%b9%cf%83%ce%bc%cf%8c%cf%82-%ce%b4%ce%af%ce%ba%ce%b7%ce%bd-%ce%bc%ce%b1%cf%83%cf%84%ce%b9%ce%b3%ce%af%ce%bf%cf%85-whiplash)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/travmatismos-dikin-mastigiou-whiplash [R=301,NE,L]
+
+  # Cervical disc herniation
+  RewriteCond %{REQUEST_URI} ^/(κήλη-αυχενικού-μεσοσπονδυλίου-δίσκο|%ce%ba%ce%ae%ce%bb%ce%b7-%ce%b1%cf%85%cf%87%ce%b5%ce%bd%ce%b9%ce%ba%ce%bf%cf%8d-%ce%bc%ce%b5%cf%83%ce%bf%cf%83%cf%80%ce%bf%ce%bd%ce%b4%cf%85%ce%bb%ce%af%ce%bf%cf%85-%ce%b4%ce%af%cf%83%ce%ba%ce%bf|%ce%ba%ce%ae%ce%bb%ce%b7-%ce%b1%cf%85%cf%87%ce%b5%ce%bd%ce%b9%ce%ba%ce%bf%cf%83%ce%bc%ce%b5%cf%83%ce%bf%cf%83%cf%80%ce%bf%ce%bd%ce%b4%cf%85%ce%bb%ce%af%ce%bf%cf%85-%ce%b4%ce%af%cf%83%ce%ba%ce%bf)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/kili-avchenikou-mesospondyliou-diskou [R=301,NE,L]
+
+  # Kyphosis
+  RewriteCond %{REQUEST_URI} ^/(κύφωση|%ce%ba%cf%8d%cf%86%cf%89%cf%83%ce%b7)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/kyfosi [R=301,NE,L]
+
+  # Rheumatoid arthritis
+  RewriteCond %{REQUEST_URI} ^/(ρευματοειδής-αρθρίτιδα|%cf%81%ce%b5%cf%85%ce%bc%ce%b1%cf%84%ce%bf%ce%b5%ce%b9%ce%b4%ce%ae%cf%82-%ce%b1%cf%81%ce%b8%cf%81%ce%af%cf%84%ce%b9%ce%b4%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/revmatoeidis-arthritida [R=301,NE,L]
+
+  # Scoliosis
+  RewriteCond %{REQUEST_URI} ^/(σκολιωση|%cf%83%ce%ba%ce%bf%ce%bb%ce%b9%cf%89%cf%83%ce%b7)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/skoliosi [R=301,NE,L]
+
+  # Nerve compression / entrapment
+  RewriteCond %{REQUEST_URI} ^/(συμπίεση-νεύρου-παγίδευση|%cf%83%cf%85%ce%bc%cf%80%ce%af%ce%b5%cf%83%ce%b7-%ce%bd%ce%b5%cf%8d%cf%81%ce%bf%cf%85-%cf%80%ce%b1%ce%b3%ce%af%ce%b4%ce%b5%cf%85%cf%83%ce%b7|περιφερικη-πολυνευροπαθεια-βλαβη-σ|%cf%80%ce%b5%cf%81%ce%b9%cf%86%ce%b5%cf%81%ce%b9%ce%ba%ce%b7-%cf%80%ce%bf%ce%bb%cf%85%ce%bd%ce%b5%cf%85%cf%81%ce%bf%cf%80%ce%b1%ce%b8%ce%b5%ce%b9%ce%b1-%ce%b2%ce%bb%ce%b1%ce%b2%ce%b7-%cf%83)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/sympiesi-nevrou-pagidevsi [R=301,NE,L]
+
+  # Cervical spondylosis
+  RewriteCond %{REQUEST_URI} ^/(αυχενική-σπονδύλωση|%ce%b1%cf%85%cf%87%ce%b5%ce%bd%ce%b9%ce%ba%ce%ae-%cf%83%cf%80%ce%bf%ce%bd%ce%b4%cf%8d%ce%bb%cf%89%cf%83%ce%b7)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/avcheniki-spondylosi [R=301,NE,L]
+
+  # Ankle sprain
+  RewriteCond %{REQUEST_URI} ^/(διαστρεμμα-ποδοκνημικης-αρθρωσης-ασ|%ce%b4%ce%b9%ce%b1%cf%83%cf%84%cf%81%ce%b5%ce%bc%ce%bc%ce%b1-%cf%80%ce%bf%ce%b4%ce%bf%ce%ba%ce%bd%ce%b7%ce%bc%ce%b9%ce%ba%ce%b7%cf%82-%ce%b1%cf%81%ce%b8%cf%81%cf%89%cf%83%ce%b7%cf%82-%ce%b1%cf%83)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/diastremma-podoknimikis-arthrosis-astragalou [R=301,NE,L]
+
+  # Patellofemoral pain syndrome
+  RewriteCond %{REQUEST_URI} ^/(συνδρομο-επιγονατιδομηριαιου-πονου|%cf%83%cf%85%ce%bd%ce%b4%cf%81%ce%bf%ce%bc%ce%bf-%ce%b5%cf%80%ce%b9%ce%b3%ce%bf%ce%bd%ce%b1%cf%84%ce%b9%ce%b4%ce%bf%ce%bc%ce%b7%cf%81%ce%b9%ce%b1%ce%b9%ce%bf%cf%85-%cf%80%ce%bf%ce%bd%ce%bf%cf%85)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/syndromo-epigonatidomiriaiou-ponou [R=301,NE,L]
+
+  # Bursitis
+  RewriteCond %{REQUEST_URI} ^/(ορογονοθυλακιτιδα-bursitis|%ce%bf%cf%81%ce%bf%ce%b3%ce%bf%ce%bd%ce%bf%ce%b8%cf%85%ce%bb%ce%b1%ce%ba%ce%b9%cf%84%ce%b9%ce%b4%ce%b1-bursitis)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/orogonothylakitida-bursitis [R=301,NE,L]
+
+  # Plantar fasciitis
+  RewriteCond %{REQUEST_URI} ^/(παθολογια-της-πελματιαιας-απονευρωσ|%cf%80%ce%b1%ce%b8%ce%bf%ce%bb%ce%bf%ce%b3%ce%b9%ce%b1-%cf%84%ce%b7%cf%82-%cf%80%ce%b5%ce%bb%ce%bc%ce%b1%cf%84%ce%b9%ce%b1%ce%b9%ce%b1%cf%82-%ce%b1%cf%80%ce%bf%ce%bd%ce%b5%cf%85%cf%81%cf%89%cf%83)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/pathologia-tis-pelmatias-aponevrosis [R=301,NE,L]
+
+  # Achilles tendinopathy
+  RewriteCond %{REQUEST_URI} ^/(τενοντοπαθεια-αχιλλειου-τενοντα|%cf%84%ce%b5%ce%bd%ce%bf%ce%bd%cf%84%ce%bf%cf%80%ce%b1%ce%b8%ce%b5%ce%b9%ce%b1-%ce%b1%cf%87%ce%b9%ce%bb%ce%bb%ce%b5%ce%b9%ce%bf%cf%85-%cf%84%ce%b5%ce%bd%ce%bf%ce%bd%cf%84%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/tenontopatheia-achilleiou-tenonta [R=301,NE,L]
+
+  # Achilles tendon rupture
+  RewriteCond %{REQUEST_URI} ^/(ρηξη-αχιλλειου-τενοντα|%cf%81%ce%b7%ce%be%ce%b7-%ce%b1%cf%87%ce%b9%ce%bb%ce%bb%ce%b5%ce%b9%ce%bf%cf%85-%cf%84%ce%b5%ce%bd%ce%bf%ce%bd%cf%84%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/rixi-achilleiou-tenonta [R=301,NE,L]
+
+  # Patellar tendinopathy (Jumper knee)
+  RewriteCond %{REQUEST_URI} ^/(τενοντοπαθεια-επιγονατιδικου-jumpers-knee|%cf%84%ce%b5%ce%bd%ce%bf%ce%bd%cf%84%ce%bf%cf%80%ce%b1%ce%b8%ce%b5%ce%b9%ce%b1-%ce%b5%cf%80%ce%b9%ce%b3%ce%bf%ce%bd%ce%b1%cf%84%ce%b9%ce%b4%ce%b9%ce%ba%ce%bf%cf%85-jumpers-knee)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/tenontopatheia-epigonatidikou-jumpers-knee [R=301,NE,L]
+
+  # Hip pain
+  RewriteCond %{REQUEST_URI} ^/(πονος-στο-ισχιο|%cf%80%ce%bf%ce%bd%ce%bf%cf%82-%cf%83%cf%84%ce%bf-%ce%b9%cf%83%cf%87%ce%b9%ce%bf)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/ponos-sto-ischio [R=301,NE,L]
+
+  # Knee osteoarthritis
+  RewriteCond %{REQUEST_URI} ^/(οστεοαρθριτιδα-γονατος|%ce%bf%cf%83%cf%84%ce%b5%ce%bf%ce%b1%cf%81%ce%b8%cf%81%ce%b9%cf%84%ce%b9%ce%b4%ce%b1-%ce%b3%ce%bf%ce%bd%ce%b1%cf%84%ce%bf%cf%82)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/osteoarthritida-gonatos [R=301,NE,L]
+
+  # Brachial plexus injury
+  RewriteCond %{REQUEST_URI} ^/(βλαβη-βραχιονιου-πλεγματος|%ce%b2%ce%bb%ce%b1%ce%b2%ce%b7-%ce%b2%cf%81%ce%b1%cf%87%ce%b9%ce%bf%ce%bd%ce%b9%ce%bf%cf%85-%cf%80%ce%bb%ce%b5%ce%b3%ce%bc%ce%b1%cf%84%ce%bf%cf%82)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/vlavi-vrachioniou-plegmatos [R=301,NE,L]
+
+  # Elbow pain
+  RewriteCond %{REQUEST_URI} ^/(πονος-στον-αγκωνα|%cf%80%ce%bf%ce%bd%ce%bf%cf%82-%cf%83%cf%84%ce%bf%ce%bd-%ce%b1%ce%b3%ce%ba%cf%89%ce%bd%ce%b1|εκτασεισ-επιφορτισμενου-αγκωνα-με-υπ|%ce%b5%ce%ba%cf%84%ce%b1%cf%83%ce%b5%ce%b9%cf%83-%ce%b5%cf%80%ce%b9%cf%86%ce%bf%cf%81%cf%84%ce%b9%cf%83%ce%bc%ce%b5%ce%bd%ce%bf%cf%85-%ce%b1%ce%b3%ce%ba%cf%89%ce%bd%ce%b1-%ce%bc%ce%b5-%cf%85%cf%80)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/ponos-ston-agkona [R=301,NE,L]
+
+  # Rotator cuff tendinopathy
+  RewriteCond %{REQUEST_URI} ^/(πεταλο-στροφεων-του-ωμου-τεντοπαθεια|%cf%80%ce%b5%cf%84%ce%b1%ce%bb%ce%bf-%cf%83%cf%84%cf%81%ce%bf%cf%86%ce%b5%cf%89%ce%bd-%cf%84%ce%bf%cf%85-%cf%89%ce%bc%ce%bf%cf%85-%cf%84%ce%b5%ce%bd%cf%84%ce%bf%cf%80%ce%b1%ce%b8%ce%b5%ce%b9%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/petalo-strofeon-tou-omou-tentopatheia-rixi [R=301,NE,L]
+
+  # Shoulder pain & instability
+  RewriteCond %{REQUEST_URI} ^/(πονος-στον-ωμο|%cf%80%ce%bf%ce%bd%ce%bf%cf%82-%cf%83%cf%84%ce%bf%ce%bd-%cf%89%ce%bc%ce%bf|ασταθεια-διαταραχη-ωμου-σε-χρονια-φασ|%ce%b1%cf%83%cf%84%ce%b1%ce%b8%ce%b5%ce%b9%ce%b1-%ce%b4%ce%b9%ce%b1%cf%84%ce%b1%cf%81%ce%b1%cf%87%ce%b7-%cf%89%ce%bc%ce%bf%cf%85-%cf%83%ce%b5-%cf%87%cf%81%ce%bf%ce%bd%ce%b9%ce%b1-%cf%86%ce%b1%cf%83)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/ponos-ston-omo [R=301,NE,L]
+
+  # Carpal tunnel syndrome
+  RewriteCond %{REQUEST_URI} ^/(συνδρομο-καρπιαιου-σωληνα|%cf%83%cf%85%ce%bd%ce%b4%cf%81%ce%bf%ce%bc%ce%bf-%ce%ba%ce%b1%cf%81%cf%80%ce%b9%ce%b1%ce%b9%ce%bf%cf%85-%cf%83%cf%89%ce%bb%ce%b7%ce%bd%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/syndromo-karpiaiou-solina [R=301,NE,L]
+
+  # Wrist pain
+  RewriteCond %{REQUEST_URI} ^/(πονος-στον-καρπο|%cf%80%ce%bf%ce%bd%ce%bf%cf%82-%cf%83%cf%84%ce%bf%ce%bd-%ce%ba%ce%b1%cf%81%cf%80%ce%bf)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/ponos-ston-karpo [R=301,NE,L]
+
+  # De Quervain syndrome
+  RewriteCond %{REQUEST_URI} ^/(συνδρομο-de-quervain-τενοντοελυτριτιδα-αντιχ|%cf%83%cf%85%ce%bd%ce%b4%cf%81%ce%bf%ce%bc%ce%bf-de-quervain-%cf%84%ce%b5%ce%bd%ce%bf%ce%bd%cf%84%ce%bf%ce%b5%ce%bb%cf%85%cf%84%cf%81%ce%b9%cf%84%ce%b9%ce%b4%ce%b1-%ce%b1%ce%bd%cf%84%ce%b9%cf%87)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/syndromo-de-quervain-tenontoelytritida-anticheira [R=301,NE,L]
+
+  # Golfers elbow
+  RewriteCond %{REQUEST_URI} ^/(εξω-επικονδυλαλγια-golfer-s-elbow|%ce%b5%ce%be%cf%89-%ce%b5%cf%80%ce%b9%ce%ba%ce%bf%ce%bd%ce%b4%cf%85%ce%bb%ce%b1%ce%bb%ce%b3%ce%b9%ce%b1-golfer-s-elbow)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/exo-epikondylalgia-golfers-elbow [R=301,NE,L]
+
+  # Tennis elbow
+  RewriteCond %{REQUEST_URI} ^/(εξω-επικονδυλαλγια-tennis-elbow|%ce%b5%ce%be%cf%89-%ce%b5%cf%80%ce%b9%ce%ba%ce%bf%ce%bd%ce%b4%cf%85%ce%bb%ce%b1%ce%bb%ce%b3%ce%b9%ce%b1-tennis-elbow)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/exo-epikondylalgia-tennis-elbow [R=301,NE,L]
+
+  # Frozen shoulder
+  RewriteCond %{REQUEST_URI} ^/(παγωμενος-ωμος-συμφυτικη-θυλακιτιδα|%cf%80%ce%b1%ce%b3%cf%89%ce%bc%ce%b5%ce%bd%ce%bf%cf%82-%cf%89%ce%bc%ce%bf%cf%82-%cf%83%cf%85%ce%bc%cf%86%cf%85%cf%84%ce%b9%ce%ba%ce%b7-%ce%b8%cf%85%ce%bb%ce%b1%ce%ba%ce%b9%cf%84%ce%b9%ce%b4%ce%b1|ασκησεισ-αποκαταστασησ-παγωμενου-ω|%ce%b1%cf%83%ce%ba%ce%b7%cf%83%ce%b5%ce%b9%cf%83-%ce%b1%cf%80%ce%bf%ce%ba%ce%b1%cf%84%ce%b1%cf%83%cf%84%ce%b1%cf%83%ce%b7%cf%83-%cf%80%ce%b1%ce%b3%cf%89%ce%bc%ce%b5%ce%bd%ce%bf%cf%85-%cf%89)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/pagomenos-omos-symfytiki-thylakitida [R=301,NE,L]
+
+  # Cervicogenic headache
+  RewriteCond %{REQUEST_URI} ^/(αυχενογενης-πονοκεφαλος-κεφαλαλγια|%ce%b1%cf%85%cf%87%ce%b5%ce%bd%ce%bf%ce%b3%ce%b5%ce%bd%ce%b7%cf%82-%cf%80%ce%bf%ce%bd%ce%bf%ce%ba%ce%b5%cf%86%ce%b1%ce%bb%ce%bf%cf%82-%ce%ba%ce%b5%cf%86%ce%b1%ce%bb%ce%b1%ce%bb%ce%b3%ce%b9%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/avchenogenis-ponokefalos-kefalalgia [R=301,NE,L]
+
+  # Headache
+  RewriteCond %{REQUEST_URI} ^/(πονοκεφαλος-κεφαλαλγια|%cf%80%ce%bf%ce%bd%ce%bf%ce%ba%ce%b5%cf%86%ce%b1%ce%bb%ce%bf%cf%82-%ce%ba%ce%b5%cf%86%ce%b1%ce%bb%ce%b1%ce%bb%ce%b3%ce%b9%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/ponokefalos-kefalalgia [R=301,NE,L]
+
+  # Temporomandibular joint pathologies
+  RewriteCond %{REQUEST_URI} ^/(παθολογια-κρατοφαγναθικων-αρθρωσεων|%cf%80%ce%b1%ce%b8%ce%bf%ce%bb%ce%bf%ce%b3%ce%b9%ce%b1-%ce%ba%cf%81%ce%b1%cf%84%ce%bf%cf%86%ce%b1%ce%b3%ce%bd%ce%b1%ce%b8%ce%b9%ce%ba%cf%89%ce%bd-%ce%b1%cf%81%ce%b8%cf%81%cf%89%cf%83%ce%b5%cf%89%ce%bd)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra/pathologia-krofatognathikon-arthroseon [R=301,NE,L]
+
+  # Biceps tendon repairs
+  RewriteCond %{REQUEST_URI} ^/(συρραφη-του-τενοντα-του-δικεφαλου-βρα|%cf%83%cf%85%cf%81%cf%81%ce%b1%cf%86%ce%b7-%cf%84%ce%bf%cf%85-%cf%84%ce%b5%ce%bd%ce%bf%ce%bd%cf%84%ce%b1-%cf%84%ce%bf%cf%85-%ce%b4%ce%b9%ce%ba%ce%b5%cf%86%ce%b1%ce%bb%ce%bf%cf%85-%ce%b2%cf%81%ce%b1|συρραφή-δικεφάλου-βραχιονίου|%cf%83%cf%85%cf%81%cf%81%ce%b1%cf%86%ce%ae-%ce%b4%ce%b9%ce%ba%ce%b5%cf%86%ce%ac%ce%bb%ce%bf%cf%85-%ce%b2%cf%81%ce%b1%cf%87%ce%b9%ce%bf%ce%bd%ce%af%ce%bf%cf%85)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/arthra [R=301,NE,L]
+
+  # Rehab exercise posts
+  RewriteCond %{REQUEST_URI} ^/(οπισθια-ελξη-και-εκταση-με-στροφη-στην|%ce%bf%cf%80%ce%b9%cf%83%ce%b8%ce%b9%ce%b1-%ce%b5%ce%bb%ce%be%ce%b7-%ce%ba%ce%b1%ce%b9-%ce%b5%ce%ba%cf%84%ce%b1%cf%83%ce%b7-%ce%bc%ce%b5-%cf%83%cf%84%cf%81%ce%bf%cf%86%ce%b7-%cf%83%cf%84%ce%b7%ce%bd|αποκατασταση-τησ-εσω-στροφησ-σε-διατα|%ce%b1%cf%80%ce%bf%ce%ba%ce%b1%cf%84%ce%b1%cf%83%cf%84%ce%b1%cf%83%ce%b7-%cf%84%ce%b7%cf%83-%ce%b5%cf%83%cf%89-%cf%83%cf%84%cf%81%ce%bf%cf%86%ce%b7%cf%83-%cf%83%ce%b5-%ce%b4%ce%b9%ce%b1%cf%84%ce%b1)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/ypiresies/exercise [R=301,NE,L]
+
+  # Ermeion general old post
+  RewriteCond %{REQUEST_URI} ^/(ερμείον-φυσικοθεραπεία-θεσσαλονίκη|%ce%b5%cf%81%ce%bc%ce%b5%ce%af%ce%bf%ce%bd-%cf%86%cf%85%cf%83%ce%b9%ce%ba%ce%bf%ce%b8%ce%b5%cf%81%ce%b1%cf%80%ce%b5%ce%af%ce%b1-%ce%b8%ce%b5%cf%83%cf%83%ce%b1%ce%bb%ce%bf%ce%bd%ce%af%ce%ba%ce%b7)/?$ [NC]
+  RewriteRule ^ https://ermeion.gr/ [R=301,NE,L]
+
+  # 3. SPA Fallback: serve index.html for all client-side React routes
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# ==============================================================================
+# Security & MIME types
+# ==============================================================================
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType application/font-woff2 .woff2
+  AddType application/font-woff .woff
+  AddType application/manifest+json .webmanifest
+  AddType application/xml .xml
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
